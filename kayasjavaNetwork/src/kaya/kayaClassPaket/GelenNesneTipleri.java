@@ -26,9 +26,17 @@ public class GelenNesneTipleri {
     public File gelenDosya = null;
     private DefaultMutableTreeNode gelenDMTN = null;
     private DefaultMutableTreeNode currentDMTN = null;
+    public LinkedList<DefaultMutableTreeNode> gelenDMTNLL=new LinkedList<DefaultMutableTreeNode>();     // LL : LinkedList
+    public LinkedList<LinkedList<DefaultMutableTreeNode>> currentDMTNLL=new LinkedList<LinkedList<DefaultMutableTreeNode>>();
 
     public GelenNesneTipleri(Object gelenObje) {
         this.gelenObje = gelenObje;
+    }
+
+    public void addGelenObje(Object gelenObje) throws IOException, ClassNotFoundException
+    {
+        this.gelenObje = gelenObje;
+        properlyAssignGelenObje();
     }
 
     /*
@@ -57,7 +65,14 @@ public class GelenNesneTipleri {
 
             gelenDMTN2DosyaBilgilerTreeNode(gelenDMTN);
             gelenDMTN2DosyaBilgilerTreeNode(currentDMTN);
+
+            gelenDMTNLL.add(gelenDMTN);
+            LinkedList<DefaultMutableTreeNode> tmpLL=new LinkedList<DefaultMutableTreeNode>();
+            tmpLL.add(currentDMTN);
+            currentDMTNLL.add(tmpLL);
         }
+
+
 
     }
 
@@ -157,17 +172,29 @@ public class GelenNesneTipleri {
     public void gelenDMTN2DosyaBilgilerTreeNode(DefaultMutableTreeNode dmtn) {
         DosyaBilgilerTreeNode tmpDBTN = null;
         DefaultMutableTreeNode tmpNode = null;
-        LinkedList<String> tmpDosyaBilgiler = null;
+        LinkedList<String> tmpLLDosyaBilgiler = null;       // LL : LinkedList
 
 
         Enumeration enumerasyon = dmtn.depthFirstEnumeration();
         while (enumerasyon.hasMoreElements()) {
             tmpNode = (DefaultMutableTreeNode) enumerasyon.nextElement();
-            tmpDosyaBilgiler = (LinkedList<String>) tmpNode.getUserObject();
+            tmpLLDosyaBilgiler = (LinkedList<String>) tmpNode.getUserObject();
 
-            tmpDBTN = new DosyaBilgilerTreeNode(tmpDosyaBilgiler);
+            tmpDBTN = new DosyaBilgilerTreeNode(tmpLLDosyaBilgiler);
             tmpNode.setUserObject(tmpDBTN);
         }
+    }
+
+    public void setGelenDMTNfromGelenDMTNLL(int index)
+    {
+        gelenDMTN=gelenDMTNLL.get(index);
+        currentDMTN=gelenDMTN;
+    }
+
+    public void removeGelenDMTNfromGelenDMTNLL(int index)
+    {
+        gelenDMTNLL.remove(index);
+        setGelenDMTNfromGelenDMTNLL(gelenDMTNLL.size()-1);
     }
 
     /**

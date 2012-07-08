@@ -197,5 +197,18 @@ public abstract class uiSwingMetotlar {
         timer.start();
     }
 
+           /*
+            * send elements of a LL into a ComboBox, I assume elements of LL have a proper toString() method.
+            */
+    public static void LinkedList2ComboBox(LinkedList ll,JComboBox cb)
+    {
+        Object[] nesneDizi=ll.toArray();
+        DefaultComboBoxModel dcbm=new DefaultComboBoxModel(nesneDizi);
+        cb.setModel(dcbm);
+
+        // set the last item as selected
+        cb.setSelectedIndex(nesneDizi.length-1);
+
+     }
            
 }
