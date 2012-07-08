@@ -1,4 +1,4 @@
-javaNetwork2
+javaNetwork
 ============
 
-javaNetzwerk2
+javaNetzwerk
