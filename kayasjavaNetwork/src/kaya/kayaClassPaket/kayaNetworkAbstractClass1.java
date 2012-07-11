@@ -472,8 +472,8 @@ public abstract class kayaNetworkAbstractClass1 {
     }
 
     public static void writeScreenShot2Soket(Socket mySoket, String formatName) throws AWTException, IOException {
-        BufferedImage bi = screenShotGetir();
-        byte[] b = bufferedImage2ByteArray(bi, formatName);
+        BufferedImage bi = GenelMetotlar.screenShotGetir();
+        byte[] b = GenelMetotlar.bufferedImage2ByteArray(bi, formatName);
 
         // byte[] gönderdiğini anlat  ve byte[] boyutunu yaz.
                 /* !! Bu mesaj BYTE ARRAY olarak gitmeli.
@@ -586,7 +586,7 @@ public abstract class kayaNetworkAbstractClass1 {
         {
             String outputOfCommand;
             try {
-                outputOfCommand = executeString(gelenMesaj.substring(1).trim());
+                outputOfCommand = GenelMetotlar.executeString(gelenMesaj.substring(1).trim());
             } catch (Exception ex) {
                 outputOfCommand = ex.toString();
             }
@@ -609,7 +609,7 @@ public abstract class kayaNetworkAbstractClass1 {
         }
         else if (gelenMesaj.startsWith(timerScreenShotDurdurStr)) // diğer taraf artık screenShot istemiyor.
         {
-            timerScreenShotDurdur();
+            GenelMetotlar.timerScreenShotDurdur(timerScreenShot);
         }
         else if (gelenMesaj.startsWith(defaultMutableTreeNodeGetirStr)) // diğer taraf dosya sistemi istiyor.
         {
@@ -687,7 +687,7 @@ dv=new DosyaVisitor();
         int byteDiziUzunluk = Integer.parseInt(dosyaUzunlukStr);
         // "dosyaUzunlukBytes" yazan uzunluk bilgisi --> String --> Integer
 
-        byte[] gelenVeriBytes = readByteArrayFromInputStream(is, byteDiziUzunluk);
+        byte[] gelenVeriBytes = GenelMetotlar.readByteArrayFromInputStream(is, byteDiziUzunluk);
 
         return gelenVeriBytes;
     }
@@ -699,32 +699,12 @@ dv=new DosyaVisitor();
      */
     public static byte[] readByteArrayFromSoket(Socket mySoket, int lenOfByteDizi) throws IOException {
         InputStream is = mySoket.getInputStream();
-        byte[] b = readByteArrayFromInputStream(is, lenOfByteDizi);
+        byte[] b = GenelMetotlar.readByteArrayFromInputStream(is, lenOfByteDizi);
         return b;
     }
 
-    public static byte[] readByteArrayFromInputStream(InputStream is, int lenOfByteDizi) throws IOException {
-        byte[] byteDizi = new byte[lenOfByteDizi];
-
-        int bytesRead = 0;    // "gelenVeriBytes" dan okunmuş toplam byte sayısı
-        int bytesReadTmp;   // "gelenVeriBytes" dan bir döngüde okunmuş byte sayısı
-
-        /* !! Aşağıdaki döngü !!.
-         * tüm veri okunana kadar dön.
-         * !! InputStream.read(byte[] b, int off, int len) --> fonksiyonu büyük  "len" değerleri için tüm veriyi okumayı sağlayamıyor.
-         * Bu nedenle tüm veri okunana kadar "read(byte[] b, int off, int len)" fonksiyonu çağrılmalı.
-         * Bu durumu bilmediğim için uzun byte dizisi gönderme konusunda 3 gün boyunca sıkıntı çektim, debelenip durdum.
-         */
-        while (bytesRead < lenOfByteDizi) {
-            bytesReadTmp = is.read(byteDizi, bytesRead, lenOfByteDizi - bytesRead);
-            bytesRead += bytesReadTmp;
-        }
-
-        return byteDizi;
-    }
-
     public static BufferedImage readBufferedImageFromSoket(Socket mySoket, int boyutOfByteDizi) throws IOException, InterruptedException {
-        BufferedImage bi = byteArray2BufferedImage(readByteArrayFromSoket(mySoket, boyutOfByteDizi));
+        BufferedImage bi = GenelMetotlar.byteArray2BufferedImage(readByteArrayFromSoket(mySoket, boyutOfByteDizi));
         return bi;
     }
 
@@ -816,140 +796,7 @@ dv=new DosyaVisitor();
 
         return gelenMesaj;
     }
-
-    // executes the input string as a shell command and returns its output as string
-    public static String executeString(String komut) throws IOException, InterruptedException {
-        /**
-         * Runtime run = Runtime.getRuntime(); String verbose = ""; try{ Process
-         * pr = run.exec(komut); pr.waitFor(); BufferedReader br = new
-         * BufferedReader(new InputStreamReader(pr.getInputStream())); while
-         * ((verbose+=br.readLine())!=null) { // Bu satırda program bekliyor.
-         * br.readLine() --> program bekliyor. } } catch(Exception ex) {
-         * verbose=ex.toString(); }
-         */
-        String verbose = "";
-        try {
-            Runtime run = Runtime.getRuntime();
-            //Process myProcess = run.exec(komut);
-            String[] komutDizi = komut.split(" ");
-            /*
-             * http://www.javaworld.com/javaworld/jw-12-2000/jw-1229-traps.html?page=4
-             */
-            Process myProcess = run.exec(komutDizi);
-            /*
-             * http://stackoverflow.com/questions/1081084/is-java-runtime-execstring-platform-independent
-             * I had some code that ran commands through
-             * Runtime.getRuntime.exec(String), and it worked on Windows. When I
-             * moved the code to Linux, it broke, and the only way of fixing it
-             * was to switch to the exec(String[]) version. If I leave things
-             * this way, will the code work the same on Windows and Linux, or
-             * should I use the exec(String) on Windows and exec(String[]) on
-             * Linux?
-             */
-            InputStream instream = myProcess.getInputStream(); // BufferedReader.readLine() --> program bekliyor. InputStream çalışıyor.
-            int c;
-            while ((c = instream.read()) != -1) {
-                verbose += String.valueOf((char) c);
-            }
-            instream.close();
-        } catch (Exception ex) {
-            verbose = ex.toString();
-        }
-
-        return verbose;
-    }
-
-    //JTextArea için
-    public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, JTextArea mytextArea) {
-        int indeks = mytable.getSelectedRow();
-        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
-        {
-            mytextArea.setText(propValueDescrip.get(indeks).get(0) + " = " + propValueDescrip.get(indeks).get(2));
-        }
-    }
-
-    //TextArea için
-    public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, TextArea mytextArea) {
-
-        int indeks = mytable.getSelectedRow();
-        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
-        {
-            mytextArea.setText(propValueDescrip.get(indeks).get(0) + " = " + propValueDescrip.get(indeks).get(2));
-        }
-    }
-
-    // istenilen bilgiyi seçmek için
-    public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, JTextArea mytextArea, int bilgiIndeks) {
-        int indeks = mytable.getSelectedRow();
-        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
-        {
-            mytextArea.setText(propValueDescrip.get(indeks).get(bilgiIndeks));
-        }
-    }
-
-    // "JTable" seçili alana ait olan özelliğin internetteki kaynağını "Editor Pane" e yansıtır.
-    public static void tableInfo2EditorPane(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, String kaynakURL, JEditorPane myeditorpane) throws IOException {
-        int indeks = mytable.getSelectedRow();
-        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
-        {
-            String prop = propValueDescrip.get(indeks).get(0);
-            if (!prop.endsWith("()")) {
-                prop += "()";
-            }
-            String urlToGoStr = kaynakURL + "#" + prop;
-            URL urlToGo = new URL(urlToGoStr);
-            myeditorpane.setPage(urlToGo);
-        }
-    }
-
-    // ekran görüntüsü al.
-    public static BufferedImage screenShotGetir() throws AWTException {
-        /*
-         * http://www.arulraj.net/2010/06/print-screen-using-java.html
-         */
-
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        Dimension dim = tk.getScreenSize();
-        Rectangle rect = new Rectangle(dim);
-        Robot myRobot = new Robot();
-
-        BufferedImage myBufferedImage = myRobot.createScreenCapture(rect);
-        return myBufferedImage;
-    }
-
    
-
-    // BufferedImage'i verilen isim ve tipteki dosyaya yazdırır.
-    public static void bufferedImage2File(BufferedImage bi, String dosyaAd, String dosyaTip) throws IOException {
-        /*
-         * http://stackoverflow.com/questions/7738588/bufferedimage-turns-all-black-after-scaling-via-canvas
-         */
-        File outputDosya = new File(dosyaAd + "." + dosyaTip);
-        ImageIO.write(bi, dosyaTip, outputDosya);
-    }
-
-    // BufferedImage'ı byte[]'a dönüştürür.
-    public static byte[] bufferedImage2ByteArray(BufferedImage resim, String formatName) throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        //ImageIO.write(resim, "bmp", baos);
-//        ImageIO.write(resim, "png", baos);  // "bmp" dosyalarının boyutu çok büyük oluyor. "png" formatı kullan.
-        ImageIO.write(resim, formatName, baos);
-        baos.flush();
-        byte[] resimInByte = baos.toByteArray();
-        baos.close();
-        return resimInByte;
-    }
-
-    public static BufferedImage byteArray2BufferedImage(byte[] b) throws IOException {
-        /*
-        http://www.mkyong.com/java/how-to-convert-byte-to-bufferedimage-in-java/
-         */
-        ByteArrayInputStream bais = new ByteArrayInputStream(b);
-        BufferedImage bi = ImageIO.read(bais);
-        bais.close();
-        return bi;
-    }
-
 
 
     public static void periodicScreenShot2Soket(final Socket mySoket, int delayOfTimer, final String formatName) {
@@ -981,17 +828,7 @@ dv=new DosyaVisitor();
         timerScreenShot = new Timer(delayOfTimer, actionDinler);
         timerScreenShot.start();
     }
-
-    public static void timerScreenShotDurdur() {
-        /*
-         * http://www.java2s.com/Code/JavaAPI/javax.swing/Timerstop.htm
-         */
-        if (timerScreenShot != null && timerScreenShot.isRunning()) {
-            timerScreenShot.stop();
-            timerScreenShot = null;
-        }
-    }
-
+    
     public static void epostaGonder(String from, String to, String konu, String mesaj, LinkedList<String> detaylar) throws AddressException, MessagingException {
         /*
          * http://www.tutorialspoint.com/java/java_sending_email.htm
