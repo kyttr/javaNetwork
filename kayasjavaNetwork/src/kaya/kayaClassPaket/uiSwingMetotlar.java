@@ -8,6 +8,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.logging.Level;
@@ -185,7 +187,7 @@ public abstract class uiSwingMetotlar {
 
             public void actionPerformed(ActionEvent evt) {
                 try {
-                    bi = kayaNetworkAbstractClass1.screenShotGetir();
+                    bi = GenelMetotlar.screenShotGetir();
                     bufferedImage2JLabel(bi, actionLabel);
                 } catch (AWTException ex) {
                     Logger.getLogger(kayaNetworkAbstractClass1.class.getName()).log(Level.SEVERE, null, ex);
@@ -211,4 +213,50 @@ public abstract class uiSwingMetotlar {
 
      }
            
+    
+    //JTextArea için
+    public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, JTextArea mytextArea) {
+        int indeks = mytable.getSelectedRow();
+        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
+        {
+            mytextArea.setText(propValueDescrip.get(indeks).get(0) + " = " + propValueDescrip.get(indeks).get(2));
+        }
+    }
+
+    //TextArea için
+    public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, TextArea mytextArea) {
+
+        int indeks = mytable.getSelectedRow();
+        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
+        {
+            mytextArea.setText(propValueDescrip.get(indeks).get(0) + " = " + propValueDescrip.get(indeks).get(2));
+        }
+    }
+
+    // istenilen bilgiyi seçmek için
+    public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, JTextArea mytextArea, int bilgiIndeks) {
+        int indeks = mytable.getSelectedRow();
+        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
+        {
+            mytextArea.setText(propValueDescrip.get(indeks).get(bilgiIndeks));
+        }
+    }
+
+    // "JTable" seçili alana ait olan özelliğin internetteki kaynağını "Editor Pane" e yansıtır.
+    public static void tableInfo2EditorPane(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, String kaynakURL, JEditorPane myeditorpane) throws IOException {
+        int indeks = mytable.getSelectedRow();
+        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
+        {
+            String prop = propValueDescrip.get(indeks).get(0);
+            if (!prop.endsWith("()")) {
+                prop += "()";
+            }
+            String urlToGoStr = kaynakURL + "#" + prop;
+            URL urlToGo = new URL(urlToGoStr);
+            myeditorpane.setPage(urlToGo);
+        }
+    }
+
+
+    
 }

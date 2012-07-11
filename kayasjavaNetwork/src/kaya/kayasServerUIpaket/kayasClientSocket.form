@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
@@ -87,38 +87,27 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jSpinner_setReceiveBufferSize" pref="95" max="32767" attributes="1"/>
-                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jComboBox_setReuseAddress" pref="95" max="32767" attributes="1"/>
-                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jSpinner_setSendBufferSize" pref="95" max="32767" attributes="1"/>
-                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <Component id="jComboBox_setSoLinger_On" pref="94" max="32767" attributes="1"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jSpinner_setSoLinger_linger" pref="95" max="32767" attributes="1"/>
                                       </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jSpinner_setReceiveBufferSize" alignment="0" pref="95" max="32767" attributes="1"/>
+                                              <Component id="jComboBox_setReuseAddress" alignment="0" pref="95" max="32767" attributes="1"/>
+                                              <Component id="jSpinner_setSendBufferSize" alignment="0" pref="95" max="32767" attributes="1"/>
                                               <Component id="jComboBox_setTcpNoDelay" alignment="0" pref="95" max="32767" attributes="1"/>
                                               <Component id="jSpinner_setTrafficClass" alignment="0" pref="95" max="32767" attributes="1"/>
+                                              <Component id="jSpinner_timeout" alignment="0" pref="95" max="32767" attributes="1"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jSpinner_timeout" pref="95" max="32767" attributes="1"/>
-                                          <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+                                          <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jTextField_host" pref="201" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                   <Component id="jSpinner_port" pref="94" max="32767" attributes="1"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -149,30 +138,30 @@
                               <Component id="jSpinner_port" linkSize="3" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
-                          <Component id="jComboBox_setKeepAlive" pref="20" max="32767" attributes="0"/>
+                          <Component id="jComboBox_setKeepAlive" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox_setOOBInline" pref="20" max="32767" attributes="0"/>
+                          <Component id="jComboBox_setOOBInline" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jSpinner_connectionTime" alignment="3" pref="20" max="32767" attributes="0"/>
-                              <Component id="jSpinner_latency" alignment="3" pref="20" max="32767" attributes="0"/>
-                              <Component id="jSpinner_bandwidth" alignment="3" pref="20" max="32767" attributes="0"/>
+                              <Component id="jSpinner_connectionTime" alignment="3" max="32767" attributes="0"/>
+                              <Component id="jSpinner_latency" alignment="3" max="32767" attributes="0"/>
+                              <Component id="jSpinner_bandwidth" alignment="3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jSpinner_setReceiveBufferSize" pref="20" max="32767" attributes="0"/>
+                          <Component id="jSpinner_setReceiveBufferSize" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox_setReuseAddress" pref="20" max="32767" attributes="0"/>
+                          <Component id="jComboBox_setReuseAddress" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jSpinner_setSendBufferSize" pref="20" max="32767" attributes="0"/>
+                          <Component id="jSpinner_setSendBufferSize" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox_setSoLinger_On" alignment="3" pref="20" max="32767" attributes="0"/>
-                              <Component id="jSpinner_setSoLinger_linger" alignment="3" pref="20" max="32767" attributes="0"/>
+                              <Component id="jComboBox_setSoLinger_On" alignment="3" max="32767" attributes="0"/>
+                              <Component id="jSpinner_setSoLinger_linger" alignment="3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jSpinner_timeout" pref="20" max="32767" attributes="0"/>
+                          <Component id="jSpinner_timeout" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox_setTcpNoDelay" pref="20" max="32767" attributes="0"/>
+                          <Component id="jComboBox_setTcpNoDelay" max="32767" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="jSpinner_setTrafficClass" pref="20" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
@@ -497,14 +486,14 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTabbedPane_descriptionClientSocket" alignment="1" pref="593" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane6" alignment="1" pref="593" max="32767" attributes="2"/>
+                                  <Component id="jTabbedPane_descriptionClientSocket" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane6" alignment="1" max="32767" attributes="2"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel17" pref="218" max="32767" attributes="0"/>
+                                      <Component id="jLabel17" max="32767" attributes="0"/>
                                       <EmptySpace min="375" pref="375" max="375" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel18" pref="276" max="32767" attributes="0"/>
+                                      <Component id="jLabel18" max="32767" attributes="0"/>
                                       <EmptySpace min="317" pref="317" max="317" attributes="0"/>
                                   </Group>
                               </Group>
@@ -522,7 +511,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTabbedPane_descriptionClientSocket" pref="116" max="32767" attributes="0"/>
+                              <Component id="jTabbedPane_descriptionClientSocket" pref="82" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -567,7 +556,6 @@
                             <Component class="javax.swing.JEditorPane" name="jEditorPane_descriptionServerSocket">
                               <Properties>
                                 <Property name="editable" type="boolean" value="false"/>
-                                <Property name="autoscrolls" type="boolean" value="true"/>
                               </Properties>
                             </Component>
                           </SubComponents>
@@ -631,7 +619,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;&#xa;ListSelectionModel rowSM = jTable_clientSocket.getSelectionModel();&#xa;rowSM.addListSelectionListener(new ListSelectionListener() {&#xa;public void valueChanged(ListSelectionEvent e) {&#xa;ListSelectionModel rowSM = (ListSelectionModel)e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;kayaNetworkAbstractClass1.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket, jTextArea_descriptionClientSocket);&#xa;kayaNetworkAbstractClass1.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket,jTextArea_valueClientSocket, 1);&#xa;/*try{&#xa;jEditorPane_descriptionServerSocket.setEditable(false);&#xa;String url4EditorPane=&quot;http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html&quot;;&#xa;kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);&#xa;//jEditorPane_descriptionServerSocket.setPage(new URL(&quot;http://docs.oracle.com/&quot;));&#xa;}&#xa;catch(Exception myexception)&#xa;{&#xa;jEditorPane_descriptionServerSocket.setText(myexception.toString());&#xa;}*/&#xa;}&#xa;});&#xa;&#xa;///////////"/>
+                            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;&#xa;ListSelectionModel rowSM = jTable_clientSocket.getSelectionModel();&#xa;rowSM.addListSelectionListener(new ListSelectionListener() {&#xa;public void valueChanged(ListSelectionEvent e) {&#xa;ListSelectionModel rowSM = (ListSelectionModel)e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;uiSwingMetotlar.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket, jTextArea_descriptionClientSocket);&#xa;uiSwingMetotlar.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket,jTextArea_valueClientSocket, 1);&#xa;/*try{&#xa;jEditorPane_descriptionServerSocket.setEditable(false);&#xa;String url4EditorPane=&quot;http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html&quot;;&#xa;kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);&#xa;//jEditorPane_descriptionServerSocket.setPage(new URL(&quot;http://docs.oracle.com/&quot;));&#xa;}&#xa;catch(Exception myexception)&#xa;{&#xa;jEditorPane_descriptionServerSocket.setText(myexception.toString());&#xa;}*/&#xa;}&#xa;});&#xa;&#xa;///////////"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -658,7 +646,7 @@
                                   <Component id="jScrollPane10" alignment="0" pref="593" max="32767" attributes="0"/>
                                   <Component id="jLabel23" alignment="0" pref="593" max="32767" attributes="0"/>
                                   <Component id="jTextField_write2Socket" alignment="0" pref="593" max="32767" attributes="0"/>
-                                  <Component id="jButton_write2Socket" alignment="0" pref="593" max="32767" attributes="0"/>
+                                  <Component id="jButton_write2Socket" alignment="0" pref="600" max="32767" attributes="0"/>
                                   <Component id="jLabel22" alignment="0" pref="593" max="32767" attributes="0"/>
                                   <Component id="jButton_readFromSocket" alignment="0" pref="593" max="32767" attributes="0"/>
                               </Group>
@@ -685,7 +673,7 @@
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane11" min="-2" pref="129" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="34" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -791,7 +779,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                                      <Component id="jButton_timerScreenShotDurdur" pref="293" max="32767" attributes="0"/>
+                                      <Component id="jButton_timerScreenShotDurdur" pref="298" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -822,7 +810,7 @@
                                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jComboBox_formatName" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="47" max="32767" attributes="0"/>
                               <Component id="jButton_timerScreenShotDurdur" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>

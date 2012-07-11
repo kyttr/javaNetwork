@@ -1,4 +1,4 @@
-<?xml version="1.1" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
@@ -42,7 +42,7 @@
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="jPanel1" min="-2" max="-2" attributes="3"/>
                           <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTabbedPane1" pref="619" max="32767" attributes="0"/>
+                          <Component id="jTabbedPane1" pref="623" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="1091" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -55,7 +55,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTabbedPane1" min="0" pref="0" max="32767" attributes="2"/>
+                              <Component id="jTabbedPane1" min="0" pref="640" max="32767" attributes="2"/>
                               <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="2"/>
                           </Group>
                           <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
@@ -89,14 +89,14 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane10" alignment="1" pref="587" max="32767" attributes="2"/>
-                                  <Component id="jTabbedPane_descriptionClientSocket" alignment="1" pref="587" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane10" alignment="1" max="32767" attributes="2"/>
+                                  <Component id="jTabbedPane_descriptionClientSocket" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel17" pref="212" max="32767" attributes="0"/>
+                                      <Component id="jLabel17" max="32767" attributes="0"/>
                                       <EmptySpace min="375" pref="375" max="375" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel18" pref="270" max="32767" attributes="0"/>
+                                      <Component id="jLabel18" max="32767" attributes="0"/>
                                       <EmptySpace min="317" pref="317" max="317" attributes="0"/>
                                   </Group>
                               </Group>
@@ -115,7 +115,7 @@
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jTabbedPane_descriptionClientSocket" min="-2" pref="157" max="-2" attributes="0"/>
-                              <EmptySpace pref="65" max="32767" attributes="0"/>
+                              <EmptySpace pref="114" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -159,7 +159,6 @@
                             <Component class="javax.swing.JEditorPane" name="jEditorPane_descriptionServerSocket">
                               <Properties>
                                 <Property name="editable" type="boolean" value="false"/>
-                                <Property name="autoscrolls" type="boolean" value="true"/>
                               </Properties>
                             </Component>
                           </SubComponents>
@@ -223,7 +222,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;&#xa;ListSelectionModel rowSM = jTable_serverSocket.getSelectionModel();&#xa;rowSM.addListSelectionListener(new ListSelectionListener() {&#xa;public void valueChanged(ListSelectionEvent e) {&#xa;ListSelectionModel rowSM = (ListSelectionModel)e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);&#xa;kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);&#xa;/*try{&#xa;jEditorPane_descriptionServerSocket.setEditable(false);&#xa;String url4EditorPane=&quot;http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html&quot;;&#xa;kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);&#xa;//jEditorPane_descriptionServerSocket.setPage(new URL(&quot;http://docs.oracle.com/&quot;));&#xa;}&#xa;catch(Exception myexception)&#xa;{&#xa;jEditorPane_descriptionServerSocket.setText(myexception.toString());&#xa;}*/&#xa;}&#xa;});&#xa;&#xa;///////////"/>
+                            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;&#xa;ListSelectionModel rowSM = jTable_serverSocket.getSelectionModel();&#xa;rowSM.addListSelectionListener(new ListSelectionListener() {&#xa;public void valueChanged(ListSelectionEvent e) {&#xa;ListSelectionModel rowSM = (ListSelectionModel)e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;uiSwingMetotlar.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);&#xa;uiSwingMetotlar.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);&#xa;/*try{&#xa;jEditorPane_descriptionServerSocket.setEditable(false);&#xa;String url4EditorPane=&quot;http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html&quot;;&#xa;kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);&#xa;//jEditorPane_descriptionServerSocket.setPage(new URL(&quot;http://docs.oracle.com/&quot;));&#xa;}&#xa;catch(Exception myexception)&#xa;{&#xa;jEditorPane_descriptionServerSocket.setText(myexception.toString());&#xa;}*/&#xa;}&#xa;});&#xa;&#xa;///////////"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
@@ -250,7 +249,7 @@
                                   <Component id="jScrollPane11" alignment="0" pref="587" max="32767" attributes="0"/>
                                   <Component id="jLabel23" alignment="0" pref="587" max="32767" attributes="0"/>
                                   <Component id="jTextField_write2Socket" alignment="0" pref="587" max="32767" attributes="0"/>
-                                  <Component id="jButton_write2Socket" alignment="0" pref="587" max="32767" attributes="0"/>
+                                  <Component id="jButton_write2Socket" alignment="0" pref="598" max="32767" attributes="0"/>
                                   <Component id="jLabel22" alignment="0" pref="587" max="32767" attributes="0"/>
                                   <Component id="jButton_readFromSocket" alignment="0" pref="587" max="32767" attributes="0"/>
                               </Group>
@@ -277,7 +276,7 @@
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane12" min="-2" pref="129" max="-2" attributes="0"/>
-                              <EmptySpace pref="20" max="32767" attributes="0"/>
+                              <EmptySpace pref="86" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -383,7 +382,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                                      <Component id="jButton_timerScreenShotDurdur" pref="287" max="32767" attributes="0"/>
+                                      <Component id="jButton_timerScreenShotDurdur" pref="296" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -416,7 +415,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jButton_timerScreenShotDurdur" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="60" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -587,7 +586,7 @@
                                                       <Component id="jScrollPane6" min="-2" pref="262" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane15" pref="282" max="32767" attributes="0"/>
+                                                  <Component id="jScrollPane15" pref="296" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -926,17 +925,17 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jSpinner_timeOut" linkSize="12" alignment="0" pref="94" max="32767" attributes="1"/>
-                                  <Component id="jSeparator3" linkSize="11" alignment="0" pref="74" max="32767" attributes="1"/>
-                                  <Component id="jSeparator1" linkSize="11" alignment="0" pref="74" max="32767" attributes="1"/>
-                                  <Component id="jSeparator2" linkSize="11" alignment="0" pref="74" max="32767" attributes="1"/>
-                                  <Component id="jSpinner_connectionTime" linkSize="12" alignment="0" pref="94" max="32767" attributes="1"/>
-                                  <Component id="jComboBox_on" linkSize="12" alignment="0" pref="94" max="32767" attributes="1"/>
+                                  <Component id="jSpinner_timeOut" linkSize="12" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSeparator3" linkSize="11" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSeparator1" linkSize="11" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSeparator2" linkSize="11" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSpinner_connectionTime" linkSize="12" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jComboBox_on" linkSize="12" alignment="0" max="32767" attributes="1"/>
                                   <Component id="jSpinner_latency" linkSize="12" alignment="0" min="-2" max="-2" attributes="1"/>
-                                  <Component id="jSpinner_size" linkSize="12" alignment="0" pref="94" max="32767" attributes="1"/>
-                                  <Component id="jSpinner_bandwidth" linkSize="12" alignment="0" pref="94" max="32767" attributes="1"/>
-                                  <Component id="jSpinner_backlog" linkSize="12" alignment="0" pref="94" max="32767" attributes="1"/>
-                                  <Component id="jSpinner_port" linkSize="12" alignment="0" pref="94" max="32767" attributes="1"/>
+                                  <Component id="jSpinner_size" linkSize="12" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSpinner_bandwidth" linkSize="12" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSpinner_backlog" linkSize="12" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSpinner_port" linkSize="12" alignment="0" max="32767" attributes="1"/>
                               </Group>
                               <EmptySpace pref="47" max="-2" attributes="0"/>
                           </Group>
