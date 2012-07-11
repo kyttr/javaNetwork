@@ -232,29 +232,22 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jSpinner_setReceiveBufferSize, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                                .addGap(100, 100, 100))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jComboBox_setReuseAddress, 0, 95, Short.MAX_VALUE)
-                                .addGap(100, 100, 100))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jSpinner_setSendBufferSize, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                                .addGap(100, 100, 100))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jComboBox_setSoLinger_On, 0, 94, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jSpinner_setSoLinger_linger, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jSpinner_setReceiveBufferSize, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                                    .addComponent(jComboBox_setReuseAddress, 0, 95, Short.MAX_VALUE)
+                                    .addComponent(jSpinner_setSendBufferSize, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
                                     .addComponent(jComboBox_setTcpNoDelay, 0, 95, Short.MAX_VALUE)
-                                    .addComponent(jSpinner_setTrafficClass, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
-                                .addGap(100, 100, 100))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jSpinner_timeout, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                                    .addComponent(jSpinner_setTrafficClass, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                                    .addComponent(jSpinner_timeout, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
                                 .addGap(100, 100, 100)))
                         .addGap(100, 100, 100))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jTextField_host, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                        .addGap(0, 0, 0)
                         .addComponent(jSpinner_port, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jComboBox_setKeepAlive, 0, 95, Short.MAX_VALUE)
@@ -277,30 +270,30 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                     .addComponent(jTextField_host, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSpinner_port, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(169, 169, 169)
-                .addComponent(jComboBox_setKeepAlive, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jComboBox_setKeepAlive)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox_setOOBInline, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jComboBox_setOOBInline)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner_connectionTime, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
-                    .addComponent(jSpinner_latency, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
-                    .addComponent(jSpinner_bandwidth, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE))
+                    .addComponent(jSpinner_connectionTime)
+                    .addComponent(jSpinner_latency)
+                    .addComponent(jSpinner_bandwidth))
                 .addGap(18, 18, 18)
-                .addComponent(jSpinner_setReceiveBufferSize, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jSpinner_setReceiveBufferSize)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox_setReuseAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jComboBox_setReuseAddress)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_setSendBufferSize, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jSpinner_setSendBufferSize)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox_setSoLinger_On, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
-                    .addComponent(jSpinner_setSoLinger_linger, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE))
+                    .addComponent(jComboBox_setSoLinger_On)
+                    .addComponent(jSpinner_setSoLinger_linger))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_timeout, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jSpinner_timeout)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox_setTcpNoDelay, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jComboBox_setTcpNoDelay)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_setTrafficClass, javax.swing.GroupLayout.PREFERRED_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jSpinner_setTrafficClass, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
                 .addGap(65, 65, 65))
         );
 
@@ -430,7 +423,6 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
         jTabbedPane_descriptionClientSocket.addTab("String (Verbose - Swing)", jScrollPane2);
 
         jEditorPane_descriptionServerSocket.setEditable(false);
-        jEditorPane_descriptionServerSocket.setAutoscrolls(true);
         jScrollPane4.setViewportView(jEditorPane_descriptionServerSocket);
 
         jTabbedPane_descriptionClientSocket.addTab("http://docs.oracle.com/", jScrollPane4);
@@ -466,8 +458,8 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                 ListSelectionModel rowSM = (ListSelectionModel)e.getSource();
                 //int selectedIndex = rowSM.getMinSelectionIndex();
                 // do something with selected index
-                kayaNetworkAbstractClass1.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket, jTextArea_descriptionClientSocket);
-                kayaNetworkAbstractClass1.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket,jTextArea_valueClientSocket, 1);
+                uiSwingMetotlar.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket, jTextArea_descriptionClientSocket);
+                uiSwingMetotlar.tableInfo2TextArea(myClientSoketInfos, jTable_clientSocket,jTextArea_valueClientSocket, 1);
                 /*try{
                     jEditorPane_descriptionServerSocket.setEditable(false);
                     String url4EditorPane="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html";
@@ -491,13 +483,13 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(375, 375, 375))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(317, 317, 317)))
                 .addContainerGap())
         );
@@ -511,7 +503,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.PREFERRED_SIZE, 116, Short.MAX_VALUE)
+                .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
                 .addGap(162, 162, 162))
         );
 
@@ -560,7 +552,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                     .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
                     .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
-                    .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
+                    .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
                     .addComponent(jButton_readFromSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE))
                 .addContainerGap())
@@ -584,7 +576,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reading from and Writing to a Socket", jPanel6);
@@ -655,7 +647,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                                     .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addGap(312, 312, 312)
-                        .addComponent(jButton_timerScreenShotDurdur, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)))
+                        .addComponent(jButton_timerScreenShotDurdur, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
@@ -679,7 +671,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                     .addComponent(jButton_ScreenShotAl)
                     .addComponent(jLabel24)
                     .addComponent(jComboBox_formatName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jButton_timerScreenShotDurdur)
                 .addContainerGap())
         );
