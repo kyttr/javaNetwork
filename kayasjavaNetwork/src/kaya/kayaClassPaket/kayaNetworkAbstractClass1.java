@@ -54,7 +54,7 @@ public abstract class kayaNetworkAbstractClass1 {
 
     //public static int boyutResimPaket = 1024 * 4;
     //public static String myEOF = ">myEOF<";
-    private static String myEOF = ">myEOF<1>myEOF<2>myEOF<";
+    private static String myEOF = ">myEOF<1>myEOF<2>myEOF<";    // EOF : end of file
     private static Timer timerScreenShot = null;
     private static String timerScreenShotDurdurStr = "timerScreenShotDurdur";
     private static String screenShotGetirStr = "screenShotGetir";
@@ -66,6 +66,20 @@ public abstract class kayaNetworkAbstractClass1 {
     public static String defaultMutableTreeNodeAlStr = "defaultMutableTreeNodeAl";
     public static String defaultMutableTreeNodeGetirStr = "defaultMutableTreeNodeGetir";
 
+    /*
+     * organizes information corresponding to a object String strProp : names of
+     * methods that get property, each element is separated with "," String
+     * strDescrip : descriptions of the properties, each element is separated
+     * with ":::" LinkedList<String> degerler : list of values of properties
+     *
+     * return LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = name of the property
+     *
+     * 3. element = description of the property
+     */
     public static LinkedList<LinkedList<String>> bilgilerDon(String strProp, String strDescrip, LinkedList<String> degerler) {
         LinkedList<LinkedList<String>> listeBilgiler = new LinkedList<LinkedList<String>>();
         LinkedList<String> listeTemp = new LinkedList<String>();
@@ -88,24 +102,34 @@ public abstract class kayaNetworkAbstractClass1 {
         return listeBilgiler;
     }
 
-    // veri alıp gönderirken, "props", "descrip" alanları sabit, onları da gönderip yer işgal etmeye gerek yok.
-    // Bilgiler listesinden yalnızca "vals" kısmını dön.
-    public static  LinkedList<String> valsFromPropsValsDescriptions(LinkedList<LinkedList<String>> propValueDescrip)
-    {
+    /*
+     * veri alıp gönderirken, "props", "descrip" alanları her nesne için sabit,
+     * onları da gönderip yer işgal etmeye gerek yok. Bilgiler listesinden
+     * yalnızca "vals" kısmını dön.
+     */
+    public static LinkedList<String> valsFromPropsValsDescriptions(LinkedList<LinkedList<String>> propValueDescrip) {
         LinkedList<String> vals = new LinkedList<String>();
         int boyut = propValueDescrip.size();
-        String tmp=null;
+        String tmp = null;
 
-        for(int i=0;i<boyut;i++)
-        {
-            tmp=propValueDescrip.get(i).get(1);
+        for (int i = 0; i < boyut; i++) {
+            tmp = propValueDescrip.get(i).get(1);   // get the second String in each element of propValueDescrip
             vals.add(tmp);
         }
 
         return vals;
     }
 
-  
+    /*
+     * returns : information corresponding to a "File" object return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = name of the property
+     *
+     * 3. element = description of the property
+     */
     public static LinkedList<LinkedList<String>> fileBilgileri(File dosya) throws IOException {
         LinkedList<String> listeVals = new LinkedList<String>();
 
@@ -135,22 +159,19 @@ public abstract class kayaNetworkAbstractClass1 {
         /*
          * http://docs.oracle.com/javase/7/docs/api/java/nio/file/attribute/BasicFileAttributes.html
          */
-        try{
-        BasicFileAttributes attrs = Files.readAttributes(dosya.toPath(), BasicFileAttributes.class);
+        try {
+            BasicFileAttributes attrs = Files.readAttributes(dosya.toPath(), BasicFileAttributes.class);
 
-        listeVals.add(String.valueOf(attrs.creationTime().toString()));
-        listeVals.add(String.valueOf(attrs.fileKey().toString()));
-        listeVals.add(String.valueOf(attrs.isDirectory()));
-        listeVals.add(String.valueOf(attrs.isOther()));
-        listeVals.add(String.valueOf(attrs.isRegularFile()));
-        listeVals.add(String.valueOf(attrs.isSymbolicLink()));
-        listeVals.add(String.valueOf(attrs.lastAccessTime().toString()));
-        listeVals.add(String.valueOf(attrs.lastModifiedTime().toString()));
-        listeVals.add(String.valueOf(attrs.size()));
-        }
-        catch(Exception ex)
-        {
-
+            listeVals.add(String.valueOf(attrs.creationTime().toString()));
+            listeVals.add(String.valueOf(attrs.fileKey().toString()));
+            listeVals.add(String.valueOf(attrs.isDirectory()));
+            listeVals.add(String.valueOf(attrs.isOther()));
+            listeVals.add(String.valueOf(attrs.isRegularFile()));
+            listeVals.add(String.valueOf(attrs.isSymbolicLink()));
+            listeVals.add(String.valueOf(attrs.lastAccessTime().toString()));
+            listeVals.add(String.valueOf(attrs.lastModifiedTime().toString()));
+            listeVals.add(String.valueOf(attrs.size()));
+        } catch (Exception ex) {
         }
 
         String props = "canExecute,canRead,canWrite,exists,getAbsolutePath,getCanonicalPath,getFreeSpace,getName,getParent,getPath,getTotalSpace,getUsableSpace,hashCode,isAbsolute,isDirectory,isFile,isHidden,lastModified,length,toString,toURI,creationTime,fileKey,isDirectory,isOther,isRegularFile,isSymbolicLink,lastAccessTime,lastModifiedTime,size";
@@ -163,6 +184,16 @@ public abstract class kayaNetworkAbstractClass1 {
         return bilgilerDon(props, description, listeVals);
     }
 
+    /*
+     * returns : information corresponding to a "URL" object return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = name of the property
+     *
+     * 3. element = description of the property
+     */
     public static LinkedList<LinkedList<String>> urlBilgileri(URL url) throws IOException {
         LinkedList<String> listeVals = new LinkedList<String>();
 
@@ -188,6 +219,16 @@ public abstract class kayaNetworkAbstractClass1 {
         return bilgilerDon(props, description, listeVals);
     }
 
+    /*
+     * returns : information corresponding to a "ServerSocket" object return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = name of the property
+     *
+     * 3. element = description of the property
+     */
     public static LinkedList<LinkedList<String>> serverSocketBilgileri(ServerSocket sunucuSoket) throws SocketException, IOException {
         LinkedList<String> listeVals = new LinkedList<String>();
 
@@ -213,6 +254,16 @@ public abstract class kayaNetworkAbstractClass1 {
         return bilgilerDon(props, description, listeVals);
     }
 
+    /*
+     * returns : information corresponding to a "Socket" object return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = name of the property
+     *
+     * 3. element = description of the property
+     */
     public static LinkedList<LinkedList<String>> socketBilgileri(Socket clientSoket) throws SocketException {
         LinkedList<String> listeVals = new LinkedList<String>();
 
@@ -251,6 +302,11 @@ public abstract class kayaNetworkAbstractClass1 {
         return bilgilerDon(props, description, listeVals);
     }
 
+    /*
+     * get the HTML source of a URL return String : "HTML" source of the URL
+     *
+     * http://stackoverflow.com/questions/9357822/how-to-show-regional-characters-in-android
+     */
     public static String readURLDirectly2HTMLString(URL url) throws IOException {
         /*
          * http://stackoverflow.com/questions/9357822/how-to-show-regional-characters-in-android
@@ -258,7 +314,6 @@ public abstract class kayaNetworkAbstractClass1 {
         //InputStreamReader isr = new InputStreamReader(url.openStream(),"UTF-8");  //ç,ü,ğ,ş,ö
         InputStreamReader isr = new InputStreamReader(url.openStream());    // bu da çalışıyor.
         BufferedReader bf = new BufferedReader(isr);
-
 
         String htmlKaynaktemp;
         String htmlKaynak = "";
@@ -272,6 +327,14 @@ public abstract class kayaNetworkAbstractClass1 {
         return htmlKaynak;
     }
 
+    /*
+     * initialize and set a ServerSocket according to given parameters
+     * LinkedList<Integer> parametreler : list of parameters describing the
+     * Serverocket
+     * parametreler={port,backlog,connectionTime,latency,bandwidth,size,on,timeout}
+     *
+     * return ServerSocket
+     */
     public static ServerSocket initializeAndSetServerSocket(LinkedList<Integer> parametreler) throws IOException {
         ServerSocket sunucuSoket;
 
@@ -303,6 +366,16 @@ public abstract class kayaNetworkAbstractClass1 {
         return sunucuSoket;
     }
 
+    /*
+     * initialize and set a Socket according to given parameters
+     * LinkedList<Integer> parametreler : list of parameters describing the
+     * Serverocket
+     * parametreler={port,keepAlive,ooBlnline,connectionTime,latency,bandwidth,receiveBufferSize,reuseAddress,
+     * sendBufferSize,boolsoLinger,linger,timeout,tcpNoDelay,trafficClass}
+     * String host : host of the "Socket"
+     *
+     * return Socket
+     */
     public static Socket initializeAndSetSocket(LinkedList<Integer> parametreler, String host) throws IOException {
         Socket clientSoket;
 
@@ -317,7 +390,7 @@ public abstract class kayaNetworkAbstractClass1 {
         }
 
         /*
-         * bazı parametreler boolean tipind, onlar için uygulama şöyle: 0 =
+         * bazı parametreler boolean tipinde, onlar için uygulama şöyle: 0 =
          * hiçbir şey yapma 1 = false 2 = true
          */
         if (parametreler.get(1) > 0) {
@@ -354,6 +427,11 @@ public abstract class kayaNetworkAbstractClass1 {
         return clientSoket;
     }
 
+    /*
+     * write String message to Socket. PrintWriter of the Socket is closed after
+     * the operation, so the Socket also will be closed. String mesaj : line of
+     * message Socket mySoket :
+     */
     public static void write2Soket(Socket mySoket, String mesaj) throws IOException {
         PrintWriter pw = new PrintWriter(mySoket.getOutputStream(), true);
         pw.println(mesaj);    // bunu kullanma
@@ -362,6 +440,11 @@ public abstract class kayaNetworkAbstractClass1 {
         pw.close();
     }
 
+    /*
+     * write String message to Socket. String mesaj : line of message Socket
+     * mySoket : boolean closePrintWriterOnExit : if true, PrintWriter of the
+     * Socket is closed after the operation, so the Socket also will be closed.
+     */
     public static void write2Soket(Socket mySoket, String mesaj, boolean closePrintWriterOnExit) throws IOException {
         PrintWriter pw = new PrintWriter(mySoket.getOutputStream(), true);
         pw.println(mesaj);    // bunu kullanma
@@ -389,6 +472,11 @@ public abstract class kayaNetworkAbstractClass1 {
         }
     }
 
+    /*
+     * write String message to Socket. initialize and set Socket, if it is
+     * closed. String mesaj : line of message Socket mySoket :
+     *
+     */
     public static void write2Soket(Socket mySoket, String mesaj, LinkedList<Integer> paramsforClientSocket, String host) throws IOException {
         //mySoket.close();
         if (mySoket.isClosed()) {
@@ -404,11 +492,15 @@ public abstract class kayaNetworkAbstractClass1 {
     }
 
     /*
-     * "byteDizi" sokete yaz. "byteDizi" uzunluğu bilinmiyor. Bu nedenle "byteDizi"den hemen önce onun uzunluğunu gönder.
+     * Sokete "byteDizi" yaz. "byteDizi" uzunluğu bilinmiyor. Bu nedenle
+     * "byteDizi"den hemen önce onun uzunluğunu gönder.
+     *
+     * http://stackoverflow.com/questions/1176135/java-socket-send-receive-byte-array
+     * işe yaramadı.
      */
     public static void writeByteArrayAndLength2Soket(Socket mysoket, byte[] byteDizi) throws IOException {
         /*
-        http://stackoverflow.com/questions/1176135/java-socket-send-receive-byte-array
+         * http://stackoverflow.com/questions/1176135/java-socket-send-receive-byte-array
          * işe yaramadı.
          */
         OutputStream os = mysoket.getOutputStream();
@@ -418,7 +510,7 @@ public abstract class kayaNetworkAbstractClass1 {
         // lenBytes : "byteDizi" uzunluğunu tutan byte dizisi
         byte[] lenBytes = lenStr.getBytes();
         // lenOflenBytes : "lenBytes" ın uzunluğu
-        // varsayım : 0<lenOflenBytes<256
+        // varsayım : 0<lenOflenBytes<256, bir anlamda "byteDizi" nin uzunluğu en fazla 255 basamaklı olabilir.
         byte lenOflenBytes = (byte) lenBytes.length;
 
         os.write(lenOflenBytes);
@@ -435,7 +527,8 @@ public abstract class kayaNetworkAbstractClass1 {
     }
 
     /*
-     * "dosya" sokete yaz. "dosya" uzunluğu bilinmiyor. Bu nedenle "dosya"den hemen önce onun uzunluğunu gönder.
+     * Sokete "dosya" yaz. "dosya" uzunluğu bilinmiyor. Bu nedenle "dosya"den
+     * hemen önce onun uzunluğunu gönder.
      */
     public static void writeFileAndLength2Soket(Socket mysoket, File dosya) throws FileNotFoundException, IOException {
         byte[] byteDizi = new byte[(int) dosya.length()];
@@ -445,7 +538,7 @@ public abstract class kayaNetworkAbstractClass1 {
     }
 
     /*
-     * "dosya" sokete yaz. "dosya" uzunluğu biliniyor.
+     * Sokete "dosya" yaz. "dosya" uzunluğu biliniyor.
      */
     public static void writeFile2Soket(Socket mysoket, File dosya) throws IOException {
         byte[] byteDizi = new byte[(int) dosya.length()];
@@ -454,11 +547,18 @@ public abstract class kayaNetworkAbstractClass1 {
         writeByteArray2Soket(mysoket, byteDizi);
     }
 
+    /*
+     * Sokete "dosya" yaz. öncelikle byte[] gönderdiğini anlat :
+     * buBirByteDizidirStr "dosya" gönderdiğini anlat : dosyaAlStr "dosya"nın
+     * boyutunu gönder. "dosya"nın ismini gönder. "dosya"nın kendisini gönder.
+     * Dosya uzunluğu artık biliniyor.
+     */
     public static void writeFile2SoketHighLevel(Socket mySoket, File dosya) throws IOException {
         // öncelikle byte dizi gönderdiğini anlat.
         byte[] buBirByteDizidirBytes = buBirByteDizidirStr.getBytes();
         writeByteArray2Soket(mySoket, buBirByteDizidirBytes);
 
+        // dosya gönderdiğini anlat 
         String dosyaAlPrefix = dosyaAlStr + (int) dosya.length();
         byte[] dosyaAlPrefixBytes = dosyaAlPrefix.getBytes();
         writeByteArrayAndLength2Soket(mySoket, dosyaAlPrefixBytes); //Dosya uzunluğu artık biliniyor.
@@ -471,13 +571,17 @@ public abstract class kayaNetworkAbstractClass1 {
         writeFile2Soket(mySoket, dosya);
     }
 
+    /*
+     * Sokete "ScreenShot" yaz. String formatName : "ScreenShot" formatı.
+     */
     public static void writeScreenShot2Soket(Socket mySoket, String formatName) throws AWTException, IOException {
         BufferedImage bi = GenelMetotlar.screenShotGetir();
         byte[] b = GenelMetotlar.bufferedImage2ByteArray(bi, formatName);
 
         // byte[] gönderdiğini anlat  ve byte[] boyutunu yaz.
-                /* !! Bu mesaj BYTE ARRAY olarak gitmeli.
-         * String olarak giderse hemen sonraki byte[] ile karışıyor.
+                /*
+         * !! Bu mesaj BYTE ARRAY olarak gitmeli. String olarak giderse hemen
+         * sonraki byte[] ile karışıyor.
          */
         byte[] buBirByteDizidirBytes = buBirByteDizidirStr.getBytes();
         writeByteArray2Soket(mySoket, buBirByteDizidirBytes);
@@ -488,6 +592,9 @@ public abstract class kayaNetworkAbstractClass1 {
         writeByteArray2Soket(mySoket, b);
     }
 
+    /*
+     * çalışmıyor, kullanılmıyor.
+     */
     public static void writeFileSystemView2Soket(Socket mySoket) throws IOException {
         // öncelikle byte dizi gönderdiğini anlat.
         byte[] buBirByteDizidirBytes = buBirByteDizidirStr.getBytes();
@@ -504,23 +611,43 @@ public abstract class kayaNetworkAbstractClass1 {
         writeByteArray2Soket(mySoket, fsvBytes);
     }
 
+    /*
+     * Sokete "nesne" yaz. String prefixStr : karşı tarafa "nesne" nin tipini
+     * anlatan prefix. Ör : "dosyaAl"
+     */
     public static void writeObject2SoketHighLevel(Socket mySoket, Object nesne, String prefixStr) throws IOException {
         // öncelikle byte dizi gönderdiğini anlat.
         byte[] buBirByteDizidirBytes = buBirByteDizidirStr.getBytes();
         writeByteArray2Soket(mySoket, buBirByteDizidirBytes);
 
+        // "nesne"yi byte dizisine çevir. 
+        // "nesne" serileştirilebilir olmalı (implements Serializable).
         byte[] b = GenelMetotlar.object2ByteArray(nesne);
 
+        // karşı tarafa "nesne" tipini ve "nesne" nin uzunluğunu gönder.
         String prefixStr2 = prefixStr + b.length;
-        byte[] fsvAlPrefixBytes = prefixStr2.getBytes();
-        writeByteArrayAndLength2Soket(mySoket, fsvAlPrefixBytes);
+        byte[] PrefixBytes = prefixStr2.getBytes();
+        writeByteArrayAndLength2Soket(mySoket, PrefixBytes);
 
+        // karşı taraf artık "nesne" nin uzunluğunu biliyor.
         writeByteArray2Soket(mySoket, b);
     }
 
     public kayaNetworkAbstractClass1() {
     }
 
+    /*
+     * "mySoket" ten gelen mesajı oku ve bir "Object" olarak döndür.
+     *
+     * karşı taraftaki soketten veri geldiğinde ilk çalışacak okuma metodu
+     * budur. Bu metod gelen verinin String veya byte[] dizi olup olmadığına
+     * karar verir. Gelen veri byte[] ise o veriye uygun metotları çağırır.
+     * Gelen veri bir istek içeriyorsa, "mySoket" ona göre cevap verir.
+     *
+     * Gelen verinin sonuna gelindiği "myEOF" String'i ile anlaşılır. "myEOF"
+     * görülünce okuma durdurulur.
+     *
+     */
     public static Object readMesajFromSoket(Socket mySoket) throws IOException, InterruptedException, AWTException, ClassNotFoundException {
         String gelenMesaj = "";
         String lineOfgelenMesaj = "";
@@ -556,12 +683,11 @@ public abstract class kayaNetworkAbstractClass1 {
         if (mySoket.getInputStream().available() > 0) {
             br = new BufferedReader(new InputStreamReader(mySoket.getInputStream()));
             //   "thread" kullanacaksam aşağıdaki gibi bir kod kullanmamalı. Çünkü, aşağıdaki kod "thread" de streamden sürekli input bekler.
-           /*A
-            while ((lineOfMesaj = br.readLine()) != null) {
-            gelenMesaj += lineOfMesaj + "\n";
-            }
-            br.close();
-            A*/
+           /*
+             * A
+             * while ((lineOfMesaj = br.readLine()) != null) { gelenMesaj +=
+             * lineOfMesaj + "\n"; } br.close(); A
+             */
 
             while ((lineOfgelenMesaj = br.readLine()) != null) {
                 if (lineOfgelenMesaj.equals(myEOF)) {
@@ -606,34 +732,27 @@ public abstract class kayaNetworkAbstractClass1 {
             } else {
                 writeScreenShot2Soket(mySoket, format);
             }
-        }
-        else if (gelenMesaj.startsWith(timerScreenShotDurdurStr)) // diğer taraf artık screenShot istemiyor.
+        } else if (gelenMesaj.startsWith(timerScreenShotDurdurStr)) // diğer taraf artık screenShot istemiyor.
         {
             GenelMetotlar.timerScreenShotDurdur(timerScreenShot);
-        }
-        else if (gelenMesaj.startsWith(defaultMutableTreeNodeGetirStr)) // diğer taraf dosya sistemi istiyor.
+        } else if (gelenMesaj.startsWith(defaultMutableTreeNodeGetirStr)) // diğer taraf dosya sistemi istiyor.
         {
             gelenMesaj = gelenMesaj.replace(defaultMutableTreeNodeGetirStr, "");
-            String[] paramsForDMTN=gelenMesaj.split(",",2);     // oluşacak parametre dizisi en fazla 2 elemanlı olabilir.
-            int depthOfTree=Integer.parseInt(paramsForDMTN[0]);
-            String kokDosyaStr=paramsForDMTN[1];
-            File kokDosya=new File(kokDosyaStr);
+            String[] paramsForDMTN = gelenMesaj.split(",", 2);     // oluşacak parametre dizisi en fazla 2 elemanlı olabilir.
+            int depthOfTree = Integer.parseInt(paramsForDMTN[0]);
+            String kokDosyaStr = paramsForDMTN[1];
+            File kokDosya = new File(kokDosyaStr);
 
-            DosyaVisitor dv=null;
-            if(depthOfTree>0)
-            {
-                if(kokDosya.exists())
-                {
-                    dv=new DosyaVisitor(kokDosya, depthOfTree);
+            DosyaVisitor dv = null;
+            if (depthOfTree > 0) {
+                if (kokDosya.exists()) {
+                    dv = new DosyaVisitor(kokDosya, depthOfTree);
+                } else {
+                    dv = new DosyaVisitor(depthOfTree);
                 }
- else{
-    dv=new DosyaVisitor(depthOfTree);
- }
 
-            }
-            else
-            {
-dv=new DosyaVisitor();
+            } else {
+                dv = new DosyaVisitor();
             }
 
             writeObject2SoketHighLevel(mySoket, dv.dmtnDosyaBilgilerTree, kayaNetworkAbstractClass1.defaultMutableTreeNodeAlStr);
@@ -660,16 +779,20 @@ dv=new DosyaVisitor();
     }
 
     /*
-     * Socket üzerinden gönderilen veriyi oku.
-     * Gönderilen verinin uzunluğu bilinmiyor. Verinin uzunluğunun verinin en başına koyulduğunu varsayıyorum.
-     * Gelen verinin en başından gelen verinin uzunluğunu al. Sonrasında veriyi alıp byte[] olarak döndür.
+     * Socket üzerinden gönderilen veriyi oku. Gönderilen verinin uzunluğu
+     * bilinmiyor. Verinin uzunluğunun verinin en başına koyulduğunu
+     * varsayıyorum. Gelen verinin en başından gelen verinin uzunluğunu al.
+     * Sonrasında veriyi alıp byte[] olarak döndür.
+     *
+     * http://stackoverflow.com/questions/6684665/java-byte-array-to-string-to-byte-array
      */
     public static byte[] readByteArrayFromSoket(Socket mySoket) throws IOException {
-        /* ESKİ KOD
-        InputStream is = mySoket.getInputStream();
-        byte[] mesajByteDizi = new byte[is.available()]; // Büyük değerler için is.available()'a güvenme.
-        is.read(mesajByteDizi);
-        return mesajByteDizi;
+        /*
+         * ESKİ KOD
+         *
+         * InputStream is = mySoket.getInputStream(); byte[] mesajByteDizi = new
+         * byte[is.available()]; // Büyük değerler için is.available()'a
+         * güvenme. is.read(mesajByteDizi); return mesajByteDizi;
          */
 
         InputStream is = mySoket.getInputStream();
@@ -693,9 +816,10 @@ dv=new DosyaVisitor();
     }
 
     /*
-     * Socket üzerinden gönderilen veriyi oku.
-     * lenOfByteDizi : gönderilen verinin uzunluğu
-     * Verinin uzunluğu verinin önüne yerleştirilmiş değil.
+     * Socket üzerinden gönderilen veriyi oku. Verinin uzunluğu verinin önüne
+     * yerleştirilmiş değil.
+     *
+     * int lenOfByteDizi : gönderilen verinin uzunluğu.
      */
     public static byte[] readByteArrayFromSoket(Socket mySoket, int lenOfByteDizi) throws IOException {
         InputStream is = mySoket.getInputStream();
@@ -796,9 +920,19 @@ dv=new DosyaVisitor();
 
         return gelenMesaj;
     }
-   
 
-
+    /*
+     * Sokete belirli bir peryotta "screenShot" yaz.
+     *
+     * int delayOfTimer : "screenShot" gönderme peryodu .
+     *
+     * final String formatName : gönderilecek "screenShot" resminin formatı. Ö:
+     * "png","jpg".
+     *
+     * http://stackoverflow.com/questions/1006611/java-swing-timer
+     * http://docs.oracle.com/javase/tutorial/uiswing/misc/timer.html
+     * http://java.sun.com/products/jfc/tsc/articles/timer/
+     */
     public static void periodicScreenShot2Soket(final Socket mySoket, int delayOfTimer, final String formatName) {
 
         /*
@@ -828,7 +962,11 @@ dv=new DosyaVisitor();
         timerScreenShot = new Timer(delayOfTimer, actionDinler);
         timerScreenShot.start();
     }
-    
+
+    /*
+     * http://www.tutorialspoint.com/java/java_sending_email.htm
+     * http://www.javabeat.net/2007/10/sending-mail-from-java/
+     */
     public static void epostaGonder(String from, String to, String konu, String mesaj, LinkedList<String> detaylar) throws AddressException, MessagingException {
         /*
          * http://www.tutorialspoint.com/java/java_sending_email.htm
@@ -850,7 +988,7 @@ dv=new DosyaVisitor();
         //Transport.send(myMesaj);
 
         /*
-        http://stackoverflow.com/questions/1990454/using-javamail-to-connect-to-gmail-smtp-server-ignores-specified-port-and-tries
+         * http://stackoverflow.com/questions/1990454/using-javamail-to-connect-to-gmail-smtp-server-ignores-specified-port-and-tries
          */
 
         Transport transport = postaSession.getTransport("smtp");
@@ -862,9 +1000,15 @@ dv=new DosyaVisitor();
         transport.close();
     }
 
+    /*
+     * gönderilecek eposta ile ilgili detayları "Properties" nesnesine aktar.
+     * LinkedList<String> epostaDetaylar :
+     * {password,host,port,auth,starttls.enable}
+     */
     public static Properties ePostaPropertiesVorBereiten(LinkedList<String> epostaDetaylar) {
         Properties epostaProps = new Properties();
         //Properties props = System.getProperties();
+        //LinkedList<String> epostaDetaylar : {password,host,port,auth,starttls.enable}
         if (!epostaDetaylar.get(0).equals("")) // parola boş değilse
         {
             epostaProps.put("mail.smtp.password", epostaDetaylar.get(0));
