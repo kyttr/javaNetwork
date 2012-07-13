@@ -1030,4 +1030,35 @@ public abstract class kayaNetworkAbstractClass1 {
 
         return epostaProps;
     }
+    
+    public LinkedList<LinkedList<String>> networkInterfaceBilgileri(NetworkInterface ni) throws SocketException 
+    {
+        LinkedList<String> listeVals = new LinkedList<String>();
+
+        listeVals.add(String.valueOf(ni.getDisplayName()));
+        listeVals.add(String.valueOf(ni.getHardwareAddress()));
+        listeVals.add(String.valueOf(ni.getIndex()));
+        listeVals.add(String.valueOf(ni.getInetAddresses().toString()));
+        listeVals.add(String.valueOf(ni.getInterfaceAddresses().toString()));
+        listeVals.add(String.valueOf(ni.getMTU()));
+        listeVals.add(String.valueOf(ni.getName()));
+        listeVals.add(String.valueOf(ni.getParent().getName()));
+        listeVals.add(String.valueOf(ni.getSubInterfaces().toString()));
+        listeVals.add(String.valueOf(ni.isLoopback()));
+        listeVals.add(String.valueOf(ni.isPointToPoint()));
+        listeVals.add(String.valueOf(ni.isUp()));
+        listeVals.add(String.valueOf(ni.isVirtual()));
+        listeVals.add(String.valueOf(ni.supportsMulticast()));
+        listeVals.add(String.valueOf(ni.toString()));
+
+
+        String props = "";
+
+        String description;
+        {
+            description = "";
+        }
+
+        return bilgilerDon(props, description, listeVals);
+    }
 }
