@@ -1031,6 +1031,16 @@ public abstract class kayaNetworkAbstractClass1 {
         return epostaProps;
     }
     
+    /*
+     * returns : information corresponding to a "NetworkInterface" object return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = name of the property
+     *
+     * 3. element = description of the property
+     */
     public LinkedList<LinkedList<String>> networkInterfaceBilgileri(NetworkInterface ni) throws SocketException 
     {
         LinkedList<String> listeVals = new LinkedList<String>();
