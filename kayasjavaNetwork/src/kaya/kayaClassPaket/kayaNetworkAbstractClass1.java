@@ -315,6 +315,7 @@ public abstract class kayaNetworkAbstractClass1 {
         InputStreamReader isr = new InputStreamReader(url.openStream());    // bu da çalışıyor.
         BufferedReader bf = new BufferedReader(isr);
 
+        //GenelMetotlar.readByteArrayFromInputStream(null, lenOfByteDizi) ile "htmlKaynak" al.
         String htmlKaynaktemp;
         String htmlKaynak = "";
 
