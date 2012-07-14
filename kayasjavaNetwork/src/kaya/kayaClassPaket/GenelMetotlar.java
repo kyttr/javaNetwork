@@ -233,6 +233,33 @@ public class GenelMetotlar {
         return byteDizi;
     }
 
+    /*
+     * Bir "InputStream" nesnesindeki veriyi bir "String"e aktar. Bunu yaparken "BufferedReader" ve "InputStreamReader" nesneleri kullan.
+     * return "InputStream" nesnesindeki veri
+     */
+    public static String readStringfromInputStream(InputStream is) throws IOException
+    {
+        /*
+         * http://stackoverflow.com/questions/9357822/how-to-show-regional-characters-in-android
+         */
+        //InputStreamReader isr = new InputStreamReader(is,"UTF-8");  //ç,ü,ğ,ş,ö
+        // InputStreamReader isr = new InputStreamReader(is);    // bu da çalışıyor.   
+        InputStreamReader isr=new InputStreamReader(is);
+        BufferedReader bf = new BufferedReader(isr);
+        String veriTemp;
+        String veri = "";
+
+        while ((veriTemp = bf.readLine()) != null) {
+            veri += veriTemp + "\n";
+        }
+
+        // kaynakları kapatmayayım, şimdilik
+        //isr.close();
+        //bf.close();
+        
+        return veri;
+    }
+    
     // ekran görüntüsü al.
     public static BufferedImage screenShotGetir() throws AWTException {
         /*

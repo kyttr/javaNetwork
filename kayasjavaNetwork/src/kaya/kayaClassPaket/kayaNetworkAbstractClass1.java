@@ -308,24 +308,9 @@ public abstract class kayaNetworkAbstractClass1 {
      * http://stackoverflow.com/questions/9357822/how-to-show-regional-characters-in-android
      */
     public static String readURLDirectly2HTMLString(URL url) throws IOException {
-        /*
-         * http://stackoverflow.com/questions/9357822/how-to-show-regional-characters-in-android
-         */
-        //InputStreamReader isr = new InputStreamReader(url.openStream(),"UTF-8");  //ç,ü,ğ,ş,ö
-        InputStreamReader isr = new InputStreamReader(url.openStream());    // bu da çalışıyor.
-        BufferedReader bf = new BufferedReader(isr);
-
-        //GenelMetotlar.readByteArrayFromInputStream(null, lenOfByteDizi) ile "htmlKaynak" al.
-        String htmlKaynaktemp;
-        String htmlKaynak = "";
-
-        while ((htmlKaynaktemp = bf.readLine()) != null) {
-            htmlKaynak += htmlKaynaktemp + "\n";
-        }
-
-        isr.close();
-        bf.close();
-        return htmlKaynak;
+        // "InputStream" den "String" okumak için yeni bir metot yazdım, artık onu kullanıyorum.
+        InputStream is=url.openStream();
+        return GenelMetotlar.readStringfromInputStream(is);
     }
 
     /*
