@@ -218,6 +218,54 @@ public abstract class kayaNetworkAbstractClass1 {
 
         return bilgilerDon(props, description, listeVals);
     }
+    
+    /*
+     * returns : information corresponding to a "URLConnection" object return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = name of the property
+     *
+     * 3. element = description of the property
+     */    
+    public static LinkedList<LinkedList<String>> urlConnectionBilgileri(URLConnection urlBaglanti) throws IOException
+    {
+        LinkedList<String> listeVals = new LinkedList<String>();
+
+        listeVals.add(String.valueOf(urlBaglanti.getAllowUserInteraction()));
+listeVals.add(String.valueOf(urlBaglanti.getConnectTimeout()));
+listeVals.add(String.valueOf(urlBaglanti.getContent()));
+listeVals.add(String.valueOf(urlBaglanti.getContentEncoding()));
+listeVals.add(String.valueOf(urlBaglanti.getContentLength()));
+listeVals.add(String.valueOf(urlBaglanti.getContentLengthLong()));
+listeVals.add(String.valueOf(urlBaglanti.getContentType()));
+listeVals.add(String.valueOf(urlBaglanti.getDate()));
+listeVals.add(String.valueOf(urlBaglanti.getDefaultAllowUserInteraction()));
+listeVals.add(String.valueOf(urlBaglanti.getDefaultUseCaches()));
+listeVals.add(String.valueOf(urlBaglanti.getDoInput()));
+listeVals.add(String.valueOf(urlBaglanti.getDoOutput()));
+listeVals.add(String.valueOf(urlBaglanti.getExpiration()));
+listeVals.add(String.valueOf(urlBaglanti.getFileNameMap()));
+listeVals.add(String.valueOf(urlBaglanti.getHeaderFields()));
+listeVals.add(String.valueOf(urlBaglanti.getIfModifiedSince()));
+listeVals.add(String.valueOf(urlBaglanti.getLastModified()));
+listeVals.add(String.valueOf(urlBaglanti.getPermission()));
+listeVals.add(String.valueOf(urlBaglanti.getReadTimeout()));
+listeVals.add(String.valueOf(urlBaglanti.getRequestProperties()));
+listeVals.add(String.valueOf(urlBaglanti.getURL()));
+listeVals.add(String.valueOf(urlBaglanti.getUseCaches()));
+listeVals.add(String.valueOf(urlBaglanti.toString()));
+
+        String props = "getAllowUserInteraction,getConnectTimeout,getContent,getContentEncoding,getContentLength,getContentLengthLong,getContentType,getDate,getDefaultAllowUserInteraction,getDefaultUseCaches,getDoInput,getDoOutput,getExpiration,getFileNameMap,getHeaderFields,getIfModifiedSince,getLastModified,getPermission,getReadTimeout,getRequestProperties,getURL,getUseCaches,toString";
+
+        String description;
+        {
+            description = "Returns the value of the allowUserInteraction field for this object.:::Returns setting for connect timeout.:::Retrieves the contents of this URL connection.:::Returns the value of the content-encoding header field.:::Returns the value of the content-length header field.:::Returns the value of the content-length header field as a long.:::Returns the value of the content-type header field.:::Returns the value of the date header field.:::Returns the default value of the allowUserInteraction field.:::Returns the default value of a URLConnection's useCaches flag.:::Returns the value of this URLConnection's doInput flag.:::Returns the value of this URLConnection's doOutput flag.:::Returns the value of the expires header field.:::Loads filename map (a mimetable) from a data file.:::Returns an unmodifiable Map of the header fields.:::Returns the value of this object's ifModifiedSince field.:::Returns the value of the last-modified header field.:::Returns a permission object representing the permission necessary to make the connection represented by this object.:::Returns setting for read timeout.:::Returns an unmodifiable Map of general request properties for this connection.:::Returns the value of this URLConnection's URL field.:::Returns the value of this URLConnection's useCaches field.:::Returns a String representation of this URL connection.";
+        }
+
+        return bilgilerDon(props, description, listeVals);        
+    }
 
     /*
      * returns : information corresponding to a "ServerSocket" object return
@@ -1049,7 +1097,7 @@ public abstract class kayaNetworkAbstractClass1 {
         listeVals.add(String.valueOf(ni.toString()));
 
 
-        String props = "getDisplayName(),getHardwareAddress(),getIndex(),getInetAddresses(),getInterfaceAddresses(),getMTU(),getName(),getNetworkInterfaces(),getParent(),getSubInterfaces(),isLoopback(),isPointToPoint(),isUp(),isVirtual(),supportsMulticast(),toString()";
+        String props = "getDisplayName,getHardwareAddress,getIndex,getInetAddresses,getInterfaceAddresses,getMTU,getName,getNetworkInterfaces,getParent,getSubInterfaces,isLoopback,isPointToPoint,isUp,isVirtual,supportsMulticast,toString";
 
         String description;
         {
