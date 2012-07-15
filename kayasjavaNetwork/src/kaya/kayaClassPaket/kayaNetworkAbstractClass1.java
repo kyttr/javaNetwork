@@ -804,7 +804,7 @@ public abstract class kayaNetworkAbstractClass1 {
             }
         } else if (gelenMesaj.startsWith(timerScreenShotDurdurStr)) // diğer taraf artık screenShot istemiyor.
         {
-            GenelMetotlar.timerScreenShotDurdur(timerScreenShot);
+            GenelMetotlar.timerDurdur(timerScreenShot);
         } else if (gelenMesaj.startsWith(defaultMutableTreeNodeGetirStr)) // diğer taraf dosya sistemi istiyor.
         {
             gelenMesaj = gelenMesaj.replace(defaultMutableTreeNodeGetirStr, "");
