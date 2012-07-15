@@ -1038,6 +1038,7 @@ public abstract class kayaNetworkAbstractClass1 {
         listeVals.add(String.valueOf(ni.getInterfaceAddresses().toString()));
         listeVals.add(String.valueOf(ni.getMTU()));
         listeVals.add(String.valueOf(ni.getName()));
+        listeVals.add(String.valueOf(ni.getNetworkInterfaces()));
         listeVals.add(String.valueOf(ni.getParent().getName()));
         listeVals.add(String.valueOf(ni.getSubInterfaces().toString()));
         listeVals.add(String.valueOf(ni.isLoopback()));
@@ -1048,11 +1049,11 @@ public abstract class kayaNetworkAbstractClass1 {
         listeVals.add(String.valueOf(ni.toString()));
 
 
-        String props = "";
+        String props = "getDisplayName(),getHardwareAddress(),getIndex(),getInetAddresses(),getInterfaceAddresses(),getMTU(),getName(),getNetworkInterfaces(),getParent(),getSubInterfaces(),isLoopback(),isPointToPoint(),isUp(),isVirtual(),supportsMulticast(),toString()";
 
         String description;
         {
-            description = "";
+            description = "Get the display name of this network interface.:::Returns the hardware address (usually MAC) of the interface if it has one and if it can be accessed given the current privileges.:::Returns the index of this network interface.:::Convenience method to return an Enumeration with all or a subset of the InetAddresses bound to this network interface.:::Get a List of all or a subset of the InterfaceAddresses of this network interface.:::Returns the Maximum Transmission Unit (MTU) of this interface.:::Get the name of this network interface.:::Returns all the interfaces on this machine.:::Returns the parent NetworkInterface of this interface if this is a subinterface, or null if it is a physical (non virtual) interface or has no parent.:::Get an Enumeration with all the subinterfaces (also known as virtual interfaces) attached to this network interface.:::Returns whether a network interface is a loopback interface.:::Returns whether a network interface is a point to point interface.:::Returns whether a network interface is up and running.:::Returns whether this interface is a virtual interface (also called subinterface).:::Returns whether a network interface supports multicasting or not.";
         }
 
         return bilgilerDon(props, description, listeVals);
