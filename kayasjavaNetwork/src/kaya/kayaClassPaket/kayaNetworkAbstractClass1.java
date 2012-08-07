@@ -59,6 +59,7 @@ public abstract class kayaNetworkAbstractClass1 {
     private static String timerScreenShotDurdurStr = "timerScreenShotDurdur";
     private static String screenShotGetirStr = "screenShotGetir";
     private static String screenShotAlStr = "screenShotAl";
+    private static String dosyaGetirStr = "dosyaGetir";
     private static String dosyaAlStr = "dosyaAl";
     private static String buBirByteDizidirStr = "buBirByteDizidir";
     private static String fileSystemViewAlStr = "fileSystemViewAl";
@@ -101,7 +102,6 @@ public abstract class kayaNetworkAbstractClass1 {
 
         return listeBilgiler;
     }
-    
 
     /*
      * veri alıp gönderirken, "props", "descrip" alanları her nesne için sabit,
@@ -976,6 +976,30 @@ public abstract class kayaNetworkAbstractClass1 {
             nesne = dmtn;
         }
         return nesne;
+    }
+
+    /*
+     * diğer tarafta dosya alma isteği gönder. 
+     * String dosyaAbsolutePath : istenilen dosyanın mutlak ismi
+     */
+    public static void requestFileFromSoket(String dosyaAbsolutePath, Socket mySoket) throws IOException {
+        String gidecekMesaj = dosyaGetirStr + dosyaAbsolutePath;
+        write2Soket(mySoket, gidecekMesaj, false);
+    }
+
+    /*
+     * diğer tarafa PeriodicScreenShot isteği gönder.
+     * int peryotOfScreenShot : screenShot peryodu
+     * String formatTip : screenShot formatı
+     */
+    public static void requestPeriodicScreenShot(int peryotOfScreenShot, String formatTip, Socket mySoket) throws IOException {
+        String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
+        kayaNetworkAbstractClass1.write2Soket(mySoket, gidecekMesaj, false);
+    }
+    
+    public static void requestTimerScreenShotDurdur(Socket mySoket) throws IOException
+    {
+        write2Soket(mySoket, timerScreenShotDurdurStr, false);
     }
 
     public static String acceptSoketAndSayWelcome(ServerSocket sunucuSoket) throws IOException, InterruptedException, AWTException, ClassNotFoundException {

@@ -183,14 +183,14 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jButton1 = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
         jProgressBar2 = new javax.swing.JProgressBar();
+        jLabel13 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel_dosyaReadSelection = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
         jList_dosyalar = new javax.swing.JList();
-        jLabel13 = new javax.swing.JLabel();
         jLabel_dosyaReadDurum = new javax.swing.JLabel();
         jButton_walkFileTree = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
         jSpinner_walkFileTreeDepth = new javax.swing.JSpinner();
         jComboBox_currentRootDirectory = new javax.swing.JComboBox();
@@ -234,6 +234,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTabbedPane1.setPreferredSize(new java.awt.Dimension(700, 631));
 
@@ -326,7 +328,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Property-Value-Description", jPanel3);
@@ -369,7 +371,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                     .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
+                    .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
                     .addComponent(jButton_readFromSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE))
                 .addContainerGap())
@@ -393,7 +395,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reading from and Writing to a Socket", jPanel6);
@@ -462,7 +464,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                                     .addGroup(jPanel8Layout.createSequentialGroup()
                                         .addComponent(jSpinner_timerDelay, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))))))
+                                        .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                         .addGap(312, 312, 312)
                         .addComponent(jButton_timerScreenShotDurdur, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)))
@@ -491,7 +493,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                     .addComponent(jComboBox_formatName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_timerScreenShotDurdur)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("ScreenShot", jPanel8);
@@ -504,6 +506,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jScrollPane4.setViewportView(jFileChooser1);
 
         jTabbedPane1.addTab("Dosya Write", jScrollPane4);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -541,8 +545,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         ///////////
         jScrollPane13.setViewportView(jTable_dosyaRead);
 
+        jPanel2.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 564, 250));
+
         jComboBox_fileTreeToWalk.setEditable(true);
         jComboBox_fileTreeToWalk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
+        jPanel2.add(jComboBox_fileTreeToWalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
 
         jList_dizinler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -556,37 +563,30 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         });
         jScrollPane6.setViewportView(jList_dizinler);
 
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 262, 150));
+
         jScrollPane14.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
 
-        jButton1.setText("Get Selected");
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(257, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
+        jButton1.setText("Get Selected");
+        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 108, -1));
+        jPanel9.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jPanel9.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+        jLabel13.setText("Durum :");
+        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+
+        jButton3.setText("Visit Directory");
+        jPanel9.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
         jScrollPane14.setViewportView(jPanel9);
 
+        jPanel2.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 564, 140));
+
         jLabel11.setText("Selection : ");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 449, -1, -1));
+        jPanel2.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
 
         jList_dosyalar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -595,7 +595,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         });
         jScrollPane15.setViewportView(jList_dosyalar);
 
-        jLabel13.setText("Durum :");
+        jPanel2.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 237, 296, 150));
+        jPanel2.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
 
         jButton_walkFileTree.setText("walkFileTree()");
         jButton_walkFileTree.addActionListener(new java.awt.event.ActionListener() {
@@ -603,24 +604,31 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 jButton_walkFileTreeActionPerformed(evt);
             }
         });
-
-        jButton3.setText("Visit Directory");
+        jPanel2.add(jButton_walkFileTree, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
 
         jLabel15.setText("Files.walkFileTree(..., maxDepth,...)");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
+        jPanel2.add(jSpinner_walkFileTreeDepth, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
+        jPanel2.add(jComboBox_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
 
         jLabel16.setText("root of currentDMTN :");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
 
         jTextField_currentRootDirectory.setEditable(false);
+        jPanel2.add(jTextField_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
 
         jLabel19.setText("LL<LL<DMTN>> :");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
 
         jComboBox_gelenDMTNLL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_gelenDMTNLLActionPerformed(evt);
             }
         });
+        jPanel2.add(jComboBox_gelenDMTNLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
 
         jLabel20.setText("LL<DMTN> :");
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
 
         jButton_deleteDMTN.setText("Del");
         jButton_deleteDMTN.addActionListener(new java.awt.event.ActionListener() {
@@ -628,6 +636,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 jButton_deleteDMTNActionPerformed(evt);
             }
         });
+        jPanel2.add(jButton_deleteDMTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
 
         jButton_deleteDMTN1.setText("Del");
         jButton_deleteDMTN1.addActionListener(new java.awt.event.ActionListener() {
@@ -635,108 +644,14 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 jButton_deleteDMTN1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jComboBox_fileTreeToWalk, 0, 420, Short.MAX_VALUE)
-                        .addGap(156, 156, 156))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel_dosyaReadDurum, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE))
-                            .addComponent(jScrollPane14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-                            .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel_dosyaReadSelection, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jSpinner_walkFileTreeDepth, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton_walkFileTree))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField_currentRootDirectory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jComboBox_currentRootDirectory, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jComboBox_gelenDMTNLL, javax.swing.GroupLayout.Alignment.LEADING, 0, 331, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton_deleteDMTN1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                                            .addComponent(jButton_deleteDMTN, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3)
-                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane15, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)))
-                        .addGap(26, 26, 26))
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jComboBox_fileTreeToWalk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner_walkFileTreeDepth, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_walkFileTree))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox_gelenDMTNLL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_deleteDMTN))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox_currentRootDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_deleteDMTN1))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField_currentRootDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, 0, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel_dosyaReadDurum))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel_dosyaReadSelection))
-                .addGap(1, 1, 1)
-                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jPanel2.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
 
         jScrollPane5.setViewportView(jPanel2);
 
         jTabbedPane1.addTab("Dosya Read", jScrollPane5);
         jTabbedPane1.addTab("tab6", jScrollPane16);
+
+        jPanel7.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 12, 623, 640));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("ServerSocket Kur"));
 
@@ -939,30 +854,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 2301, Short.MAX_VALUE)
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel7Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 623, Short.MAX_VALUE)
-                    .addGap(1091, 1091, 1091)))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 911, Short.MAX_VALUE)
-            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel7Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTabbedPane1, 0, 640, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(260, 260, 260)))
-        );
+        jPanel7.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
         jScrollPane1.setViewportView(jPanel7);
 
@@ -1117,11 +1009,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private void jButton_periodicScreenShotGetirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_periodicScreenShotGetirActionPerformed
         int peryotOfScreenShot = (Integer) jSpinner_timerDelay.getValue();
         String formatTip = jComboBox_formatName.getSelectedItem().toString();
-        //String gidecekMesaj = "screenShotGetir"+peryotOfScreenShot;
-        String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
+           //String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
         try {
-            kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
-            jTextArea_written2Socket.append(gidecekMesaj + "\n");
+            kayaNetworkAbstractClass1.requestPeriodicScreenShot(peryotOfScreenShot, formatTip, MTSunucu.clientSoket);
+           // kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
+          //  jTextArea_written2Socket.append(gidecekMesaj + "\n");
         } catch (IOException ex) {
             Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionServerSocket.append(ex.toString() + "\n");
@@ -1135,10 +1027,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jButton_timerScreenShotDurdurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_timerScreenShotDurdurActionPerformed
         // TODO add your handling code here:
-        String gidecekMesaj = "timerScreenShotDurdur";
+        //String gidecekMesaj = "timerScreenShotDurdur";
         try {
-            kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
-            jTextArea_written2Socket.append(gidecekMesaj + "\n");
+          //  kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
+            //jTextArea_written2Socket.append(gidecekMesaj + "\n");
+            kayaNetworkAbstractClass1.requestTimerScreenShotDurdur(MTSunucu.clientSoket);
         } catch (IOException ex) {
             Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionServerSocket.append(ex.toString() + "\n");

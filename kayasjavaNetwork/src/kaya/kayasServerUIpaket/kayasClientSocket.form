@@ -87,7 +87,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jComboBox_setSoLinger_On" pref="94" max="32767" attributes="1"/>
+                                          <Component id="jComboBox_setSoLinger_On" max="32767" attributes="1"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jSpinner_setSoLinger_linger" pref="95" max="32767" attributes="1"/>
                                       </Group>
@@ -511,7 +511,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTabbedPane_descriptionClientSocket" pref="82" max="32767" attributes="0"/>
+                              <Component id="jTabbedPane_descriptionClientSocket" pref="109" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -673,7 +673,7 @@
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane11" min="-2" pref="129" max="-2" attributes="0"/>
-                              <EmptySpace pref="34" max="32767" attributes="0"/>
+                              <EmptySpace pref="47" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -810,7 +810,7 @@
                                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jComboBox_formatName" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="47" max="32767" attributes="0"/>
+                              <EmptySpace pref="56" max="32767" attributes="0"/>
                               <Component id="jButton_timerScreenShotDurdur" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>

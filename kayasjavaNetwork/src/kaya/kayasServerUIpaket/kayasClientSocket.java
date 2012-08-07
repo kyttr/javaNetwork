@@ -832,11 +832,11 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
         }*/
         int peryotOfScreenShot = (Integer) jSpinner_timerDelay.getValue();
         String formatTip = jComboBox_formatName.getSelectedItem().toString();
-        //String gidecekMesaj = "screenShotGetir"+peryotOfScreenShot;
-        String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
+        //String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
         try {
-            kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
-            jTextArea_written2Socket.append(gidecekMesaj + "\n");
+            kayaNetworkAbstractClass1.requestPeriodicScreenShot(peryotOfScreenShot, formatTip, myClientSoket);
+           // kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
+          //  jTextArea_written2Socket.append(gidecekMesaj + "\n");
         } catch (IOException ex) {
             Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionClientSocket.append(ex.toString() + "\n");
@@ -850,10 +850,11 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
 
     private void jButton_timerScreenShotDurdurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_timerScreenShotDurdurActionPerformed
         // TODO add your handling code here:
-        String gidecekMesaj = "timerScreenShotDurdur";
+        //String gidecekMesaj = "timerScreenShotDurdur";
         try {
-            kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
-            jTextArea_written2Socket.append(gidecekMesaj + "\n");
+          //  kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
+            //jTextArea_written2Socket.append(gidecekMesaj + "\n");
+            kayaNetworkAbstractClass1.requestTimerScreenShotDurdur(myClientSoket);
         } catch (IOException ex) {
             Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionClientSocket.append(ex.toString() + "\n");
