@@ -11,6 +11,7 @@
 package kaya.kayasServerUIpaket;
 
 import java.awt.AWTException;
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -26,8 +27,10 @@ import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.filechooser.FileView;
+import javax.swing.plaf.basic.DefaultMenuLayout;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  *
@@ -131,6 +134,39 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jPanel11 = new javax.swing.JPanel();
+        jComboBox_fileTreeToWalk1 = new javax.swing.JComboBox();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jList_dizinler1 = new javax.swing.JList();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel_dosyaReadSelection1 = new javax.swing.JLabel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        jList_dosyalar1 = new javax.swing.JList();
+        jLabel_dosyaReadDurum1 = new javax.swing.JLabel();
+        jButton_walkFileTree1 = new javax.swing.JButton();
+        jLabel25 = new javax.swing.JLabel();
+        jSpinner_walkFileTreeDepth1 = new javax.swing.JSpinner();
+        jComboBox_currentRootDirectory1 = new javax.swing.JComboBox();
+        jLabel26 = new javax.swing.JLabel();
+        jTextField_currentRootDirectory1 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jComboBox_gelenDMTNLL1 = new javax.swing.JComboBox();
+        jLabel28 = new javax.swing.JLabel();
+        jButton_deleteDMTN2 = new javax.swing.JButton();
+        jButton_deleteDMTN3 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        jTable_dosyaRead1 = new javax.swing.JTable();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        jPanel13 = new javax.swing.JPanel();
+        jButton_requestFileFromSoket1 = new javax.swing.JButton();
+        jProgressBar3 = new javax.swing.JProgressBar();
+        jProgressBar4 = new javax.swing.JProgressBar();
+        jLabel14 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -231,41 +267,95 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jButton_initializeAndSetServerSocket = new javax.swing.JButton();
         jButton_kapat = new javax.swing.JButton();
 
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
-        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jComboBox_fileTreeToWalk1.setEditable(true);
+        jComboBox_fileTreeToWalk1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
+        jPanel11.add(jComboBox_fileTreeToWalk1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
 
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(700, 631));
+        jList_dizinler1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList_dizinler1ValueChanged(evt);
+            }
+        });
+        jList_dizinler1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jList_dizinler1KeyPressed(evt);
+            }
+        });
+        jScrollPane18.setViewportView(jList_dizinler1);
 
-        jTextArea_descriptionServerSocket.setColumns(20);
-        jTextArea_descriptionServerSocket.setLineWrap(true);
-        jTextArea_descriptionServerSocket.setRows(5);
-        jScrollPane7.setViewportView(jTextArea_descriptionServerSocket);
+        jPanel11.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 270, 250));
 
-        jTabbedPane_descriptionClientSocket.addTab("String (Verbose - Swing)", jScrollPane7);
+        jLabel12.setText("Selection : ");
+        jPanel11.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        jPanel11.add(jLabel_dosyaReadSelection1, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
 
-        jEditorPane_descriptionServerSocket.setEditable(false);
-        jScrollPane8.setViewportView(jEditorPane_descriptionServerSocket);
+        jList_dosyalar1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList_dosyalar1ValueChanged(evt);
+            }
+        });
+        jScrollPane19.setViewportView(jList_dosyalar1);
 
-        jTabbedPane_descriptionClientSocket.addTab("http://docs.oracle.com/", jScrollPane8);
+        jPanel11.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 237, 280, 250));
+        jPanel11.add(jLabel_dosyaReadDurum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
 
-        jScrollPane2.setViewportView(textArea_descriptionServerSocket);
+        jButton_walkFileTree1.setText("walkFileTree()");
+        jButton_walkFileTree1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_walkFileTree1ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jButton_walkFileTree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
 
-        jTabbedPane_descriptionClientSocket.addTab("Verbose - AWT", jScrollPane2);
+        jLabel25.setText("Files.walkFileTree(..., maxDepth,...)");
+        jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
+        jPanel11.add(jSpinner_walkFileTreeDepth1, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
+        jPanel11.add(jComboBox_currentRootDirectory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
 
-        jLabel17.setText("Değer (Value)");
+        jLabel26.setText("root of currentDMTN :");
+        jPanel11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
 
-        jTextArea_valueClientSocket.setColumns(20);
-        jTextArea_valueClientSocket.setLineWrap(true);
-        jTextArea_valueClientSocket.setRows(5);
-        jScrollPane9.setViewportView(jTextArea_valueClientSocket);
+        jTextField_currentRootDirectory1.setEditable(false);
+        jPanel11.add(jTextField_currentRootDirectory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
 
-        jLabel18.setText("Açıklama (Description)");
+        jLabel27.setText("LL<LL<DMTN>> :");
+        jPanel11.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
 
-        jTable_serverSocket.setModel(new javax.swing.table.DefaultTableModel(
+        jComboBox_gelenDMTNLL1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_gelenDMTNLL1ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jComboBox_gelenDMTNLL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
+
+        jLabel28.setText("LL<DMTN> :");
+        jPanel11.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
+
+        jButton_deleteDMTN2.setText("Del");
+        jButton_deleteDMTN2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_deleteDMTN2ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jButton_deleteDMTN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
+
+        jButton_deleteDMTN3.setText("Del");
+        jButton_deleteDMTN3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_deleteDMTN3ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jButton_deleteDMTN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
+
+        jScrollPane17.setViewportView(jPanel11);
+
+        jPanel10.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 600, 558));
+
+        jTable_dosyaRead1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null}
             },
@@ -277,255 +367,10 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
         // Kendimizin yazması gerekiyor.
 
-        ListSelectionModel rowSM = jTable_serverSocket.getSelectionModel();
-        rowSM.addListSelectionListener(new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent e) {
-                ListSelectionModel rowSM = (ListSelectionModel)e.getSource();
-                //int selectedIndex = rowSM.getMinSelectionIndex();
-                // do something with selected index
-                uiSwingMetotlar.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);
-                uiSwingMetotlar.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);
-                /*try{
-                    jEditorPane_descriptionServerSocket.setEditable(false);
-                    String url4EditorPane="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html";
-                    kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);
-                    //jEditorPane_descriptionServerSocket.setPage(new URL("http://docs.oracle.com/"));
-                }
-                catch(Exception myexception)
-                {
-                    jEditorPane_descriptionServerSocket.setText(myexception.toString());
-                }*/
-            }
-        });
-
-        ///////////
-        jScrollPane10.setViewportView(jTable_serverSocket);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(375, 375, 375))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(317, 317, 317)))
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Property-Value-Description", jPanel3);
-
-        jLabel21.setText("readFromSocket");
-
-        jTextArea_readFromSocket.setColumns(20);
-        jTextArea_readFromSocket.setLineWrap(true);
-        jTextArea_readFromSocket.setRows(5);
-        jScrollPane11.setViewportView(jTextArea_readFromSocket);
-
-        jLabel22.setText("written2Socket");
-
-        jTextArea_written2Socket.setColumns(20);
-        jTextArea_written2Socket.setLineWrap(true);
-        jTextArea_written2Socket.setRows(5);
-        jScrollPane12.setViewportView(jTextArea_written2Socket);
-
-        jLabel23.setText("To be Written to Socket");
-
-        jButton_write2Socket.setText("PrintWriter.println(jTextField_write2Socket.getText())");
-        jButton_write2Socket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_write2SocketActionPerformed(evt);
-            }
-        });
-
-        jButton_readFromSocket.setText("BufferedReader.readLine()");
-        jButton_readFromSocket.setEnabled(false);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                    .addComponent(jButton_readFromSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_readFromSocket)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton_write2Socket)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Reading from and Writing to a Socket", jPanel6);
-
-        jButton_screenShotGetir.setText("screenShotGetir() + bufferefImage2JLabel()");
-        jButton_screenShotGetir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_screenShotGetirActionPerformed(evt);
-            }
-        });
-
-        jSpinner_timerDelay.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
-
-        jLabel10.setText("Timer.setDelay(delay);");
-
-        jButton_periodicScreenShotGetir.setText("periodicScreenShotGetir()");
-        jButton_periodicScreenShotGetir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_periodicScreenShotGetirActionPerformed(evt);
-            }
-        });
-
-        jButton_ScreenShotAl.setText("ScreenShotAl()");
-        jButton_ScreenShotAl.setEnabled(false);
-        jButton_ScreenShotAl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_ScreenShotAlActionPerformed(evt);
-            }
-        });
-
-        jComboBox_formatName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "png", "jpg", "gif", "bmp" }));
-
-        jLabel24.setText("formatName");
-
-        jButton_timerScreenShotDurdur.setText("timerScreenShotDurdur()");
-        jButton_timerScreenShotDurdur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_timerScreenShotDurdurActionPerformed(evt);
-            }
-        });
-
-        jLabel_screenShot.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_screenShot.setText("Buraya ScreenShot gelecek.");
-        jScrollPane3.setViewportView(jLabel_screenShot);
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton_screenShotGetir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
-                            .addGroup(jPanel8Layout.createSequentialGroup()
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                                        .addComponent(jComboBox_formatName, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton_ScreenShotAl, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
-                                    .addGroup(jPanel8Layout.createSequentialGroup()
-                                        .addComponent(jSpinner_timerDelay, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                        .addGap(312, 312, 312)
-                        .addComponent(jButton_timerScreenShotDurdur, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 585, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_screenShotGetir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jSpinner_timerDelay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_periodicScreenShotGetir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_ScreenShotAl)
-                    .addComponent(jLabel24)
-                    .addComponent(jComboBox_formatName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_timerScreenShotDurdur)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("ScreenShot", jPanel8);
-
-        jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFileChooser1ActionPerformed(evt);
-            }
-        });
-        jScrollPane4.setViewportView(jFileChooser1);
-
-        jTabbedPane1.addTab("Dosya Write", jScrollPane4);
-
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null}
-            },
-            new String [] {
-                "Title 1"
-            }
-        ));
-        /////////// Bu kodu internetten buldum.
-        // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
-        // Kendimizin yazması gerekiyor.
-
-        ListSelectionModel rowSM2 = jTable_serverSocket.getSelectionModel();
-        rowSM2.addListSelectionListener(new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent e) {
-                ListSelectionModel rowSM2 = (ListSelectionModel)e.getSource();
+        //    ListSelectionModel rowSM2 = jTable_serverSocket.getSelectionModel();
+        //rowSM2.addListSelectionListener(new ListSelectionListener() {
+            //public void valueChanged(ListSelectionEvent e) {
+                //ListSelectionModel rowSM2 = (ListSelectionModel)e.getSource();
                 //int selectedIndex = rowSM.getMinSelectionIndex();
                 // do something with selected index
                 //kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);
@@ -540,333 +385,714 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 {
                     jEditorPane_descriptionServerSocket.setText(myexception.toString());
                 }*/
+                //}
+            //});
+
+    ///////////
+    jScrollPane20.setViewportView(jTable_dosyaRead1);
+
+    jScrollPane21.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
+
+    jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jButton_requestFileFromSoket1.setText("requestFileFromSoket()");
+    jButton_requestFileFromSoket1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_requestFileFromSoket1ActionPerformed(evt);
+        }
+    });
+    jPanel13.add(jButton_requestFileFromSoket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
+    jPanel13.add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+    jPanel13.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+
+    jLabel14.setText("Durum :");
+    jPanel13.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+
+    jButton4.setText("Visit Directory");
+    jPanel13.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+
+    jScrollPane21.setViewportView(jPanel13);
+
+    javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+    jPanel12.setLayout(jPanel12Layout);
+    jPanel12Layout.setHorizontalGroup(
+        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel12Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addComponent(jScrollPane20))
+            .addContainerGap())
+    );
+    jPanel12Layout.setVerticalGroup(
+        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel12Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(30, Short.MAX_VALUE))
+    );
+
+    jPanel10.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 12, -1, 558));
+
+    javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+    jFrame1.getContentPane().setLayout(jFrame1Layout);
+    jFrame1Layout.setHorizontalGroup(
+        jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 1221, Short.MAX_VALUE)
+        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 1221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)))
+    );
+    jFrame1Layout.setVerticalGroup(
+        jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 582, Short.MAX_VALUE)
+        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)))
+    );
+
+    setExtendedState(JFrame.MAXIMIZED_BOTH);
+    getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
+
+    jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+    jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jTabbedPane1.setPreferredSize(new java.awt.Dimension(700, 631));
+
+    jTextArea_descriptionServerSocket.setColumns(20);
+    jTextArea_descriptionServerSocket.setLineWrap(true);
+    jTextArea_descriptionServerSocket.setRows(5);
+    jScrollPane7.setViewportView(jTextArea_descriptionServerSocket);
+
+    jTabbedPane_descriptionClientSocket.addTab("String (Verbose - Swing)", jScrollPane7);
+
+    jEditorPane_descriptionServerSocket.setEditable(false);
+    jScrollPane8.setViewportView(jEditorPane_descriptionServerSocket);
+
+    jTabbedPane_descriptionClientSocket.addTab("http://docs.oracle.com/", jScrollPane8);
+
+    jScrollPane2.setViewportView(textArea_descriptionServerSocket);
+
+    jTabbedPane_descriptionClientSocket.addTab("Verbose - AWT", jScrollPane2);
+
+    jLabel17.setText("Değer (Value)");
+
+    jTextArea_valueClientSocket.setColumns(20);
+    jTextArea_valueClientSocket.setLineWrap(true);
+    jTextArea_valueClientSocket.setRows(5);
+    jScrollPane9.setViewportView(jTextArea_valueClientSocket);
+
+    jLabel18.setText("Açıklama (Description)");
+
+    jTable_serverSocket.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null}
+        },
+        new String [] {
+            "Title 1"
+        }
+    ));
+    /////////// Bu kodu internetten buldum.
+    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
+    // Kendimizin yazması gerekiyor.
+
+    ListSelectionModel rowSM = jTable_serverSocket.getSelectionModel();
+    rowSM.addListSelectionListener(new ListSelectionListener() {
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel rowSM = (ListSelectionModel)e.getSource();
+            //int selectedIndex = rowSM.getMinSelectionIndex();
+            // do something with selected index
+            uiSwingMetotlar.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);
+            uiSwingMetotlar.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);
+            /*try{
+                jEditorPane_descriptionServerSocket.setEditable(false);
+                String url4EditorPane="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html";
+                kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);
+                //jEditorPane_descriptionServerSocket.setPage(new URL("http://docs.oracle.com/"));
             }
-        });
+            catch(Exception myexception)
+            {
+                jEditorPane_descriptionServerSocket.setText(myexception.toString());
+            }*/
+        }
+    });
 
-        ///////////
-        jScrollPane13.setViewportView(jTable_dosyaRead);
+    ///////////
+    jScrollPane10.setViewportView(jTable_serverSocket);
 
-        jPanel2.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 564, 250));
+    javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+    jPanel3.setLayout(jPanel3Layout);
+    jPanel3Layout.setHorizontalGroup(
+        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel3Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(375, 375, 375))
+                .addGroup(jPanel3Layout.createSequentialGroup()
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(317, 317, 317)))
+            .addContainerGap())
+    );
+    jPanel3Layout.setVerticalGroup(
+        jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel3Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel17)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jLabel18)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(66, Short.MAX_VALUE))
+    );
 
-        jComboBox_fileTreeToWalk.setEditable(true);
-        jComboBox_fileTreeToWalk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
-        jPanel2.add(jComboBox_fileTreeToWalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
+    jTabbedPane1.addTab("Property-Value-Description", jPanel3);
 
-        jList_dizinler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jList_dizinlerValueChanged(evt);
+    jLabel21.setText("readFromSocket");
+
+    jTextArea_readFromSocket.setColumns(20);
+    jTextArea_readFromSocket.setLineWrap(true);
+    jTextArea_readFromSocket.setRows(5);
+    jScrollPane11.setViewportView(jTextArea_readFromSocket);
+
+    jLabel22.setText("written2Socket");
+
+    jTextArea_written2Socket.setColumns(20);
+    jTextArea_written2Socket.setLineWrap(true);
+    jTextArea_written2Socket.setRows(5);
+    jScrollPane12.setViewportView(jTextArea_written2Socket);
+
+    jLabel23.setText("To be Written to Socket");
+
+    jButton_write2Socket.setText("PrintWriter.println(jTextField_write2Socket.getText())");
+    jButton_write2Socket.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_write2SocketActionPerformed(evt);
+        }
+    });
+
+    jButton_readFromSocket.setText("BufferedReader.readLine()");
+    jButton_readFromSocket.setEnabled(false);
+
+    javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+    jPanel6.setLayout(jPanel6Layout);
+    jPanel6Layout.setHorizontalGroup(
+        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                .addComponent(jButton_readFromSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    jPanel6Layout.setVerticalGroup(
+        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel21)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jButton_readFromSocket)
+            .addGap(36, 36, 36)
+            .addComponent(jLabel23)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addComponent(jButton_write2Socket)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel22)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(21, Short.MAX_VALUE))
+    );
+
+    jTabbedPane1.addTab("Reading from and Writing to a Socket", jPanel6);
+
+    jButton_screenShotGetir.setText("screenShotGetir() + bufferefImage2JLabel()");
+    jButton_screenShotGetir.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_screenShotGetirActionPerformed(evt);
+        }
+    });
+
+    jSpinner_timerDelay.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
+
+    jLabel10.setText("Timer.setDelay(delay);");
+
+    jButton_periodicScreenShotGetir.setText("periodicScreenShotGetir()");
+    jButton_periodicScreenShotGetir.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_periodicScreenShotGetirActionPerformed(evt);
+        }
+    });
+
+    jButton_ScreenShotAl.setText("ScreenShotAl()");
+    jButton_ScreenShotAl.setEnabled(false);
+    jButton_ScreenShotAl.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_ScreenShotAlActionPerformed(evt);
+        }
+    });
+
+    jComboBox_formatName.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "png", "jpg", "gif", "bmp" }));
+
+    jLabel24.setText("formatName");
+
+    jButton_timerScreenShotDurdur.setText("timerScreenShotDurdur()");
+    jButton_timerScreenShotDurdur.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_timerScreenShotDurdurActionPerformed(evt);
+        }
+    });
+
+    jLabel_screenShot.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel_screenShot.setText("Buraya ScreenShot gelecek.");
+    jScrollPane3.setViewportView(jLabel_screenShot);
+
+    javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+    jPanel8.setLayout(jPanel8Layout);
+    jPanel8Layout.setHorizontalGroup(
+        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel8Layout.createSequentialGroup()
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton_screenShotGetir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 587, Short.MAX_VALUE)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jComboBox_formatName, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jButton_ScreenShotAl, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE))
+                                .addGroup(jPanel8Layout.createSequentialGroup()
+                                    .addComponent(jSpinner_timerDelay, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))))))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                    .addGap(312, 312, 312)
+                    .addComponent(jButton_timerScreenShotDurdur, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)))
+            .addContainerGap())
+        .addGroup(jPanel8Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 585, Short.MAX_VALUE)
+            .addGap(14, 14, 14))
+    );
+    jPanel8Layout.setVerticalGroup(
+        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel8Layout.createSequentialGroup()
+            .addGap(34, 34, 34)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jButton_screenShotGetir)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel10)
+                .addComponent(jSpinner_timerDelay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_periodicScreenShotGetir))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jButton_ScreenShotAl)
+                .addComponent(jLabel24)
+                .addComponent(jComboBox_formatName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jButton_timerScreenShotDurdur)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+
+    jTabbedPane1.addTab("ScreenShot", jPanel8);
+
+    jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jFileChooser1ActionPerformed(evt);
+        }
+    });
+    jScrollPane4.setViewportView(jFileChooser1);
+
+    jTabbedPane1.addTab("Dosya Write", jScrollPane4);
+
+    jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+    jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null}
+        },
+        new String [] {
+            "Title 1"
+        }
+    ));
+    /////////// Bu kodu internetten buldum.
+    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
+    // Kendimizin yazması gerekiyor.
+
+    ListSelectionModel rowSM2 = jTable_serverSocket.getSelectionModel();
+    rowSM2.addListSelectionListener(new ListSelectionListener() {
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel rowSM2 = (ListSelectionModel)e.getSource();
+            //int selectedIndex = rowSM.getMinSelectionIndex();
+            // do something with selected index
+            //kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);
+            //kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);
+            /*try{
+                jEditorPane_descriptionServerSocket.setEditable(false);
+                String url4EditorPane="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html";
+                kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);
+                //jEditorPane_descriptionServerSocket.setPage(new URL("http://docs.oracle.com/"));
             }
-        });
-        jList_dizinler.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jList_dizinlerKeyPressed(evt);
-            }
-        });
-        jScrollPane6.setViewportView(jList_dizinler);
+            catch(Exception myexception)
+            {
+                jEditorPane_descriptionServerSocket.setText(myexception.toString());
+            }*/
+        }
+    });
 
-        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 262, 150));
+    ///////////
+    jScrollPane13.setViewportView(jTable_dosyaRead);
 
-        jScrollPane14.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
+    jPanel2.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 564, 250));
 
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+    jComboBox_fileTreeToWalk.setEditable(true);
+    jComboBox_fileTreeToWalk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
+    jPanel2.add(jComboBox_fileTreeToWalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
 
-        jButton_requestFileFromSoket.setText("requestFileFromSoket()");
-        jButton_requestFileFromSoket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_requestFileFromSoketActionPerformed(evt);
-            }
-        });
-        jPanel9.add(jButton_requestFileFromSoket, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
-        jPanel9.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-        jPanel9.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+    jList_dizinler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+            jList_dizinlerValueChanged(evt);
+        }
+    });
+    jList_dizinler.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            jList_dizinlerKeyPressed(evt);
+        }
+    });
+    jScrollPane6.setViewportView(jList_dizinler);
 
-        jLabel13.setText("Durum :");
-        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+    jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 262, 150));
 
-        jButton3.setText("Visit Directory");
-        jPanel9.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+    jScrollPane14.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
 
-        jScrollPane14.setViewportView(jPanel9);
+    jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 564, 140));
+    jButton_requestFileFromSoket.setText("requestFileFromSoket()");
+    jButton_requestFileFromSoket.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_requestFileFromSoketActionPerformed(evt);
+        }
+    });
+    jPanel9.add(jButton_requestFileFromSoket, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
+    jPanel9.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+    jPanel9.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLabel11.setText("Selection : ");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 449, -1, -1));
-        jPanel2.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
+    jLabel13.setText("Durum :");
+    jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
-        jList_dosyalar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jList_dosyalarValueChanged(evt);
-            }
-        });
-        jScrollPane15.setViewportView(jList_dosyalar);
+    jButton3.setText("Visit Directory");
+    jPanel9.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
-        jPanel2.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 237, 296, 150));
-        jPanel2.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
+    jScrollPane14.setViewportView(jPanel9);
 
-        jButton_walkFileTree.setText("walkFileTree()");
-        jButton_walkFileTree.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_walkFileTreeActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton_walkFileTree, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
+    jPanel2.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 564, 140));
 
-        jLabel15.setText("Files.walkFileTree(..., maxDepth,...)");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
-        jPanel2.add(jSpinner_walkFileTreeDepth, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
-        jPanel2.add(jComboBox_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
+    jLabel11.setText("Selection : ");
+    jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 449, -1, -1));
+    jPanel2.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
 
-        jLabel16.setText("root of currentDMTN :");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
+    jList_dosyalar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+            jList_dosyalarValueChanged(evt);
+        }
+    });
+    jScrollPane15.setViewportView(jList_dosyalar);
 
-        jTextField_currentRootDirectory.setEditable(false);
-        jPanel2.add(jTextField_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
+    jPanel2.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 237, 296, 150));
+    jPanel2.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
 
-        jLabel19.setText("LL<LL<DMTN>> :");
-        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
+    jButton_walkFileTree.setText("walkFileTree()");
+    jButton_walkFileTree.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_walkFileTreeActionPerformed(evt);
+        }
+    });
+    jPanel2.add(jButton_walkFileTree, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
 
-        jComboBox_gelenDMTNLL.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_gelenDMTNLLActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jComboBox_gelenDMTNLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
+    jLabel15.setText("Files.walkFileTree(..., maxDepth,...)");
+    jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
+    jPanel2.add(jSpinner_walkFileTreeDepth, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
+    jPanel2.add(jComboBox_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
 
-        jLabel20.setText("LL<DMTN> :");
-        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
+    jLabel16.setText("root of currentDMTN :");
+    jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
 
-        jButton_deleteDMTN.setText("Del");
-        jButton_deleteDMTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_deleteDMTNActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton_deleteDMTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
+    jTextField_currentRootDirectory.setEditable(false);
+    jPanel2.add(jTextField_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
 
-        jButton_deleteDMTN1.setText("Del");
-        jButton_deleteDMTN1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_deleteDMTN1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
+    jLabel19.setText("LL<LL<DMTN>> :");
+    jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
 
-        jScrollPane5.setViewportView(jPanel2);
+    jComboBox_gelenDMTNLL.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jComboBox_gelenDMTNLLActionPerformed(evt);
+        }
+    });
+    jPanel2.add(jComboBox_gelenDMTNLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
 
-        jTabbedPane1.addTab("Dosya Read", jScrollPane5);
-        jTabbedPane1.addTab("tab6", jScrollPane16);
+    jLabel20.setText("LL<DMTN> :");
+    jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
 
-        jPanel7.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 12, 623, 640));
+    jButton_deleteDMTN.setText("Del");
+    jButton_deleteDMTN.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_deleteDMTNActionPerformed(evt);
+        }
+    });
+    jPanel2.add(jButton_deleteDMTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("ServerSocket Kur"));
+    jButton_deleteDMTN1.setText("Del");
+    jButton_deleteDMTN1.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_deleteDMTN1ActionPerformed(evt);
+        }
+    });
+    jPanel2.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
 
-        jSpinner_timeOut.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
+    jScrollPane5.setViewportView(jPanel2);
 
-        jSpinner_port.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
+    jTabbedPane1.addTab("Dosya Read", jScrollPane5);
+    jTabbedPane1.addTab("tab6", jScrollPane16);
 
-        jSpinner_connectionTime.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
+    jPanel7.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 12, 623, 640));
 
-        jComboBox_on.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "False", "True" }));
+    jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("ServerSocket Kur"));
 
-        jSpinner_latency.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
+    jSpinner_timeOut.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
 
-        jSpinner_backlog.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
+    jSpinner_port.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
 
-        jSpinner_size.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
+    jSpinner_connectionTime.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
 
-        jSpinner_bandwidth.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
+    jComboBox_on.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "False", "True" }));
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSpinner_timeOut, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinner_connectionTime, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox_on, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSpinner_latency, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner_size, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinner_bandwidth, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinner_backlog, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinner_port, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(47, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+    jSpinner_latency.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
 
-        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSeparator1, jSeparator2, jSeparator3});
+    jSpinner_backlog.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
 
-        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jComboBox_on, jSpinner_backlog, jSpinner_bandwidth, jSpinner_connectionTime, jSpinner_latency, jSpinner_port, jSpinner_size, jSpinner_timeOut});
+    jSpinner_size.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
 
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jSpinner_port, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_backlog, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 13, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addGap(37, 37, 37)
-                .addComponent(jSpinner_connectionTime, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_latency, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_bandwidth, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_size, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox_on)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner_timeOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+    jSpinner_bandwidth.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(-1), Integer.valueOf(-1), null, Integer.valueOf(1)));
 
-        jLabel1.setText("ServerSocket(int port) ");
+    javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+    jPanel4.setLayout(jPanel4Layout);
+    jPanel4Layout.setHorizontalGroup(
+        jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel4Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jSpinner_timeOut, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSpinner_connectionTime, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jComboBox_on, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSpinner_latency, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSpinner_size, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSpinner_bandwidth, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSpinner_backlog, javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jSpinner_port, javax.swing.GroupLayout.Alignment.LEADING))
+            .addContainerGap(47, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
 
-        jLabel2.setText("ServerSocket(int port, int backlog)");
+    jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSeparator1, jSeparator2, jSeparator3});
 
-        jLabel3.setText("<html>ServerSocket(int port,<br> int backlog, InetAddress bindAddr)</html>");
+    jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jComboBox_on, jSpinner_backlog, jSpinner_bandwidth, jSpinner_connectionTime, jSpinner_latency, jSpinner_port, jSpinner_size, jSpinner_timeOut});
 
-        jLabel4.setText("bind(SocketAddress endpoint)");
+    jPanel4Layout.setVerticalGroup(
+        jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel4Layout.createSequentialGroup()
+            .addComponent(jSpinner_port, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSpinner_backlog, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addGap(18, 18, 18)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 13, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
+            .addGap(37, 37, 37)
+            .addComponent(jSpinner_connectionTime, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSpinner_latency, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSpinner_bandwidth, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSpinner_size, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jComboBox_on)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSpinner_timeOut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap())
+    );
 
-        jLabel5.setText("<html>bind(SocketAddress endpoint,<br> int backlog)</html>");
+    jLabel1.setText("ServerSocket(int port) ");
 
-        jLabel6.setText("<html>setPerformancePreferences<br>(int connectionTime, int latency, int bandwidth)</html>");
+    jLabel2.setText("ServerSocket(int port, int backlog)");
 
-        jLabel7.setText("setReceiveBufferSize(int size)");
+    jLabel3.setText("<html>ServerSocket(int port,<br> int backlog, InetAddress bindAddr)</html>");
 
-        jLabel8.setText("setReuseAddress(boolean on)");
+    jLabel4.setText("bind(SocketAddress endpoint)");
 
-        jLabel9.setText("setSoTimeout(int timeout)");
+    jLabel5.setText("<html>bind(SocketAddress endpoint,<br> int backlog)</html>");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+    jLabel6.setText("<html>setPerformancePreferences<br>(int connectionTime, int latency, int bandwidth)</html>");
 
-        jButton_accept.setText("ServerSocket.accept()");
-        jButton_accept.setEnabled(false);
-        jButton_accept.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_acceptActionPerformed(evt);
-            }
-        });
+    jLabel7.setText("setReceiveBufferSize(int size)");
 
-        jButton_setVisible.setText("kayasClientSocket.setVisible(true)");
-        jButton_setVisible.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_setVisibleActionPerformed(evt);
-            }
-        });
+    jLabel8.setText("setReuseAddress(boolean on)");
 
-        jButton_initializeAndSetServerSocket.setText("initializeAndSet ServerSocket");
-        jButton_initializeAndSetServerSocket.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_initializeAndSetServerSocketActionPerformed(evt);
-            }
-        });
+    jLabel9.setText("setSoTimeout(int timeout)");
 
-        jButton_kapat.setText("kayasMultiThrdServer.kapat()");
-        jButton_kapat.setEnabled(false);
-        jButton_kapat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_kapatActionPerformed(evt);
-            }
-        });
+    javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+    jPanel5.setLayout(jPanel5Layout);
+    jPanel5Layout.setHorizontalGroup(
+        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel5Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    jPanel5Layout.setVerticalGroup(
+        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel5Layout.createSequentialGroup()
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
+            .addGap(18, 18, 18)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(33, 33, 33)
+            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton_initializeAndSetServerSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton_setVisible, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jButton_accept, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton_kapat, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
-                .addGap(14, 14, 14))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_initializeAndSetServerSocket)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_accept)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_kapat)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_setVisible)
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
+    jButton_accept.setText("ServerSocket.accept()");
+    jButton_accept.setEnabled(false);
+    jButton_accept.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_acceptActionPerformed(evt);
+        }
+    });
 
-        jPanel7.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
+    jButton_setVisible.setText("kayasClientSocket.setVisible(true)");
+    jButton_setVisible.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_setVisibleActionPerformed(evt);
+        }
+    });
 
-        jScrollPane1.setViewportView(jPanel7);
+    jButton_initializeAndSetServerSocket.setText("initializeAndSet ServerSocket");
+    jButton_initializeAndSetServerSocket.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_initializeAndSetServerSocketActionPerformed(evt);
+        }
+    });
 
-        getContentPane().add(jScrollPane1);
+    jButton_kapat.setText("kayasMultiThrdServer.kapat()");
+    jButton_kapat.setEnabled(false);
+    jButton_kapat.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_kapatActionPerformed(evt);
+        }
+    });
 
-        pack();
+    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+    jPanel1.setLayout(jPanel1Layout);
+    jPanel1Layout.setHorizontalGroup(
+        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGap(14, 14, 14)
+                    .addComponent(jButton_initializeAndSetServerSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGap(14, 14, 14)
+                    .addComponent(jButton_setVisible, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGap(14, 14, 14)
+                    .addComponent(jButton_accept, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)))
+            .addContainerGap())
+        .addGroup(jPanel1Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jButton_kapat, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addGap(14, 14, 14))
+    );
+    jPanel1Layout.setVerticalGroup(
+        jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jButton_initializeAndSetServerSocket)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jButton_accept)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jButton_kapat)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jButton_setVisible)
+            .addContainerGap(46, Short.MAX_VALUE))
+    );
+
+    jPanel7.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
+
+    jScrollPane1.setViewportView(jPanel7);
+
+    getContentPane().add(jScrollPane1);
+
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton_acceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_acceptActionPerformed
@@ -935,6 +1161,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private void jButton_initializeAndSetServerSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_initializeAndSetServerSocketActionPerformed
         // TODO add your handling code here:
 
+        
+        jFrame1.setVisible(true);
+        //jFrame1.setExtendedState(JFrame.);
+        jFrame1.pack();
+        
         textArea_descriptionServerSocket.setText("");
 
         LinkedList<Integer> paramsforServerSocket = new LinkedList<Integer>();
@@ -1165,6 +1396,101 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         }
     }//GEN-LAST:event_jButton_requestFileFromSoketActionPerformed
 
+    private void jList_dizinler1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dizinler1ValueChanged
+        // TODO add your handling code here:
+//        try {
+//            String selectedChildName = (String) jList_dizinler.getSelectedValue();
+//            dosyaBilgilerInfos = gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
+//            uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
+//            jLabel_dosyaReadSelection.setText(selectedChildName);
+//        } catch (Exception ex) {
+//        }
+    }//GEN-LAST:event_jList_dizinler1ValueChanged
+
+    private void jList_dizinler1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jList_dizinler1KeyPressed
+        // TODO add your handling code here:
+
+//        // if the pressed key is not "ENTER", then leave method.
+//        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
+//            return;
+//        }
+//
+//        int selectedDMNTIndex = jList_dizinler.getSelectedIndex() - 1;    // selectedDMNTIndex=-1 için bir dizin yukarı çık.
+//        gnt.subDosyaBilgilerTreeNode(gnt.getCurrentDMTN(), selectedDMNTIndex);
+//        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
+//        //gnt.setCurrentDMTN(uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory));
+//
+//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar);
+//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, dmtnVariable, jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+   }//GEN-LAST:event_jList_dizinler1KeyPressed
+
+    private void jList_dosyalar1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dosyalar1ValueChanged
+        // TODO add your handling code here:
+//        try {
+//            String selectedChildName = (String) jList_dosyalar.getSelectedValue();
+//            dosyaBilgilerInfos = gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
+//            uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
+//            jLabel_dosyaReadSelection.setText(selectedChildName);
+//        } catch (Exception ex) {
+//        }
+    }//GEN-LAST:event_jList_dosyalar1ValueChanged
+
+    private void jButton_walkFileTree1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_walkFileTree1ActionPerformed
+        // TODO add your handling code here:
+//        String kokDosyaPath = jComboBox_fileTreeToWalk.getSelectedItem().toString().trim();
+//        int treeDepth = (Integer) jSpinner_walkFileTreeDepth.getValue();
+//
+//        String gidecekMesaj = kayaNetworkAbstractClass1.defaultMutableTreeNodeGetirStr + treeDepth + "," + kokDosyaPath;
+//        try {
+//            kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
+//        } catch (IOException ex) {
+//            Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        // durum değişikliği belirt.
+//        jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR2);
+    }//GEN-LAST:event_jButton_walkFileTree1ActionPerformed
+
+    private void jComboBox_gelenDMTNLL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_gelenDMTNLL1ActionPerformed
+        // TODO add your handling code here:
+//        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
+//        gnt.setGelenDMTNfromGelenDMTNLL(indeks);
+//        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
+    }//GEN-LAST:event_jComboBox_gelenDMTNLL1ActionPerformed
+
+    private void jButton_deleteDMTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTN2ActionPerformed
+        // TODO add your handling code here:
+//        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
+//        gnt.removeGelenDMTNfromGelenDMTNLL(indeks);
+//        uiSwingMetotlar.LinkedList2ComboBox(gnt.gelenDMTNLL, jComboBox_gelenDMTNLL);
+//        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
+    }//GEN-LAST:event_jButton_deleteDMTN2ActionPerformed
+
+    private void jButton_deleteDMTN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTN3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_deleteDMTN3ActionPerformed
+
+    private void jButton_requestFileFromSoket1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_requestFileFromSoket1ActionPerformed
+        // TODO add your handling code here:
+//        List<String> requestedFiles = jList_dosyalar.getSelectedValuesList();
+//        Iterator iterator = requestedFiles.iterator();
+//        String requestedFileAbsolutPath = "";
+//        String requestedFileStr = "";
+//        while (iterator.hasNext()) {
+//            requestedFileStr = (String) iterator.next();
+//            tmpDMTN = gnt.findChildWithName(gnt.getGelenDMTN(), requestedFileStr);
+//            requestedFileAbsolutPath = ((GelenNesneTipleri.DosyaBilgilerTreeNode) tmpDMTN.getUserObject()).toAbsolutePathString();
+//            try {
+//                kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
+//            } catch (IOException ex) {
+//                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+//                textArea_descriptionServerSocket.append(ex.toString() + "\n");
+//            }
+//        }
+    }//GEN-LAST:event_jButton_requestFileFromSoket1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1179,31 +1505,42 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton_ScreenShotAl;
     private javax.swing.JButton jButton_accept;
     private javax.swing.JButton jButton_deleteDMTN;
     private javax.swing.JButton jButton_deleteDMTN1;
+    private javax.swing.JButton jButton_deleteDMTN2;
+    private javax.swing.JButton jButton_deleteDMTN3;
     private javax.swing.JButton jButton_initializeAndSetServerSocket;
     private javax.swing.JButton jButton_kapat;
     private javax.swing.JButton jButton_periodicScreenShotGetir;
     private javax.swing.JButton jButton_readFromSocket;
     private javax.swing.JButton jButton_requestFileFromSoket;
+    private javax.swing.JButton jButton_requestFileFromSoket1;
     private javax.swing.JButton jButton_screenShotGetir;
     private javax.swing.JButton jButton_setVisible;
     private javax.swing.JButton jButton_timerScreenShotDurdur;
     private javax.swing.JButton jButton_walkFileTree;
+    private javax.swing.JButton jButton_walkFileTree1;
     private javax.swing.JButton jButton_write2Socket;
     private javax.swing.JComboBox jComboBox_currentRootDirectory;
+    private javax.swing.JComboBox jComboBox_currentRootDirectory1;
     private javax.swing.JComboBox jComboBox_fileTreeToWalk;
+    private javax.swing.JComboBox jComboBox_fileTreeToWalk1;
     private javax.swing.JComboBox jComboBox_formatName;
     private javax.swing.JComboBox jComboBox_gelenDMTNLL;
+    private javax.swing.JComboBox jComboBox_gelenDMTNLL1;
     private javax.swing.JComboBox jComboBox_on;
     private javax.swing.JEditorPane jEditorPane_descriptionServerSocket;
     private javax.swing.JFileChooser jFileChooser1;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1215,6 +1552,10 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1223,11 +1564,19 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_dosyaReadDurum;
+    private javax.swing.JLabel jLabel_dosyaReadDurum1;
     private javax.swing.JLabel jLabel_dosyaReadSelection;
+    private javax.swing.JLabel jLabel_dosyaReadSelection1;
     private javax.swing.JLabel jLabel_screenShot;
     private javax.swing.JList jList_dizinler;
+    private javax.swing.JList jList_dizinler1;
     private javax.swing.JList jList_dosyalar;
+    private javax.swing.JList jList_dosyalar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1238,6 +1587,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JPanel jPanel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JProgressBar jProgressBar3;
+    private javax.swing.JProgressBar jProgressBar4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -1246,7 +1597,12 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1266,15 +1622,18 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JSpinner jSpinner_timeOut;
     private javax.swing.JSpinner jSpinner_timerDelay;
     private javax.swing.JSpinner jSpinner_walkFileTreeDepth;
+    private javax.swing.JSpinner jSpinner_walkFileTreeDepth1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane_descriptionClientSocket;
     private javax.swing.JTable jTable_dosyaRead;
+    private javax.swing.JTable jTable_dosyaRead1;
     private javax.swing.JTable jTable_serverSocket;
     private javax.swing.JTextArea jTextArea_descriptionServerSocket;
     private javax.swing.JTextArea jTextArea_readFromSocket;
     private javax.swing.JTextArea jTextArea_valueClientSocket;
     private javax.swing.JTextArea jTextArea_written2Socket;
     private javax.swing.JTextField jTextField_currentRootDirectory;
+    private javax.swing.JTextField jTextField_currentRootDirectory1;
     private javax.swing.JTextField jTextField_write2Socket;
     private java.awt.TextArea textArea_descriptionServerSocket;
     // End of variables declaration//GEN-END:variables
