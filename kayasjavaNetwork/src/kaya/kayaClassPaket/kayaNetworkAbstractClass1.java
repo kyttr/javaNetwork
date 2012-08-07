@@ -828,6 +828,12 @@ public abstract class kayaNetworkAbstractClass1 {
 
             writeObject2SoketHighLevel(mySoket, dv.dmtnDosyaBilgilerTree, kayaNetworkAbstractClass1.defaultMutableTreeNodeAlStr);
         }
+        else if(gelenMesaj.startsWith(dosyaGetirStr))   //karşı taraf dosya istiyor.
+        {
+            gelenMesaj=gelenMesaj.replaceFirst(dosyaGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePath>
+            File dosyaToBeSent=new File(gelenMesaj);
+            writeFile2SoketHighLevel(mySoket, dosyaToBeSent);
+        }
 
         return gelenMesaj;
     }

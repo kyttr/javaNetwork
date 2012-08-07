@@ -139,7 +139,7 @@ public class kayasSocketThread implements Runnable {
                 uiSwingMetotlar.bufferedImage2JLabel(gelenResim, screenShotLabel);
             }
             //
-            if (gelenDosya != null) {
+            if (gelenDosya != null && textArea != null) {
                 textArea.append("Dosya geldi : " + gelenDosya.getAbsolutePath() + "\n");
             }
 

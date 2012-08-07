@@ -286,11 +286,11 @@ public class GenelMetotlar {
         //InputStreamReader isr = new InputStreamReader(is,"UTF-8");  //ç,ü,ğ,ş,ö
         // InputStreamReader isr = new InputStreamReader(is);    // bu da çalışıyor.   
         InputStreamReader isr = new InputStreamReader(is);
-        BufferedReader bf = new BufferedReader(isr);
+        BufferedReader br = new BufferedReader(isr);
         String veriTemp;
         String veri = "";
 
-        while ((veriTemp = bf.readLine()) != null) {
+        while ((veriTemp = br.readLine()) != null) {
             veri += veriTemp + "\n";
         }
 
@@ -298,6 +298,32 @@ public class GenelMetotlar {
         //isr.close();
         //bf.close();
 
+        return veri;
+    }
+
+    /*
+     * Bir "InputStream" nesnesindeki veriyi bir "String"e aktar. Bunu yaparken
+     * "BufferedReader" ve "InputStreamReader" nesneleri kullan.
+     *
+     * "eof" gelene kadar okumaya devam et. return "InputStream" nesnesindeki
+     * veri
+     *
+     * http://stackoverflow.com/questions/9357822/how-to-show-regional-characters-in-android
+     */
+    public static String readStringfromInputStream(InputStream is, String eof) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String lineOfgelenMesaj = "";
+        String veri = "";
+        while ((lineOfgelenMesaj = br.readLine()) != null) {
+            if (lineOfgelenMesaj.equals(eof)) {
+                break;      //  okunan satır "eof" ise, döngüden çık.
+                // bu kontrol önemli.
+            } else if (veri.concat(lineOfgelenMesaj).endsWith(eof)) {
+                veri += lineOfgelenMesaj;
+                break;
+            }
+            veri += "\n" + lineOfgelenMesaj;
+        }
         return veri;
     }
 
