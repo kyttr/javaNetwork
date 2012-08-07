@@ -46,6 +46,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     kayasMultiThrdServer MTSunucu;
     Thread clientDinleThread;
     GelenNesneTipleri gnt;
+    DefaultMutableTreeNode tmpDMTN;
 
     public void OlayOlmus(OlayNesnesi olay) {
         /*
@@ -180,7 +181,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jList_dizinler = new javax.swing.JList();
         jScrollPane14 = new javax.swing.JScrollPane();
         jPanel9 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jButton_requestFileFromSoket = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
         jProgressBar2 = new javax.swing.JProgressBar();
         jLabel13 = new javax.swing.JLabel();
@@ -569,13 +570,18 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Get Selected");
-        jPanel9.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 108, -1));
+        jButton_requestFileFromSoket.setText("requestFileFromSoket()");
+        jButton_requestFileFromSoket.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_requestFileFromSoketActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton_requestFileFromSoket, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
         jPanel9.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
         jPanel9.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
         jLabel13.setText("Durum :");
-        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
+        jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
         jButton3.setText("Visit Directory");
         jPanel9.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
@@ -1139,6 +1145,26 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
     }//GEN-LAST:event_jComboBox_gelenDMTNLLActionPerformed
 
+    private void jButton_requestFileFromSoketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_requestFileFromSoketActionPerformed
+        // TODO add your handling code here:
+        List<String> requestedFiles=jList_dosyalar.getSelectedValuesList();
+        Iterator iterator=requestedFiles.iterator();
+        String requestedFileAbsolutPath="";
+        String requestedFileStr="";
+        while(iterator.hasNext())
+        {
+            requestedFileStr=(String) iterator.next();
+            tmpDMTN=gnt.findChildWithName(gnt.getGelenDMTN(), requestedFileStr);
+            requestedFileAbsolutPath=((GelenNesneTipleri.DosyaBilgilerTreeNode)tmpDMTN.getUserObject()).toAbsolutePathString();
+            try {
+                kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
+            } catch (IOException ex) {
+                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+                textArea_descriptionServerSocket.append(ex.toString() + "\n");
+            }
+        }
+    }//GEN-LAST:event_jButton_requestFileFromSoketActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1152,7 +1178,6 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton_ScreenShotAl;
     private javax.swing.JButton jButton_accept;
@@ -1162,6 +1187,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JButton jButton_kapat;
     private javax.swing.JButton jButton_periodicScreenShotGetir;
     private javax.swing.JButton jButton_readFromSocket;
+    private javax.swing.JButton jButton_requestFileFromSoket;
     private javax.swing.JButton jButton_screenShotGetir;
     private javax.swing.JButton jButton_setVisible;
     private javax.swing.JButton jButton_timerScreenShotDurdur;
