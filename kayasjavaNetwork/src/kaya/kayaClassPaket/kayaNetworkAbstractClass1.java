@@ -101,6 +101,7 @@ public abstract class kayaNetworkAbstractClass1 {
 
         return listeBilgiler;
     }
+    
 
     /*
      * veri alıp gönderirken, "props", "descrip" alanları her nesne için sabit,
