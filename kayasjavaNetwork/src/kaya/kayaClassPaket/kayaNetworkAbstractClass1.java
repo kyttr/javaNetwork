@@ -752,33 +752,30 @@ public abstract class kayaNetworkAbstractClass1 {
         ////////////////////////////////
 
         if (mySoket.getInputStream().available() > 0) {
-//            br = new BufferedReader(new InputStreamReader(mySoket.getInputStream()));
-//            //   "thread" kullanacaksam aşağıdaki gibi bir kod kullanmamalı. Çünkü, aşağıdaki kod "thread" de streamden sürekli input bekler.
-//           /*
-//             * A
-//             * while ((lineOfMesaj = br.readLine()) != null) { gelenMesaj +=
-//             * lineOfMesaj + "\n"; } br.close(); A
-//             */
-//
-//            while ((lineOfgelenMesaj = br.readLine()) != null) {
-//                if (lineOfgelenMesaj.equals(myEOF)) {
-//                    break;      //  okunan satır ">myEOF<" ise, döngüden çık.
-//                    // bu kontrol önemli.
-//                } else if (gelenMesaj.concat(lineOfgelenMesaj).endsWith(myEOF)) {
-//                    gelenMesaj += lineOfgelenMesaj;
-//                    break;
-//                }
-//                // 1606 gelenMesaj += lineOfMesaj + "\n";
-//                gelenMesaj += "\n" + lineOfgelenMesaj;
-//            }
-            
-            // biraz daha "abstraction" ekledim.
-            gelenMesaj=GenelMetotlar.readStringfromInputStream(mySoket.getInputStream(), myEOF);
+            br = new BufferedReader(new InputStreamReader(mySoket.getInputStream()));
+            //   "thread" kullanacaksam aşağıdaki gibi bir kod kullanmamalı. Çünkü, aşağıdaki kod "thread" de streamden sürekli input bekler.
+           /*
+             * A
+             * while ((lineOfMesaj = br.readLine()) != null) { gelenMesaj +=
+             * lineOfMesaj + "\n"; } br.close(); A
+             */
 
-            // 1606 gelenMesaj=gelenMesaj.substring(0, gelenMesaj.length()-3);  // gelenMesaj sonundaki "\n" ekini at.
+            while ((lineOfgelenMesaj = br.readLine()) != null) {
+                if (lineOfgelenMesaj.equals(myEOF)) {
+                    break;      //  okunan satır ">myEOF<" ise, döngüden çık.
+                    // bu kontrol önemli.
+                } else if (gelenMesaj.concat(lineOfgelenMesaj).endsWith(myEOF)) {
+                    gelenMesaj += lineOfgelenMesaj;
+                    break;
+                }
+                // 1606 gelenMesaj += lineOfMesaj + "\n";
+                gelenMesaj += "\n" + lineOfgelenMesaj;
+            }
+                        // 1606 gelenMesaj=gelenMesaj.substring(0, gelenMesaj.length()-3);  // gelenMesaj sonundaki "\n" ekini at.
 //            gelenMesaj = gelenMesaj.replaceFirst("\n", "");  // gelenMesaj başındaki "\n" ekini at.
 //            gelenMesaj = gelenMesaj.replaceAll(myEOF, "");    // ">myEOF<" yazan bölümleri at.
             //br.close(); // okuma işleminden sonra BufferedReader kapanırsa, soket kapanır.
+           
         }
         gelenMesaj = gelenMesaj.replaceFirst("\n", "");  // gelenMesaj başındaki "\n" ekini at.
         gelenMesaj = gelenMesaj.replaceAll(myEOF, "");    // ">myEOF<" yazan bölümleri at.
