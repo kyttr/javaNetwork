@@ -135,11 +135,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private void initComponents() {
 
         jFrame_dosyaGezgini = new javax.swing.JFrame();
+        jPanel10 = new javax.swing.JPanel();
+        jScrollPane17 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jPanel9 = new javax.swing.JPanel();
         jComboBox_fileTreeToWalk = new javax.swing.JComboBox();
-        jScrollPane13 = new javax.swing.JScrollPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
         jList_dizinler = new javax.swing.JList();
         jLabel11 = new javax.swing.JLabel();
         jLabel_dosyaReadSelection = new javax.swing.JLabel();
@@ -157,11 +157,12 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jLabel20 = new javax.swing.JLabel();
         jButton_deleteDMTN = new javax.swing.JButton();
         jButton_deleteDMTN1 = new javax.swing.JButton();
-        jPanel14 = new javax.swing.JPanel();
-        jScrollPane14 = new javax.swing.JScrollPane();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel11 = new javax.swing.JPanel();
+        jScrollPane18 = new javax.swing.JScrollPane();
         jTable_dosyaRead = new javax.swing.JTable();
-        jScrollPane22 = new javax.swing.JScrollPane();
-        jPanel15 = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jPanel9 = new javax.swing.JPanel();
         jButton_requestFileFromSoket = new javax.swing.JButton();
         jProgressBar1 = new javax.swing.JProgressBar();
         jProgressBar2 = new javax.swing.JProgressBar();
@@ -239,14 +240,19 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jButton_initializeAndSetServerSocket = new javax.swing.JButton();
         jButton_kapat = new javax.swing.JButton();
 
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jComboBox_fileTreeToWalk.setEditable(true);
         jComboBox_fileTreeToWalk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
-        jPanel9.add(jComboBox_fileTreeToWalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
+        jPanel2.add(jComboBox_fileTreeToWalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
 
+        jList_dizinler.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList_dizinlerMouseClicked(evt);
+            }
+        });
         jList_dizinler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 jList_dizinlerValueChanged(evt);
@@ -257,13 +263,13 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 jList_dizinlerKeyPressed(evt);
             }
         });
-        jScrollPane13.setViewportView(jList_dizinler);
+        jScrollPane6.setViewportView(jList_dizinler);
 
-        jPanel9.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 270, 250));
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 270, 250));
 
         jLabel11.setText("Selection : ");
-        jPanel9.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
-        jPanel9.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 528, -1, 20));
+        jPanel2.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 480, 20));
 
         jList_dosyalar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -272,8 +278,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         });
         jScrollPane15.setViewportView(jList_dosyalar);
 
-        jPanel9.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 237, 280, 250));
-        jPanel9.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
+        jPanel2.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 237, 280, 250));
+        jPanel2.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 480, 20));
 
         jButton_walkFileTree.setText("walkFileTree()");
         jButton_walkFileTree.addActionListener(new java.awt.event.ActionListener() {
@@ -281,31 +287,31 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 jButton_walkFileTreeActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton_walkFileTree, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
+        jPanel2.add(jButton_walkFileTree, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
 
         jLabel15.setText("Files.walkFileTree(..., maxDepth,...)");
-        jPanel9.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
-        jPanel9.add(jSpinner_walkFileTreeDepth, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
-        jPanel9.add(jComboBox_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
+        jPanel2.add(jSpinner_walkFileTreeDepth, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
+        jPanel2.add(jComboBox_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
 
         jLabel16.setText("root of currentDMTN :");
-        jPanel9.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
 
         jTextField_currentRootDirectory.setEditable(false);
-        jPanel9.add(jTextField_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
+        jPanel2.add(jTextField_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
 
         jLabel19.setText("LL<LL<DMTN>> :");
-        jPanel9.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
 
         jComboBox_gelenDMTNLL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox_gelenDMTNLLActionPerformed(evt);
             }
         });
-        jPanel9.add(jComboBox_gelenDMTNLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
+        jPanel2.add(jComboBox_gelenDMTNLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
 
         jLabel20.setText("LL<DMTN> :");
-        jPanel9.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
 
         jButton_deleteDMTN.setText("Del");
         jButton_deleteDMTN.addActionListener(new java.awt.event.ActionListener() {
@@ -313,7 +319,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 jButton_deleteDMTNActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton_deleteDMTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
+        jPanel2.add(jButton_deleteDMTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
 
         jButton_deleteDMTN1.setText("Del");
         jButton_deleteDMTN1.addActionListener(new java.awt.event.ActionListener() {
@@ -321,11 +327,14 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 jButton_deleteDMTN1ActionPerformed(evt);
             }
         });
-        jPanel9.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
+        jPanel2.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
 
-        jScrollPane6.setViewportView(jPanel9);
+        jLabel12.setText("Durum :");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
-        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 600, 558));
+        jScrollPane17.setViewportView(jPanel2);
+
+        jPanel10.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 600, 558));
 
         jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -361,11 +370,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             //});
 
     ///////////
-    jScrollPane14.setViewportView(jTable_dosyaRead);
+    jScrollPane18.setViewportView(jTable_dosyaRead);
 
-    jScrollPane22.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
+    jScrollPane14.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
 
-    jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+    jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
     jButton_requestFileFromSoket.setText("requestFileFromSoket()");
     jButton_requestFileFromSoket.addActionListener(new java.awt.event.ActionListener() {
@@ -373,40 +382,40 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             jButton_requestFileFromSoketActionPerformed(evt);
         }
     });
-    jPanel15.add(jButton_requestFileFromSoket, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
-    jPanel15.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-    jPanel15.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+    jPanel9.add(jButton_requestFileFromSoket, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
+    jPanel9.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+    jPanel9.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
     jLabel13.setText("Durum :");
-    jPanel15.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+    jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
     jButton3.setText("Visit Directory");
-    jPanel15.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+    jPanel9.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
-    jScrollPane22.setViewportView(jPanel15);
+    jScrollPane14.setViewportView(jPanel9);
 
-    javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-    jPanel14.setLayout(jPanel14Layout);
-    jPanel14Layout.setHorizontalGroup(
-        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel14Layout.createSequentialGroup()
+    javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+    jPanel11.setLayout(jPanel11Layout);
+    jPanel11Layout.setHorizontalGroup(
+        jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel11Layout.createSequentialGroup()
             .addContainerGap()
-            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
-                .addComponent(jScrollPane14))
+            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addComponent(jScrollPane18))
             .addContainerGap())
     );
-    jPanel14Layout.setVerticalGroup(
-        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel14Layout.createSequentialGroup()
+    jPanel11Layout.setVerticalGroup(
+        jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel11Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(30, Short.MAX_VALUE))
     );
 
-    jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 12, -1, 558));
+    jPanel10.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 12, -1, 558));
 
     javax.swing.GroupLayout jFrame_dosyaGezginiLayout = new javax.swing.GroupLayout(jFrame_dosyaGezgini.getContentPane());
     jFrame_dosyaGezgini.getContentPane().setLayout(jFrame_dosyaGezginiLayout);
@@ -416,7 +425,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         .addGroup(jFrame_dosyaGezginiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame_dosyaGezginiLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 1221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)))
     );
     jFrame_dosyaGezginiLayout.setVerticalGroup(
@@ -425,7 +434,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         .addGroup(jFrame_dosyaGezginiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame_dosyaGezginiLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)))
     );
 
@@ -1174,7 +1183,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     }//GEN-LAST:event_jList_dosyalarValueChanged
 
     private void jButton_walkFileTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_walkFileTreeActionPerformed
-//         TODO add your handling code here:
+        // TODO add your handling code here:
         String kokDosyaPath = jComboBox_fileTreeToWalk.getSelectedItem().toString().trim();
         int treeDepth = (Integer) jSpinner_walkFileTreeDepth.getValue();
 
@@ -1227,6 +1236,19 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         }
     }//GEN-LAST:event_jButton_requestFileFromSoketActionPerformed
 
+    /*
+     * do something if it is a double click.
+     */
+    private void jList_dizinlerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList_dizinlerMouseClicked
+        // TODO add your handling code here:
+        
+        if(evt.getClickCount()==2)  // if it is a double click.
+        {
+            //  pretend as if "Enter" is pressed.
+            jList_dizinlerKeyPressed(new KeyEvent(this, 0, 0, 0, KeyEvent.VK_ENTER, '0'));
+        }
+    }//GEN-LAST:event_jList_dizinlerMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1267,6 +1289,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1292,8 +1315,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JList jList_dizinler;
     private javax.swing.JList jList_dosyalar;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1308,12 +1331,12 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;

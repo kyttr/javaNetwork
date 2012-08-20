@@ -48,6 +48,7 @@ public class dosyaGezginiFrame extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jButton_deleteDMTN = new javax.swing.JButton();
         jButton_deleteDMTN1 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_dosyaRead = new javax.swing.JTable();
@@ -84,8 +85,8 @@ public class dosyaGezginiFrame extends javax.swing.JFrame {
         jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 270, 250));
 
         jLabel11.setText("Selection : ");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
-        jPanel2.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 528, -1, 20));
+        jPanel2.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 480, 20));
 
         jList_dosyalar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
@@ -95,7 +96,7 @@ public class dosyaGezginiFrame extends javax.swing.JFrame {
         jScrollPane15.setViewportView(jList_dosyalar);
 
         jPanel2.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 237, 280, 250));
-        jPanel2.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
+        jPanel2.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 480, 20));
 
         jButton_walkFileTree.setText("walkFileTree()");
         jButton_walkFileTree.addActionListener(new java.awt.event.ActionListener() {
@@ -144,6 +145,9 @@ public class dosyaGezginiFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
+
+        jLabel12.setText("Durum :");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         jScrollPane5.setViewportView(jPanel2);
 
@@ -400,6 +404,7 @@ public class dosyaGezginiFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox_fileTreeToWalk;
     private javax.swing.JComboBox jComboBox_gelenDMTNLL;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
