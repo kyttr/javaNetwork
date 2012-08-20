@@ -1134,74 +1134,74 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jList_dizinlerValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dizinlerValueChanged
         // TODO add your handling code here:
-//        try {
-//            String selectedChildName = (String) jList_dizinler.getSelectedValue();
-//            dosyaBilgilerInfos = gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
-//            uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
-//            jLabel_dosyaReadSelection.setText(selectedChildName);
-//        } catch (Exception ex) {
-//        }
+        try {
+            String selectedChildName = (String) jList_dizinler.getSelectedValue();
+            dosyaBilgilerInfos = gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
+            uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
+            jLabel_dosyaReadSelection.setText(selectedChildName);
+        } catch (Exception ex) {
+        }
     }//GEN-LAST:event_jList_dizinlerValueChanged
 
     private void jList_dizinlerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jList_dizinlerKeyPressed
         // TODO add your handling code here:
 
-//        // if the pressed key is not "ENTER", then leave method.
-//        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
-//            return;
-//        }
-//
-//        int selectedDMNTIndex = jList_dizinler.getSelectedIndex() - 1;    // selectedDMNTIndex=-1 için bir dizin yukarı çık.
-//        gnt.subDosyaBilgilerTreeNode(gnt.getCurrentDMTN(), selectedDMNTIndex);
-//        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
-//        //gnt.setCurrentDMTN(uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory));
-//
-//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar);
-//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-//        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, dmtnVariable, jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+        // if the pressed key is not "ENTER", then leave method.
+        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
+            return;
+        }
+
+        int selectedDMNTIndex = jList_dizinler.getSelectedIndex() - 1;    // selectedDMNTIndex=-1 için bir dizin yukarı çık.
+        gnt.subDosyaBilgilerTreeNode(gnt.getCurrentDMTN(), selectedDMNTIndex);
+        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
+        //gnt.setCurrentDMTN(uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory));
+
+        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar);
+        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, dmtnVariable, jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
    }//GEN-LAST:event_jList_dizinlerKeyPressed
 
     private void jList_dosyalarValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dosyalarValueChanged
         // TODO add your handling code here:
-//        try {
-//            String selectedChildName = (String) jList_dosyalar.getSelectedValue();
-//            dosyaBilgilerInfos = gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
-//            uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
-//            jLabel_dosyaReadSelection.setText(selectedChildName);
-//        } catch (Exception ex) {
-//        }
+        try {
+            String selectedChildName = (String) jList_dosyalar.getSelectedValue();
+            dosyaBilgilerInfos = gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
+            uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
+            jLabel_dosyaReadSelection.setText(selectedChildName);
+        } catch (Exception ex) {
+        }
     }//GEN-LAST:event_jList_dosyalarValueChanged
 
     private void jButton_walkFileTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_walkFileTreeActionPerformed
-        // TODO add your handling code here:
-//        String kokDosyaPath = jComboBox_fileTreeToWalk.getSelectedItem().toString().trim();
-//        int treeDepth = (Integer) jSpinner_walkFileTreeDepth.getValue();
-//
-//        String gidecekMesaj = kayaNetworkAbstractClass1.defaultMutableTreeNodeGetirStr + treeDepth + "," + kokDosyaPath;
-//        try {
-//            kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
-//        } catch (IOException ex) {
-//            Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        // durum değişikliği belirt.
-//        jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR2);
+//         TODO add your handling code here:
+        String kokDosyaPath = jComboBox_fileTreeToWalk.getSelectedItem().toString().trim();
+        int treeDepth = (Integer) jSpinner_walkFileTreeDepth.getValue();
+
+        String gidecekMesaj = kayaNetworkAbstractClass1.defaultMutableTreeNodeGetirStr + treeDepth + "," + kokDosyaPath;
+        try {
+            kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
+        } catch (IOException ex) {
+            Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        // durum değişikliği belirt.
+        jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR2);
     }//GEN-LAST:event_jButton_walkFileTreeActionPerformed
 
     private void jComboBox_gelenDMTNLLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_gelenDMTNLLActionPerformed
         // TODO add your handling code here:
-//        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
-//        gnt.setGelenDMTNfromGelenDMTNLL(indeks);
-//        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
+        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
+        gnt.setGelenDMTNfromGelenDMTNLL(indeks);
+        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
     }//GEN-LAST:event_jComboBox_gelenDMTNLLActionPerformed
 
     private void jButton_deleteDMTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTNActionPerformed
         // TODO add your handling code here:
-//        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
-//        gnt.removeGelenDMTNfromGelenDMTNLL(indeks);
-//        uiSwingMetotlar.LinkedList2ComboBox(gnt.gelenDMTNLL, jComboBox_gelenDMTNLL);
-//        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
+        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
+        gnt.removeGelenDMTNfromGelenDMTNLL(indeks);
+        uiSwingMetotlar.LinkedList2ComboBox(gnt.gelenDMTNLL, jComboBox_gelenDMTNLL);
+        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
     }//GEN-LAST:event_jButton_deleteDMTNActionPerformed
 
     private void jButton_deleteDMTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTN1ActionPerformed
@@ -1210,21 +1210,21 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jButton_requestFileFromSoketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_requestFileFromSoketActionPerformed
         // TODO add your handling code here:
-//        List<String> requestedFiles = jList_dosyalar.getSelectedValuesList();
-//        Iterator iterator = requestedFiles.iterator();
-//        String requestedFileAbsolutPath = "";
-//        String requestedFileStr = "";
-//        while (iterator.hasNext()) {
-//            requestedFileStr = (String) iterator.next();
-//            tmpDMTN = gnt.findChildWithName(gnt.getGelenDMTN(), requestedFileStr);
-//            requestedFileAbsolutPath = ((GelenNesneTipleri.DosyaBilgilerTreeNode) tmpDMTN.getUserObject()).toAbsolutePathString();
-//            try {
-//                kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
-//            } catch (IOException ex) {
-//                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
-//                textArea_descriptionServerSocket.append(ex.toString() + "\n");
-//            }
-//        }
+        List<String> requestedFiles = jList_dosyalar.getSelectedValuesList();
+        Iterator iterator = requestedFiles.iterator();
+        String requestedFileAbsolutPath = "";
+        String requestedFileStr = "";
+        while (iterator.hasNext()) {
+            requestedFileStr = (String) iterator.next();
+            tmpDMTN = gnt.findChildWithName(gnt.getGelenDMTN(), requestedFileStr);
+            requestedFileAbsolutPath = ((GelenNesneTipleri.DosyaBilgilerTreeNode) tmpDMTN.getUserObject()).toAbsolutePathString();
+            try {
+                kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
+            } catch (IOException ex) {
+                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+                textArea_descriptionServerSocket.append(ex.toString() + "\n");
+            }
+        }
     }//GEN-LAST:event_jButton_requestFileFromSoketActionPerformed
 
     /**
