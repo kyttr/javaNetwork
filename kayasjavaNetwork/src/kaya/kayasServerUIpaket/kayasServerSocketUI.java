@@ -134,39 +134,39 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
-        jPanel10 = new javax.swing.JPanel();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        jPanel11 = new javax.swing.JPanel();
-        jComboBox_fileTreeToWalk1 = new javax.swing.JComboBox();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        jList_dizinler1 = new javax.swing.JList();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel_dosyaReadSelection1 = new javax.swing.JLabel();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        jList_dosyalar1 = new javax.swing.JList();
-        jLabel_dosyaReadDurum1 = new javax.swing.JLabel();
-        jButton_walkFileTree1 = new javax.swing.JButton();
-        jLabel25 = new javax.swing.JLabel();
-        jSpinner_walkFileTreeDepth1 = new javax.swing.JSpinner();
-        jComboBox_currentRootDirectory1 = new javax.swing.JComboBox();
-        jLabel26 = new javax.swing.JLabel();
-        jTextField_currentRootDirectory1 = new javax.swing.JTextField();
-        jLabel27 = new javax.swing.JLabel();
-        jComboBox_gelenDMTNLL1 = new javax.swing.JComboBox();
-        jLabel28 = new javax.swing.JLabel();
-        jButton_deleteDMTN2 = new javax.swing.JButton();
-        jButton_deleteDMTN3 = new javax.swing.JButton();
-        jPanel12 = new javax.swing.JPanel();
-        jScrollPane20 = new javax.swing.JScrollPane();
-        jTable_dosyaRead1 = new javax.swing.JTable();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        jPanel13 = new javax.swing.JPanel();
-        jButton_requestFileFromSoket1 = new javax.swing.JButton();
-        jProgressBar3 = new javax.swing.JProgressBar();
-        jProgressBar4 = new javax.swing.JProgressBar();
-        jLabel14 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        jFrame_dosyaGezgini = new javax.swing.JFrame();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jPanel9 = new javax.swing.JPanel();
+        jComboBox_fileTreeToWalk = new javax.swing.JComboBox();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jList_dizinler = new javax.swing.JList();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel_dosyaReadSelection = new javax.swing.JLabel();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jList_dosyalar = new javax.swing.JList();
+        jLabel_dosyaReadDurum = new javax.swing.JLabel();
+        jButton_walkFileTree = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jSpinner_walkFileTreeDepth = new javax.swing.JSpinner();
+        jComboBox_currentRootDirectory = new javax.swing.JComboBox();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField_currentRootDirectory = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        jComboBox_gelenDMTNLL = new javax.swing.JComboBox();
+        jLabel20 = new javax.swing.JLabel();
+        jButton_deleteDMTN = new javax.swing.JButton();
+        jButton_deleteDMTN1 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jTable_dosyaRead = new javax.swing.JTable();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        jPanel15 = new javax.swing.JPanel();
+        jButton_requestFileFromSoket = new javax.swing.JButton();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        jLabel13 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -209,35 +209,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jScrollPane4 = new javax.swing.JScrollPane();
         jFileChooser1 = new javax.swing.JFileChooser();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        jTable_dosyaRead = new javax.swing.JTable();
-        jComboBox_fileTreeToWalk = new javax.swing.JComboBox();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jList_dizinler = new javax.swing.JList();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        jPanel9 = new javax.swing.JPanel();
-        jButton_requestFileFromSoket = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        jLabel13 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel_dosyaReadSelection = new javax.swing.JLabel();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        jList_dosyalar = new javax.swing.JList();
-        jLabel_dosyaReadDurum = new javax.swing.JLabel();
-        jButton_walkFileTree = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
-        jSpinner_walkFileTreeDepth = new javax.swing.JSpinner();
-        jComboBox_currentRootDirectory = new javax.swing.JComboBox();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField_currentRootDirectory = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jComboBox_gelenDMTNLL = new javax.swing.JComboBox();
-        jLabel20 = new javax.swing.JLabel();
-        jButton_deleteDMTN = new javax.swing.JButton();
-        jButton_deleteDMTN1 = new javax.swing.JButton();
+        jButton_dosyaGezginiFrameBaslat = new javax.swing.JButton();
         jScrollPane16 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -267,95 +239,95 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jButton_initializeAndSetServerSocket = new javax.swing.JButton();
         jButton_kapat = new javax.swing.JButton();
 
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox_fileTreeToWalk1.setEditable(true);
-        jComboBox_fileTreeToWalk1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
-        jPanel11.add(jComboBox_fileTreeToWalk1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
+        jComboBox_fileTreeToWalk.setEditable(true);
+        jComboBox_fileTreeToWalk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
+        jPanel9.add(jComboBox_fileTreeToWalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
 
-        jList_dizinler1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        jList_dizinler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jList_dizinler1ValueChanged(evt);
+                jList_dizinlerValueChanged(evt);
             }
         });
-        jList_dizinler1.addKeyListener(new java.awt.event.KeyAdapter() {
+        jList_dizinler.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jList_dizinler1KeyPressed(evt);
+                jList_dizinlerKeyPressed(evt);
             }
         });
-        jScrollPane18.setViewportView(jList_dizinler1);
+        jScrollPane13.setViewportView(jList_dizinler);
 
-        jPanel11.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 270, 250));
+        jPanel9.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 270, 250));
 
-        jLabel12.setText("Selection : ");
-        jPanel11.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
-        jPanel11.add(jLabel_dosyaReadSelection1, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
+        jLabel11.setText("Selection : ");
+        jPanel9.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        jPanel9.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
 
-        jList_dosyalar1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        jList_dosyalar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                jList_dosyalar1ValueChanged(evt);
+                jList_dosyalarValueChanged(evt);
             }
         });
-        jScrollPane19.setViewportView(jList_dosyalar1);
+        jScrollPane15.setViewportView(jList_dosyalar);
 
-        jPanel11.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 237, 280, 250));
-        jPanel11.add(jLabel_dosyaReadDurum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
+        jPanel9.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 237, 280, 250));
+        jPanel9.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
 
-        jButton_walkFileTree1.setText("walkFileTree()");
-        jButton_walkFileTree1.addActionListener(new java.awt.event.ActionListener() {
+        jButton_walkFileTree.setText("walkFileTree()");
+        jButton_walkFileTree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_walkFileTree1ActionPerformed(evt);
+                jButton_walkFileTreeActionPerformed(evt);
             }
         });
-        jPanel11.add(jButton_walkFileTree1, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
+        jPanel9.add(jButton_walkFileTree, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
 
-        jLabel25.setText("Files.walkFileTree(..., maxDepth,...)");
-        jPanel11.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
-        jPanel11.add(jSpinner_walkFileTreeDepth1, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
-        jPanel11.add(jComboBox_currentRootDirectory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
+        jLabel15.setText("Files.walkFileTree(..., maxDepth,...)");
+        jPanel9.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
+        jPanel9.add(jSpinner_walkFileTreeDepth, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
+        jPanel9.add(jComboBox_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
 
-        jLabel26.setText("root of currentDMTN :");
-        jPanel11.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
+        jLabel16.setText("root of currentDMTN :");
+        jPanel9.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
 
-        jTextField_currentRootDirectory1.setEditable(false);
-        jPanel11.add(jTextField_currentRootDirectory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
+        jTextField_currentRootDirectory.setEditable(false);
+        jPanel9.add(jTextField_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
 
-        jLabel27.setText("LL<LL<DMTN>> :");
-        jPanel11.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
+        jLabel19.setText("LL<LL<DMTN>> :");
+        jPanel9.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
 
-        jComboBox_gelenDMTNLL1.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox_gelenDMTNLL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox_gelenDMTNLL1ActionPerformed(evt);
+                jComboBox_gelenDMTNLLActionPerformed(evt);
             }
         });
-        jPanel11.add(jComboBox_gelenDMTNLL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
+        jPanel9.add(jComboBox_gelenDMTNLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
 
-        jLabel28.setText("LL<DMTN> :");
-        jPanel11.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
+        jLabel20.setText("LL<DMTN> :");
+        jPanel9.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
 
-        jButton_deleteDMTN2.setText("Del");
-        jButton_deleteDMTN2.addActionListener(new java.awt.event.ActionListener() {
+        jButton_deleteDMTN.setText("Del");
+        jButton_deleteDMTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_deleteDMTN2ActionPerformed(evt);
+                jButton_deleteDMTNActionPerformed(evt);
             }
         });
-        jPanel11.add(jButton_deleteDMTN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
+        jPanel9.add(jButton_deleteDMTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
 
-        jButton_deleteDMTN3.setText("Del");
-        jButton_deleteDMTN3.addActionListener(new java.awt.event.ActionListener() {
+        jButton_deleteDMTN1.setText("Del");
+        jButton_deleteDMTN1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_deleteDMTN3ActionPerformed(evt);
+                jButton_deleteDMTN1ActionPerformed(evt);
             }
         });
-        jPanel11.add(jButton_deleteDMTN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
+        jPanel9.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
 
-        jScrollPane17.setViewportView(jPanel11);
+        jScrollPane6.setViewportView(jPanel9);
 
-        jPanel10.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 600, 558));
+        jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 600, 558));
 
-        jTable_dosyaRead1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null}
             },
@@ -389,71 +361,71 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             //});
 
     ///////////
-    jScrollPane20.setViewportView(jTable_dosyaRead1);
+    jScrollPane14.setViewportView(jTable_dosyaRead);
 
-    jScrollPane21.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
+    jScrollPane22.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
 
-    jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+    jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-    jButton_requestFileFromSoket1.setText("requestFileFromSoket()");
-    jButton_requestFileFromSoket1.addActionListener(new java.awt.event.ActionListener() {
+    jButton_requestFileFromSoket.setText("requestFileFromSoket()");
+    jButton_requestFileFromSoket.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton_requestFileFromSoket1ActionPerformed(evt);
+            jButton_requestFileFromSoketActionPerformed(evt);
         }
     });
-    jPanel13.add(jButton_requestFileFromSoket1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
-    jPanel13.add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-    jPanel13.add(jProgressBar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+    jPanel15.add(jButton_requestFileFromSoket, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
+    jPanel15.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+    jPanel15.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-    jLabel14.setText("Durum :");
-    jPanel13.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+    jLabel13.setText("Durum :");
+    jPanel15.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
 
-    jButton4.setText("Visit Directory");
-    jPanel13.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
+    jButton3.setText("Visit Directory");
+    jPanel15.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
-    jScrollPane21.setViewportView(jPanel13);
+    jScrollPane22.setViewportView(jPanel15);
 
-    javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-    jPanel12.setLayout(jPanel12Layout);
-    jPanel12Layout.setHorizontalGroup(
-        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel12Layout.createSequentialGroup()
+    javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+    jPanel14.setLayout(jPanel14Layout);
+    jPanel14Layout.setHorizontalGroup(
+        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel14Layout.createSequentialGroup()
             .addContainerGap()
-            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
-                .addComponent(jScrollPane20))
+            .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addComponent(jScrollPane14))
             .addContainerGap())
     );
-    jPanel12Layout.setVerticalGroup(
-        jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel12Layout.createSequentialGroup()
+    jPanel14Layout.setVerticalGroup(
+        jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel14Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addContainerGap(30, Short.MAX_VALUE))
     );
 
-    jPanel10.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 12, -1, 558));
+    jPanel2.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 12, -1, 558));
 
-    javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-    jFrame1.getContentPane().setLayout(jFrame1Layout);
-    jFrame1Layout.setHorizontalGroup(
-        jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    javax.swing.GroupLayout jFrame_dosyaGezginiLayout = new javax.swing.GroupLayout(jFrame_dosyaGezgini.getContentPane());
+    jFrame_dosyaGezgini.getContentPane().setLayout(jFrame_dosyaGezginiLayout);
+    jFrame_dosyaGezginiLayout.setHorizontalGroup(
+        jFrame_dosyaGezginiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGap(0, 1221, Short.MAX_VALUE)
-        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
+        .addGroup(jFrame_dosyaGezginiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame_dosyaGezginiLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 1221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1221, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)))
     );
-    jFrame1Layout.setVerticalGroup(
-        jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+    jFrame_dosyaGezginiLayout.setVerticalGroup(
+        jFrame_dosyaGezginiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGap(0, 582, Short.MAX_VALUE)
-        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
+        .addGroup(jFrame_dosyaGezginiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame_dosyaGezginiLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE)))
     );
 
@@ -734,151 +706,13 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     jTabbedPane1.addTab("Dosya Write", jScrollPane4);
 
-    jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-    jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
-        new Object [][] {
-            {null}
-        },
-        new String [] {
-            "Title 1"
-        }
-    ));
-    /////////// Bu kodu internetten buldum.
-    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
-    // Kendimizin yazması gerekiyor.
-
-    ListSelectionModel rowSM2 = jTable_serverSocket.getSelectionModel();
-    rowSM2.addListSelectionListener(new ListSelectionListener() {
-        public void valueChanged(ListSelectionEvent e) {
-            ListSelectionModel rowSM2 = (ListSelectionModel)e.getSource();
-            //int selectedIndex = rowSM.getMinSelectionIndex();
-            // do something with selected index
-            //kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);
-            //kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);
-            /*try{
-                jEditorPane_descriptionServerSocket.setEditable(false);
-                String url4EditorPane="http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html";
-                kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);
-                //jEditorPane_descriptionServerSocket.setPage(new URL("http://docs.oracle.com/"));
-            }
-            catch(Exception myexception)
-            {
-                jEditorPane_descriptionServerSocket.setText(myexception.toString());
-            }*/
-        }
-    });
-
-    ///////////
-    jScrollPane13.setViewportView(jTable_dosyaRead);
-
-    jPanel2.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, 564, 250));
-
-    jComboBox_fileTreeToWalk.setEditable(true);
-    jComboBox_fileTreeToWalk.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
-    jPanel2.add(jComboBox_fileTreeToWalk, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 40, 434, -1));
-
-    jList_dizinler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-        public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-            jList_dizinlerValueChanged(evt);
-        }
-    });
-    jList_dizinler.addKeyListener(new java.awt.event.KeyAdapter() {
-        public void keyPressed(java.awt.event.KeyEvent evt) {
-            jList_dizinlerKeyPressed(evt);
-        }
-    });
-    jScrollPane6.setViewportView(jList_dizinler);
-
-    jPanel2.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 237, 262, 150));
-
-    jScrollPane14.setViewportBorder(javax.swing.BorderFactory.createTitledBorder("Actionlar"));
-
-    jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-    jButton_requestFileFromSoket.setText("requestFileFromSoket()");
-    jButton_requestFileFromSoket.addActionListener(new java.awt.event.ActionListener() {
+    jButton_dosyaGezginiFrameBaslat.setText("jFrame_dosyaGezgini.setVisible(true)");
+    jButton_dosyaGezginiFrameBaslat.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton_requestFileFromSoketActionPerformed(evt);
+            jButton_dosyaGezginiFrameBaslatActionPerformed(evt);
         }
     });
-    jPanel9.add(jButton_requestFileFromSoket, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 190, -1));
-    jPanel9.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-    jPanel9.add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-    jLabel13.setText("Durum :");
-    jPanel9.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
-
-    jButton3.setText("Visit Directory");
-    jPanel9.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
-
-    jScrollPane14.setViewportView(jPanel9);
-
-    jPanel2.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 564, 140));
-
-    jLabel11.setText("Selection : ");
-    jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 449, -1, -1));
-    jPanel2.add(jLabel_dosyaReadSelection, new org.netbeans.lib.awtextra.AbsoluteConstraints(93, 449, 483, -1));
-
-    jList_dosyalar.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-        public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-            jList_dosyalarValueChanged(evt);
-        }
-    });
-    jScrollPane15.setViewportView(jList_dosyalar);
-
-    jPanel2.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 237, 296, 150));
-    jPanel2.add(jLabel_dosyaReadDurum, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 503, -1));
-
-    jButton_walkFileTree.setText("walkFileTree()");
-    jButton_walkFileTree.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton_walkFileTreeActionPerformed(evt);
-        }
-    });
-    jPanel2.add(jButton_walkFileTree, new org.netbeans.lib.awtextra.AbsoluteConstraints(388, 78, -1, -1));
-
-    jLabel15.setText("Files.walkFileTree(..., maxDepth,...)");
-    jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 79, 252, 28));
-    jPanel2.add(jSpinner_walkFileTreeDepth, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 77, 94, 32));
-    jPanel2.add(jComboBox_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 162, 331, -1));
-
-    jLabel16.setText("root of currentDMTN :");
-    jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 203, 163, 28));
-
-    jTextField_currentRootDirectory.setEditable(false);
-    jPanel2.add(jTextField_currentRootDirectory, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 203, 400, -1));
-
-    jLabel19.setText("LL<LL<DMTN>> :");
-    jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 162, 152, 28));
-
-    jComboBox_gelenDMTNLL.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jComboBox_gelenDMTNLLActionPerformed(evt);
-        }
-    });
-    jPanel2.add(jComboBox_gelenDMTNLL, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 126, 331, -1));
-
-    jLabel20.setText("LL<DMTN> :");
-    jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 126, 145, 28));
-
-    jButton_deleteDMTN.setText("Del");
-    jButton_deleteDMTN.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton_deleteDMTNActionPerformed(evt);
-        }
-    });
-    jPanel2.add(jButton_deleteDMTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 125, 57, -1));
-
-    jButton_deleteDMTN1.setText("Del");
-    jButton_deleteDMTN1.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton_deleteDMTN1ActionPerformed(evt);
-        }
-    });
-    jPanel2.add(jButton_deleteDMTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(519, 161, 57, -1));
-
-    jScrollPane5.setViewportView(jPanel2);
+    jScrollPane5.setViewportView(jButton_dosyaGezginiFrameBaslat);
 
     jTabbedPane1.addTab("Dosya Read", jScrollPane5);
     jTabbedPane1.addTab("tab6", jScrollPane16);
@@ -1160,11 +994,6 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jButton_initializeAndSetServerSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_initializeAndSetServerSocketActionPerformed
         // TODO add your handling code here:
-
-        
-        jFrame1.setVisible(true);
-        //jFrame1.setExtendedState(JFrame.);
-        jFrame1.pack();
         
         textArea_descriptionServerSocket.setText("");
 
@@ -1296,107 +1125,14 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         }
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
-    private void jButton_walkFileTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_walkFileTreeActionPerformed
+    private void jButton_dosyaGezginiFrameBaslatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_dosyaGezginiFrameBaslatActionPerformed
         // TODO add your handling code here:
-        String kokDosyaPath = jComboBox_fileTreeToWalk.getSelectedItem().toString().trim();
-        int treeDepth = (Integer) jSpinner_walkFileTreeDepth.getValue();
-
-        String gidecekMesaj = kayaNetworkAbstractClass1.defaultMutableTreeNodeGetirStr + treeDepth + "," + kokDosyaPath;
-        try {
-            kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
-        } catch (IOException ex) {
-            Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        // durum değişikliği belirt.
-        jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR2);
-    }//GEN-LAST:event_jButton_walkFileTreeActionPerformed
-
-    /*
-     * "ENTER" a basılınca bir işlem yap.
-     */
-    private void jList_dizinlerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jList_dizinlerKeyPressed
-        // TODO add your handling code here:
-
-        // if the pressed key is not "ENTER", then leave method.
-        if (evt.getKeyCode()!=KeyEvent.VK_ENTER)
-        {
-            return;
-        }
-
-        int selectedDMNTIndex = jList_dizinler.getSelectedIndex()-1;    // selectedDMNTIndex=-1 için bir dizin yukarı çık.
-        gnt.subDosyaBilgilerTreeNode(gnt.getCurrentDMTN(), selectedDMNTIndex);
-        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-        //gnt.setCurrentDMTN(uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory));
-
-        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar);
-        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, dmtnVariable, jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-    }//GEN-LAST:event_jList_dizinlerKeyPressed
+        jFrame_dosyaGezgini.setVisible(true);
+        //jFrame1.setExtendedState(JFrame.);
+        jFrame_dosyaGezgini.pack();
+    }//GEN-LAST:event_jButton_dosyaGezginiFrameBaslatActionPerformed
 
     private void jList_dizinlerValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dizinlerValueChanged
-        // TODO add your handling code here:
-        try{
-                String selectedChildName=(String) jList_dizinler.getSelectedValue();
-        dosyaBilgilerInfos=gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
-        uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
-        jLabel_dosyaReadSelection.setText(selectedChildName);
-        }
-        catch(Exception ex){}
-    }//GEN-LAST:event_jList_dizinlerValueChanged
-
-    private void jList_dosyalarValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dosyalarValueChanged
-        // TODO add your handling code here:
-        try{
-                String selectedChildName=(String) jList_dosyalar.getSelectedValue();
-        dosyaBilgilerInfos=gnt.bilgilerDon4DosyaBilgilerTreeNode(gnt.getGelenDMTN(), selectedChildName);
-        uiSwingMetotlar.bilgiler2Table(dosyaBilgilerInfos, jTable_dosyaRead);
-        jLabel_dosyaReadSelection.setText(selectedChildName);
-        }
-        catch(Exception ex){}
-    }//GEN-LAST:event_jList_dosyalarValueChanged
-
-    private void jButton_deleteDMTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTNActionPerformed
-        // TODO add your handling code here:
-        int indeks=jComboBox_gelenDMTNLL.getSelectedIndex();
-        gnt.removeGelenDMTNfromGelenDMTNLL(indeks);
-            uiSwingMetotlar.LinkedList2ComboBox(gnt.gelenDMTNLL, jComboBox_gelenDMTNLL);
-        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-    }//GEN-LAST:event_jButton_deleteDMTNActionPerformed
-
-    private void jButton_deleteDMTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTN1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_deleteDMTN1ActionPerformed
-
-    private void jComboBox_gelenDMTNLLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_gelenDMTNLLActionPerformed
-        // TODO add your handling code here:
-        int indeks=jComboBox_gelenDMTNLL.getSelectedIndex();
-        gnt.setGelenDMTNfromGelenDMTNLL(indeks);
-        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-    }//GEN-LAST:event_jComboBox_gelenDMTNLLActionPerformed
-
-    private void jButton_requestFileFromSoketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_requestFileFromSoketActionPerformed
-        // TODO add your handling code here:
-        List<String> requestedFiles=jList_dosyalar.getSelectedValuesList();
-        Iterator iterator=requestedFiles.iterator();
-        String requestedFileAbsolutPath="";
-        String requestedFileStr="";
-        while(iterator.hasNext())
-        {
-            requestedFileStr=(String) iterator.next();
-            tmpDMTN=gnt.findChildWithName(gnt.getGelenDMTN(), requestedFileStr);
-            requestedFileAbsolutPath=((GelenNesneTipleri.DosyaBilgilerTreeNode)tmpDMTN.getUserObject()).toAbsolutePathString();
-            try {
-                kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
-            } catch (IOException ex) {
-                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
-                textArea_descriptionServerSocket.append(ex.toString() + "\n");
-            }
-        }
-    }//GEN-LAST:event_jButton_requestFileFromSoketActionPerformed
-
-    private void jList_dizinler1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dizinler1ValueChanged
         // TODO add your handling code here:
 //        try {
 //            String selectedChildName = (String) jList_dizinler.getSelectedValue();
@@ -1405,9 +1141,9 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 //            jLabel_dosyaReadSelection.setText(selectedChildName);
 //        } catch (Exception ex) {
 //        }
-    }//GEN-LAST:event_jList_dizinler1ValueChanged
+    }//GEN-LAST:event_jList_dizinlerValueChanged
 
-    private void jList_dizinler1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jList_dizinler1KeyPressed
+    private void jList_dizinlerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jList_dizinlerKeyPressed
         // TODO add your handling code here:
 
 //        // if the pressed key is not "ENTER", then leave method.
@@ -1424,9 +1160,9 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 //        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
 //        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
 //        //uiSwingMetotlar.subDosyaBilgilerTree2List(selectedDMNTIndex, dmtnVariable, jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-   }//GEN-LAST:event_jList_dizinler1KeyPressed
+   }//GEN-LAST:event_jList_dizinlerKeyPressed
 
-    private void jList_dosyalar1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dosyalar1ValueChanged
+    private void jList_dosyalarValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_dosyalarValueChanged
         // TODO add your handling code here:
 //        try {
 //            String selectedChildName = (String) jList_dosyalar.getSelectedValue();
@@ -1435,9 +1171,9 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 //            jLabel_dosyaReadSelection.setText(selectedChildName);
 //        } catch (Exception ex) {
 //        }
-    }//GEN-LAST:event_jList_dosyalar1ValueChanged
+    }//GEN-LAST:event_jList_dosyalarValueChanged
 
-    private void jButton_walkFileTree1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_walkFileTree1ActionPerformed
+    private void jButton_walkFileTreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_walkFileTreeActionPerformed
         // TODO add your handling code here:
 //        String kokDosyaPath = jComboBox_fileTreeToWalk.getSelectedItem().toString().trim();
 //        int treeDepth = (Integer) jSpinner_walkFileTreeDepth.getValue();
@@ -1451,28 +1187,28 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 //
 //        // durum değişikliği belirt.
 //        jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR2);
-    }//GEN-LAST:event_jButton_walkFileTree1ActionPerformed
+    }//GEN-LAST:event_jButton_walkFileTreeActionPerformed
 
-    private void jComboBox_gelenDMTNLL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_gelenDMTNLL1ActionPerformed
+    private void jComboBox_gelenDMTNLLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_gelenDMTNLLActionPerformed
         // TODO add your handling code here:
 //        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
 //        gnt.setGelenDMTNfromGelenDMTNLL(indeks);
 //        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
-    }//GEN-LAST:event_jComboBox_gelenDMTNLL1ActionPerformed
+    }//GEN-LAST:event_jComboBox_gelenDMTNLLActionPerformed
 
-    private void jButton_deleteDMTN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTN2ActionPerformed
+    private void jButton_deleteDMTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTNActionPerformed
         // TODO add your handling code here:
 //        int indeks = jComboBox_gelenDMTNLL.getSelectedIndex();
 //        gnt.removeGelenDMTNfromGelenDMTNLL(indeks);
 //        uiSwingMetotlar.LinkedList2ComboBox(gnt.gelenDMTNLL, jComboBox_gelenDMTNLL);
 //        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
-    }//GEN-LAST:event_jButton_deleteDMTN2ActionPerformed
+    }//GEN-LAST:event_jButton_deleteDMTNActionPerformed
 
-    private void jButton_deleteDMTN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTN3ActionPerformed
+    private void jButton_deleteDMTN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteDMTN1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_deleteDMTN3ActionPerformed
+    }//GEN-LAST:event_jButton_deleteDMTN1ActionPerformed
 
-    private void jButton_requestFileFromSoket1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_requestFileFromSoket1ActionPerformed
+    private void jButton_requestFileFromSoketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_requestFileFromSoketActionPerformed
         // TODO add your handling code here:
 //        List<String> requestedFiles = jList_dosyalar.getSelectedValuesList();
 //        Iterator iterator = requestedFiles.iterator();
@@ -1489,7 +1225,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 //                textArea_descriptionServerSocket.append(ex.toString() + "\n");
 //            }
 //        }
-    }//GEN-LAST:event_jButton_requestFileFromSoket1ActionPerformed
+    }//GEN-LAST:event_jButton_requestFileFromSoketActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1505,42 +1241,33 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton_ScreenShotAl;
     private javax.swing.JButton jButton_accept;
     private javax.swing.JButton jButton_deleteDMTN;
     private javax.swing.JButton jButton_deleteDMTN1;
-    private javax.swing.JButton jButton_deleteDMTN2;
-    private javax.swing.JButton jButton_deleteDMTN3;
+    private javax.swing.JButton jButton_dosyaGezginiFrameBaslat;
     private javax.swing.JButton jButton_initializeAndSetServerSocket;
     private javax.swing.JButton jButton_kapat;
     private javax.swing.JButton jButton_periodicScreenShotGetir;
     private javax.swing.JButton jButton_readFromSocket;
     private javax.swing.JButton jButton_requestFileFromSoket;
-    private javax.swing.JButton jButton_requestFileFromSoket1;
     private javax.swing.JButton jButton_screenShotGetir;
     private javax.swing.JButton jButton_setVisible;
     private javax.swing.JButton jButton_timerScreenShotDurdur;
     private javax.swing.JButton jButton_walkFileTree;
-    private javax.swing.JButton jButton_walkFileTree1;
     private javax.swing.JButton jButton_write2Socket;
     private javax.swing.JComboBox jComboBox_currentRootDirectory;
-    private javax.swing.JComboBox jComboBox_currentRootDirectory1;
     private javax.swing.JComboBox jComboBox_fileTreeToWalk;
-    private javax.swing.JComboBox jComboBox_fileTreeToWalk1;
     private javax.swing.JComboBox jComboBox_formatName;
     private javax.swing.JComboBox jComboBox_gelenDMTNLL;
-    private javax.swing.JComboBox jComboBox_gelenDMTNLL1;
     private javax.swing.JComboBox jComboBox_on;
     private javax.swing.JEditorPane jEditorPane_descriptionServerSocket;
     private javax.swing.JFileChooser jFileChooser1;
-    private javax.swing.JFrame jFrame1;
+    private javax.swing.JFrame jFrame_dosyaGezgini;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1552,10 +1279,6 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1564,19 +1287,13 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_dosyaReadDurum;
-    private javax.swing.JLabel jLabel_dosyaReadDurum1;
     private javax.swing.JLabel jLabel_dosyaReadSelection;
-    private javax.swing.JLabel jLabel_dosyaReadSelection1;
     private javax.swing.JLabel jLabel_screenShot;
     private javax.swing.JList jList_dizinler;
-    private javax.swing.JList jList_dizinler1;
     private javax.swing.JList jList_dosyalar;
-    private javax.swing.JList jList_dosyalar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1587,8 +1304,6 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JPanel jPanel9;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
-    private javax.swing.JProgressBar jProgressBar4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -1597,12 +1312,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -1622,18 +1333,15 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JSpinner jSpinner_timeOut;
     private javax.swing.JSpinner jSpinner_timerDelay;
     private javax.swing.JSpinner jSpinner_walkFileTreeDepth;
-    private javax.swing.JSpinner jSpinner_walkFileTreeDepth1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane_descriptionClientSocket;
     private javax.swing.JTable jTable_dosyaRead;
-    private javax.swing.JTable jTable_dosyaRead1;
     private javax.swing.JTable jTable_serverSocket;
     private javax.swing.JTextArea jTextArea_descriptionServerSocket;
     private javax.swing.JTextArea jTextArea_readFromSocket;
     private javax.swing.JTextArea jTextArea_valueClientSocket;
     private javax.swing.JTextArea jTextArea_written2Socket;
     private javax.swing.JTextField jTextField_currentRootDirectory;
-    private javax.swing.JTextField jTextField_currentRootDirectory1;
     private javax.swing.JTextField jTextField_write2Socket;
     private java.awt.TextArea textArea_descriptionServerSocket;
     // End of variables declaration//GEN-END:variables
