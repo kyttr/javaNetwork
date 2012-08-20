@@ -40,6 +40,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private static String jLabel_dosyaReadDurumSTR1="'OlayOlmus()' thrown, gnt.getGelenDMTN() != null, response arrived";
     private static String jLabel_dosyaReadDurumSTR2="'write2Soket()'  executed, waiting ...";
+    private static String jLabel_dosyaReadDurumSTR3="Dosya geldi : ";
 
     // global değişkenler
     ServerSocket mySunucuSoket;
@@ -90,6 +91,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             jTextArea_readFromSocket.append(gnt.gelenStr + "\n");
         } else if (gnt.gelenDosya != null) {
             jTextArea_readFromSocket.append("Dosya geldi : " + gnt.gelenDosya.getAbsolutePath() + "\n");
+            jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR3 + gnt.gelenDosya.getAbsolutePath() );
         } else if (gnt.gelenResim != null) {
             uiSwingMetotlar.bufferedImage2JLabel(gnt.gelenResim, jLabel_screenShot);
         } else if (gnt.getGelenDMTN() != null) {
@@ -1217,6 +1219,9 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_deleteDMTN1ActionPerformed
 
+    /*
+     * request the selected files in "jList_dosyalar" from the other side
+     */
     private void jButton_requestFileFromSoketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_requestFileFromSoketActionPerformed
         // TODO add your handling code here:
         List<String> requestedFiles = jList_dosyalar.getSelectedValuesList();
