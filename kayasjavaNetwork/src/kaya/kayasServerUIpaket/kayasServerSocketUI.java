@@ -1238,6 +1238,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     /*
      * do something if it is a double click.
+     * 
+     * http://www.rgagnon.com/javadetails/java-0219.html
      */
     private void jList_dizinlerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList_dizinlerMouseClicked
         // TODO add your handling code here:
