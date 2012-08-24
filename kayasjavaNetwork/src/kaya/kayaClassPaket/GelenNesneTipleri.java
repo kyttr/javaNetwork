@@ -47,8 +47,8 @@ public class GelenNesneTipleri {
         gelenStr = "";
         gelenResim = null;
         gelenDosya = null;
-        gelenDMTN = null;
-        currentDMTN = null;
+//        gelenDMTN = null;
+//        currentDMTN = null;
 
         if (gelenObje instanceof BufferedImage) {
             this.gelenResim = (BufferedImage) gelenObje;

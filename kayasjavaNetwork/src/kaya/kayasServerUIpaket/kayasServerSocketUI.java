@@ -38,10 +38,9 @@ import org.netbeans.lib.awtextra.AbsoluteLayout;
  */
 public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinleyenlerInterface {
 
-    private static String jLabel_dosyaReadDurumSTR1="'OlayOlmus()' thrown, gnt.getGelenDMTN() != null, response arrived";
-    private static String jLabel_dosyaReadDurumSTR2="'write2Soket()'  executed, waiting ...";
-    private static String jLabel_dosyaReadDurumSTR3="Dosya geldi : ";
-
+    private static String jLabel_dosyaReadDurumSTR1 = "'OlayOlmus()' thrown, gnt.getGelenDMTN() != null, response arrived";
+    private static String jLabel_dosyaReadDurumSTR2 = "'write2Soket()'  executed, waiting ...";
+    private static String jLabel_dosyaReadDurumSTR3 = "Dosya geldi : ";
     // global değişkenler
     ServerSocket mySunucuSoket;
     LinkedList<LinkedList<String>> mySunucuSoketInfos;
@@ -69,45 +68,48 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
 
         /*
-        if (nesne instanceof BufferedImage) {
-        //            gnt.gelenResim=(BufferedImage) nesne;
-        kayaNetworkAbstractClass1.bufferedImage2JLabel(gnt.gelenResim, jLabel_screenShot);
-        } else if (nesne instanceof String) {
-        //            gnt.gelenStr=(String) nesne;
-        jTextArea_readFromSocket.append(gnt.gelenStr + "\n");
-        } else if (nesne instanceof File) {
-        //            gnt.gelenDosya=(File) nesne;
-        jTextArea_readFromSocket.append("Dosya geldi : " +  gnt.gelenDosya.getAbsolutePath() + "\n");
-        } else if (nesne instanceof DefaultMutableTreeNode) {
-        //            gnt.setGelenDMTN((DefaultMutableTreeNode) nesne);
-        gnt.gelenDMTN2DosyaBilgilerTreeNode();
-
-        //uiSwingMetotlar.dosyaBilgilerTree2List(gnt.gelenDMTN, jList_dizinler, jList_dosyalar);
-        uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar);
-        }
+         * if (nesne instanceof BufferedImage) { //
+         * gnt.gelenResim=(BufferedImage) nesne;
+         * kayaNetworkAbstractClass1.bufferedImage2JLabel(gnt.gelenResim,
+         * jLabel_screenShot); } else if (nesne instanceof String) { //
+         * gnt.gelenStr=(String) nesne;
+         * jTextArea_readFromSocket.append(gnt.gelenStr + "\n"); } else if
+         * (nesne instanceof File) { // gnt.gelenDosya=(File) nesne;
+         * jTextArea_readFromSocket.append("Dosya geldi : " +
+         * gnt.gelenDosya.getAbsolutePath() + "\n"); } else if (nesne instanceof
+         * DefaultMutableTreeNode) { //
+         * gnt.setGelenDMTN((DefaultMutableTreeNode) nesne);
+         * gnt.gelenDMTN2DosyaBilgilerTreeNode();
+         *
+         * //uiSwingMetotlar.dosyaBilgilerTree2List(gnt.gelenDMTN,
+         * jList_dizinler, jList_dosyalar);
+         * uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getGelenDMTN(),
+         * jList_dizinler, jList_dosyalar); }
          */
 
         if (!gnt.gelenStr.isEmpty()) {
             jTextArea_readFromSocket.append(gnt.gelenStr + "\n");
         } else if (gnt.gelenDosya != null) {
             jTextArea_readFromSocket.append("Dosya geldi : " + gnt.gelenDosya.getAbsolutePath() + "\n");
-            jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR3 + gnt.gelenDosya.getAbsolutePath() );
+            jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR3 + gnt.gelenDosya.getAbsolutePath());
         } else if (gnt.gelenResim != null) {
             uiSwingMetotlar.bufferedImage2JLabel(gnt.gelenResim, jLabel_screenShot);
         } else if (gnt.getGelenDMTN() != null) {
             //uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar);
-         //   uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-         //      uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-            
-                //dmtnVariable = (DefaultMutableTreeNode) GenelMetotlar.derinCopy(gnt.getGelenDMTN());
-                //dmtnVariable = gnt.getCurrentDMTN();
-                jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR1);
-                uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
-                uiSwingMetotlar.LinkedList2ComboBox(gnt.gelenDMTNLL, jComboBox_gelenDMTNLL);
-         }
+            //   uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+            //      uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar,jTextField_currentRootDirectory,jComboBox_currentRootDirectory);
+
+            //dmtnVariable = (DefaultMutableTreeNode) GenelMetotlar.derinCopy(gnt.getGelenDMTN());
+            //dmtnVariable = gnt.getCurrentDMTN();
+            jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR1);
+            uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getCurrentDMTN(), jList_dizinler, jList_dosyalar, jTextField_currentRootDirectory, jComboBox_currentRootDirectory);
+            uiSwingMetotlar.LinkedList2ComboBox(gnt.gelenDMTNLL, jComboBox_gelenDMTNLL);
+        }
     }
 
-    /** Creates new form kayasServerSocketUI */
+    /**
+     * Creates new form kayasServerSocketUI
+     */
     public kayasServerSocketUI() {
         initComponents();
         //Q - Her buton için : "enter" ile buton aktifleşir.
@@ -122,15 +124,15 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         SwingAbsractClass.enterPressesWhenFocused2(jButton_screenShotGetir);
 
         // intialize "gnt"
-        gnt=new GelenNesneTipleri(null);
+        gnt = new GelenNesneTipleri(null);
 
         //Q         //
     }
 
-    /** This method is called from within the constructor to
-     * initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is
-     * always regenerated by the Form Editor.
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -942,27 +944,20 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jButton_acceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_acceptActionPerformed
         /*
-        String gelenMesaj;
-        try {
-        // TODO add your handling code here:
-        gelenMesaj= kayaNetworkAbstractClass1.acceptSoketAndSayWelcome(mySunucuSoket);
-        if(gelenMesaj.isEmpty())
-        {
-        jTextArea_readFromSocket.append("YOK ETWAS");
-        }
-        else
-        {
-        jTextArea_readFromSocket.append(gelenMesaj);
-        }
-        } catch (Exception ex) {
-        Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
-        textArea_descriptionServerSocket.setText(ex.toString());
-        }
-         **/
+         * String gelenMesaj; try { // TODO add your handling code here:
+         * gelenMesaj=
+         * kayaNetworkAbstractClass1.acceptSoketAndSayWelcome(mySunucuSoket);
+         * if(gelenMesaj.isEmpty()) { jTextArea_readFromSocket.append("YOK
+         * ETWAS"); } else { jTextArea_readFromSocket.append(gelenMesaj); } }
+         * catch (Exception ex) {
+         * Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE,
+         * null, ex); textArea_descriptionServerSocket.setText(ex.toString()); }
+         *
+         */
         /*
-        kayasMultiThrdServer MTSunucu=new kayasMultiThrdServer(mySunucuSoket,jTextArea_readFromSocket);
-        MTSunucu.clientDinle();
-        //        MTSunucu.finalize();
+         * kayasMultiThrdServer MTSunucu=new
+         * kayasMultiThrdServer(mySunucuSoket,jTextArea_readFromSocket);
+         * MTSunucu.clientDinle(); // MTSunucu.finalize();
          */
 
         // kayasMultiThrdServer.finalize() butonu etkinleşsin.
@@ -1005,7 +1000,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jButton_initializeAndSetServerSocketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_initializeAndSetServerSocketActionPerformed
         // TODO add your handling code here:
-        
+
         textArea_descriptionServerSocket.setText("");
 
         LinkedList<Integer> paramsforServerSocket = new LinkedList<Integer>();
@@ -1040,12 +1035,9 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private void jButton_kapatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_kapatActionPerformed
         // TODO add your handling code here:
         /*
-        if(MTSunucu!=null)        // kayasMultiThrdServer kapatılsın.
-        {
-        MTSunucu.finalize();
-        }
-        MTSunucu.finalize();
-         *         //serverDinleThread.interrupt();    //
+         * if(MTSunucu!=null) // kayasMultiThrdServer kapatılsın. {
+         * MTSunucu.finalize(); } MTSunucu.finalize();
+         * //serverDinleThread.interrupt(); //
          *
          * Bunlar işe yaramıyor. Kendi metodumu yazdım.
          */
@@ -1086,11 +1078,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private void jButton_periodicScreenShotGetirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_periodicScreenShotGetirActionPerformed
         int peryotOfScreenShot = (Integer) jSpinner_timerDelay.getValue();
         String formatTip = jComboBox_formatName.getSelectedItem().toString();
-           //String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
+        //String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
         try {
             kayaNetworkAbstractClass1.requestPeriodicScreenShot(peryotOfScreenShot, formatTip, MTSunucu.clientSoket);
-           // kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
-          //  jTextArea_written2Socket.append(gidecekMesaj + "\n");
+            // kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
+            //  jTextArea_written2Socket.append(gidecekMesaj + "\n");
         } catch (IOException ex) {
             Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionServerSocket.append(ex.toString() + "\n");
@@ -1106,7 +1098,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         // TODO add your handling code here:
         //String gidecekMesaj = "timerScreenShotDurdur";
         try {
-          //  kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
+            //  kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
             //jTextArea_written2Socket.append(gidecekMesaj + "\n");
             kayaNetworkAbstractClass1.requestTimerScreenShotDurdur(MTSunucu.clientSoket);
         } catch (IOException ex) {
@@ -1227,11 +1219,21 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         List<String> requestedFiles = jList_dosyalar.getSelectedValuesList();
         Iterator iterator = requestedFiles.iterator();
         String requestedFileAbsolutPath = "";
+
+        // do not request files one by one, first gather the absolute names of the files, then request those files iteratively.
+        LinkedList<String> requestedFileAbsolutPathLL = new LinkedList<String>();
+
         String requestedFileStr = "";
         while (iterator.hasNext()) {
             requestedFileStr = (String) iterator.next();
             tmpDMTN = gnt.findChildWithName(gnt.getGelenDMTN(), requestedFileStr);
             requestedFileAbsolutPath = ((GelenNesneTipleri.DosyaBilgilerTreeNode) tmpDMTN.getUserObject()).toAbsolutePathString();
+
+            requestedFileAbsolutPathLL.add(requestedFileAbsolutPath);
+        }
+        iterator = requestedFileAbsolutPathLL.iterator();
+        while (iterator.hasNext()) {
+            requestedFileAbsolutPath = (String) iterator.next();
             try {
                 kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
             } catch (IOException ex) {
@@ -1243,13 +1245,13 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     /*
      * do something if it is a double click.
-     * 
+     *
      * http://www.rgagnon.com/javadetails/java-0219.html
      */
     private void jList_dizinlerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList_dizinlerMouseClicked
         // TODO add your handling code here:
-        
-        if(evt.getClickCount()==2)  // if it is a double click.
+
+        if (evt.getClickCount() == 2) // if it is a double click.
         {
             //  pretend as if "Enter" is pressed.
             jList_dizinlerKeyPressed(new KeyEvent(this, 0, 0, 0, KeyEvent.VK_ENTER, '0'));
