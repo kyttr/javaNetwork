@@ -1231,15 +1231,22 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
             requestedFileAbsolutPathLL.add(requestedFileAbsolutPath);
         }
-        iterator = requestedFileAbsolutPathLL.iterator();
-        while (iterator.hasNext()) {
-            requestedFileAbsolutPath = (String) iterator.next();
-            try {
-                kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
-            } catch (IOException ex) {
-                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
-                textArea_descriptionServerSocket.append(ex.toString() + "\n");
-            }
+        try {
+            //        iterator = requestedFileAbsolutPathLL.iterator();
+            //        while (iterator.hasNext()) {
+            //            requestedFileAbsolutPath = (String) iterator.next();
+            //            try {
+            //                kayaNetworkAbstractClass1.requestFileFromSoket(requestedFileAbsolutPath, MTSunucu.clientSoket);
+            //            } catch (InterruptedException ex) {
+            //                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+            //            } catch (IOException ex) {
+            //                Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+            //                textArea_descriptionServerSocket.append(ex.toString() + "\n");
+            //            }
+            //        }
+                    kayaNetworkAbstractClass1.requestFilesFromSoket(requestedFileAbsolutPathLL, MTSunucu.clientSoket);
+        } catch (IOException ex) {
+            Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton_requestFileFromSoketActionPerformed
 

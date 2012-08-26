@@ -1,0 +1,79 @@
+Carl Friedrich Gauss ya da Gauß (30 Nisan 1777 – 23 Þubat 1855), Alman kökenli matematikçi ve bilim adamý. Katkýda bulunduðu alanlardan bazýlarý; sayýlar kuramý, analiz, diferansiyel geometri, jeodezi, elektrik, manyetizma, astronomi ve optiktir. "Matematikçilerin prensi" ve "antik çaðlardan beri yaþamýþ en büyük matematikçi" olarak da bilinen Gauss,[1] matematiðin ve bilimin pek çok alanýna etkisini býrakmýþtýr ve tarihin en nüfuzlu matematikçilerinden biri olarak kabul edilir.
+
+Gauss'un çocukluk yýllarýndan beri dahi olduðunu gösteren pek çok hikâye vardýr, nitekim pek çok matematiksel keþfini henüz 20 yaþýna gelmeden yapmýþtýr. Sayýlar kuramýnýn önemli sonuçlarýný derleyip kendi katkýlarýný da ekleyerek yazdýðý büyük eseri Disquisitiones Arithmeticae'yi 21 yaþýnda (1798) bitirmiþse de, eser ilk olarak 1801'de basýlmýþtýr.
+Konu baþlýklarý
+
+    1 Hayatý
+        1.1 Çocukluðu ve gençliði
+        1.2 Orta yaþlarý
+        1.3 Yaþlýlýðý ve ölümü
+        1.4 Aile hayatý
+    2 Anma
+    3 Notlar
+    4 Kaynaklar
+    5 Dýþ baðlantýlar
+
+Hayatý
+Çocukluðu ve gençliði
+Braunschweig'da bir Gauss heykeli
+
+Gauss, Kutsal Roma Cermen Ýmparatorluðu'na baðlý olan Braunschweig-Lüneburg Dükalýðý'ndaki Braunschweig kentinde, Gebhard Dietrich ve Dorothea Gauss çiftinin tek çocuðu olarak dünyaya geldi. Babasý az eðitimli bir taþ ve duvar ustasýydý, annesinin ise okuma-yazmasý bile yoktu. Efsaneye göre, Gauss henüz üç yaþýndayken, babasýnýn kâðýt üzerinde yaptýðý hesaplarý kafasýndan kontrol edip düzelterek dehasýný belli etti.[2]
+
+Bir baþka meþhur hikâyeye göre, Gauss'un ilkokul öðretmeni J.G. Büttner, öðrencilerini oyalamak için 1'den 100'e kadar olan sayýlarý toplamalarýný isteyince, Gauss cevabý birkaç saniye içinde bularak hem öðretmenini, hem de asistaný Martin Bertels'i hayrete düþürdü. Küçük Gauss, sayý listesinin iki zýt ucundan birer sayý alýp topladýðýnda hep ayný sonucun çýktýðýný farketmiþti: 1 + 100 = 101, 2 + 99 = 101, 3 + 98 = 101, vs. Böylece 1'den 100'e kadar olan sayýlarýn toplamý 50 × 101 = 5050 oluyordu.[3]
+
+Gauss, Braunschweig Dükü Karl Wilhelm Ferdinand'in verdiði burs sayesinde 1792-1795 arasýnda Collegium Carolinum'da (bugünkü adýyla Braunschweig Teknik Üniversitesi), 1795-1798 arasýnda da Göttingen Üniversitesi'nde öðrenim gördü. 1796'da kenar sayýsý bir Fermat asalý olan her düzgün çokgenin, sadece cetvel ve pergel kullanýlarak çizilebileceðini kanýtladý. Bu tür cetvel ve pergel problemleri Antik Yunan'dan beri matematikçileri meþgul etmekteydi, dolayýsýyla da Gauss'un keþfinin önemi büyüktü. Gauss bu baþarýsýndan o kadar memnun oldu ki, mezar taþýna bir düzgün onyedigenin oyulmasýný vasiyet etti. Ne var ki, daireye çok yakýn olan bu þeklin oyulmasý çok zor olacaðýndan, vasiyetini yerine getirecek bir taþ ustasý bulamadý.
+
+1796 Gauss için oldukça verimli bir yýl oldu. Düzgün çokgenlerle ilgili keþfinden bir ay kadar sonra, yine kendi keþfi olan modüler aritmetik fikrini kullanarak, sayýlar kuramýnda "karesel karþýlýklýlýk ilkesi" (Alm. quadratisches Reziprozitätsgesetz) olarak bilinen çok önemli teoremi kanýtladý. Ýlk olarak Euler ve Legendre tarafýndan ortaya atýlmýþ ama kanýtlanamamýþ olan bu teorem, ikinci dereceden denklemlerin çözülebilirliðinin belirlenmesini saðlýyordu. Yine ayný yýl içinde Gauss, asal sayýlarýn tamsayýlar arasýndaki daðýlýmýna iliþkin önemli bir sonuç buldu. Bundan kýsa bir süre sonra da, her tamsayýnýn en fazla üç üçgensel sayýnýn toplamý olarak yazýlabileceðini kanýtladý, ve 10 Temmuz 1796'da günlüðüne þu notu düþtü: "Eureka! Num = \Delta+\Delta+\Delta." Ekim 1796'da ise katsayýlarý sonlu bir cisimden gelen polinomlarýn çözümleriyle ilgili bir sonuç yayýmladý. (Bu sonuç, 150 yýl sonraki Weil varsayýmlarýnýn da çýkýþ noktasý olmuþtur.)
+Orta yaþlarý
+Disquisitiones Arithmeticae'nin ilk sayfasý
+
+Gauss, 1799'da bitirdiði doktora tezinde cebirin temel teoreminin bir kanýtýný sundu. Bu çok önemli teorem, karmaþýk sayýlar üzerine tanýmlanmýþ her polinomun en az bir kökü olduðunu söyler. Gauss'tan önce pek çok matematikçi bu teoremi kanýtlamayý denemiþ, ama hiçbir kanýt genel kabul görmemiþti. Gauss'un kanýtýna da, o zamanlar henüz kanýtlanmamýþ olan Jordan eðri teoremini kullandýðý için itiraz edildi. Bu itirazlar üzerine Gauss, hayatý boyunca üç deðiþik kanýt daha sunacak, 1849'daki son kanýtý tüm matematikçilerden kabul görecekti. Gauss bu kanýtlar üzerinde çalýþýrken, karmaþýk sayýlar kavramýnýn olgunlaþmasýna çok büyük katkýda bulundu.
+
+1801'de yayýmladýðý Disquisitiones Arithmeticae, sayýlar kuramýna modüler aritmetik gibi bir çok yenilik getirdi. Ayný yýl içinde, Ýtalyan astronom Giuseppe Piazzi, Ceres asteroidini keþfetti, ama asteroidi ancak 40 gün kadar takip edebildikten sonra kaybetti. 24 yaþýndaki Gauss, üç aylýk bir çalýþmadan sonra, Ceres'in tekrar görülebileceði pozisyonu hesapladý, ve 31 Aralýk'ta iki ayrý astronom (Franz Xaver von Zach ve Heinrich Olbers), Ceres'i tam Gauss'un söylediði pozisyonda gözlemlediler. Zach, "Doktor Gauss'un zeki çalýþmasý ve hesaplarý olmasaydý, Ceres'i tekrar bulamayabilirdik" diyerek Gauss'un katkýsýna teþekkür etti. O zamana kadar hala Dük'ün verdiði bursla geçinen ve bu durumdan memnun olmayan Gauss, astronomide kariyer yapmayý düþündü, ve 1807'de Göttingen Üniversitesi'nde astronomi profesörü ve gözlemevi müdürü olarak çalýþmaya baþladý. Hayatýnýn sonuna kadar ayný üniversitede çalýþacaktý.
+
+Ceres'in keþfi sayesinde gezegen ve asteroidlerin Güneþ çevresindeki hareketleriyle ilgilenmeye baþlayan Gauss, 1809'da Theoria motus corporum coelestium in sectionibus conicis solem ambientum (Güneþ çevresinde konik kesitler üzerinde hareket eden gök cisimlerinin hareketlerinin teorisi) adlý eserini yayýmladý. Bu eser, günümüz bilimlerinde yaygýn olarak kullanýlan en küçük kareler yöntemini de ayrýntýlý olarak ele alýyordu. (Ayný yöntem, 1805'te Fransýz matematikçi Adrien-Marie Legendre ve 1808'de Amerikalý matematikçi Robert Adrain tarafýndan da tanýmlanmýþ ve kullanýlmýþtý, fakat Gauss bu yöntemi 1795'den beri bildiðini iddia etti.[4])
+
+Gauss en karmaþýk hesaplarý aklýndan yapabilmesiyle de ünlenmiþti. Anlatýlana göre, Ceres'in izleyeceði yörüngeyi nasýl bu kadar hatasýz hesaplayabildiði sorulunca, "logaritma kullandým" cevabýný vermiþ, logaritma cetvelini nasýl bu kadar hýzlý kullanabildiði sorulunca da "cetvele ne gerek var, hepsini kafamda hesaplýyorum!" demiþtir.
+
+1818'de Hannover eyaleti için yüzey ölçümleri yapan Gauss, bu ölçümler için helyotropu (güneþ ýþýðý ve aynalar yardýmýyla doðrultu gözlemleri yapmaya yarayan aygýt) icat edip kullandý.
+
+Gauss, Öklit dýþý geometrilerin varlýðýný keþfettiðini, ama tepkilerden çekindiði için fikirlerini yayýmlamadýðýný iddia etmiþtir. Öklit dýþý geometriler, Öklit aksiyomlarýnýn bir kýsmýný atarak oluþturulan, sezgilerimizle çeliþen fakat kendi içinde tutarlý geometrilerdir ve Einstein'ýn genel görelilik kuramý gibi pek çok yeni fikrin doðumunu mümkün kýlmýþlardýr. Gauss'un yakýn arkadaþý Farkas Bolyai'nin oðlu János Bolyai, 1832'de Öklit dýþý geometrilerle ilgili eserini yayýmladýðýnda, Gauss Farkas Bolyai'ye bir mektup yazdý ve "eseri övmek kendimi övmek gibi olur, çünkü eserin içeriði son 30-35 yýldýr benim kafamda dolaþan fikirlerle neredeyse birebir örtüþüyor" dedi. Bu kanýtsýz iddia, János Bolyai ve Gauss'un arasýnýn açýlmasýna sebep oldu. (Gauss'un notlarý ve mektuplarýndan anlaþýldýðý kadarýyla, Öklit dýþý geometrilerle ilgili temel fikirleri János Bolyai'den önce keþfettiði doðrudur.[5])
+Dört ayrý Gauss daðýlýmý
+
+Gauss, Hannover'de yaptýðý yüzey ölçümleri sýrasýnda, ölçüm hatalarýnýn istatistiksel daðýlýmýný veren (ve daha önce astronomi araþtýrmalarýnda da kullandýðý) normal daðýlým fikrini kafasýnda iyice belirginleþtirdi. (Bugün normal daðýlýma Gauss daðýlýmý da denmektedir.) Ayrýca bu ölçümler Gauss'un diferansiyel geometriye de (eðriler ve yüzeylerle ilgilenen bir matematik dalý) ilgi duymasýný saðladý. 1828'de bu matematik dalýnýn önemli teoremlerinden biri olan theorema egregium'u kanýtladý.
+Yaþlýlýðý ve ölümü
+
+1831 yýlýnda Gauss, fizik profesörü Wilhelm Weber'le beraber çalýþmaya baþladý. Bu beraberlik, manyetizma ve elektrik konularýna pek çok yenilik getirecekti (kütle, uzunluk ve zamana baðlý yeni bir manyetizma birimi gibi). 1833'te Gauss ve Weber ilk elektromanyetik telgrafý icat ettiler, ve bu telgrafla gözlemevini fizik enstitüsüne baðladýlar. Gauss, hala müdürü olduðu gözlemevinin bahçesine bir manyetik gözlemevi kurulmasý talimatýný verdi, ve Weber'le beraber Dünya'nýn çeþitli yerlerindeki manyetik alaný ölçmek amacýyla bir "manyetik kulüp" (Alm. magnetischer Verein) kurdu. Gauss'un bu sýralarda geliþtirdiði, manyetik alanýn yatay yoðunluðunu ölçmeye yarayan metod, 20. yüzyýl ortalarýna kadar kullanýlmaya devam etti. Gauss ayrýca, Dünya'nin manyetik alanýnýn iç (çekirdek) ve dýþ (manyetosfer) kaynaklarýný ayýrmak için gereken matematiksel teoriyi de geliþtirdi. Hayatýnýn sonlarýna doðru matematiksel yeteneklerinin köreldiðini hissedince edebiyatla ilgilenmeye baþladý.
+
+Gauss 23 Þubat 1855'te, 78 yaþýndayken, yýllardýr yaþadýðý Göttingen'de hayata gözlerini yumdu ve bu þehirdeki Albanifriedhof 'a gömüldü. Cenazesinde damadý Heinrich Ewald ve yakýn arkadaþý (ayný zamanda biyografisinin yazarý) Wolfgang Sartorius von Waltershausen birer konuþma yaptýlar. Beyni araþtýrma için muhafaza edildi, ve bugün hala Göttingen Üniversitesi'nin týp fakültesinde formalin içinde korunmaktadýr.
+Aile hayatý
+Gauss'un 1828'de yayýnlanan bir portresi.
+
+Gauss ilk evliliðini 1805 yýlýnda Johanna Osthoff ile yaptý. Bu evlilikten Joseph (1806-1873) adýnda bir oðlu ve Wilhelmine (1808-1846) adýnda bir kýzý oldu. 1809'da, Louis adýný verdikleri üçüncü çocuðun doðumu sýrasýnda Johanna hayatýný kaybetti, Louis de henüz bir yaþýna gelmeden annesini takip etti. Gauss, bu ölümlerden dolayý girdiði depresyondan asla tam anlamýyla kurtulamadý. Louis'in ölümünden kýsa süre sonra, 1810'da karýsýnýn arkadaþý Minna Waldeck ile evlendi. Bu evlilikten de üç çocuðu oldu: Eugen (1811-1896), Wilhelm (1813-1879) ve Therese (1816-1864). Minna 1831'de hastalýktan ölünce Gauss'a ölümüne kadar kýzý Therese baktý. Eugen ve Wilhelm ABD'nin Missouri eyaletine yerleþtiler.
+
+Kiþiliði
+
+Gauss tam bir mükemmeliyetçi ve bir iþkolikti. Bir hikâyeye göre, bir problem üzerinde çalýþýrken karýsýnýn ölmek üzere olduðu haberini alýnca "biraz beklesin, bitirmek üzereyim" demiþti.[6] Kafasýndaki fikirler tam olgunluða eriþmeden onlarý yayýmlamak istemezdi. Bu konudaki ilkesini pauca sed matura (az ama olgun) sözüyle özetliyordu. Ölümünden sonra incelenen günlükleri ortaya çýkardý ki, meslekdaþlarý tarafýndan yayýmlanmýþ olan pek çok önemli matematiksel keþfi o daha önceden yapmýþ, ama yayýmlamamayý tercih etmiþti. Matematik tarihçisi Eric Temple Bell'e göre, Gauss günlüklerine yazdýðý tüm matematiksel fikirleri hayattayken yayýmlamýþ olsaydý matematik 50 yýl ileri atlamýþ olurdu.[7]
+17 yaþýndaki Gauss'un imzasý
+
+Gauss, kendisini örnek alan genç matematikçileri desteklemediði için çok eleþtirildi. Pek çok meslekdaþý onu mesafeli ve katý buluyordu. Gauss öðretmenlikten nefret ettiðini söylese de Richard Dedekind, Bernhard Riemann, Friedrich Bessel gibi bazý öðrencileri sonradan baþarýlý ve üretken matematikçiler oldular.
+
+Gauss'un babasýyla arasý iyi deðildi. Babasý Gauss'un matematik ve bilim okumasýný istemiyor, kendisi gibi taþ ustasý olmasýný istiyordu. Gauss, eðitimi boyunca babasýndan görmediði desteði annesinden gördü. Oðullarýyla da iyi geçinemeyen Gauss, Eugen'in ve daha sonra Wilhelm'in ABD'ye göç etmesine sebep oldu.
+
+Gauss, yazdýðý zeki kanýtlarý nasýl akýl ettiðini asla açýklamazdý. Kanýtý bir kere bulduktan sonra sanki vahiyle gelmiþ gibi yazar, sonuca nasýl ulaþtýðý konusunda özellikle ipucu vermezdi.
+
+Oldukça dindar ve muhafazakar bir adamdý. Ayrýca bir monarþi destekçisiydi ve tüm Almanya'yý etkisi altýna alan 1848 devrimlerini onaylamýyordu.
+Anma
+Gauss'un resmini taþýyan 10 DM banknotu
+
+Gauss'un ismi matematik ve fizikte onlarca teorem, formül ve kavrama verilmiþtir. Cgs sistemindeki manyetik alan birimi 1 Gauss'tur.
+
+1989-2001 yýllarý arasýnda Gauss'un resmi, bir normal daðýlým eðrisiyle beraber, 10 DM banknotlarýnýn üzerine basýlmýþtýr.
+
+1977'de, Gauss'un 200. doðumgünü þerefine, Doðu Almanya ve Batý Almanya'da ayrý ayrý hatýra pullarý basýlmýþtýr.
+
+Ay'daki Gauss krateri[8], "1001 Gaussia" asteroidi[9] ve Antarktika'da sönmüþ bir volkan olan Gaussberg[10], Gauss'un anýsýna isimlendirilmiþ bazý doðal oluþumlardýr.
+
+Almanya'nýn Dransfeld kentindeki 51 metrelik beton gözlem kulesinin ismi Gauss Kulesi'dir.
+
+Alman yazar Daniel Kehlmann'ýn 2005 tarihli romaný Die Vermessung der Welt (Dünya'nýn Ölçümü), Gauss ve Alexander von Humboldt'un hayatlarýný konu almaktadýr.

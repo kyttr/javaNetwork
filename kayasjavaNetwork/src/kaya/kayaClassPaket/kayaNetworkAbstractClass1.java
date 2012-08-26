@@ -60,12 +60,14 @@ public abstract class kayaNetworkAbstractClass1 {
     private static String screenShotGetirStr = "screenShotGetir";
     private static String screenShotAlStr = "screenShotAl";
     private static String dosyaGetirStr = "dosyaGetir";
+    private static String dosyalarGetirStr = "dosyalarGetir";
     private static String dosyaAlStr = "dosyaAl";
     private static String buBirByteDizidirStr = "buBirByteDizidir";
     private static String fileSystemViewAlStr = "fileSystemViewAl";
     //private static String defaultMutableTreeNodeAlStr="defaultMutableTreeNodeAl";
     public static String defaultMutableTreeNodeAlStr = "defaultMutableTreeNodeAl";
     public static String defaultMutableTreeNodeGetirStr = "defaultMutableTreeNodeGetir";
+    private static String dosyaAbsolutePathSeparatorStr="///";
 
     /*
      * organizes information corresponding to a object String strProp : names of
@@ -834,6 +836,17 @@ public abstract class kayaNetworkAbstractClass1 {
             File dosyaToBeSent=new File(gelenMesaj);
             writeFile2SoketHighLevel(mySoket, dosyaToBeSent);
         }
+        else if(gelenMesaj.startsWith(dosyalarGetirStr))
+        {
+            gelenMesaj=gelenMesaj.replaceFirst(dosyaGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePathLL>
+            String[] dosyalarDizi=gelenMesaj.split(dosyaAbsolutePathSeparatorStr);
+            File dosyaToBeSent;
+            for (int i=0;i<dosyalarDizi.length;i++)
+            {
+                dosyaToBeSent=new File(dosyalarDizi[i]);
+                writeFile2SoketHighLevel(mySoket, dosyaToBeSent);            
+            }
+        }
 
         return gelenMesaj;
     }
@@ -991,6 +1004,22 @@ public abstract class kayaNetworkAbstractClass1 {
     public static void requestFileFromSoket(String dosyaAbsolutePath, Socket mySoket) throws IOException {
         String gidecekMesaj = dosyaGetirStr + dosyaAbsolutePath;
         write2Soket(mySoket, gidecekMesaj, false);
+    }
+    
+    /*
+     * diğer tarafa birden fazla dosya alma isteği gönder.
+     * LinkedList<String> dosyaAbsolutePathLL : istenilen dosyaların mutlak isimlerini taşıyan dizi.
+     */
+    public static void requestFilesFromSoket(LinkedList<String> dosyaAbsolutePathLL, Socket mySoket) throws IOException
+    {
+        String gidecekMesaj = dosyalarGetirStr;
+        Iterator iter=dosyaAbsolutePathLL.iterator();
+        while(iter.hasNext())
+        {
+            gidecekMesaj+=dosyaAbsolutePathSeparatorStr+iter.next();
+        }
+        gidecekMesaj=gidecekMesaj.replaceFirst(dosyaAbsolutePathSeparatorStr,"");
+        write2Soket(mySoket, gidecekMesaj,false);
     }
 
     /*
