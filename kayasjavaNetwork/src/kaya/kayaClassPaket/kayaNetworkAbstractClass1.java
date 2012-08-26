@@ -838,7 +838,7 @@ public abstract class kayaNetworkAbstractClass1 {
         }
         else if(gelenMesaj.startsWith(dosyalarGetirStr))
         {
-            gelenMesaj=gelenMesaj.replaceFirst(dosyaGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePathLL>
+            gelenMesaj=gelenMesaj.replaceFirst(dosyalarGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePathLL>
             String[] dosyalarDizi=gelenMesaj.split(dosyaAbsolutePathSeparatorStr);
             File dosyaToBeSent;
             for (int i=0;i<dosyalarDizi.length;i++)
