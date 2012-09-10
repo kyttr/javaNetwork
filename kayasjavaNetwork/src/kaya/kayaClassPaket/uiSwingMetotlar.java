@@ -205,6 +205,7 @@ public abstract class uiSwingMetotlar {
      * proper toString() method.
      */
     public static void LinkedList2JList(LinkedList ll, JList listbox) {
+
         DefaultListModel dlm = new DefaultListModel();
         Iterator itrTmp = ll.iterator();
         while (itrTmp.hasNext()) {

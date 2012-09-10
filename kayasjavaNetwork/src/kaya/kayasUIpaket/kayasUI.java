@@ -604,6 +604,10 @@ public class kayasUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_sendEPostaActionPerformed
 
     private void jButton_getNetworkInterfacesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_getNetworkInterfacesActionPerformed
+
+        // liste ve tabloyu sıfırla.
+        jList_networkArayuzler.removeAll();
+        jTable_networkArayuz.removeAll();
         try {
             // TODO add your handling code here:
             Enumeration<NetworkInterface>   networkArayuzEnum=NetworkInterface.getNetworkInterfaces();
@@ -623,6 +627,8 @@ public class kayasUI extends javax.swing.JFrame {
     private void jList_networkArayuzlerValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_networkArayuzlerValueChanged
         // TODO add your handling code here:
         int indeks=jList_networkArayuzler.getSelectedIndex();
+        if(indeks<0)    // nesne yenilenince indeks=-1 oluyor ve bir değişiklik olduğu için bu metot çağırılıyor, indeks=- olunca da "java.lang.IndexOutOfBoundsException" alıyorum.
+        {    return; }
         try {
             networkArayuzInfos=kayaNetworkAbstractClass1.networkInterfaceBilgileri(networkArayuzList.get(indeks));
             uiSwingMetotlar.bilgiler2Table(networkArayuzInfos, jTable_networkArayuz);
