@@ -20,6 +20,7 @@ import java.net.*;///////
 import java.nio.file.FileVisitOption;
 import java.nio.file.Files;
 import java.util.EnumSet;
+import java.util.Enumeration;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +40,10 @@ import kaya.kayasServerUIpaket.kayasServerSocketUI;
  */
 public class kayasUI extends javax.swing.JFrame {
 
+    // global degiskenler
+    LinkedList<NetworkInterface> networkArayuzList;
+    LinkedList<LinkedList<String>> networkArayuzInfos;
+    
     /** Creates new form kayasUI */
     public kayasUI() {
         initComponents();
@@ -96,10 +101,10 @@ public class kayasUI extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jList_dizinler = new javax.swing.JList();
-        jButton_initializeAndSetVisible1 = new javax.swing.JButton();
+        jList_networkArayuzler = new javax.swing.JList();
+        jButton_getNetworkInterfaces = new javax.swing.JButton();
         jScrollPane18 = new javax.swing.JScrollPane();
-        jTable_dosyaRead = new javax.swing.JTable();
+        jTable_networkArayuz = new javax.swing.JTable();
         jButton_setLookAndFeel = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jButton_initializeAndSetVisible = new javax.swing.JButton();
@@ -328,11 +333,21 @@ public class kayasUI extends javax.swing.JFrame {
 
         jLabel16.setText("List of Network Interfaces");
 
-        jScrollPane8.setViewportView(jList_dizinler);
+        jList_networkArayuzler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList_networkArayuzlerValueChanged(evt);
+            }
+        });
+        jScrollPane8.setViewportView(jList_networkArayuzler);
 
-        jButton_initializeAndSetVisible1.setText(".getNetworkInterfaces()");
+        jButton_getNetworkInterfaces.setText("<html>NetworkInterface.<br>getNetworkInterfaces()");
+        jButton_getNetworkInterfaces.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_getNetworkInterfacesActionPerformed(evt);
+            }
+        });
 
-        jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_networkArayuz.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null}
             },
@@ -366,35 +381,36 @@ public class kayasUI extends javax.swing.JFrame {
             //});
 
     ///////////
-    jScrollPane18.setViewportView(jTable_dosyaRead);
+    jScrollPane18.setViewportView(jTable_networkArayuz);
 
     javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
     jPanel4.setLayout(jPanel4Layout);
     jPanel4Layout.setHorizontalGroup(
         jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel4Layout.createSequentialGroup()
-            .addContainerGap()
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                .addComponent(jButton_initializeAndSetVisible1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGap(37, 37, 37)
-            .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(52, Short.MAX_VALUE))
+            .addGap(12, 12, 12)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jButton_getNetworkInterfaces, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)))
+            .addGap(18, 18, 18)
+            .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
+            .addContainerGap())
     );
     jPanel4Layout.setVerticalGroup(
         jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel4Layout.createSequentialGroup()
             .addGap(10, 10, 10)
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jButton_getNetworkInterfaces, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-            .addGap(18, 18, 18)
-            .addComponent(jButton_initializeAndSetVisible1)
-            .addContainerGap(167, Short.MAX_VALUE))
+            .addContainerGap())
     );
 
     jScrollPane7.setViewportView(jPanel4);
@@ -587,6 +603,35 @@ public class kayasUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton_sendEPostaActionPerformed
 
+    private void jButton_getNetworkInterfacesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_getNetworkInterfacesActionPerformed
+        try {
+            // TODO add your handling code here:
+            Enumeration<NetworkInterface>   networkArayuzEnum=NetworkInterface.getNetworkInterfaces();
+            networkArayuzList=new LinkedList<NetworkInterface>();
+            LinkedList<String> tmpList=new LinkedList<String>();    // JList'te gösterim için "NetworkInterface" nesnelerinin isimlerini ayrı ayrı göndersem daha iyi olacak.
+            while(networkArayuzEnum.hasMoreElements())
+            {
+                networkArayuzList.add(networkArayuzEnum.nextElement());
+                tmpList.add(networkArayuzList.getLast().getDisplayName());
+            }
+            uiSwingMetotlar.LinkedList2JList(tmpList, jList_networkArayuzler);
+        } catch (SocketException ex) {
+            Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton_getNetworkInterfacesActionPerformed
+
+    private void jList_networkArayuzlerValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_networkArayuzlerValueChanged
+        // TODO add your handling code here:
+        int indeks=jList_networkArayuzler.getSelectedIndex();
+        try {
+            networkArayuzInfos=kayaNetworkAbstractClass1.networkInterfaceBilgileri(networkArayuzList.get(indeks));
+            uiSwingMetotlar.bilgiler2Table(networkArayuzInfos, jTable_networkArayuz);
+        } catch (SocketException ex) {
+            Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jList_networkArayuzlerValueChanged
+
     /**
     * @param args the command line arguments
     */
@@ -604,8 +649,8 @@ public class kayasUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Git;
+    private javax.swing.JButton jButton_getNetworkInterfaces;
     private javax.swing.JButton jButton_initializeAndSetVisible;
-    private javax.swing.JButton jButton_initializeAndSetVisible1;
     private javax.swing.JButton jButton_sendEPosta;
     private javax.swing.JButton jButton_setLookAndFeel;
     private javax.swing.JComboBox jComboBox1;
@@ -628,7 +673,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList jList_dizinler;
+    private javax.swing.JList jList_networkArayuzler;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -646,7 +691,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner_smtpPort;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable_URL;
-    private javax.swing.JTable jTable_dosyaRead;
+    private javax.swing.JTable jTable_networkArayuz;
     private javax.swing.JTextArea jTextArea_HTMLKaynak;
     private javax.swing.JTextArea jTextArea_epostaVerbose;
     private javax.swing.JTextArea jTextArea_setText;

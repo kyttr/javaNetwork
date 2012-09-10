@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Enumeration;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -199,9 +200,23 @@ public abstract class uiSwingMetotlar {
         timer.start();
     }
 
-           /*
-            * send elements of a LL into a ComboBox, I assume elements of LL have a proper toString() method.
-            */
+    /*
+     * send elements of a LL into a JList object, I assume elements of LL have a
+     * proper toString() method.
+     */
+    public static void LinkedList2JList(LinkedList ll, JList listbox) {
+        DefaultListModel dlm = new DefaultListModel();
+        Iterator itrTmp = ll.iterator();
+        while (itrTmp.hasNext()) {
+            dlm.addElement(itrTmp.next());
+        }
+        listbox.setModel(dlm);
+    }
+
+    /*
+     * send elements of a LL into a ComboBox, I assume elements of LL have a
+     * proper toString() method.
+     */
     public static void LinkedList2ComboBox(LinkedList ll,JComboBox cb)
     {
         Object[] nesneDizi=ll.toArray();
