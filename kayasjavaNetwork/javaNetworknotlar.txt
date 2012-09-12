@@ -1,0 +1,37 @@
+java.net.ConnectException: Connection timed out: connect    NEDEN : Windows güvenlik duvarı
+
+1. WinOS' ta program "maximized" window ile başlasın.
+2. Verbose için AWT değil, Swing kullan.                DONE
+3. ClientSocket, ServerSocketUI : written2Socket güncelle.
+DONE
+4. ServerSocketUI : readLine(), printline() butonları
+NOT DONE, DONE
+5. kayasMultiThrdServer.finalize() : kayasMultiThrdServer.finalize() butonu inaktif.
+DONE
+6. kayasMultiThrdServer.finalize() : Varolan ServerSocket'i kapat.
+HALF
+7. Verbose : textArea.append(str) X,    textArea.append(str+"\n") T
+DONE
+8. ClientSocket.close() : hide
+HALF
+9. WinOS : shell command çalışmıyor.
+DONE
+10. e.printStackTree sekmesi
+11. shell command için thread yaz.
+BASKADONE
+12. printScreen gönder.
+13. Butonlara "enter" ile basmak.
+DONE - TATMIN YOK
+14. TR karakter kodlama.
+HALF
+15. Look and Feel seçimi
+DONE
+16. Ana pencere kayaUI olacak (html vs. çeken)
+DONE
+17. jlabel.setSize(w,h) değişken ile çalışmıyor.
+18. mysoket.getoutputstream()  --> soket is closed.
+DONE
+19. get images sent over socket.
+20. 14 yeniden
+
+21. screenShot paylaşımı - resim serisi veya video
