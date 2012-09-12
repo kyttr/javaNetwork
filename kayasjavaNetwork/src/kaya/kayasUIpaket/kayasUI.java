@@ -66,6 +66,8 @@ public class kayasUI extends javax.swing.JFrame {
         jTable_URL = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea_HTMLKaynak = new javax.swing.JTextArea();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jEditorPane_url = new javax.swing.JEditorPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -149,6 +151,10 @@ public class kayasUI extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextArea_HTMLKaynak);
 
         jTabbedPane1.addTab("HTML Kaynak", jScrollPane2);
+
+        jScrollPane10.setViewportView(jEditorPane_url);
+
+        jTabbedPane1.addTab("tab6", jScrollPane10);
 
         jLabel2.setText("MimeMessage.setFrom(Address)");
 
@@ -539,6 +545,11 @@ public class kayasUI extends javax.swing.JFrame {
             // TODO add your handling code here:
             String urlstr = jTextField_URL.getText();
             URL myurl = new URL(urlstr);
+            
+            // show the webpage in corresponding pane, but regard the following link.
+            // http://stackoverflow.com/questions/4153806/jeditorpane-as-a-web-browser?rq=1
+            jEditorPane_url.setPage(myurl);
+          
             LinkedList<LinkedList<String>> urlInfos = kayaNetworkAbstractClass1.urlBilgileri(myurl);
             uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL);
             String html=kayaNetworkAbstractClass1.readURLDirectly2HTMLString(myurl);
@@ -682,6 +693,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox_smtpAuth;
     private javax.swing.JComboBox jComboBox_smtpHost;
     private javax.swing.JComboBox jComboBox_smtpStartTLS;
+    private javax.swing.JEditorPane jEditorPane_url;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -705,6 +717,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPasswordField jPasswordField_password;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
