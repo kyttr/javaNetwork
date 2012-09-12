@@ -548,7 +548,7 @@ public class kayasUI extends javax.swing.JFrame {
             
             // show the webpage in corresponding pane, but regard the following link.
             // http://stackoverflow.com/questions/4153806/jeditorpane-as-a-web-browser?rq=1
-            jEditorPane_url.setPage(myurl);
+            //jEditorPane_url.setPage(myurl);   // programı yavaşlatıyor, belki kendisi için ayrı bir thread gerekli.
           
             LinkedList<LinkedList<String>> urlInfos = kayaNetworkAbstractClass1.urlBilgileri(myurl);
             uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL);
