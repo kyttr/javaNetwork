@@ -35,7 +35,8 @@ DONE
 20. 14 yeniden
 
 21. screenShot paylaşımı - resim serisi veya video
-22. sistem özellikleri göster.
+22. sistem özellikleri göster. - HALF
 23. karşı taraf sistem özellikleri göster.
 24. client/server soket, arayuz olmadan çalışacak.
 25. html kovala.
+26. jPanel, jTable vs. auto-resize
