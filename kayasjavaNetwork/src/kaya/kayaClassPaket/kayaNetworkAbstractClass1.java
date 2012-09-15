@@ -79,7 +79,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
@@ -129,7 +129,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
@@ -193,7 +193,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
@@ -228,7 +228,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
@@ -275,7 +275,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
@@ -305,6 +305,49 @@ public abstract class kayaNetworkAbstractClass1 {
         httpUrlConnectionInfos.addAll(UrlConnectionInfos);
         return httpUrlConnectionInfos;
     }
+    
+     /*
+     * The System class maintains a Properties object that describes the
+     * configuration of the current working environment. System properties
+     * include information about the current user, the current version of the
+     * Java runtime, and the character used to separate components of a file
+     * path name. 
+     * returns : information corresponding to a "System Properties"
+     * return LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = name of a property
+     *
+     * 2. element = value of the property
+     *
+     * 3. element = description of the property
+     */
+    public static LinkedList<LinkedList<String>> systemPropertiesBilgileri()
+    {
+        LinkedList<String> listeVals = new LinkedList<String>();
+
+        String props="";
+        String description="";
+        // temp vars.
+        String tmpPropName;
+        String tmpPropVal;        
+        
+        // Get all system properties
+        Properties ozellikler = System.getProperties();
+        // Enumerate all system properties
+        Enumeration   enumerasyon = ozellikler.propertyNames();
+        while( enumerasyon.hasMoreElements()) {
+            // Get property name
+            tmpPropName = (String) enumerasyon.nextElement();
+            props+=tmpPropName+",";
+            description+=":::";
+
+            // Get property value
+            tmpPropVal = (String) ozellikler.get(tmpPropName);
+            listeVals.add(tmpPropVal);
+        }
+        
+        return bilgilerDon(props, description, listeVals);
+    }
 
     /*
      * returns : information corresponding to a "ServerSocket" object return
@@ -312,7 +355,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
@@ -347,7 +390,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
@@ -1167,7 +1210,7 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 1. element = method that returns a property
      *
-     * 2. element = name of the property
+     * 2. element = value of the property
      *
      * 3. element = description of the property
      */
