@@ -42,6 +42,7 @@ public class kayasUI extends javax.swing.JFrame {
     // global degiskenler
     LinkedList<NetworkInterface> networkArayuzList;
     LinkedList<LinkedList<String>> networkArayuzInfos;
+    LinkedList<LinkedList<String>> systemPropertiesInfos;
     
     /** Creates new form kayasUI */
     public kayasUI() {
@@ -60,7 +61,7 @@ public class kayasUI extends javax.swing.JFrame {
         jFrame_systemProperties = new javax.swing.JFrame();
         jPanel10 = new javax.swing.JPanel();
         jScrollPane19 = new javax.swing.JScrollPane();
-        jTable_dosyaRead = new javax.swing.JTable();
+        jTable_systemProperties = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jButton_Git = new javax.swing.JButton();
         jTextField_URL = new javax.swing.JTextField();
@@ -113,14 +114,16 @@ public class kayasUI extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextArea_descriptionNetworkArayuz = new javax.swing.JTextArea();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jButton_systemPropertiesGetir = new javax.swing.JButton();
         jButton_setLookAndFeel = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jButton_initializeAndSetVisible = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox();
 
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel10.setAutoscrolls(true);
 
-        jTable_dosyaRead.setModel(new javax.swing.table.DefaultTableModel(
+        jTable_systemProperties.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null}
             },
@@ -154,20 +157,33 @@ public class kayasUI extends javax.swing.JFrame {
             //});
 
     ///////////
-    jScrollPane19.setViewportView(jTable_dosyaRead);
+    jScrollPane19.setViewportView(jTable_systemProperties);
 
-    jPanel10.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, -1));
+    javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+    jPanel10.setLayout(jPanel10Layout);
+    jPanel10Layout.setHorizontalGroup(
+        jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel10Layout.createSequentialGroup()
+            .addGap(5, 5, 5)
+            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
+    jPanel10Layout.setVerticalGroup(
+        jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel10Layout.createSequentialGroup()
+            .addGap(5, 5, 5)
+            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+    );
 
     javax.swing.GroupLayout jFrame_systemPropertiesLayout = new javax.swing.GroupLayout(jFrame_systemProperties.getContentPane());
     jFrame_systemProperties.getContentPane().setLayout(jFrame_systemPropertiesLayout);
     jFrame_systemPropertiesLayout.setHorizontalGroup(
         jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 484, Short.MAX_VALUE)
+        .addGap(0, 486, Short.MAX_VALUE)
         .addGroup(jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)))
     );
     jFrame_systemPropertiesLayout.setVerticalGroup(
         jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,8 +191,8 @@ public class kayasUI extends javax.swing.JFrame {
         .addGroup(jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)))
     );
 
     setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -506,6 +522,16 @@ public class kayasUI extends javax.swing.JFrame {
 
     jTabbedPane1.addTab("Network Interfaces", jScrollPane7);
 
+    jButton_systemPropertiesGetir.setText("System.getProperties()");
+    jButton_systemPropertiesGetir.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_systemPropertiesGetirActionPerformed(evt);
+        }
+    });
+    jScrollPane11.setViewportView(jButton_systemPropertiesGetir);
+
+    jTabbedPane1.addTab("tab7", jScrollPane11);
+
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
@@ -732,6 +758,15 @@ public class kayasUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jList_networkArayuzlerValueChanged
 
+    private void jButton_systemPropertiesGetirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_systemPropertiesGetirActionPerformed
+        // TODO add your handling code here:
+        jFrame_systemProperties.setVisible(true);
+        jFrame_systemProperties.pack();
+        
+        systemPropertiesInfos=kayaNetworkAbstractClass1.systemPropertiesBilgileri();
+        uiSwingMetotlar.bilgiler2Table(systemPropertiesInfos, jTable_systemProperties);
+    }//GEN-LAST:event_jButton_systemPropertiesGetirActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -753,6 +788,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton_initializeAndSetVisible;
     private javax.swing.JButton jButton_sendEPosta;
     private javax.swing.JButton jButton_setLookAndFeel;
+    private javax.swing.JButton jButton_systemPropertiesGetir;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox_smtpAuth;
@@ -785,6 +821,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField_password;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
@@ -798,8 +835,8 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner_smtpPort;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable_URL;
-    private javax.swing.JTable jTable_dosyaRead;
     private javax.swing.JTable jTable_networkArayuz;
+    private javax.swing.JTable jTable_systemProperties;
     private javax.swing.JTextArea jTextArea_HTMLKaynak;
     private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz;
     private javax.swing.JTextArea jTextArea_epostaVerbose;

@@ -338,13 +338,16 @@ public abstract class kayaNetworkAbstractClass1 {
         while( enumerasyon.hasMoreElements()) {
             // Get property name
             tmpPropName = (String) enumerasyon.nextElement();
-            props+=tmpPropName+",";
-            description+=":::";
+            props+=","+tmpPropName;
+            description+=":::"+"yorum yok";
 
             // Get property value
             tmpPropVal = (String) ozellikler.get(tmpPropName);
             listeVals.add(tmpPropVal);
         }
+        // get rid of excess delimiters
+        props=props.replaceFirst(",", "");
+        description=description.replaceFirst(":::", "");
         
         return bilgilerDon(props, description, listeVals);
     }
