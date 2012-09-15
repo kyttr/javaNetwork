@@ -38,4 +38,3 @@ DONE
 22. sistem özellikleri göster.
 23. karşı taraf sistem özellikleri göster.
 24. client/server soket, arayuz olmadan çalışacak.
-25. html kovala.
