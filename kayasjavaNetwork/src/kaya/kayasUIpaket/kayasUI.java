@@ -59,9 +59,11 @@ public class kayasUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame_systemProperties = new javax.swing.JFrame();
-        jPanel10 = new javax.swing.JPanel();
         jScrollPane19 = new javax.swing.JScrollPane();
         jTable_systemProperties = new javax.swing.JTable();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTextArea_descriptionSystemProperties = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jButton_Git = new javax.swing.JButton();
         jTextField_URL = new javax.swing.JTextField();
@@ -121,8 +123,6 @@ public class kayasUI extends javax.swing.JFrame {
         jButton_initializeAndSetVisible = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox();
 
-        jPanel10.setAutoscrolls(true);
-
         jTable_systemProperties.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null}
@@ -159,40 +159,36 @@ public class kayasUI extends javax.swing.JFrame {
     ///////////
     jScrollPane19.setViewportView(jTable_systemProperties);
 
-    javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-    jPanel10.setLayout(jPanel10Layout);
-    jPanel10Layout.setHorizontalGroup(
-        jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel10Layout.createSequentialGroup()
-            .addGap(5, 5, 5)
-            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-    );
-    jPanel10Layout.setVerticalGroup(
-        jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(jPanel10Layout.createSequentialGroup()
-            .addGap(5, 5, 5)
-            .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-    );
+    jLabel19.setText("Açıklama (Description)");
+
+    jTextArea_descriptionSystemProperties.setColumns(20);
+    jTextArea_descriptionSystemProperties.setEditable(false);
+    jTextArea_descriptionSystemProperties.setLineWrap(true);
+    jTextArea_descriptionSystemProperties.setRows(5);
+    jScrollPane12.setViewportView(jTextArea_descriptionSystemProperties);
 
     javax.swing.GroupLayout jFrame_systemPropertiesLayout = new javax.swing.GroupLayout(jFrame_systemProperties.getContentPane());
     jFrame_systemProperties.getContentPane().setLayout(jFrame_systemPropertiesLayout);
     jFrame_systemPropertiesLayout.setHorizontalGroup(
         jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 486, Short.MAX_VALUE)
-        .addGroup(jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(17, Short.MAX_VALUE)))
+        .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
+            .addGap(25, 25, 25)
+            .addGroup(jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                .addComponent(jScrollPane12))
+            .addGap(37, 37, 37))
     );
     jFrame_systemPropertiesLayout.setVerticalGroup(
         jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGap(0, 471, Short.MAX_VALUE)
-        .addGroup(jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(26, Short.MAX_VALUE)))
+        .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
+            .addGap(24, 24, 24)
+            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addComponent(jLabel19)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(20, 20, 20))
     );
 
     setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -804,6 +800,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -814,7 +811,6 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList jList_networkArayuzler;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -822,6 +818,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
@@ -839,6 +836,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable_systemProperties;
     private javax.swing.JTextArea jTextArea_HTMLKaynak;
     private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz;
+    private javax.swing.JTextArea jTextArea_descriptionSystemProperties;
     private javax.swing.JTextArea jTextArea_epostaVerbose;
     private javax.swing.JTextArea jTextArea_setText;
     private javax.swing.JTextField jTextField_URL;

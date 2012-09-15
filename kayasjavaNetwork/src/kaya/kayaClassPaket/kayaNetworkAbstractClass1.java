@@ -331,6 +331,7 @@ public abstract class kayaNetworkAbstractClass1 {
         String tmpPropName;
         String tmpPropVal;        
         
+        //http://www.exampledepot.com/egs/java.lang/GetAllSysProps.html
         // Get all system properties
         Properties ozellikler = System.getProperties();
         // Enumerate all system properties

@@ -7,75 +7,67 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="486" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel10" max="32767" attributes="0"/>
-                      <EmptySpace pref="17" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jLabel19" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane19" alignment="0" pref="440" max="32767" attributes="0"/>
+                      <Component id="jScrollPane12" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="471" max="32767" attributes="0"/>
-              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel10" max="32767" attributes="0"/>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
-                  </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Component id="jScrollPane19" pref="260" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane12" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel10">
-          <Properties>
-            <Property name="autoscrolls" type="boolean" value="true"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,70,0,0,4,-59"/>
-          </AuxValues>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane19">
 
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                      <Component id="jScrollPane19" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
-                      <Component id="jScrollPane19" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane19">
+            <Component class="javax.swing.JTable" name="jTable_systemProperties">
+              <Properties>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="1" rowCount="1">
+                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;&#xa;//    ListSelectionModel rowSM2 = jTable_serverSocket.getSelectionModel();&#xa;//rowSM2.addListSelectionListener(new ListSelectionListener() {&#xa;//public void valueChanged(ListSelectionEvent e) {&#xa;//ListSelectionModel rowSM2 = (ListSelectionModel)e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;//kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);&#xa;//kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);&#xa;/*try{&#xa;jEditorPane_descriptionServerSocket.setEditable(false);&#xa;String url4EditorPane=&quot;http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html&quot;;&#xa;kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);&#xa;//jEditorPane_descriptionServerSocket.setPage(new URL(&quot;http://docs.oracle.com/&quot;));&#xa;}&#xa;catch(Exception myexception)&#xa;{&#xa;jEditorPane_descriptionServerSocket.setText(myexception.toString());&#xa;}*/&#xa;//}&#xa;//});&#xa;&#xa;///////////"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="A&#xe7;&#x131;klama (Description)"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane12">
 
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable_systemProperties">
-                  <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="1" rowCount="1">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                      </Table>
-                    </Property>
-                  </Properties>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;&#xa;//    ListSelectionModel rowSM2 = jTable_serverSocket.getSelectionModel();&#xa;//rowSM2.addListSelectionListener(new ListSelectionListener() {&#xa;//public void valueChanged(ListSelectionEvent e) {&#xa;//ListSelectionModel rowSM2 = (ListSelectionModel)e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;//kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket, jTextArea_descriptionServerSocket);&#xa;//kayaNetworkAbstractClass1.tableInfo2TextArea(mySunucuSoketInfos, jTable_serverSocket,jTextArea_valueClientSocket, 1);&#xa;/*try{&#xa;jEditorPane_descriptionServerSocket.setEditable(false);&#xa;String url4EditorPane=&quot;http://docs.oracle.com/javase/7/docs/api/java/net/ServerSocket.html&quot;;&#xa;kayaNetworkAbstractClass1.tableInfo2EditorPane(mySunucuSoketInfos, jTable_serverSocket, url4EditorPane, jEditorPane_descriptionServerSocket);&#xa;//jEditorPane_descriptionServerSocket.setPage(new URL(&quot;http://docs.oracle.com/&quot;));&#xa;}&#xa;catch(Exception myexception)&#xa;{&#xa;jEditorPane_descriptionServerSocket.setText(myexception.toString());&#xa;}*/&#xa;//}&#xa;//});&#xa;&#xa;///////////"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextArea_descriptionSystemProperties">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="lineWrap" type="boolean" value="true"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

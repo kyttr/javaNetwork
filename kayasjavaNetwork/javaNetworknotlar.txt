@@ -39,4 +39,6 @@ DONE
 23. karşı taraf sistem özellikleri göster.
 24. client/server soket, arayuz olmadan çalışacak.
 25. html kovala.
-26. jPanel, jTable vs. auto-resize
+26. jPanel, jTable vs. auto-resize  
+DONE : jFrame buyuyunce "jcontainer" nesnelerini orantılı olarak buyutmek için orantı
+lı buyumesi istenen nesneye sağ tıkla, Auto Resizing, "horizontal", "vertical" seçimi yap.
