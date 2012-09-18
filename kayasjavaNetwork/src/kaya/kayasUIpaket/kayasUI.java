@@ -43,6 +43,7 @@ public class kayasUI extends javax.swing.JFrame {
     LinkedList<NetworkInterface> networkArayuzList;
     LinkedList<LinkedList<String>> networkArayuzInfos;
     LinkedList<LinkedList<String>> systemPropertiesInfos;
+    LinkedList<LinkedList<String>> runtimeInfos;
     
     /** Creates new form kayasUI */
     public kayasUI() {
@@ -59,11 +60,14 @@ public class kayasUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame_systemProperties = new javax.swing.JFrame();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        jTable_systemProperties = new javax.swing.JTable();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
-        jTextArea_descriptionSystemProperties = new javax.swing.JTextArea();
+        jTextArea_descriptionSystem_Runtime = new javax.swing.JTextArea();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        jTable_systemProperties = new javax.swing.JTable();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        jTable_runtime = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jButton_Git = new javax.swing.JButton();
         jTextField_URL = new javax.swing.JTextField();
@@ -117,11 +121,19 @@ public class kayasUI extends javax.swing.JFrame {
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextArea_descriptionNetworkArayuz = new javax.swing.JTextArea();
         jScrollPane11 = new javax.swing.JScrollPane();
-        jButton_systemPropertiesGetir = new javax.swing.JButton();
+        jButton_system_runtime_PropertiesGetir = new javax.swing.JButton();
         jButton_setLookAndFeel = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jButton_initializeAndSetVisible = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox();
+
+        jLabel19.setText("Açıklama (Description)");
+
+        jTextArea_descriptionSystem_Runtime.setColumns(20);
+        jTextArea_descriptionSystem_Runtime.setEditable(false);
+        jTextArea_descriptionSystem_Runtime.setLineWrap(true);
+        jTextArea_descriptionSystem_Runtime.setRows(5);
+        jScrollPane12.setViewportView(jTextArea_descriptionSystem_Runtime);
 
         jTable_systemProperties.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -159,13 +171,34 @@ public class kayasUI extends javax.swing.JFrame {
     ///////////
     jScrollPane19.setViewportView(jTable_systemProperties);
 
-    jLabel19.setText("Açıklama (Description)");
+    jTabbedPane2.addTab("System", jScrollPane19);
 
-    jTextArea_descriptionSystemProperties.setColumns(20);
-    jTextArea_descriptionSystemProperties.setEditable(false);
-    jTextArea_descriptionSystemProperties.setLineWrap(true);
-    jTextArea_descriptionSystemProperties.setRows(5);
-    jScrollPane12.setViewportView(jTextArea_descriptionSystemProperties);
+    jTable_runtime.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null}
+        },
+        new String [] {
+            "Title 1"
+        }
+    ));
+    /////////// Bu kodu internetten buldum.
+    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
+    // Kendimizin yazması gerekiyor.
+
+    ListSelectionModel rowSM2 = jTable_runtime.getSelectionModel();
+    rowSM2.addListSelectionListener(new ListSelectionListener() {
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel rowSM2 = (ListSelectionModel)e.getSource();
+
+            uiSwingMetotlar.tableInfo2TextArea(runtimeInfos, jTable_runtime, jTextArea_descriptionSystem_Runtime);
+
+        }
+    });
+
+    ///////////
+    jScrollPane20.setViewportView(jTable_runtime);
+
+    jTabbedPane2.addTab("Runtime", jScrollPane20);
 
     javax.swing.GroupLayout jFrame_systemPropertiesLayout = new javax.swing.GroupLayout(jFrame_systemProperties.getContentPane());
     jFrame_systemProperties.getContentPane().setLayout(jFrame_systemPropertiesLayout);
@@ -174,17 +207,17 @@ public class kayasUI extends javax.swing.JFrame {
         .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
             .addGap(25, 25, 25)
             .addGroup(jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
-                .addComponent(jScrollPane12))
-            .addGap(37, 37, 37))
+                .addComponent(jScrollPane12)
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, Short.MAX_VALUE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addContainerGap())
     );
     jFrame_systemPropertiesLayout.setVerticalGroup(
         jFrame_systemPropertiesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jFrame_systemPropertiesLayout.createSequentialGroup()
-            .addGap(24, 24, 24)
-            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addGap(26, 26, 26)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabel19)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -518,13 +551,13 @@ public class kayasUI extends javax.swing.JFrame {
 
     jTabbedPane1.addTab("Network Interfaces", jScrollPane7);
 
-    jButton_systemPropertiesGetir.setText("System.getProperties()");
-    jButton_systemPropertiesGetir.addActionListener(new java.awt.event.ActionListener() {
+    jButton_system_runtime_PropertiesGetir.setText("System.getProperties() + Runtime.getRuntime()");
+    jButton_system_runtime_PropertiesGetir.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton_systemPropertiesGetirActionPerformed(evt);
+            jButton_system_runtime_PropertiesGetirActionPerformed(evt);
         }
     });
-    jScrollPane11.setViewportView(jButton_systemPropertiesGetir);
+    jScrollPane11.setViewportView(jButton_system_runtime_PropertiesGetir);
 
     jTabbedPane1.addTab("tab7", jScrollPane11);
 
@@ -754,14 +787,17 @@ public class kayasUI extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jList_networkArayuzlerValueChanged
 
-    private void jButton_systemPropertiesGetirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_systemPropertiesGetirActionPerformed
+    private void jButton_system_runtime_PropertiesGetirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_system_runtime_PropertiesGetirActionPerformed
         // TODO add your handling code here:
         jFrame_systemProperties.setVisible(true);
         jFrame_systemProperties.pack();
         
         systemPropertiesInfos=kayaNetworkAbstractClass1.systemPropertiesBilgileri();
         uiSwingMetotlar.bilgiler2Table(systemPropertiesInfos, jTable_systemProperties);
-    }//GEN-LAST:event_jButton_systemPropertiesGetirActionPerformed
+        
+        runtimeInfos=kayaNetworkAbstractClass1.runtimeBilgileri();
+        uiSwingMetotlar.bilgiler2Table(runtimeInfos, jTable_runtime);
+    }//GEN-LAST:event_jButton_system_runtime_PropertiesGetirActionPerformed
 
     /**
     * @param args the command line arguments
@@ -784,7 +820,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton_initializeAndSetVisible;
     private javax.swing.JButton jButton_sendEPosta;
     private javax.swing.JButton jButton_setLookAndFeel;
-    private javax.swing.JButton jButton_systemPropertiesGetir;
+    private javax.swing.JButton jButton_system_runtime_PropertiesGetir;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
     private javax.swing.JComboBox jComboBox_smtpAuth;
@@ -822,6 +858,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -831,12 +868,14 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSpinner jSpinner_smtpPort;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable_URL;
     private javax.swing.JTable jTable_networkArayuz;
+    private javax.swing.JTable jTable_runtime;
     private javax.swing.JTable jTable_systemProperties;
     private javax.swing.JTextArea jTextArea_HTMLKaynak;
     private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz;
-    private javax.swing.JTextArea jTextArea_descriptionSystemProperties;
+    private javax.swing.JTextArea jTextArea_descriptionSystem_Runtime;
     private javax.swing.JTextArea jTextArea_epostaVerbose;
     private javax.swing.JTextArea jTextArea_setText;
     private javax.swing.JTextField jTextField_URL;

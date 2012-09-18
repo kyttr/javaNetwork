@@ -67,7 +67,7 @@ public abstract class kayaNetworkAbstractClass1 {
     //private static String defaultMutableTreeNodeAlStr="defaultMutableTreeNodeAl";
     public static String defaultMutableTreeNodeAlStr = "defaultMutableTreeNodeAl";
     public static String defaultMutableTreeNodeGetirStr = "defaultMutableTreeNodeGetir";
-    private static String dosyaAbsolutePathSeparatorStr="///";
+    private static String dosyaAbsolutePathSeparatorStr = "///";
 
     /*
      * organizes information corresponding to a object String strProp : names of
@@ -305,14 +305,51 @@ public abstract class kayaNetworkAbstractClass1 {
         httpUrlConnectionInfos.addAll(UrlConnectionInfos);
         return httpUrlConnectionInfos;
     }
-    
-     /*
+
+    /* Every Java application has a single instance of class Runtime that allows
+     * the application to interface with the environment in which the
+     * application is running. The current runtime can be obtained from the
+     * getRuntime method.
+     *
+     * returns : information corresponding to a "Runtime" return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = name of a property
+     *
+     * 2. element = value of the property
+     *
+     * 3. element = description of the property
+     *
+     * http://stackoverflow.com/questions/25552/using-java-to-get-os-level-system-information
+     */
+    public static LinkedList<LinkedList<String>> runtimeBilgileri() {
+        Runtime r = Runtime.getRuntime();
+
+        LinkedList<String> listeVals = new LinkedList<String>();
+
+        listeVals.add(String.valueOf(r.availableProcessors()));
+        listeVals.add(String.valueOf(r.freeMemory()));
+        listeVals.add(String.valueOf(r.maxMemory()));
+        listeVals.add(String.valueOf(r.totalMemory()));
+
+
+
+        String props = "availableProcessors(),freeMemory(),maxMemory(),totalMemory()";
+
+        String description;
+        {
+            description = " number of processors available to the Java virtual machine.::: amount of free memory in the Java Virtual Machine.::: maximum amount of memory that the Java virtual machine will attempt to use.::: total amount of memory in the Java virtual machine.";
+        }
+
+        return bilgilerDon(props, description, listeVals);
+    }
+
+    /*
      * The System class maintains a Properties object that describes the
      * configuration of the current working environment. System properties
      * include information about the current user, the current version of the
      * Java runtime, and the character used to separate components of a file
-     * path name. 
-     * returns : information corresponding to a "System Properties"
+     * path name. returns : information corresponding to a "System Properties"
      * return LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
      *
      * 1. element = name of a property
@@ -321,35 +358,34 @@ public abstract class kayaNetworkAbstractClass1 {
      *
      * 3. element = description of the property
      */
-    public static LinkedList<LinkedList<String>> systemPropertiesBilgileri()
-    {
+    public static LinkedList<LinkedList<String>> systemPropertiesBilgileri() {
         LinkedList<String> listeVals = new LinkedList<String>();
 
-        String props="";
-        String description="";
+        String props = "";
+        String description = "";
         // temp vars.
         String tmpPropName;
-        String tmpPropVal;        
-        
+        String tmpPropVal;
+
         //http://www.exampledepot.com/egs/java.lang/GetAllSysProps.html
         // Get all system properties
         Properties ozellikler = System.getProperties();
         // Enumerate all system properties
-        Enumeration   enumerasyon = ozellikler.propertyNames();
-        while( enumerasyon.hasMoreElements()) {
+        Enumeration enumerasyon = ozellikler.propertyNames();
+        while (enumerasyon.hasMoreElements()) {
             // Get property name
             tmpPropName = (String) enumerasyon.nextElement();
-            props+=","+tmpPropName;
-            description+=":::"+"yorum yok";
+            props += "," + tmpPropName;
+            description += ":::" + "yorum yok";
 
             // Get property value
             tmpPropVal = (String) ozellikler.get(tmpPropName);
             listeVals.add(tmpPropVal);
         }
         // get rid of excess delimiters
-        props=props.replaceFirst(",", "");
-        description=description.replaceFirst(":::", "");
-        
+        props = props.replaceFirst(",", "");
+        description = description.replaceFirst(":::", "");
+
         return bilgilerDon(props, description, listeVals);
     }
 
@@ -820,11 +856,11 @@ public abstract class kayaNetworkAbstractClass1 {
                 // 1606 gelenMesaj += lineOfMesaj + "\n";
                 gelenMesaj += "\n" + lineOfgelenMesaj;
             }
-                        // 1606 gelenMesaj=gelenMesaj.substring(0, gelenMesaj.length()-3);  // gelenMesaj sonundaki "\n" ekini at.
+            // 1606 gelenMesaj=gelenMesaj.substring(0, gelenMesaj.length()-3);  // gelenMesaj sonundaki "\n" ekini at.
 //            gelenMesaj = gelenMesaj.replaceFirst("\n", "");  // gelenMesaj başındaki "\n" ekini at.
 //            gelenMesaj = gelenMesaj.replaceAll(myEOF, "");    // ">myEOF<" yazan bölümleri at.
             //br.close(); // okuma işleminden sonra BufferedReader kapanırsa, soket kapanır.
-           
+
         }
         gelenMesaj = gelenMesaj.replaceFirst("\n", "");  // gelenMesaj başındaki "\n" ekini at.
         gelenMesaj = gelenMesaj.replaceAll(myEOF, "");    // ">myEOF<" yazan bölümleri at.
@@ -876,22 +912,18 @@ public abstract class kayaNetworkAbstractClass1 {
             }
 
             writeObject2SoketHighLevel(mySoket, dv.dmtnDosyaBilgilerTree, kayaNetworkAbstractClass1.defaultMutableTreeNodeAlStr);
-        }
-        else if(gelenMesaj.startsWith(dosyaGetirStr))   //karşı taraf dosya istiyor.
+        } else if (gelenMesaj.startsWith(dosyaGetirStr)) //karşı taraf dosya istiyor.
         {
-            gelenMesaj=gelenMesaj.replaceFirst(dosyaGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePath>
-            File dosyaToBeSent=new File(gelenMesaj);
+            gelenMesaj = gelenMesaj.replaceFirst(dosyaGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePath>
+            File dosyaToBeSent = new File(gelenMesaj);
             writeFile2SoketHighLevel(mySoket, dosyaToBeSent);
-        }
-        else if(gelenMesaj.startsWith(dosyalarGetirStr))
-        {
-            gelenMesaj=gelenMesaj.replaceFirst(dosyalarGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePathLL>
-            String[] dosyalarDizi=gelenMesaj.split(dosyaAbsolutePathSeparatorStr);
+        } else if (gelenMesaj.startsWith(dosyalarGetirStr)) {
+            gelenMesaj = gelenMesaj.replaceFirst(dosyalarGetirStr, "");  // şu anda gelenMesaj=<dosyaAbsolutePathLL>
+            String[] dosyalarDizi = gelenMesaj.split(dosyaAbsolutePathSeparatorStr);
             File dosyaToBeSent;
-            for (int i=0;i<dosyalarDizi.length;i++)
-            {
-                dosyaToBeSent=new File(dosyalarDizi[i]);
-                writeFile2SoketHighLevel(mySoket, dosyaToBeSent);            
+            for (int i = 0; i < dosyalarDizi.length; i++) {
+                dosyaToBeSent = new File(dosyalarDizi[i]);
+                writeFile2SoketHighLevel(mySoket, dosyaToBeSent);
             }
         }
 
@@ -1045,42 +1077,39 @@ public abstract class kayaNetworkAbstractClass1 {
     }
 
     /*
-     * diğer tarafta dosya alma isteği gönder. 
-     * String dosyaAbsolutePath : istenilen dosyanın mutlak ismi
+     * diğer tarafta dosya alma isteği gönder. String dosyaAbsolutePath :
+     * istenilen dosyanın mutlak ismi
      */
     public static void requestFileFromSoket(String dosyaAbsolutePath, Socket mySoket) throws IOException {
         String gidecekMesaj = dosyaGetirStr + dosyaAbsolutePath;
         write2Soket(mySoket, gidecekMesaj, false);
     }
-    
+
     /*
-     * diğer tarafa birden fazla dosya alma isteği gönder.
-     * LinkedList<String> dosyaAbsolutePathLL : istenilen dosyaların mutlak isimlerini taşıyan dizi.
+     * diğer tarafa birden fazla dosya alma isteği gönder. LinkedList<String>
+     * dosyaAbsolutePathLL : istenilen dosyaların mutlak isimlerini taşıyan
+     * dizi.
      */
-    public static void requestFilesFromSoket(LinkedList<String> dosyaAbsolutePathLL, Socket mySoket) throws IOException
-    {
+    public static void requestFilesFromSoket(LinkedList<String> dosyaAbsolutePathLL, Socket mySoket) throws IOException {
         String gidecekMesaj = dosyalarGetirStr;
-        Iterator iter=dosyaAbsolutePathLL.iterator();
-        while(iter.hasNext())
-        {
-            gidecekMesaj+=dosyaAbsolutePathSeparatorStr+iter.next();
+        Iterator iter = dosyaAbsolutePathLL.iterator();
+        while (iter.hasNext()) {
+            gidecekMesaj += dosyaAbsolutePathSeparatorStr + iter.next();
         }
-        gidecekMesaj=gidecekMesaj.replaceFirst(dosyaAbsolutePathSeparatorStr,"");
-        write2Soket(mySoket, gidecekMesaj,false);
+        gidecekMesaj = gidecekMesaj.replaceFirst(dosyaAbsolutePathSeparatorStr, "");
+        write2Soket(mySoket, gidecekMesaj, false);
     }
 
     /*
-     * diğer tarafa PeriodicScreenShot isteği gönder.
-     * int peryotOfScreenShot : screenShot peryodu
-     * String formatTip : screenShot formatı
+     * diğer tarafa PeriodicScreenShot isteği gönder. int peryotOfScreenShot :
+     * screenShot peryodu String formatTip : screenShot formatı
      */
     public static void requestPeriodicScreenShot(int peryotOfScreenShot, String formatTip, Socket mySoket) throws IOException {
         String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
         kayaNetworkAbstractClass1.write2Soket(mySoket, gidecekMesaj, false);
     }
-    
-    public static void requestTimerScreenShotDurdur(Socket mySoket) throws IOException
-    {
+
+    public static void requestTimerScreenShotDurdur(Socket mySoket) throws IOException {
         write2Soket(mySoket, timerScreenShotDurdurStr, false);
     }
 
@@ -1229,14 +1258,11 @@ public abstract class kayaNetworkAbstractClass1 {
         listeVals.add(String.valueOf(ni.getMTU()));
         listeVals.add(String.valueOf(ni.getName()));
         listeVals.add(String.valueOf(ni.getNetworkInterfaces()));
-if(ni.getParent()!=null)
-{
-        listeVals.add(String.valueOf(ni.getParent().getName()));
-}
-else
-{
-        listeVals.add("no parent");
-}
+        if (ni.getParent() != null) {
+            listeVals.add(String.valueOf(ni.getParent().getName()));
+        } else {
+            listeVals.add("no parent");
+        }
         listeVals.add(String.valueOf(ni.getSubInterfaces().toString()));
         listeVals.add(String.valueOf(ni.isLoopback()));
         listeVals.add(String.valueOf(ni.isPointToPoint()));
