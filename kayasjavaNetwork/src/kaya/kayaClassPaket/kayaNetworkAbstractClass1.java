@@ -254,7 +254,13 @@ public abstract class kayaNetworkAbstractClass1 {
         listeVals.add(String.valueOf(urlBaglanti.getLastModified()));
         listeVals.add(String.valueOf(urlBaglanti.getPermission()));
         listeVals.add(String.valueOf(urlBaglanti.getReadTimeout()));
+        try{
         listeVals.add(String.valueOf(urlBaglanti.getRequestProperties()));
+        }
+        catch(Exception ex)
+                {
+        listeVals.add(ex.toString());        
+                }
         listeVals.add(String.valueOf(urlBaglanti.getURL()));
         listeVals.add(String.valueOf(urlBaglanti.getUseCaches()));
         listeVals.add(String.valueOf(urlBaglanti.toString()));

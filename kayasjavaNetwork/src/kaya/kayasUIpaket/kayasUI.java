@@ -45,6 +45,10 @@ public class kayasUI extends javax.swing.JFrame {
     LinkedList<LinkedList<String>> systemPropertiesInfos;
     LinkedList<LinkedList<String>> runtimeInfos;
     
+    LinkedList<LinkedList<String>> urlInfos;
+    LinkedList<LinkedList<String>> urlConnectionInfos;
+    LinkedList<LinkedList<String>> HttpUrlConnectionInfos;
+ 
     /** Creates new form kayasUI */
     public kayasUI() {
         initComponents();
@@ -122,6 +126,17 @@ public class kayasUI extends javax.swing.JFrame {
         jTextArea_descriptionNetworkArayuz = new javax.swing.JTextArea();
         jScrollPane11 = new javax.swing.JScrollPane();
         jButton_system_runtime_PropertiesGetir = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        jTable_URL2 = new javax.swing.JTable();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        jTable_URLConnection = new javax.swing.JTable();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        jTable_HttpURLConnection = new javax.swing.JTable();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTextArea_descriptionURL_HTTP_Connection = new javax.swing.JTextArea();
+        jLabel20 = new javax.swing.JLabel();
         jButton_setLookAndFeel = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jButton_initializeAndSetVisible = new javax.swing.JButton();
@@ -365,7 +380,7 @@ public class kayasUI extends javax.swing.JFrame {
                 .addComponent(jButton_sendEPosta))
             .addGap(17, 17, 17)
             .addComponent(jLabel11)
-            .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 317, Short.MAX_VALUE))
     );
 
     jLabel5.setText("Properties.put(\"mail.smtp.password\",");
@@ -434,7 +449,7 @@ public class kayasUI extends javax.swing.JFrame {
                     .addGap(7, 7, 7)
                     .addComponent(jLabel6)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addContainerGap())
     );
 
@@ -519,11 +534,11 @@ public class kayasUI extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(18, 18, 18)
-                    .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE))
+                    .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE))
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(18, 18, 18)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
                         .addComponent(jScrollPane9))))
             .addContainerGap())
     );
@@ -535,7 +550,7 @@ public class kayasUI extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 606, Short.MAX_VALUE))
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -560,6 +575,121 @@ public class kayasUI extends javax.swing.JFrame {
     jScrollPane11.setViewportView(jButton_system_runtime_PropertiesGetir);
 
     jTabbedPane1.addTab("tab7", jScrollPane11);
+
+    jTable_URL2.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null}
+        },
+        new String [] {
+            "Title 1"
+        }
+    ));
+    /////////// Bu kodu internetten buldum.
+    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
+    // Kendimizin yazması gerekiyor.
+
+    ListSelectionModel rowSMURL2 = jTable_URL2.getSelectionModel();
+    rowSMURL2.addListSelectionListener(new ListSelectionListener() {
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel rowSMURL2 = (ListSelectionModel)e.getSource();
+
+            uiSwingMetotlar.tableInfo2TextArea(urlInfos, jTable_URL2, jTextArea_descriptionURL_HTTP_Connection);
+
+        }
+    });
+
+    ///////////
+    jScrollPane21.setViewportView(jTable_URL2);
+
+    jTabbedPane3.addTab("URL", jScrollPane21);
+
+    jTable_URLConnection.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null}
+        },
+        new String [] {
+            "Title 1"
+        }
+    ));
+    /////////// Bu kodu internetten buldum.
+    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
+    // Kendimizin yazması gerekiyor.
+
+    ListSelectionModel rowSMURLConnection = jTable_URLConnection.getSelectionModel();
+    rowSMURLConnection.addListSelectionListener(new ListSelectionListener() {
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel rowSMURLConnection = (ListSelectionModel)e.getSource();
+
+            uiSwingMetotlar.tableInfo2TextArea(urlConnectionInfos, jTable_URLConnection, jTextArea_descriptionURL_HTTP_Connection);
+
+        }
+    });
+
+    ///////////
+    jScrollPane22.setViewportView(jTable_URLConnection);
+
+    jTabbedPane3.addTab("URLConnection", jScrollPane22);
+
+    jTable_HttpURLConnection.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null}
+        },
+        new String [] {
+            "Title 1"
+        }
+    ));
+    /////////// Bu kodu internetten buldum.
+    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
+    // Kendimizin yazması gerekiyor.
+
+    ListSelectionModel rowSMHttpURLConnection = jTable_HttpURLConnection.getSelectionModel();
+    rowSMHttpURLConnection.addListSelectionListener(new ListSelectionListener() {
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel rowSMHttpURLConnection = (ListSelectionModel)e.getSource();
+
+            uiSwingMetotlar.tableInfo2TextArea(HttpUrlConnectionInfos, jTable_HttpURLConnection, jTextArea_descriptionURL_HTTP_Connection);
+
+        }
+    });
+
+    ///////////
+    jScrollPane23.setViewportView(jTable_HttpURLConnection);
+
+    jTabbedPane3.addTab("HttpURLConnection", jScrollPane23);
+
+    jTextArea_descriptionURL_HTTP_Connection.setColumns(20);
+    jTextArea_descriptionURL_HTTP_Connection.setEditable(false);
+    jTextArea_descriptionURL_HTTP_Connection.setLineWrap(true);
+    jTextArea_descriptionURL_HTTP_Connection.setRows(5);
+    jScrollPane13.setViewportView(jTextArea_descriptionURL_HTTP_Connection);
+
+    jLabel20.setText("Açıklama (Description)");
+
+    javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+    jPanel5.setLayout(jPanel5Layout);
+    jPanel5Layout.setHorizontalGroup(
+        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel5Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+    jPanel5Layout.setVerticalGroup(
+        jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel5Layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel20)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addContainerGap())
+    );
+
+    jTabbedPane1.addTab("URL + HTTP Bilgiler", jPanel5);
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -670,8 +800,21 @@ public class kayasUI extends javax.swing.JFrame {
             // http://stackoverflow.com/questions/4153806/jeditorpane-as-a-web-browser?rq=1
             //jEditorPane_url.setPage(myurl);   // programı yavaşlatıyor, belki kendisi için ayrı bir thread gerekli.
           
-            LinkedList<LinkedList<String>> urlInfos = kayaNetworkAbstractClass1.urlBilgileri(myurl);
+            // URL
+            urlInfos = kayaNetworkAbstractClass1.urlBilgileri(myurl);
             uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL);
+            uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL2);
+            
+            // URLConnection
+            URLConnection urlBaglanti=myurl.openConnection();
+            urlConnectionInfos=kayaNetworkAbstractClass1.urlConnectionBilgileri(urlBaglanti);
+            uiSwingMetotlar.bilgiler2Table(urlConnectionInfos, jTable_URLConnection);
+            
+            //HttpURLConnection
+            HttpURLConnection httpurlBaglanti=(HttpURLConnection) urlBaglanti;
+            HttpUrlConnectionInfos=kayaNetworkAbstractClass1.httpURLConnectionBilgileri(httpurlBaglanti);
+            uiSwingMetotlar.bilgiler2Table(HttpUrlConnectionInfos, jTable_HttpURLConnection);
+            
             String html=kayaNetworkAbstractClass1.readURLDirectly2HTMLString(myurl);
             HTMLString2TextArea(html, jTextArea_HTMLKaynak);
         } catch (IOException ex) {
@@ -838,6 +981,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -850,15 +994,20 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JPasswordField jPasswordField_password;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -869,13 +1018,18 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner_smtpPort;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTable jTable_HttpURLConnection;
     private javax.swing.JTable jTable_URL;
+    private javax.swing.JTable jTable_URL2;
+    private javax.swing.JTable jTable_URLConnection;
     private javax.swing.JTable jTable_networkArayuz;
     private javax.swing.JTable jTable_runtime;
     private javax.swing.JTable jTable_systemProperties;
     private javax.swing.JTextArea jTextArea_HTMLKaynak;
     private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz;
     private javax.swing.JTextArea jTextArea_descriptionSystem_Runtime;
+    private javax.swing.JTextArea jTextArea_descriptionURL_HTTP_Connection;
     private javax.swing.JTextArea jTextArea_epostaVerbose;
     private javax.swing.JTextArea jTextArea_setText;
     private javax.swing.JTextField jTextField_URL;
