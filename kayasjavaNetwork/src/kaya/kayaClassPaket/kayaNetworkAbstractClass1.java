@@ -216,7 +216,7 @@ public abstract class kayaNetworkAbstractClass1 {
 
         String description;
         {
-            description = "the authority part of this URL.:::the contents of this URL.:::the contents of this URL.:::the default port number of the protocol associated with this URL.:::the file name of this URL.:::the host name of this URL, if applicable.:::the path part of this URL.:::the port number of this URL.:::the protocol name of this URL.:::the query part of this URL.:::the anchor (also known as the \"reference\") of this URL.:::the userInfo part of this URL.";
+            description = "the authority part of this URL.:::the contents of this URL.:::the default port number of the protocol associated with this URL.:::the file name of this URL.:::the host name of this URL, if applicable.:::the path part of this URL.:::the port number of this URL.:::the protocol name of this URL.:::the query part of this URL.:::the anchor (also known as the \"reference\") of this URL.:::the userInfo part of this URL.";
         }
 
         return bilgilerDon(props, description, listeVals);
