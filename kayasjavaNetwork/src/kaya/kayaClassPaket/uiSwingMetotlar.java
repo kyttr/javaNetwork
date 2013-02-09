@@ -146,6 +146,22 @@ public abstract class uiSwingMetotlar {
          * Alt satırdaki yöntem işe yaramadı. //mytable.clearSelection();
          */
 
+        /*
+         * javaNetworknotlar.txt : 27. jTable --> row sort
+         *
+         * http://docs.oracle.com/javase/tutorial/uiswing/components/table.html#sorting
+         *
+         * Table sorting and filtering is managed by a sorter object. The
+         * easiest way to provide a sorter object is to set autoCreateRowSorter
+         * bound property to true:
+         *
+         * JTable table = new JTable(); table.setAutoCreateRowSorter(true);
+         *
+         * This action defines a row sorter that is an instance of
+         * javax.swing.table.TableRowSorter. This provides a table that does a
+         * simple locale-specific sort when the user clicks on a column header.
+         */
+        mytable.setAutoCreateRowSorter(true);
 
         for (int i = 0; i < boyut; i++) {
             //listeTemp.clear();   //"propValueDescrip" listesindekileri de siliyor.
