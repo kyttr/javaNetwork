@@ -30,7 +30,8 @@ public abstract class uiSwingMetotlar {
 
     /*
      * "dmtnDosyaBilgilerTree" bir "file system" ağacıdır.
-     * "dmtnDosyaBilgilerTree" nin 1. seviyesindeki dosyalar ve dizinler ilgili listelere aktarılır.
+     * "dmtnDosyaBilgilerTree" nin 1. seviyesindeki dosyalar ve dizinler ilgili
+     * listelere aktarılır.
      */
     public static void dosyaBilgilerTree2List(DefaultMutableTreeNode dmtnDosyaBilgilerTree, JList listDizin, JList listDosya) {
         //LinkedList<String> dosyaBilgiler=null;
@@ -45,23 +46,22 @@ public abstract class uiSwingMetotlar {
 
         dlmDizin.addElement(upperDizin);   // symbol for traversing to the upper directory
 
-        try{
-        Enumeration enumerator = dmtnDosyaBilgilerTree.children();
-        while (enumerator.hasMoreElements()) {
-            node = (DefaultMutableTreeNode) enumerator.nextElement();
-            dbtn = (GelenNesneTipleri.DosyaBilgilerTreeNode) node.getUserObject();
+        try {
+            Enumeration enumerator = dmtnDosyaBilgilerTree.children();
+            while (enumerator.hasMoreElements()) {
+                node = (DefaultMutableTreeNode) enumerator.nextElement();
+                dbtn = (GelenNesneTipleri.DosyaBilgilerTreeNode) node.getUserObject();
 
-            // "dosya/klasör" kontrolü yap.
-            // bkz. : kayaNetworkAbstractClass1.fileBilgileri(File dosya)
-            if (dbtn.isDizin()) {
-                dlmDizin.addElement(dbtn.toString());
-            } else {
-                dlmDosya.addElement(dbtn.toString());
+                // "dosya/klasör" kontrolü yap.
+                // bkz. : kayaNetworkAbstractClass1.fileBilgileri(File dosya)
+                if (dbtn.isDizin()) {
+                    dlmDizin.addElement(dbtn.toString());
+                } else {
+                    dlmDosya.addElement(dbtn.toString());
+                }
             }
+        } catch (Exception ex) {
         }
-        }
-        catch(Exception ex)
-        {     }
 
         listDizin.setModel(dlmDizin);
         listDosya.setModel(dlmDosya);
@@ -77,13 +77,16 @@ public abstract class uiSwingMetotlar {
     }
 
     /*
-     *  "dmtnDosyaBilgilerTree" : a file system tree, nodes have objects of type "GelenNesneTipleri.DosyaBilgilerTreeNode"
-     *  "indexOfChild"          : index of a directory among the directory-type children of "dmtnDosyaBilgilerTree".
-     *  return "subDMNT
+     * "dmtnDosyaBilgilerTree" : a file system tree, nodes have objects of type
+     * "GelenNesneTipleri.DosyaBilgilerTreeNode" "indexOfChild" : index of a
+     * directory among the directory-type children of "dmtnDosyaBilgilerTree".
+     * return "subDMNT
      */
     public static DefaultMutableTreeNode subDosyaBilgilerTree2List(int indexOfChild, DefaultMutableTreeNode dmtnDosyaBilgilerTree, JList listDizin, JList listDosya) {
         /*
-         * "subDMNT"        : among children of "dmtnDosyaBilgilerTree" if we construct a list consisting of "directory" nodes, "subDMNT" is the element with index "indexOfChild"
+         * "subDMNT" : among children of "dmtnDosyaBilgilerTree" if we construct
+         * a list consisting of "directory" nodes, "subDMNT" is the element with
+         * index "indexOfChild"
          */
         DefaultMutableTreeNode subDMNT = null;
 
@@ -101,13 +104,16 @@ public abstract class uiSwingMetotlar {
     }
 
     /*
-     *  "dmtnDosyaBilgilerTree" : a file system tree, nodes have objects of type "GelenNesneTipleri.DosyaBilgilerTreeNode"
-     *  "indexOfChild"          : index of a directory among the directory-type children of "dmtnDosyaBilgilerTree".
-     *  return "subDMNT
+     * "dmtnDosyaBilgilerTree" : a file system tree, nodes have objects of type
+     * "GelenNesneTipleri.DosyaBilgilerTreeNode" "indexOfChild" : index of a
+     * directory among the directory-type children of "dmtnDosyaBilgilerTree".
+     * return "subDMNT
      */
     public static DefaultMutableTreeNode subDosyaBilgilerTree2List(int indexOfChild, DefaultMutableTreeNode dmtnDosyaBilgilerTree, JList listDizin, JList listDosya, JTextField tf_kokDizin, JComboBox cb_kokDizin) {
         /*
-         * "subDMNT"        : among children of "dmtnDosyaBilgilerTree" if we construct a list consisting of "directory" nodes, "subDMNT" is the element with index "indexOfChild"
+         * "subDMNT" : among children of "dmtnDosyaBilgilerTree" if we construct
+         * a list consisting of "directory" nodes, "subDMNT" is the element with
+         * index "indexOfChild"
          */
         DefaultMutableTreeNode subDMNT = null;
 
@@ -124,7 +130,7 @@ public abstract class uiSwingMetotlar {
         return subDMNT;
     }
 
-      public static void bilgiler2Table(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable) {
+    public static void bilgiler2Table(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable) {
         int boyut = propValueDescrip.size();
         LinkedList<String> listeTemp = new LinkedList<String>();
 
@@ -150,7 +156,7 @@ public abstract class uiSwingMetotlar {
         }
     }
 
-       public static void bufferedImage2JLabel(BufferedImage bi, JLabel myLabel) {
+    public static void bufferedImage2JLabel(BufferedImage bi, JLabel myLabel) {
         // label'ın en-boy oranı, resmin en-boy oranı ile aynı olsun. Label'ın genişliği sabit olacak, yükseklik değişecek.
         //import java.lang.Math.*;
             /*
@@ -175,7 +181,7 @@ public abstract class uiSwingMetotlar {
         myLabel.setIcon(ikon);
     }
 
-           public static void periodicScreenShotGetir(final JLabel mylabel) {
+    public static void periodicScreenShotGetir(final JLabel mylabel) {
         /*
          * http://stackoverflow.com/questions/1006611/java-swing-timer
          * http://docs.oracle.com/javase/tutorial/uiswing/misc/timer.html
@@ -218,23 +224,26 @@ public abstract class uiSwingMetotlar {
      * send elements of a LL into a ComboBox, I assume elements of LL have a
      * proper toString() method.
      */
-    public static void LinkedList2ComboBox(LinkedList ll,JComboBox cb)
-    {
-        Object[] nesneDizi=ll.toArray();
-        DefaultComboBoxModel dcbm=new DefaultComboBoxModel(nesneDizi);
+    public static void LinkedList2ComboBox(LinkedList ll, JComboBox cb) {
+        Object[] nesneDizi = ll.toArray();
+        DefaultComboBoxModel dcbm = new DefaultComboBoxModel(nesneDizi);
         cb.setModel(dcbm);
 
         // set the last item as selected
-        cb.setSelectedIndex(nesneDizi.length-1);
+        cb.setSelectedIndex(nesneDizi.length - 1);
 
-     }
-           
-    
+    }
+
     //JTextArea için
     public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, JTextArea mytextArea) {
         int indeks = mytable.getSelectedRow();
-        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
-        {
+        //if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
+        /*
+         * 28. Tabloların ilk satırı seçildiğinde açıklama kutusunda açıklama
+         * gözükmüyor. üst satırdaki sorunun kaynağı : if (indeks > 0)
+         *
+         */
+        if (indeks > -1) {
             mytextArea.setText(propValueDescrip.get(indeks).get(0) + " = " + propValueDescrip.get(indeks).get(2));
         }
     }
@@ -243,8 +252,13 @@ public abstract class uiSwingMetotlar {
     public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, TextArea mytextArea) {
 
         int indeks = mytable.getSelectedRow();
-        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
-        {
+        //if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
+        /*
+         * 28. Tabloların ilk satırı seçildiğinde açıklama kutusunda açıklama
+         * gözükmüyor. üst satırdaki sorunun kaynağı : if (indeks > 0)
+         *
+         */
+        if (indeks > -1) {
             mytextArea.setText(propValueDescrip.get(indeks).get(0) + " = " + propValueDescrip.get(indeks).get(2));
         }
     }
@@ -252,8 +266,13 @@ public abstract class uiSwingMetotlar {
     // istenilen bilgiyi seçmek için
     public static void tableInfo2TextArea(LinkedList<LinkedList<String>> propValueDescrip, JTable mytable, JTextArea mytextArea, int bilgiIndeks) {
         int indeks = mytable.getSelectedRow();
-        if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
-        {
+        //if (indeks > 0) // bu olmazsa QT'deki gibi "out of range" hatası
+        /*
+         * 28. Tabloların ilk satırı seçildiğinde açıklama kutusunda açıklama
+         * gözükmüyor. üst satırdaki sorunun kaynağı : if (indeks > 0)
+         *
+         */
+        if (indeks > -1) {
             mytextArea.setText(propValueDescrip.get(indeks).get(bilgiIndeks));
         }
     }
@@ -272,7 +291,4 @@ public abstract class uiSwingMetotlar {
             myeditorpane.setPage(urlToGo);
         }
     }
-
-
-    
 }

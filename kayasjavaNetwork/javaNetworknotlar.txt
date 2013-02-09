@@ -44,3 +44,4 @@ DONE : jFrame buyuyunce "jcontainer" nesnelerini orantılı olarak buyutmek içi
 lı buyumesi istenen nesneye sağ tıkla, Auto Resizing, "horizontal", "vertical" seçimi yap.
 27. jTable --> row sort
 28. Tabloların ilk satırı seçildiğinde açıklama kutusunda açıklama gözükmüyor.
+DONE
