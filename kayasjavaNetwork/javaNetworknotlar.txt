@@ -46,3 +46,5 @@ lı buyumesi istenen nesneye sağ tıkla, Auto Resizing, "horizontal", "vertical
 DONE
 28. Tabloların ilk satırı seçildiğinde açıklama kutusunda açıklama gözükmüyor.
 DONE
+29. Hata olduğunda "error Message Window" göster.
+30. Run Command in CMD, Terminal, etc.
