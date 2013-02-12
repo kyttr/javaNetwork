@@ -49,3 +49,4 @@ DONE
 29. Hata olduğunda "error Message Window" göster.
 DONE
 30. Run Command in CMD, Terminal, etc.
+DONE
