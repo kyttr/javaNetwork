@@ -21,6 +21,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import kaya.kayaClassPaket.GelenNesneTipleri.DosyaBilgilerTreeNode;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.BadLocationException;
 
 /**
  *
@@ -225,6 +226,34 @@ public abstract class uiSwingMetotlar {
     }
 
     /*
+     * add "element" to "listbox" The operation done in this method may seem
+     * very easy at first. But, I had many problems with that operation. It took
+     * me 1 hour to reach a solution.
+     *
+     * http://stackoverflow.com/questions/5212983/jlist-add-remove-item For
+     * instance the following code adopted from the above link does not work, if
+     * the JList is not set by a "DefaultListModel" object previously
+     *
+     * DefaultListModel dlm=(DefaultListModel)
+     * jList_shellCommandHistory.getModel();
+     */
+    public static void element2JList(Object element, JList listbox) {
+        /*
+         * http://stackoverflow.com/questions/7831381/casting-from-a-listmodel-into-a-defaultlistmodel-in-java-7
+         */
+        ListModel lm = listbox.getModel();
+        DefaultListModel dlm = null;
+        if (lm.getSize() == 0) // if the list is empty, then probably I did not set it by a "DefaultListModel" object 
+        {
+            dlm = new DefaultListModel();
+            listbox.setModel(dlm);
+        } else {
+            dlm = (DefaultListModel) lm;
+        }
+        dlm.addElement(element);
+    }
+
+    /*
      * send elements of a LL into a JList object, I assume elements of LL have a
      * proper toString() method.
      */
@@ -330,5 +359,51 @@ public abstract class uiSwingMetotlar {
         String hataMesaj = errors.toString();
 
         myTextArea.append(hataMesaj);
+    }
+
+    /*
+     * set the view of a "JScroLlPane" object. I need this option because
+     * sometimes I want the top view as default, sometimes the bottom view. For
+     * example : For "jTextArea_ShellVerbose", I want to see the most recent
+     * output, so I want the bottom view.
+     *
+     * !! this method does NOT work as desired.
+     */
+    public static void setScrollPaneView_Top_or_Bottom(JScrollPane sb, boolean top) {
+        /*
+         * http://stackoverflow.com/questions/5147768/scroll-jscrollpane-to-bottom
+         */
+        JScrollBar vertical = sb.getVerticalScrollBar();
+        if (top) {
+            vertical.setValue(vertical.getMinimum());
+            //vertical.setValue(0);
+        } else {
+            vertical.setValue(vertical.getMaximum());
+            //vertical.setValue(Integer.MAX_VALUE);
+        }
+    }
+
+    public static void setViewOfJTextArea2Bottom(JTextArea myTextArea) {
+
+        /*
+         * There are also options in the right below links which I did not like
+         * much:
+         * jTextArea_ShellVerbose.setCaretPosition(jTextArea_ShellVerbose.getDocument().getLength()
+         *
+         * http://stackoverflow.com/questions/7938881/lock-jscrollpane-to-bottom-of-jtextarea-java-swing
+         * http://tips4java.wordpress.com/2008/10/22/text-area-scrolling/
+         */
+
+        /*
+         * http://stackoverflow.com/questions/2670124/swing-scroll-to-bottom-of-jscrollpane-conditional-on-current-viewport-location?rq=1
+         */
+        int endPosition = myTextArea.getDocument().getLength();
+        Rectangle bottom = null;
+        try {
+            bottom = myTextArea.modelToView(endPosition);
+        } catch (BadLocationException ex) {
+            Logger.getLogger(uiSwingMetotlar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        myTextArea.scrollRectToVisible(bottom);
     }
 }

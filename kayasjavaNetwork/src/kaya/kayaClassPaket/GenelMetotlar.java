@@ -7,6 +7,9 @@ package kaya.kayaClassPaket;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
@@ -198,8 +201,9 @@ public class GenelMetotlar {
         BufferedImage bi = ImageIO.read(bais);
         bais.close();
         return bi;
-    }
 
+
+    }
 
     /*
      * executes the input "String" as a shell command and returns its output as
@@ -234,8 +238,30 @@ public class GenelMetotlar {
              * Linux?
              */
             InputStream instream = myProcess.getInputStream(); // BufferedReader.readLine() --> program bekliyor. InputStream çalışıyor.
+
+            /*
+             * http://stackoverflow.com/questions/5826070/java-runtime-process-check-if-waiting-for-input
+             * http://stackoverflow.com/questions/10765928/java-how-to-know-if-a-process-is-waiting-for-input?lq=1
+             * Bazı komutlar çağrıldıktan sonra kullanıcıdan "girdi"(input)
+             * bekler. Ör : date,time,more. Bu komutlar da "InputStream" nesnesi
+             * sürekli kullanıcı "girdi"(input) verene kadar bekliyor. Sonuçta,
+             * aşağıdaki "while" döngüsü sonsuz döngüye dönüşüyor ve program
+             * donuyor. Bunun sorunu atlatmak için bu komutu işleyen nesnenin
+             * "OutputStream" nesnesini kapatıyorum. Böylece, "InputStream"
+             * nesnesinin kendisinden "girdi"(input) alacağı bir nesne ortadan
+             * kalkmış oluyor ve "InputStream" nesnesi "girdi"(input) için daha
+             * fazla beklemiyor.
+             *
+             * Bu yöntemde şöyle bir handikap var : "girdi"(input) bekleyen
+             * komutlar düzgün şekilde çalışmıyor. Kullanıcı komutu terk etmiş
+             * gibi hemen kapanıyor.
+             */
+            OutputStream outstream = myProcess.getOutputStream();
+            outstream.close();
+
             int c;
             while ((c = instream.read()) != -1) {
+                //while ((c = instream.read()) != -1 || instream.available() > 0) {
                 verbose += String.valueOf((char) c);
             }
             instream.close();
@@ -244,6 +270,50 @@ public class GenelMetotlar {
         }
 
         return verbose;
+    }
+
+    /*
+     * a different version of "executeString()". This method runs the command
+     * execution in a Thread. But, it does not work the way I wanted. I want to
+     * do other things while commmand-line process is running. I wanted to let
+     * the thread run a "command-line" execution. Meanwhile I would be able to
+     * do other things in my GUI. But, it still works as if there is no thread,
+     * hence this method looks like to run serial.
+     * 
+     * At the moment NOTHING calss this method.
+     */
+    public static String executeString_in_Thread(String komut) throws InterruptedException {
+        /*
+         * Following 3 links did not help :
+         *
+         * http://stackoverflow.com/questions/5853167/runnable-with-a-parameter
+         * http://stackoverflow.com/questions/877096/how-can-i-pass-a-parameter-to-a-java-thread
+         * http://stackoverflow.com/questions/9551630/getting-value-of-a-thread-variable-from-outside
+         *
+         * Below code is adopted from the following link :
+         *
+         * http://stackoverflow.com/questions/9148899/returning-value-from-thread
+         */
+
+
+        final String parameter = komut; // the final is important
+        final CountDownLatch latch = new CountDownLatch(1);
+        final String[] output = new String[1];
+        Thread execute_Command_Thread = new Thread() {
+
+            @Override
+            public synchronized void run() {
+                try {
+                    output[0] = executeString(parameter);
+                } catch (Exception ex) {
+                    Logger.getLogger(GenelMetotlar.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                latch.countDown(); // Release await() in the test thread.
+            }
+        };
+        execute_Command_Thread.start();
+        latch.await(); // Wait for countDown() in the UI thread.
+        return output[0];
     }
 
     /*

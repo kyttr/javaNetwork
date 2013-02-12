@@ -285,14 +285,18 @@
                                       <Component id="jButton_Execute" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel21" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane16" pref="535" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jScrollPane_ShellVerbose" pref="535" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jLabel_shellVerbose_executing" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jList_shellCommandHistory" alignment="1" min="-2" pref="187" max="-2" attributes="0"/>
-                                          <Component id="jLabel17" alignment="1" min="-2" pref="187" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel17" pref="187" max="32767" attributes="0"/>
+                                          <Component id="jScrollPane_shellCommandHistory" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -314,12 +318,13 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel17" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="jLabel_shellVerbose_executing" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="jLabel22" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jList_shellCommandHistory" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane16" pref="225" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane_ShellVerbose" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane_shellCommandHistory" pref="225" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -338,31 +343,56 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Execute"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_ExecuteActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel17">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Shell Command History"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JList" name="jList_shellCommandHistory">
-                    </Component>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane16">
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane_ShellVerbose">
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTextArea" name="jTextArea_descriptionNetworkArayuz1">
+                        <Component class="javax.swing.JTextArea" name="jTextArea_ShellVerbose">
                           <Properties>
                             <Property name="columns" type="int" value="20"/>
                             <Property name="editable" type="boolean" value="false"/>
                             <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="rows" type="int" value="5"/>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Default Cursor"/>
+                            </Property>
                           </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="kayasUI_jTextArea_ShellVerbose"/>
+                          </AuxValues>
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="jLabel21">
+                    <Component class="javax.swing.JLabel" name="jLabel_shellVerbose_executing">
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane_shellCommandHistory">
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JList" name="jList_shellCommandHistory">
+                          <Properties>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Default Cursor"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="MouseListener mouseListener = new MouseAdapter() {&#xa;            &#xa;            public void mouseClicked(MouseEvent mouseEvent) {&#xa;                JList theList = (JList) mouseEvent.getSource();&#xa;                if (mouseEvent.getClickCount() == 2) {  // double click&#xa;                    String komut = (String)theList.getSelectedValue();&#xa;                    executeCommand_in_Thread(komut);&#xa;                }&#xa;            }&#xa;        };&#xa;        jList_shellCommandHistory.addMouseListener(mouseListener);"/>
+                          </AuxValues>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="jLabel22">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Verbose"/>
+                        <Property name="text" type="java.lang.String" value="Verbose : "/>
                       </Properties>
                     </Component>
                   </SubComponents>
