@@ -79,6 +79,16 @@ public class kayasUI extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jScrollPane14 = new javax.swing.JScrollPane();
         jTextArea_Mesaj = new javax.swing.JTextArea();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField_Command = new javax.swing.JTextField();
+        jButton_Execute = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jList_shellCommandHistory = new javax.swing.JList();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jTextArea_descriptionNetworkArayuz1 = new javax.swing.JTextArea();
+        jLabel21 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_URL = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -251,11 +261,6 @@ public class kayasUI extends javax.swing.JFrame {
     });
 
     jTextField_URL.setText("http://");
-    jTextField_URL.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jTextField_URLActionPerformed(evt);
-        }
-    });
 
     jLabel1.setText("URL : ");
 
@@ -266,6 +271,67 @@ public class kayasUI extends javax.swing.JFrame {
     jScrollPane14.setViewportView(jTextArea_Mesaj);
 
     jTabbedPane1.addTab("Mesaj", jScrollPane14);
+
+    jLabel14.setText(">");
+
+    jButton_Execute.setText("Execute");
+
+    jLabel17.setText("Shell Command History");
+
+    jTextArea_descriptionNetworkArayuz1.setColumns(20);
+    jTextArea_descriptionNetworkArayuz1.setEditable(false);
+    jTextArea_descriptionNetworkArayuz1.setLineWrap(true);
+    jTextArea_descriptionNetworkArayuz1.setRows(5);
+    jScrollPane16.setViewportView(jTextArea_descriptionNetworkArayuz1);
+
+    jLabel21.setText("Verbose");
+
+    javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+    jPanel6.setLayout(jPanel6Layout);
+    jPanel6Layout.setHorizontalGroup(
+        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGap(10, 10, 10)
+            .addComponent(jLabel14)
+            .addGap(10, 10, 10)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addComponent(jTextField_Command)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButton_Execute, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jList_shellCommandHistory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addContainerGap())
+    );
+    jPanel6Layout.setVerticalGroup(
+        jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel6Layout.createSequentialGroup()
+            .addContainerGap()
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton_Execute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextField_Command)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jList_shellCommandHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane16, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
+            .addContainerGap())
+    );
+
+    jScrollPane15.setViewportView(jPanel6);
+
+    jTabbedPane1.addTab("Shell", jScrollPane15);
 
     jTable_URL.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
@@ -667,7 +733,6 @@ public class kayasUI extends javax.swing.JFrame {
     jTabbedPane3.addTab("HttpURLConnection", jScrollPane23);
 
     jTextArea_descriptionURL_HTTP_Connection.setColumns(20);
-    jTextArea_descriptionURL_HTTP_Connection.setEditable(false);
     jTextArea_descriptionURL_HTTP_Connection.setLineWrap(true);
     jTextArea_descriptionURL_HTTP_Connection.setRows(5);
     jScrollPane13.setViewportView(jTextArea_descriptionURL_HTTP_Connection);
@@ -792,10 +857,6 @@ public class kayasUI extends javax.swing.JFrame {
     {
         mytextArea.setText(htmlKaynak);
     }
-
-    private void jTextField_URLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_URLActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField_URLActionPerformed
 
     private void jButton_GitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GitActionPerformed
         try {
@@ -966,6 +1027,7 @@ public class kayasUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton_Execute;
     private javax.swing.JButton jButton_Git;
     private javax.swing.JButton jButton_getNetworkInterfaces;
     private javax.swing.JButton jButton_initializeAndSetVisible;
@@ -985,11 +1047,14 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -998,11 +1063,13 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList jList_networkArayuzler;
+    private javax.swing.JList jList_shellCommandHistory;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPasswordField jPasswordField_password;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -1010,6 +1077,8 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1038,10 +1107,12 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea_HTMLKaynak;
     private javax.swing.JTextArea jTextArea_Mesaj;
     private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz;
+    private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz1;
     private javax.swing.JTextArea jTextArea_descriptionSystem_Runtime;
     private javax.swing.JTextArea jTextArea_descriptionURL_HTTP_Connection;
     private javax.swing.JTextArea jTextArea_epostaVerbose;
     private javax.swing.JTextArea jTextArea_setText;
+    private javax.swing.JTextField jTextField_Command;
     private javax.swing.JTextField jTextField_URL;
     private javax.swing.JTextField jTextField_setFrom;
     private javax.swing.JTextField jTextField_setRecipient;
