@@ -77,6 +77,8 @@ public class kayasUI extends javax.swing.JFrame {
         jTextField_URL = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jTextArea_Mesaj = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_URL = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -256,6 +258,14 @@ public class kayasUI extends javax.swing.JFrame {
     });
 
     jLabel1.setText("URL : ");
+
+    jTextArea_Mesaj.setColumns(20);
+    jTextArea_Mesaj.setEditable(false);
+    jTextArea_Mesaj.setLineWrap(true);
+    jTextArea_Mesaj.setRows(5);
+    jScrollPane14.setViewportView(jTextArea_Mesaj);
+
+    jTabbedPane1.addTab("Mesaj", jScrollPane14);
 
     jTable_URL.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
@@ -816,6 +826,7 @@ public class kayasUI extends javax.swing.JFrame {
             HTMLString2TextArea(html, jTextArea_HTMLKaynak);
         } catch (IOException ex) {
             Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+            uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
         }
     }//GEN-LAST:event_jButton_GitActionPerformed
 
@@ -998,6 +1009,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1024,6 +1036,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable_runtime;
     private javax.swing.JTable jTable_systemProperties;
     private javax.swing.JTextArea jTextArea_HTMLKaynak;
+    private javax.swing.JTextArea jTextArea_Mesaj;
     private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz;
     private javax.swing.JTextArea jTextArea_descriptionSystem_Runtime;
     private javax.swing.JTextArea jTextArea_descriptionURL_HTTP_Connection;

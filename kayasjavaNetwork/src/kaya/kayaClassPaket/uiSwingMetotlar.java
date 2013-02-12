@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Iterator;
@@ -306,5 +308,27 @@ public abstract class uiSwingMetotlar {
             URL urlToGo = new URL(urlToGoStr);
             myeditorpane.setPage(urlToGo);
         }
+    }
+
+    /*
+     * Bir hata meydana geldiğinde yapılacaklar
+     *
+     * 1. Hatayla ilgili mesaj bir "JTextArea" nesnesine yazdırılabilir.
+     */
+    public static void exceptionHappened(Exception ex, JTextArea myTextArea) {
+
+        //mesajı önceki mesajlardan ayırmak için ayırıcı görevinde bir satır
+        String separator = "\n-----------------------------\n";
+        myTextArea.append(separator);
+
+        //String hataMesaj=ex.toString();
+        //String hataMesaj=ex.getLocalizedMessage();
+
+        //http://stackoverflow.com/questions/4812570/how-to-store-printstacktrace-into-a-string
+        StringWriter errors = new StringWriter();
+        ex.printStackTrace(new PrintWriter(errors));
+        String hataMesaj = errors.toString();
+
+        myTextArea.append(hataMesaj);
     }
 }
