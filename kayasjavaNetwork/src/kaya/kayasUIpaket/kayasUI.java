@@ -54,6 +54,7 @@ public class kayasUI extends javax.swing.JFrame {
     LinkedList<LinkedList<String>> urlInfos;
     LinkedList<LinkedList<String>> urlConnectionInfos;
     LinkedList<LinkedList<String>> HttpUrlConnectionInfos;
+    LinkedList<URL> visitedURLs=new LinkedList<URL>();
 
     /**
      * Creates new form kayasUI
@@ -160,6 +161,8 @@ public class kayasUI extends javax.swing.JFrame {
         jScrollPane13 = new javax.swing.JScrollPane();
         jTextArea_descriptionURL_HTTP_Connection = new javax.swing.JTextArea();
         jLabel20 = new javax.swing.JLabel();
+        jComboBox_urlHistory = new javax.swing.JComboBox();
+        jButton_back = new javax.swing.JButton();
         jButton_setLookAndFeel = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jButton_initializeAndSetVisible = new javax.swing.JButton();
@@ -294,8 +297,8 @@ public class kayasUI extends javax.swing.JFrame {
 
     jLabel17.setText("Shell Command History");
 
-    jTextArea_ShellVerbose.setEditable(false);
     jTextArea_ShellVerbose.setColumns(20);
+    jTextArea_ShellVerbose.setEditable(false);
     jTextArea_ShellVerbose.setLineWrap(true);
     jTextArea_ShellVerbose.setRows(5);
     jTextArea_ShellVerbose.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -339,11 +342,11 @@ public class kayasUI extends javax.swing.JFrame {
                     .addComponent(jButton_Execute, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane_ShellVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
+                        .addComponent(jScrollPane_ShellVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addComponent(jLabel22)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jButton_clearVerbose)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -366,7 +369,7 @@ public class kayasUI extends javax.swing.JFrame {
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton_clearVerbose, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton_clearVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane_ShellVerbose)
@@ -526,7 +529,7 @@ public class kayasUI extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                     .addComponent(jTextField_setFrom, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(18, 18, 18)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -539,7 +542,7 @@ public class kayasUI extends javax.swing.JFrame {
                 .addComponent(jTextField_setSubject)
                 .addComponent(jScrollPane4)
                 .addComponent(jScrollPane5))
-            .addContainerGap(67, Short.MAX_VALUE))
+            .addContainerGap(71, Short.MAX_VALUE))
     );
     jPanel2Layout.setVerticalGroup(
         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -795,14 +798,14 @@ public class kayasUI extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.TRAILING)
                 .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 884, Short.MAX_VALUE))
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE))
             .addContainerGap())
     );
     jPanel5Layout.setVerticalGroup(
         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel5Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabel20)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -811,6 +814,19 @@ public class kayasUI extends javax.swing.JFrame {
     );
 
     jTabbedPane1.addTab("URL + HTTP Bilgiler", jPanel5);
+
+    jComboBox_urlHistory.addItemListener(new java.awt.event.ItemListener() {
+        public void itemStateChanged(java.awt.event.ItemEvent evt) {
+            jComboBox_urlHistoryİtemStateChanged(evt);
+        }
+    });
+
+    jButton_back.setText("<-");
+    jButton_back.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_backActionPerformed(evt);
+        }
+    });
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -822,9 +838,13 @@ public class kayasUI extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addComponent(jLabel1)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jTextField_URL)
-                    .addGap(18, 18, 18)
-                    .addComponent(jButton_Git, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField_URL, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jComboBox_urlHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButton_Git, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButton_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addComponent(jTabbedPane1))
             .addContainerGap())
     );
@@ -838,7 +858,9 @@ public class kayasUI extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField_URL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton_Git)))
+                    .addComponent(jButton_Git)
+                    .addComponent(jComboBox_urlHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_back)))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
             .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
             .addContainerGap())
@@ -921,7 +943,8 @@ public class kayasUI extends javax.swing.JFrame {
         Thread execute_Command_Thread = new Thread() {
 
             String output = "";
-            String executing_String="executing...";
+            String executing_String = "executing...";
+
             @Override
             public void run() {
                 jLabel_shellVerbose_executing.setText(executing_String);
@@ -940,7 +963,7 @@ public class kayasUI extends javax.swing.JFrame {
 
                 //For "jList_shellCommandHistory", I want to see the most recent command, so I want the bottom view
                 uiSwingMetotlar.setScrollPaneView_Top_or_Bottom(jScrollPane_shellCommandHistory, false);
-                
+
                 // execution finished
                 jLabel_shellVerbose_executing.setText("");
             }
@@ -976,6 +999,16 @@ public class kayasUI extends javax.swing.JFrame {
 
             String html = kayaNetworkAbstractClass1.readURLDirectly2HTMLString(myurl);
             HTMLString2TextArea(html, jTextArea_HTMLKaynak);
+
+            // This visited URL will be added to the top of "URL History" combobox.
+            // Also keep track of visited URLs in the code, do not lose info.
+            visitedURLs.add(myurl);
+            
+            // The URL should be inserted to the beginning of the list, because it is most recent item.
+            //jComboBox_urlHistory.addItem(urlstr);     // this adds to the end.
+            ((DefaultComboBoxModel) jComboBox_urlHistory.getModel()).insertElementAt(urlstr, 0);
+            //jComboBox_urlHistory.setSelectedIndex(-1);      // After the visit, I want nothing to be displayed in the combobox.
+
         } catch (IOException ex) {
             Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
             uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
@@ -1140,6 +1173,23 @@ public class kayasUI extends javax.swing.JFrame {
         jTextArea_ShellVerbose.setText(null);
     }//GEN-LAST:event_jButton_clearVerboseActionPerformed
 
+    private void jComboBox_urlHistoryİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_urlHistoryİtemStateChanged
+        // TODO add your handling code here:
+        String selectedURL=(String) jComboBox_urlHistory.getSelectedItem();
+        jTextField_URL.setText(selectedURL);
+    }//GEN-LAST:event_jComboBox_urlHistoryİtemStateChanged
+
+    /*
+     * visit second most recent visited URL, ie. previous URL
+     */
+    private void jButton_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_backActionPerformed
+        // TODO add your handling code here:
+        int previousURLindex=1;
+        String lastURL=(String) jComboBox_urlHistory.getModel().getElementAt(previousURLindex);
+        jTextField_URL.setText(lastURL);
+        jButton_GitActionPerformed(evt);
+    }//GEN-LAST:event_jButton_backActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1158,6 +1208,7 @@ public class kayasUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Execute;
     private javax.swing.JButton jButton_Git;
+    private javax.swing.JButton jButton_back;
     private javax.swing.JButton jButton_clearVerbose;
     private javax.swing.JButton jButton_getNetworkInterfaces;
     private javax.swing.JButton jButton_initializeAndSetVisible;
@@ -1169,6 +1220,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBox_smtpAuth;
     private javax.swing.JComboBox jComboBox_smtpHost;
     private javax.swing.JComboBox jComboBox_smtpStartTLS;
+    private javax.swing.JComboBox jComboBox_urlHistory;
     private javax.swing.JEditorPane jEditorPane_url;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JFrame jFrame_systemProperties;
