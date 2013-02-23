@@ -99,6 +99,7 @@ public class kayasUI extends javax.swing.JFrame {
         jScrollPane_shellCommandHistory = new javax.swing.JScrollPane();
         jList_shellCommandHistory = new javax.swing.JList();
         jLabel22 = new javax.swing.JLabel();
+        jButton_clearVerbose = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_URL = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -293,8 +294,8 @@ public class kayasUI extends javax.swing.JFrame {
 
     jLabel17.setText("Shell Command History");
 
-    jTextArea_ShellVerbose.setColumns(20);
     jTextArea_ShellVerbose.setEditable(false);
+    jTextArea_ShellVerbose.setColumns(20);
     jTextArea_ShellVerbose.setLineWrap(true);
     jTextArea_ShellVerbose.setRows(5);
     jTextArea_ShellVerbose.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -316,6 +317,13 @@ public class kayasUI extends javax.swing.JFrame {
 
     jLabel22.setText("Verbose : ");
 
+    jButton_clearVerbose.setText("Clear");
+    jButton_clearVerbose.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_clearVerboseActionPerformed(evt);
+        }
+    });
+
     javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
     jPanel6.setLayout(jPanel6Layout);
     jPanel6Layout.setHorizontalGroup(
@@ -331,11 +339,13 @@ public class kayasUI extends javax.swing.JFrame {
                     .addComponent(jButton_Execute, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane_ShellVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE)
+                        .addComponent(jScrollPane_ShellVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addComponent(jLabel22)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jButton_clearVerbose)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
@@ -355,7 +365,8 @@ public class kayasUI extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButton_clearVerbose, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane_ShellVerbose)
@@ -512,7 +523,7 @@ public class kayasUI extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
@@ -528,7 +539,7 @@ public class kayasUI extends javax.swing.JFrame {
                 .addComponent(jTextField_setSubject)
                 .addComponent(jScrollPane4)
                 .addComponent(jScrollPane5))
-            .addContainerGap(58, Short.MAX_VALUE))
+            .addContainerGap(67, Short.MAX_VALUE))
     );
     jPanel2Layout.setVerticalGroup(
         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -784,14 +795,14 @@ public class kayasUI extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.TRAILING)
                 .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE))
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 884, Short.MAX_VALUE))
             .addContainerGap())
     );
     jPanel5Layout.setVerticalGroup(
         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel5Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabel20)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1124,6 +1135,11 @@ public class kayasUI extends javax.swing.JFrame {
          */
     }//GEN-LAST:event_jButton_ExecuteActionPerformed
 
+    private void jButton_clearVerboseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_clearVerboseActionPerformed
+        // TODO add your handling code here:
+        jTextArea_ShellVerbose.setText(null);
+    }//GEN-LAST:event_jButton_clearVerboseActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1142,6 +1158,7 @@ public class kayasUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Execute;
     private javax.swing.JButton jButton_Git;
+    private javax.swing.JButton jButton_clearVerbose;
     private javax.swing.JButton jButton_getNetworkInterfaces;
     private javax.swing.JButton jButton_initializeAndSetVisible;
     private javax.swing.JButton jButton_sendEPosta;

@@ -286,11 +286,13 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jScrollPane_ShellVerbose" pref="626" max="32767" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jScrollPane_ShellVerbose" pref="642" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
                                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jLabel_shellVerbose_executing" max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jButton_clearVerbose" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -320,6 +322,7 @@
                                   <Component id="jLabel17" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                                   <Component id="jLabel_shellVerbose_executing" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                                   <Component id="jLabel22" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="jButton_clearVerbose" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -358,8 +361,8 @@
                       <SubComponents>
                         <Component class="javax.swing.JTextArea" name="jTextArea_ShellVerbose">
                           <Properties>
-                            <Property name="columns" type="int" value="20"/>
                             <Property name="editable" type="boolean" value="false"/>
+                            <Property name="columns" type="int" value="20"/>
                             <Property name="lineWrap" type="boolean" value="true"/>
                             <Property name="rows" type="int" value="5"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -394,6 +397,14 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Verbose : "/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton_clearVerbose">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Clear"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_clearVerboseActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -484,7 +495,7 @@
                                   <Component id="jLabel4" max="32767" attributes="0"/>
                                   <Component id="jLabel6" max="32767" attributes="0"/>
                                   <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel3" alignment="1" pref="485" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel2" min="-2" pref="223" max="-2" attributes="0"/>
                                       <EmptySpace pref="67" max="32767" attributes="0"/>
@@ -504,7 +515,7 @@
                                   <Component id="jScrollPane4" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jScrollPane5" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="58" max="32767" attributes="0"/>
+                              <EmptySpace pref="67" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -971,7 +982,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane13" alignment="1" max="32767" attributes="0"/>
                               <Component id="jLabel20" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jTabbedPane3" alignment="1" pref="843" max="32767" attributes="0"/>
+                              <Component id="jTabbedPane3" alignment="1" pref="884" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -981,7 +992,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTabbedPane3" pref="202" max="32767" attributes="0"/>
+                          <Component id="jTabbedPane3" pref="192" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
