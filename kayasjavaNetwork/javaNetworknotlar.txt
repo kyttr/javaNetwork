@@ -50,3 +50,4 @@ DONE
 DONE
 30. Run Command in CMD, Terminal, etc.
 DONE
+31. Tum projeyi tek bir dosyaya cevir. Boylece kullanicilar programi kolaylikla kullanabilir. (Convert the whole project into a single executable so that end-users can use it comfortably.)
