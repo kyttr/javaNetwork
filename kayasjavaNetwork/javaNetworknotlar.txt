@@ -51,3 +51,4 @@ DONE
 30. Run Command in CMD, Terminal, etc.
 DONE
 31. Tum projeyi tek bir dosyaya cevir. Boylece kullanicilar programi kolaylikla kullanabilir. (Convert the whole project into a single executable so that end-users can use it comfortably.)
+32. "kayasUI.java"da ziyaret edilen sayfalari hafizaya al. Bir "Geri" butonu ile gecmisteki sayfalara gidilebilir. Daha da iyisi ziyaret edilen sayfalar "Gecmis" adindaki bir listede tutulabilir. Kisacasi internet tarayicilarini taklit et.
