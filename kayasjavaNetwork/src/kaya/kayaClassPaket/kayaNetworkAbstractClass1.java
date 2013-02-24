@@ -254,13 +254,11 @@ public abstract class kayaNetworkAbstractClass1 {
         listeVals.add(String.valueOf(urlBaglanti.getLastModified()));
         listeVals.add(String.valueOf(urlBaglanti.getPermission()));
         listeVals.add(String.valueOf(urlBaglanti.getReadTimeout()));
-        try{
-        listeVals.add(String.valueOf(urlBaglanti.getRequestProperties()));
+        try {
+            listeVals.add(String.valueOf(urlBaglanti.getRequestProperties()));
+        } catch (Exception ex) {
+            listeVals.add(ex.toString());
         }
-        catch(Exception ex)
-                {
-        listeVals.add(ex.toString());        
-                }
         listeVals.add(String.valueOf(urlBaglanti.getURL()));
         listeVals.add(String.valueOf(urlBaglanti.getUseCaches()));
         listeVals.add(String.valueOf(urlBaglanti.toString()));
@@ -312,7 +310,8 @@ public abstract class kayaNetworkAbstractClass1 {
         return httpUrlConnectionInfos;
     }
 
-    /* Every Java application has a single instance of class Runtime that allows
+    /*
+     * Every Java application has a single instance of class Runtime that allows
      * the application to interface with the environment in which the
      * application is running. The current runtime can be obtained from the
      * getRuntime method.
@@ -1283,6 +1282,50 @@ public abstract class kayaNetworkAbstractClass1 {
         String description;
         {
             description = "Get the display name of this network interface.:::Returns the hardware address (usually MAC) of the interface if it has one and if it can be accessed given the current privileges.:::Returns the index of this network interface.:::Convenience method to return an Enumeration with all or a subset of the InetAddresses bound to this network interface.:::Get a List of all or a subset of the InterfaceAddresses of this network interface.:::Returns the Maximum Transmission Unit (MTU) of this interface.:::Get the name of this network interface.:::Returns all the interfaces on this machine.:::Returns the parent NetworkInterface of this interface if this is a subinterface, or null if it is a physical (non virtual) interface or has no parent.:::Get an Enumeration with all the subinterfaces (also known as virtual interfaces) attached to this network interface.:::Returns whether a network interface is a loopback interface.:::Returns whether a network interface is a point to point interface.:::Returns whether a network interface is up and running.:::Returns whether this interface is a virtual interface (also called subinterface).:::Returns whether a network interface supports multicasting or not.:::Returns a string representation of the object.";
+        }
+
+        return bilgilerDon(props, description, listeVals);
+    }
+
+    /*
+     * returns : information corresponding to a "InetAddress" object return
+     * LinkedList<LinkedList<String>> each LinkedList<String> has size 3.
+     *
+     * 1. element = method that returns a property
+     *
+     * 2. element = value of the property
+     *
+     * 3. element = description of the property
+     */
+    public static LinkedList<LinkedList<String>> inetAddressBilgileri(InetAddress ia) throws SocketException, UnknownHostException {
+        LinkedList<String> listeVals = new LinkedList<String>();
+
+        //listeVals.add(String.valueOf(ia.getDisplayName()));
+        listeVals.add(String.valueOf(ia.getAddress()));
+        listeVals.add(String.valueOf(ia.getCanonicalHostName()));
+        listeVals.add(String.valueOf(ia.getHostAddress()));
+        listeVals.add(String.valueOf(ia.getHostName()));
+        listeVals.add(String.valueOf(ia.getLocalHost()));
+        listeVals.add(String.valueOf(ia.getLoopbackAddress()));
+        listeVals.add(String.valueOf(ia.hashCode()));
+        listeVals.add(String.valueOf(ia.isAnyLocalAddress()));
+        listeVals.add(String.valueOf(ia.isLinkLocalAddress()));
+        listeVals.add(String.valueOf(ia.isLoopbackAddress()));
+        listeVals.add(String.valueOf(ia.isMCGlobal()));
+        listeVals.add(String.valueOf(ia.isMCLinkLocal()));
+        listeVals.add(String.valueOf(ia.isMCNodeLocal()));
+        listeVals.add(String.valueOf(ia.isMCOrgLocal()));
+        listeVals.add(String.valueOf(ia.isMCSiteLocal()));
+        listeVals.add(String.valueOf(ia.isMulticastAddress()));
+        listeVals.add(String.valueOf(ia.isSiteLocalAddress()));
+        listeVals.add(String.valueOf(ia.toString()));
+
+
+        String props = "getAddress,getCanonicalHostName,getHostAddress,getHostName,getLocalHost,getLoopbackAddress,hashCode,isAnyLocalAddress,isLinkLocalAddress,isLoopbackAddress,isMCGlobal,isMCLinkLocal,isMCNodeLocal,isMCOrgLocal,isMCSiteLocal,isMulticastAddress,isSiteLocalAddress,toString";
+
+        String description;
+        {
+            description = "raw IP address of this InetAddress object.:::Gets the fully qualified domain name for this IP address.:::IP address string in textual presentation.:::Gets the host name for this IP address.:::address of the local host.:::loopback address.:::a hashcode for this IP address.:::Utility routine to check if the InetAddress in a wildcard address.:::Utility routine to check if the InetAddress is an link local address.:::Utility routine to check if the InetAddress is a loopback address.:::Utility routine to check if the multicast address has global scope.:::Utility routine to check if the multicast address has link scope.:::Utility routine to check if the multicast address has node scope.:::Utility routine to check if the multicast address has organization scope.:::Utility routine to check if the multicast address has site scope.:::Utility routine to check if the InetAddress is an IP multicast address.:::Utility routine to check if the InetAddress is a site local address.:::Converts this IP address to a String.:::";
         }
 
         return bilgilerDon(props, description, listeVals);
