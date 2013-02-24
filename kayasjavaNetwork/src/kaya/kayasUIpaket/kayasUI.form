@@ -325,7 +325,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton_clearVerbose" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_clearVerbose" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel17" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                                       <Component id="jLabel_shellVerbose_executing" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
@@ -1088,8 +1088,8 @@
             <Container class="javax.swing.JScrollPane" name="jScrollPane11">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="tab7">
-                    <Property name="tabTitle" type="java.lang.String" value="tab7"/>
+                  <JTabbedPaneConstraints tabName="Sys + Run">
+                    <Property name="tabTitle" type="java.lang.String" value="Sys + Run"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>

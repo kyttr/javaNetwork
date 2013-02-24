@@ -379,7 +379,7 @@ public class kayasUI extends javax.swing.JFrame {
                     .addComponent(jTextField_Command)))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jButton_clearVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton_clearVerbose)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -809,7 +809,7 @@ public class kayasUI extends javax.swing.JFrame {
     });
     jScrollPane11.setViewportView(jButton_system_runtime_PropertiesGetir);
 
-    jTabbedPane1.addTab("tab7", jScrollPane11);
+    jTabbedPane1.addTab("Sys + Run", jScrollPane11);
 
     jTable_URL2.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
