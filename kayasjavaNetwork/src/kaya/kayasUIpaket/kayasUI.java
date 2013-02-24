@@ -48,13 +48,15 @@ public class kayasUI extends javax.swing.JFrame {
 
     // global degiskenler
     LinkedList<NetworkInterface> networkArayuzList;
+    LinkedList<InetAddress> ipAdresList;
     LinkedList<LinkedList<String>> networkArayuzInfos;
+    LinkedList<LinkedList<String>> ipAdresInfos;
     LinkedList<LinkedList<String>> systemPropertiesInfos;
     LinkedList<LinkedList<String>> runtimeInfos;
     LinkedList<LinkedList<String>> urlInfos;
     LinkedList<LinkedList<String>> urlConnectionInfos;
     LinkedList<LinkedList<String>> HttpUrlConnectionInfos;
-    LinkedList<URL> visitedURLs=new LinkedList<URL>();
+    LinkedList<URL> visitedURLs = new LinkedList<URL>();
 
     /**
      * Creates new form kayasUI
@@ -152,8 +154,8 @@ public class kayasUI extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jList_inetAddress = new javax.swing.JList();
-        jButton_getNetworkInterfaces1 = new javax.swing.JButton();
+        jList_inetAddressler = new javax.swing.JList();
+        jButton_getInetAddresses = new javax.swing.JButton();
         jScrollPane24 = new javax.swing.JScrollPane();
         jTable_inetAddress = new javax.swing.JTable();
         jLabel23 = new javax.swing.JLabel();
@@ -705,17 +707,17 @@ public class kayasUI extends javax.swing.JFrame {
 
     jLabel21.setText("List of Internet Protocol (IP) addresses. ");
 
-    jList_inetAddress.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+    jList_inetAddressler.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
         public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-            jList_inetAddressValueChanged(evt);
+            jList_inetAddresslerValueChanged(evt);
         }
     });
-    jScrollPane17.setViewportView(jList_inetAddress);
+    jScrollPane17.setViewportView(jList_inetAddressler);
 
-    jButton_getNetworkInterfaces1.setText("<html>for(ni : NetworkInterface.getNetworkInterfaces()){<br>\tni.getInetAddresses()) }");
-    jButton_getNetworkInterfaces1.addActionListener(new java.awt.event.ActionListener() {
+    jButton_getInetAddresses.setText("<html>for(ni : NetworkInterface.getNetworkInterfaces()){<br>\tni.getInetAddresses()) }");
+    jButton_getInetAddresses.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jButton_getNetworkInterfaces1ActionPerformed(evt);
+            jButton_getInetAddressesActionPerformed(evt);
         }
     });
 
@@ -730,18 +732,18 @@ public class kayasUI extends javax.swing.JFrame {
     /////////// Bu kodu internetten buldum.
     // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
     // Kendimizin yazması gerekiyor.
-    /*
-    ListSelectionModel rowSM = jTable_networkArayuz.getSelectionModel();
-    rowSM.addListSelectionListener(new ListSelectionListener() {
+
+    ListSelectionModel rowSM_inetAddress = jTable_inetAddress.getSelectionModel();
+    rowSM_inetAddress.addListSelectionListener(new ListSelectionListener() {
 
         public void valueChanged(ListSelectionEvent e) {
-            ListSelectionModel rowSM = (ListSelectionModel) e.getSource();
+            ListSelectionModel rowSM_inetAddress = (ListSelectionModel) e.getSource();
             //int selectedIndex = rowSM.getMinSelectionIndex();
             // do something with selected index
-            uiSwingMetotlar.tableInfo2TextArea(networkArayuzInfos, jTable_networkArayuz, jTextArea_descriptionNetworkArayuz);
+            uiSwingMetotlar.tableInfo2TextArea(ipAdresInfos, jTable_inetAddress, jTextArea_descriptionInetAddress);
         }
     });
-    */
+
     ///////////
     jScrollPane24.setViewportView(jTable_inetAddress);
 
@@ -765,7 +767,7 @@ public class kayasUI extends javax.swing.JFrame {
                         .addComponent(jLabel21)))
                 .addGroup(jPanel7Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(jButton_getNetworkInterfaces1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jButton_getInetAddresses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGap(18, 18, 18)
             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel7Layout.createSequentialGroup()
@@ -785,7 +787,7 @@ public class kayasUI extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
                     .addGap(27, 27, 27)
-                    .addComponent(jButton_getNetworkInterfaces1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton_getInetAddresses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel7Layout.createSequentialGroup()
                     .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -948,11 +950,11 @@ public class kayasUI extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jTextField_URL, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jComboBox_urlHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox_urlHistory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jButton_Git, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jButton_back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton_back))
                 .addComponent(jTabbedPane1))
             .addContainerGap())
     );
@@ -1111,7 +1113,7 @@ public class kayasUI extends javax.swing.JFrame {
             // This visited URL will be added to the top of "URL History" combobox.
             // Also keep track of visited URLs in the code, do not lose info.
             visitedURLs.add(myurl);
-            
+
             // The URL should be inserted to the beginning of the list, because it is most recent item.
             //jComboBox_urlHistory.addItem(urlstr);     // this adds to the end.
             ((DefaultComboBoxModel) jComboBox_urlHistory.getModel()).insertElementAt(urlstr, 0);
@@ -1201,7 +1203,6 @@ public class kayasUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_sendEPostaActionPerformed
 
     private void jButton_getNetworkInterfacesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_getNetworkInterfacesActionPerformed
-
         // liste ve tabloyu sıfırla.
         jList_networkArayuzler.removeAll();
         jTable_networkArayuz.removeAll();
@@ -1283,7 +1284,7 @@ public class kayasUI extends javax.swing.JFrame {
 
     private void jComboBox_urlHistoryİtemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox_urlHistoryİtemStateChanged
         // TODO add your handling code here:
-        String selectedURL=(String) jComboBox_urlHistory.getSelectedItem();
+        String selectedURL = (String) jComboBox_urlHistory.getSelectedItem();
         jTextField_URL.setText(selectedURL);
     }//GEN-LAST:event_jComboBox_urlHistoryİtemStateChanged
 
@@ -1292,19 +1293,60 @@ public class kayasUI extends javax.swing.JFrame {
      */
     private void jButton_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_backActionPerformed
         // TODO add your handling code here:
-        int previousURLindex=1;
-        String lastURL=(String) jComboBox_urlHistory.getModel().getElementAt(previousURLindex);
+        int previousURLindex = 1;
+        String lastURL = (String) jComboBox_urlHistory.getModel().getElementAt(previousURLindex);
         jTextField_URL.setText(lastURL);
         jButton_GitActionPerformed(evt);
     }//GEN-LAST:event_jButton_backActionPerformed
 
-    private void jList_inetAddressValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_inetAddressValueChanged
+    private void jList_inetAddresslerValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_inetAddresslerValueChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_jList_inetAddressValueChanged
+        
+        int indeks = jList_inetAddressler.getSelectedIndex();
+        if (indeks < 0) // nesne yenilenince indeks=-1 oluyor ve bir değişiklik olduğu için bu metot çağırılıyor, indeks=- olunca da "java.lang.IndexOutOfBoundsException" alıyorum.
+        {
+            return;
+        }
+        try {
+            ipAdresInfos = kayaNetworkAbstractClass1.inetAddressBilgileri(ipAdresList.get(indeks));
+            uiSwingMetotlar.bilgiler2Table(ipAdresInfos, jTable_inetAddress);
+        } catch (Exception ex) {
+            Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+            uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
+        }
+    }//GEN-LAST:event_jList_inetAddresslerValueChanged
 
-    private void jButton_getNetworkInterfaces1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_getNetworkInterfaces1ActionPerformed
+    private void jButton_getInetAddressesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_getInetAddressesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_getNetworkInterfaces1ActionPerformed
+        // liste ve tabloyu sıfırla.
+        jList_inetAddressler.removeAll();
+        jTable_inetAddress.removeAll();
+        try {
+            // TODO add your handling code here:
+            NetworkInterface niTmp = null;
+            Enumeration<InetAddress> niEnumTmp = null;
+            InetAddress iaTmp=null;
+            ipAdresList=new LinkedList<InetAddress>();
+            LinkedList<String> tmpList = new LinkedList<String>();    // JList'te gösterim için "InetAddress" nesnelerinin isimlerini ayrı ayrı göndersem daha iyi olacak.
+
+            Enumeration<NetworkInterface> networkArayuzEnum = NetworkInterface.getNetworkInterfaces();
+            while (networkArayuzEnum.hasMoreElements()) {
+                niTmp = networkArayuzEnum.nextElement();
+                niEnumTmp = niTmp.getInetAddresses();
+                while (niEnumTmp.hasMoreElements()) {
+                    iaTmp=niEnumTmp.nextElement();
+                    
+                    ipAdresList.add(iaTmp);
+                    tmpList.add(iaTmp.toString());
+                    //tmpList.add(iaTmp.getHostAddress());
+                }
+            }
+            uiSwingMetotlar.LinkedList2JList(tmpList, jList_inetAddressler);
+        } catch (SocketException ex) {
+            Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+            uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
+        }
+    }//GEN-LAST:event_jButton_getInetAddressesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1326,8 +1368,8 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Git;
     private javax.swing.JButton jButton_back;
     private javax.swing.JButton jButton_clearVerbose;
+    private javax.swing.JButton jButton_getInetAddresses;
     private javax.swing.JButton jButton_getNetworkInterfaces;
-    private javax.swing.JButton jButton_getNetworkInterfaces1;
     private javax.swing.JButton jButton_initializeAndSetVisible;
     private javax.swing.JButton jButton_sendEPosta;
     private javax.swing.JButton jButton_setLookAndFeel;
@@ -1364,7 +1406,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_shellVerbose_executing;
-    private javax.swing.JList jList_inetAddress;
+    private javax.swing.JList jList_inetAddressler;
     private javax.swing.JList jList_networkArayuzler;
     private javax.swing.JList jList_shellCommandHistory;
     private javax.swing.JPanel jPanel1;

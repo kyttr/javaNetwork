@@ -182,14 +182,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="jTextField_URL" min="-2" pref="598" max="-2" attributes="1"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox_urlHistory" min="-2" pref="171" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox_urlHistory" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Component id="jButton_Git" min="-2" pref="45" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton_back" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton_back" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jTabbedPane1" max="32767" attributes="1"/>
                   </Group>
@@ -979,7 +979,7 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jButton_getNetworkInterfaces1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButton_getInetAddresses" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -1005,7 +1005,7 @@
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                       <Component id="jScrollPane17" pref="259" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="jButton_getNetworkInterfaces1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jButton_getInetAddresses" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jScrollPane24" pref="0" max="32767" attributes="0"/>
@@ -1030,19 +1030,19 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="jList_inetAddress">
+                        <Component class="javax.swing.JList" name="jList_inetAddressler">
                           <Events>
-                            <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jList_inetAddressValueChanged"/>
+                            <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="jList_inetAddresslerValueChanged"/>
                           </Events>
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JButton" name="jButton_getNetworkInterfaces1">
+                    <Component class="javax.swing.JButton" name="jButton_getInetAddresses">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="&lt;html&gt;for(ni : NetworkInterface.getNetworkInterfaces()){&lt;br&gt;&#x9;ni.getInetAddresses()) }"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_getNetworkInterfaces1ActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_getInetAddressesActionPerformed"/>
                       </Events>
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane24">
@@ -1058,7 +1058,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;/*&#xa;        ListSelectionModel rowSM = jTable_networkArayuz.getSelectionModel();&#xa;        rowSM.addListSelectionListener(new ListSelectionListener() {&#xa;&#xa;            public void valueChanged(ListSelectionEvent e) {&#xa;                ListSelectionModel rowSM = (ListSelectionModel) e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;                uiSwingMetotlar.tableInfo2TextArea(networkArayuzInfos, jTable_networkArayuz, jTextArea_descriptionNetworkArayuz);&#xa;            }&#xa;        });&#xa;*/&#xa;///////////"/>
+                            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="/////////// Bu kodu internetten buldum. &#xa;// &quot;jTable&quot; &#x131;n &quot;currentItemChanged&quot; gibi bir olay&#x131; yokmu&#x15f;. &#xa;// Kendimizin yazmas&#x131; gerekiyor.&#xa;&#xa;        ListSelectionModel rowSM_inetAddress = jTable_inetAddress.getSelectionModel();&#xa;        rowSM_inetAddress.addListSelectionListener(new ListSelectionListener() {&#xa;&#xa;            public void valueChanged(ListSelectionEvent e) {&#xa;                ListSelectionModel rowSM_inetAddress = (ListSelectionModel) e.getSource();&#xa;//int selectedIndex = rowSM.getMinSelectionIndex();&#xa;// do something with selected index&#xa;                uiSwingMetotlar.tableInfo2TextArea(ipAdresInfos, jTable_inetAddress, jTextArea_descriptionInetAddress);&#xa;            }&#xa;        });&#xa;&#xa;///////////"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
