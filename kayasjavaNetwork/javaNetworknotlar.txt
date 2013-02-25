@@ -55,3 +55,4 @@ DONE
 DONE
 33. IP adreslerini gösterme. "NetworkInterface" nesneleri ile IP adreslerini aldıktan sonra gösterimi doğru yapmadığımı fark ettim.
 DONE
+34. "http://whatismyipaddress.com/" sitesinin yaptığını yap.
