@@ -56,3 +56,4 @@ DONE
 33. IP adreslerini gösterme. "NetworkInterface" nesneleri ile IP adreslerini aldıktan sonra gösterimi doğru yapmadığımı fark ettim.
 DONE
 34. "http://whatismyipaddress.com/" sitesinin yaptığını yap.
+35. "kayasUI.java" --> "java Mail" sekmesinin tasarimi : "Auto Resizing" ekle.
