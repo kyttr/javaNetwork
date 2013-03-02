@@ -57,3 +57,4 @@ DONE
 DONE
 34. "http://whatismyipaddress.com/" sitesinin yaptığını yap.
 35. "kayasUI.java" --> "java Mail" sekmesinin tasarimi : "Auto Resizing" ekle.
+36. <object>Bilgileri() ,ornegin inetAddressBilgileri, gibi metotlarin "description" alani daha detayli olsun. Java dokumentasyonundaki uzun tanimlari kullan.
