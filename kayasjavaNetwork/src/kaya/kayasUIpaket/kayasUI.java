@@ -324,7 +324,7 @@ public class kayasUI extends javax.swing.JFrame {
             JList theList = (JList) mouseEvent.getSource();
             if (mouseEvent.getClickCount() == 2) {  // double click
                 String komut = (String)theList.getSelectedValue();
-                executeCommand_in_Thread(komut);
+                in_Thread_executeCommand(komut);
             }
         }
     };
@@ -1038,7 +1038,7 @@ public class kayasUI extends javax.swing.JFrame {
      * wanted to let the thread run a "command-line" execution. Meanwhile I
      * would be able to do other things in my GUI.
      */
-    private void executeCommand_in_Thread(String komut) {
+    private void in_Thread_executeCommand(String komut) {
         /*
          * http://stackoverflow.com/questions/5853167/runnable-with-a-parameter
          * http://stackoverflow.com/questions/877096/how-can-i-pass-a-parameter-to-a-java-thread
@@ -1080,47 +1080,66 @@ public class kayasUI extends javax.swing.JFrame {
         execute_Command_Thread.start();
     }
 
+    /*
+     * I want to do other things while "URL visit" process is running. I wanted
+     * to let the thread run a "URL visit" execution. Meanwhile I would be able
+     * to do other things in my GUI.
+     */
+    private void in_Thread_Git(String urlstr) {
+        
+        final String parameter = urlstr; // the final is important
+
+        Thread git_Thread = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    URL myurl = new URL(parameter);
+
+                    // show the webpage in corresponding pane, but regard the following link.
+                    // http://stackoverflow.com/questions/4153806/jeditorpane-as-a-web-browser?rq=1
+                    //jEditorPane_url.setPage(myurl);   // programı yavaşlatıyor, belki kendisi için ayrı bir thread gerekli.
+
+                    // URL
+                    urlInfos = kayaNetworkAbstractClass1.urlBilgileri(myurl);
+                    uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL);
+                    uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL2);
+
+                    // URLConnection
+                    URLConnection urlBaglanti = myurl.openConnection();
+                    urlConnectionInfos = kayaNetworkAbstractClass1.urlConnectionBilgileri(urlBaglanti);
+                    uiSwingMetotlar.bilgiler2Table(urlConnectionInfos, jTable_URLConnection);
+
+                    //HttpURLConnection
+                    HttpURLConnection httpurlBaglanti = (HttpURLConnection) urlBaglanti;
+                    HttpUrlConnectionInfos = kayaNetworkAbstractClass1.httpURLConnectionBilgileri(httpurlBaglanti);
+                    uiSwingMetotlar.bilgiler2Table(HttpUrlConnectionInfos, jTable_HttpURLConnection);
+
+                    String html = kayaNetworkAbstractClass1.readURLDirectly2HTMLString(myurl);
+                    HTMLString2TextArea(html, jTextArea_HTMLKaynak);
+
+                    // This visited URL will be added to the top of "URL History" combobox.
+                    // Also keep track of visited URLs in the code, do not lose info.
+                    visitedURLs.add(myurl);
+
+                    // The URL should be inserted to the beginning of the list, because it is most recent item.
+                    //jComboBox_urlHistory.addItem(urlstr);     // this adds to the end.
+                    ((DefaultComboBoxModel) jComboBox_urlHistory.getModel()).insertElementAt(parameter, 0);
+                    //jComboBox_urlHistory.setSelectedIndex(-1);      // After the visit, I want nothing to be displayed in the combobox.
+
+                } catch (IOException ex) {
+                    Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+                    uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
+                }
+            }
+        };
+        
+        git_Thread.start();
+    }
+
     private void jButton_GitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_GitActionPerformed
-        try {
-            // TODO add your handling code here:
             String urlstr = jTextField_URL.getText();
-            URL myurl = new URL(urlstr);
-
-            // show the webpage in corresponding pane, but regard the following link.
-            // http://stackoverflow.com/questions/4153806/jeditorpane-as-a-web-browser?rq=1
-            //jEditorPane_url.setPage(myurl);   // programı yavaşlatıyor, belki kendisi için ayrı bir thread gerekli.
-
-            // URL
-            urlInfos = kayaNetworkAbstractClass1.urlBilgileri(myurl);
-            uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL);
-            uiSwingMetotlar.bilgiler2Table(urlInfos, jTable_URL2);
-
-            // URLConnection
-            URLConnection urlBaglanti = myurl.openConnection();
-            urlConnectionInfos = kayaNetworkAbstractClass1.urlConnectionBilgileri(urlBaglanti);
-            uiSwingMetotlar.bilgiler2Table(urlConnectionInfos, jTable_URLConnection);
-
-            //HttpURLConnection
-            HttpURLConnection httpurlBaglanti = (HttpURLConnection) urlBaglanti;
-            HttpUrlConnectionInfos = kayaNetworkAbstractClass1.httpURLConnectionBilgileri(httpurlBaglanti);
-            uiSwingMetotlar.bilgiler2Table(HttpUrlConnectionInfos, jTable_HttpURLConnection);
-
-            String html = kayaNetworkAbstractClass1.readURLDirectly2HTMLString(myurl);
-            HTMLString2TextArea(html, jTextArea_HTMLKaynak);
-
-            // This visited URL will be added to the top of "URL History" combobox.
-            // Also keep track of visited URLs in the code, do not lose info.
-            visitedURLs.add(myurl);
-
-            // The URL should be inserted to the beginning of the list, because it is most recent item.
-            //jComboBox_urlHistory.addItem(urlstr);     // this adds to the end.
-            ((DefaultComboBoxModel) jComboBox_urlHistory.getModel()).insertElementAt(urlstr, 0);
-            //jComboBox_urlHistory.setSelectedIndex(-1);      // After the visit, I want nothing to be displayed in the combobox.
-
-        } catch (IOException ex) {
-            Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
-            uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
-        }
+            in_Thread_Git(urlstr);
     }//GEN-LAST:event_jButton_GitActionPerformed
 
     /*
@@ -1253,7 +1272,7 @@ public class kayasUI extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         String komut = jTextField_Command.getText().trim();
-        executeCommand_in_Thread(komut);
+        in_Thread_executeCommand(komut);
         /*
          * String output = ""; try { //output =
          * GenelMetotlar.executeString(komut); output =
@@ -1299,7 +1318,7 @@ public class kayasUI extends javax.swing.JFrame {
 
     private void jList_inetAddresslerValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_inetAddresslerValueChanged
         // TODO add your handling code here:
-        
+
         int indeks = jList_inetAddressler.getSelectedIndex();
         if (indeks < 0) // nesne yenilenince indeks=-1 oluyor ve bir değişiklik olduğu için bu metot çağırılıyor, indeks=- olunca da "java.lang.IndexOutOfBoundsException" alıyorum.
         {
@@ -1323,8 +1342,8 @@ public class kayasUI extends javax.swing.JFrame {
             // TODO add your handling code here:
             NetworkInterface niTmp = null;
             Enumeration<InetAddress> niEnumTmp = null;
-            InetAddress iaTmp=null;
-            ipAdresList=new LinkedList<InetAddress>();
+            InetAddress iaTmp = null;
+            ipAdresList = new LinkedList<InetAddress>();
             LinkedList<String> tmpList = new LinkedList<String>();    // JList'te gösterim için "InetAddress" nesnelerinin isimlerini ayrı ayrı göndersem daha iyi olacak.
 
             Enumeration<NetworkInterface> networkArayuzEnum = NetworkInterface.getNetworkInterfaces();
@@ -1332,8 +1351,8 @@ public class kayasUI extends javax.swing.JFrame {
                 niTmp = networkArayuzEnum.nextElement();
                 niEnumTmp = niTmp.getInetAddresses();
                 while (niEnumTmp.hasMoreElements()) {
-                    iaTmp=niEnumTmp.nextElement();
-                    
+                    iaTmp = niEnumTmp.nextElement();
+
                     ipAdresList.add(iaTmp);
                     tmpList.add(iaTmp.toString());
                     //tmpList.add(iaTmp.getHostAddress());

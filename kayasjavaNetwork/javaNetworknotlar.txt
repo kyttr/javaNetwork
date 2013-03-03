@@ -60,3 +60,4 @@ DONE
 DONE
 36. <object>Bilgileri() ,ornegin inetAddressBilgileri, gibi metotlarin "description" alani daha detayli olsun. Java dokumentasyonundaki uzun tanimlari kullan.
 37. URL ziyareti ayrı bir kanal (Thread) içinde yapılsın.
+DONE

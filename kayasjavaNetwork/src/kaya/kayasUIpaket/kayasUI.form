@@ -396,7 +396,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="MouseListener mouseListener = new MouseAdapter() {&#xa;            &#xa;            public void mouseClicked(MouseEvent mouseEvent) {&#xa;                JList theList = (JList) mouseEvent.getSource();&#xa;                if (mouseEvent.getClickCount() == 2) {  // double click&#xa;                    String komut = (String)theList.getSelectedValue();&#xa;                    executeCommand_in_Thread(komut);&#xa;                }&#xa;            }&#xa;        };&#xa;        jList_shellCommandHistory.addMouseListener(mouseListener);"/>
+                            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="MouseListener mouseListener = new MouseAdapter() {&#xa;            &#xa;            public void mouseClicked(MouseEvent mouseEvent) {&#xa;                JList theList = (JList) mouseEvent.getSource();&#xa;                if (mouseEvent.getClickCount() == 2) {  // double click&#xa;                    String komut = (String)theList.getSelectedValue();&#xa;                    in_Thread_executeCommand(komut);&#xa;                }&#xa;            }&#xa;        };&#xa;        jList_shellCommandHistory.addMouseListener(mouseListener);"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>
