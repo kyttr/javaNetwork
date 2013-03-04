@@ -62,3 +62,4 @@ DONE
 37. URL ziyareti ayrı bir kanal (Thread) içinde yapılsın.
 DONE
 38. soket Bağlantı işlemi kanal (Thread) içinde yapılsın. kanal (Thread) içinde çalışan işlemler için "thread is running", "executing" vs. gibi uyarı yazıları olsun.
+39. "kayasServerSocketUI" ve "kayasClientSocket" tasarımı düzenle.
