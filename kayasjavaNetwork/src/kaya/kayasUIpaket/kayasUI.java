@@ -278,6 +278,7 @@ public class kayasUI extends javax.swing.JFrame {
     );
 
     setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+    setTitle("kayasUI");
 
     jButton_Git.setText("Git");
     jButton_Git.addActionListener(new java.awt.event.ActionListener() {

@@ -244,6 +244,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jButton_initializeAndSetServerSocket = new javax.swing.JButton();
         jButton_kapat = new javax.swing.JButton();
 
+        jFrame_dosyaGezgini.setTitle("dosyaGezgini");
+
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -442,6 +444,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 .addGap(0, 0, Short.MAX_VALUE)))
     );
 
+    setTitle("Server (sunucu) Soket");
     setExtendedState(JFrame.MAXIMIZED_BOTH);
     getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
