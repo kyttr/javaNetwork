@@ -1234,11 +1234,12 @@ public abstract class kayaNetworkAbstractClass1 {
 
         Transport transport = postaSession.getTransport("smtp");
 
-        Integer port = Integer.parseInt(props.getProperty("mail.smtp.port"));
+        String portStr=props.getProperty("mail.smtp.port");
         String host = props.getProperty("mail.smtp.host");
         // try to execute most detailed "connect()" method
-        if (port != null) // "port" girilmis ise
+        if (portStr != null) // "port" girilmis ise
         {
+            int port=Integer.parseInt(portStr);
             transport.connect(host, port, from, props.getProperty("mail.smtp.password"));
         } else if (!host.isEmpty()) // "host" girilmis ise
         {
