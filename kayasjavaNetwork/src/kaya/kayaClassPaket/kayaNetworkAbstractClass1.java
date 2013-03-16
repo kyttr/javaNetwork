@@ -1241,7 +1241,7 @@ public abstract class kayaNetworkAbstractClass1 {
         {
             int port=Integer.parseInt(portStr);
             transport.connect(host, port, from, props.getProperty("mail.smtp.password"));
-        } else if (!host.isEmpty()) // "host" girilmis ise
+        } else if (host!=null) // "host" girilmis ise
         {
             transport.connect(host, from, props.getProperty("mail.smtp.password"));
         } else if (!from.isEmpty()) // "user" girilmis ise
