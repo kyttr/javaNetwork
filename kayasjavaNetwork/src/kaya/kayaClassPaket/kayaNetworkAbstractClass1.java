@@ -1244,7 +1244,7 @@ public abstract class kayaNetworkAbstractClass1 {
         Properties epostaProps = new Properties();
         //Properties props = System.getProperties();
         //LinkedList<String> epostaDetaylar : {password,host,port,auth,starttls.enable}
-        if (!epostaDetaylar.get(0).equals("")) // parola boş değilse
+        if (!epostaDetaylar.get(0).isEmpty()) // parola boş değilse
         {
             epostaProps.put("mail.smtp.password", epostaDetaylar.get(0));
         }
