@@ -1249,7 +1249,10 @@ public abstract class kayaNetworkAbstractClass1 {
             transport.connect(from, props.getProperty("mail.smtp.password"));
         } else // hicbir sey girilmemis ise
         {
-            transport.connect();
+            //transport.connect(); // calismiyor : Could not connect to SMTP host: localhost, port: 25; nested exception is:
+            Transport.send(myMesaj);
+            transport.close();
+            return;
         }
 
         //transport.connect();
