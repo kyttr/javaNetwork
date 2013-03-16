@@ -89,6 +89,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
         if (!gnt.gelenStr.isEmpty()) {
             jTextArea_readFromSocket.append(gnt.gelenStr + "\n");
+            //For "jTextArea_readFromSocket", I want to see the most recent message coming from the other socket, so I want the bottom view
+            uiSwingMetotlar.setViewOfJTextArea2Bottom(jTextArea_readFromSocket);
         } else if (gnt.gelenDosya != null) {
             jTextArea_readFromSocket.append("Dosya geldi : " + gnt.gelenDosya.getAbsolutePath() + "\n");
             jLabel_dosyaReadDurum.setText(jLabel_dosyaReadDurumSTR3 + gnt.gelenDosya.getAbsolutePath());
@@ -981,7 +983,6 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
         //Thread serverDinleThread = new Thread() {
         clientDinleThread = new Thread() {
-
             @Override
             public void run() {
                 try {
@@ -1259,7 +1260,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             //                textArea_descriptionServerSocket.append(ex.toString() + "\n");
             //            }
             //        }
-                    kayaNetworkAbstractClass1.requestFilesFromSoket(requestedFileAbsolutPathLL, MTSunucu.clientSoket);
+            kayaNetworkAbstractClass1.requestFilesFromSoket(requestedFileAbsolutPathLL, MTSunucu.clientSoket);
         } catch (IOException ex) {
             Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1286,7 +1287,6 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
-
             public void run() {
                 new kayasServerSocketUI().setVisible(true);
             }
