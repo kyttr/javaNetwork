@@ -491,7 +491,7 @@ public abstract class kayaNetworkAbstractClass1 {
          * state of the socket.::: the connection state of the socket.:::
          * whether the read-half of the socket connection is closed.::: whether
          * the write-half of the socket connection is closed.";
-        }
+         }
          */
 
         {
@@ -1182,7 +1182,6 @@ public abstract class kayaNetworkAbstractClass1 {
         }
 
         ActionListener actionDinler = new ActionListener() {
-
             public void actionPerformed(ActionEvent evt) {
                 try {
                     writeScreenShot2Soket(mySoket, formatName);
@@ -1212,11 +1211,18 @@ public abstract class kayaNetworkAbstractClass1 {
         Session postaSession = Session.getDefaultInstance(props);
         Message myMesaj = new MimeMessage(postaSession);
 
-        InternetAddress fromAddress = new InternetAddress(from);
-        InternetAddress toAddress = new InternetAddress(to);
+        InternetAddress fromAddress = null;
+        InternetAddress toAddress = null;
 
-        myMesaj.setFrom(fromAddress);
-        myMesaj.setRecipient(Message.RecipientType.TO, toAddress);
+        if (!from.isEmpty()) {
+            fromAddress = new InternetAddress(from);
+            myMesaj.setFrom(fromAddress);
+        }
+        if (!to.isEmpty()) {
+            toAddress = new InternetAddress(to);
+            myMesaj.setRecipient(Message.RecipientType.TO, toAddress);
+        }
+
         myMesaj.setSubject(konu);
         myMesaj.setText(mesaj);
 
@@ -1227,7 +1233,24 @@ public abstract class kayaNetworkAbstractClass1 {
          */
 
         Transport transport = postaSession.getTransport("smtp");
-        transport.connect(props.getProperty("mail.smtp.host"), Integer.parseInt(props.getProperty("mail.smtp.port")), from, props.getProperty("mail.smtp.password"));
+
+        Integer port = Integer.parseInt(props.getProperty("mail.smtp.port"));
+        String host = props.getProperty("mail.smtp.host");
+        // try to execute most detailed "connect()" method
+        if (port != null) // "port" girilmis ise
+        {
+            transport.connect(host, port, from, props.getProperty("mail.smtp.password"));
+        } else if (!host.isEmpty()) // "host" girilmis ise
+        {
+            transport.connect(host, from, props.getProperty("mail.smtp.password"));
+        } else if (!from.isEmpty()) // "user" girilmis ise
+        {
+            transport.connect(from, props.getProperty("mail.smtp.password"));
+        } else // hicbir sey girilmemis ise
+        {
+            transport.connect();
+        }
+
         //transport.connect();
         //transport.connect(from, props.getProperty("mail.smtp.password"));
 
@@ -1326,7 +1349,7 @@ public abstract class kayaNetworkAbstractClass1 {
          * is a virtual interface (also called subinterface).:::Returns whether
          * a network interface supports multicasting or not.:::Returns a string
          * representation of the object.";
-        }
+         }
          */
 
         {
@@ -1391,7 +1414,7 @@ public abstract class kayaNetworkAbstractClass1 {
          * check if the InetAddress is an IP multicast address.:::Utility
          * routine to check if the InetAddress is a site local
          * address.:::Converts this IP address to a String.:::";
-        }
+         }
          */
 
         {
