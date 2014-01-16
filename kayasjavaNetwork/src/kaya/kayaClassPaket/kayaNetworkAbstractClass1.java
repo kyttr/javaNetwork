@@ -8,37 +8,18 @@ package kaya.kayaClassPaket;
  *
  * @author kaya
  */
-import com.sun.imageio.plugins.bmp.BMPImageReader;
 import java.awt.AWTException;
-import java.awt.Canvas;
-import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.TextArea;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.awt.image.Raster;
 import java.util.*;
 import java.io.*;
 import java.net.*;
 import java.util.logging.Logger;
-import javax.swing.*;
-import javax.swing.table.*;
-import java.lang.*;
 import java.util.logging.Level;
-import javax.imageio.ImageIO;
-import javax.imageio.*;
 import java.lang.Math.*;
-import java.lang.reflect.Array;
-import java.nio.ByteBuffer;
-import java.nio.charset.CharsetDecoder;
 import java.nio.file.Files;
 import java.nio.file.attribute.BasicFileAttributes;
-import javax.imageio.stream.ImageInputStream;
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -48,7 +29,6 @@ import javax.mail.Session;
 import javax.swing.Timer;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.tree.DefaultMutableTreeNode;
-import kaya.kayasServerUIpaket.kayasServerSocketUI;
 
 public abstract class kayaNetworkAbstractClass1 {
 
