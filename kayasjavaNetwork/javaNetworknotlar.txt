@@ -65,4 +65,5 @@ DONE
 39. "kayasServerSocketUI" ve "kayasClientSocket" tasarımı düzenle.
 40. "ScreenShot" sekmesi : "screenShotGetir() + bufferefImage2JLabel()" butonu ile "periodicScreenShotGetir()" butonu arka arkaya çalışınca görüntüde çakışma oluyor. Çakışmayı engelle.
 41. "kayasServerSocketUI" ve "kayasClientSocket" : "textArea" nesnelerinde varsayılan olarak en son satırı göster. "Shell" sekmesinde yaptığın gibi.
+DONE.
 42. "dosyaGezginiFrame" tasarımı düzenle. ("kayasServerSocketUI" ya bağlı olan nesne)

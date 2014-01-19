@@ -8,37 +8,18 @@ package kaya.kayaClassPaket;
  *
  * @author kaya
  */
-import com.sun.imageio.plugins.bmp.BMPImageReader;
 import java.awt.AWTException;
-import java.awt.Canvas;
-import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.TextArea;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.awt.image.Raster;
 import java.util.*;
 import java.io.*;
 import java.net.*;
 import java.util.logging.Logger;
-import javax.swing.*;
-import javax.swing.table.*;
-import java.lang.*;
 import java.util.logging.Level;
-import javax.imageio.ImageIO;
-import javax.imageio.*;
 import java.lang.Math.*;
-import java.lang.reflect.Array;
-import java.nio.ByteBuffer;
-import java.nio.charset.CharsetDecoder;
 import java.nio.file.Files;
 import java.nio.file.attribute.BasicFileAttributes;
-import javax.imageio.stream.ImageInputStream;
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -48,7 +29,6 @@ import javax.mail.Session;
 import javax.swing.Timer;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.tree.DefaultMutableTreeNode;
-import kaya.kayasServerUIpaket.kayasServerSocketUI;
 
 public abstract class kayaNetworkAbstractClass1 {
 
@@ -491,7 +471,7 @@ public abstract class kayaNetworkAbstractClass1 {
          * state of the socket.::: the connection state of the socket.:::
          * whether the read-half of the socket connection is closed.::: whether
          * the write-half of the socket connection is closed.";
-        }
+         }
          */
 
         {
@@ -1182,7 +1162,6 @@ public abstract class kayaNetworkAbstractClass1 {
         }
 
         ActionListener actionDinler = new ActionListener() {
-
             public void actionPerformed(ActionEvent evt) {
                 try {
                     writeScreenShot2Soket(mySoket, formatName);
@@ -1212,11 +1191,18 @@ public abstract class kayaNetworkAbstractClass1 {
         Session postaSession = Session.getDefaultInstance(props);
         Message myMesaj = new MimeMessage(postaSession);
 
-        InternetAddress fromAddress = new InternetAddress(from);
-        InternetAddress toAddress = new InternetAddress(to);
+        InternetAddress fromAddress = null;
+        InternetAddress toAddress = null;
 
-        myMesaj.setFrom(fromAddress);
-        myMesaj.setRecipient(Message.RecipientType.TO, toAddress);
+        if (!from.isEmpty()) {
+            fromAddress = new InternetAddress(from);
+            myMesaj.setFrom(fromAddress);
+        }
+        if (!to.isEmpty()) {
+            toAddress = new InternetAddress(to);
+            myMesaj.setRecipient(Message.RecipientType.TO, toAddress);
+        }
+
         myMesaj.setSubject(konu);
         myMesaj.setText(mesaj);
 
@@ -1227,7 +1213,28 @@ public abstract class kayaNetworkAbstractClass1 {
          */
 
         Transport transport = postaSession.getTransport("smtp");
-        transport.connect(props.getProperty("mail.smtp.host"), Integer.parseInt(props.getProperty("mail.smtp.port")), from, props.getProperty("mail.smtp.password"));
+
+        String portStr=props.getProperty("mail.smtp.port");
+        String host = props.getProperty("mail.smtp.host");
+        // try to execute most detailed "connect()" method
+        if (portStr != null) // "port" girilmis ise
+        {
+            int port=Integer.parseInt(portStr);
+            transport.connect(host, port, from, props.getProperty("mail.smtp.password"));
+        } else if (host!=null) // "host" girilmis ise
+        {
+            transport.connect(host, from, props.getProperty("mail.smtp.password"));
+        } else if (!from.isEmpty()) // "user" girilmis ise
+        {
+            transport.connect(from, props.getProperty("mail.smtp.password"));
+        } else // hicbir sey girilmemis ise
+        {
+            //transport.connect(); // calismiyor : Could not connect to SMTP host: localhost, port: 25; nested exception is:
+            Transport.send(myMesaj);
+            transport.close();
+            return;
+        }
+
         //transport.connect();
         //transport.connect(from, props.getProperty("mail.smtp.password"));
 
@@ -1244,7 +1251,7 @@ public abstract class kayaNetworkAbstractClass1 {
         Properties epostaProps = new Properties();
         //Properties props = System.getProperties();
         //LinkedList<String> epostaDetaylar : {password,host,port,auth,starttls.enable}
-        if (!epostaDetaylar.get(0).equals("")) // parola boş değilse
+        if (!epostaDetaylar.get(0).isEmpty()) // parola boş değilse
         {
             epostaProps.put("mail.smtp.password", epostaDetaylar.get(0));
         }
@@ -1326,7 +1333,7 @@ public abstract class kayaNetworkAbstractClass1 {
          * is a virtual interface (also called subinterface).:::Returns whether
          * a network interface supports multicasting or not.:::Returns a string
          * representation of the object.";
-        }
+         }
          */
 
         {
@@ -1391,7 +1398,7 @@ public abstract class kayaNetworkAbstractClass1 {
          * check if the InetAddress is an IP multicast address.:::Utility
          * routine to check if the InetAddress is a site local
          * address.:::Converts this IP address to a String.:::";
-        }
+         }
          */
 
         {
