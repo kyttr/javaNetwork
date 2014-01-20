@@ -555,7 +555,8 @@ For a Java program to interact with a server-side process it simply must be able
         
         
         URLConnection urlConnection = url.openConnection();
-        urlConnection.setDoOutput(true);
+        urlConnection.setDoOutput(true);   // java.net.ProtocolException: cannot write to a URLConnection if doOutput=false
+        urlConnection.setDoInput(true);
 
         OutputStream os=urlConnection.getOutputStream();
         try (OutputStreamWriter osw = new OutputStreamWriter(os)) {
