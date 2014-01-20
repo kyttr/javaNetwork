@@ -49,8 +49,10 @@ public class kayasUI extends javax.swing.JFrame {
     // global degiskenler
     LinkedList<NetworkInterface> networkArayuzList;
     LinkedList<InetAddress> ipAdresList;
+    LinkedList<InetAddress> ipAdresListByName;
     LinkedList<LinkedList<String>> networkArayuzInfos;
     LinkedList<LinkedList<String>> ipAdresInfos;
+    LinkedList<LinkedList<String>> ipAdresInfosByName;
     LinkedList<LinkedList<String>> systemPropertiesInfos;
     LinkedList<LinkedList<String>> runtimeInfos;
     LinkedList<LinkedList<String>> urlInfos;
@@ -149,7 +151,9 @@ public class kayasUI extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
         jTextArea_descriptionNetworkArayuz = new javax.swing.JTextArea();
-        jScrollPane16 = new javax.swing.JScrollPane();
+        jPanel9 = new javax.swing.JPanel();
+        jTabbedPane4 = new javax.swing.JTabbedPane();
+        jScrollPane31 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
@@ -160,6 +164,18 @@ public class kayasUI extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jScrollPane25 = new javax.swing.JScrollPane();
         jTextArea_descriptionInetAddress = new javax.swing.JTextArea();
+        jScrollPane34 = new javax.swing.JScrollPane();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane27 = new javax.swing.JScrollPane();
+        jList_inetAddresslerByName = new javax.swing.JList();
+        jButton_getInetAddressesByName = new javax.swing.JButton();
+        jScrollPane28 = new javax.swing.JScrollPane();
+        jTable_inetAddressByName = new javax.swing.JTable();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane29 = new javax.swing.JScrollPane();
+        jTextArea_descriptionInetAddressByName = new javax.swing.JTextArea();
+        jTextField_InetAddressByName = new javax.swing.JTextField();
         jScrollPane11 = new javax.swing.JScrollPane();
         jButton_system_runtime_PropertiesGetir = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -355,11 +371,11 @@ public class kayasUI extends javax.swing.JFrame {
                     .addComponent(jButton_Execute, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane_ShellVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, 668, Short.MAX_VALUE)
+                        .addComponent(jScrollPane_ShellVerbose, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addComponent(jLabel22)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                            .addComponent(jLabel_shellVerbose_executing, javax.swing.GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jButton_clearVerbose)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -544,17 +560,17 @@ public class kayasUI extends javax.swing.JFrame {
                     .addGap(3, 3, 3))
                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE))
             .addGap(18, 18, 18)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jTextField_setRecipient)
                 .addComponent(jTextField_setSubject)
-                .addComponent(jScrollPane4)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createSequentialGroup()
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jPasswordField_password, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
+                    .addComponent(jPasswordField_password, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
                 .addComponent(jScrollPane5))
             .addContainerGap())
     );
@@ -677,7 +693,7 @@ public class kayasUI extends javax.swing.JFrame {
                     .addComponent(jScrollPane9)
                     .addGap(14, 14, 14))
                 .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE))
+                .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 706, Short.MAX_VALUE))
             .addGap(22, 22, 22))
     );
     jPanel4Layout.setVerticalGroup(
@@ -773,7 +789,7 @@ public class kayasUI extends javax.swing.JFrame {
                     .addComponent(jScrollPane25)
                     .addGap(14, 14, 14))
                 .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE))
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE))
             .addGap(22, 22, 22))
     );
     jPanel7Layout.setVerticalGroup(
@@ -796,9 +812,134 @@ public class kayasUI extends javax.swing.JFrame {
             .addContainerGap())
     );
 
-    jScrollPane16.setViewportView(jPanel7);
+    jScrollPane31.setViewportView(jPanel7);
 
-    jTabbedPane1.addTab("IP Adresler", jScrollPane16);
+    jTabbedPane4.addTab("from NetworkInterfaces", jScrollPane31);
+
+    jLabel24.setText("List of Internet Protocol (IP) addresses. ");
+
+    jList_inetAddresslerByName.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+            jList_inetAddresslerByNameValueChanged(evt);
+        }
+    });
+    jScrollPane27.setViewportView(jList_inetAddresslerByName);
+
+    jButton_getInetAddressesByName.setText("InetAddress.getAllByName()");
+    jButton_getInetAddressesByName.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButton_getInetAddressesByNameActionPerformed(evt);
+        }
+    });
+
+    jTable_inetAddressByName.setModel(new javax.swing.table.DefaultTableModel(
+        new Object [][] {
+            {null}
+        },
+        new String [] {
+            "Title 1"
+        }
+    ));
+    /////////// Bu kodu internetten buldum.
+    // "jTable" ın "currentItemChanged" gibi bir olayı yokmuş.
+    // Kendimizin yazması gerekiyor.
+
+    ListSelectionModel rowSM_inetAddressByName = jTable_inetAddressByName.getSelectionModel();
+    rowSM_inetAddressByName.addListSelectionListener(new ListSelectionListener() {
+
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel rowSM_inetAddressByName = (ListSelectionModel) e.getSource();
+            //int selectedIndex = rowSM.getMinSelectionIndex();
+            // do something with selected index
+            uiSwingMetotlar.tableInfo2TextArea(ipAdresInfosByName, jTable_inetAddressByName, jTextArea_descriptionInetAddressByName);
+        }
+    });
+
+    ///////////
+    jScrollPane28.setViewportView(jTable_inetAddressByName);
+
+    jLabel25.setText("Açıklama (Description)");
+
+    jTextArea_descriptionInetAddressByName.setColumns(20);
+    jTextArea_descriptionInetAddressByName.setLineWrap(true);
+    jTextArea_descriptionInetAddressByName.setRows(5);
+    jScrollPane29.setViewportView(jTextArea_descriptionInetAddressByName);
+
+    jTextField_InetAddressByName.setText("www.google.com");
+
+    javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+    jPanel8.setLayout(jPanel8Layout);
+    jPanel8Layout.setHorizontalGroup(
+        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel8Layout.createSequentialGroup()
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addGap(12, 12, 12)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel24)))
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextField_InetAddressByName, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton_getInetAddressesByName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE))))
+            .addGap(18, 18, 18)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addComponent(jScrollPane29)
+                    .addGap(14, 14, 14))
+                .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane28, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
+            .addGap(22, 22, 22))
+    );
+    jPanel8Layout.setVerticalGroup(
+        jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(jPanel8Layout.createSequentialGroup()
+            .addGap(10, 10, 10)
+            .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane27)
+                    .addGap(18, 18, 18)
+                    .addComponent(jTextField_InetAddressByName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jButton_getInetAddressesByName, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createSequentialGroup()
+                    .addComponent(jScrollPane28, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel25)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addContainerGap())
+    );
+
+    jScrollPane34.setViewportView(jPanel8);
+
+    jTabbedPane4.addTab("ByName", jScrollPane34);
+
+    javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+    jPanel9.setLayout(jPanel9Layout);
+    jPanel9Layout.setHorizontalGroup(
+        jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 1054, Short.MAX_VALUE)
+        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 1038, Short.MAX_VALUE)
+                .addContainerGap()))
+    );
+    jPanel9Layout.setVerticalGroup(
+        jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGap(0, 298, Short.MAX_VALUE)
+        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addContainerGap()))
+    );
+
+    jTabbedPane1.addTab("IP Adresler", jPanel9);
 
     jButton_system_runtime_PropertiesGetir.setText("System.getProperties() + Runtime.getRuntime()");
     jButton_system_runtime_PropertiesGetir.addActionListener(new java.awt.event.ActionListener() {
@@ -907,14 +1048,14 @@ public class kayasUI extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.TRAILING)
                 .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 885, Short.MAX_VALUE))
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1030, Short.MAX_VALUE))
             .addContainerGap())
     );
     jPanel5Layout.setVerticalGroup(
         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel5Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jLabel20)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1321,7 +1462,7 @@ public class kayasUI extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         int indeks = jList_inetAddressler.getSelectedIndex();
-        if (indeks < 0) // nesne yenilenince indeks=-1 oluyor ve bir değişiklik olduğu için bu metot çağırılıyor, indeks=- olunca da "java.lang.IndexOutOfBoundsException" alıyorum.
+        if (indeks < 0) // nesne yenilenince indeks=-1 oluyor ve bir değişiklik olduğu için bu metot çağırılıyor, indeks=-1 olunca da "java.lang.IndexOutOfBoundsException" alıyorum.
         {
             return;
         }
@@ -1330,7 +1471,8 @@ public class kayasUI extends javax.swing.JFrame {
             uiSwingMetotlar.bilgiler2Table(ipAdresInfos, jTable_inetAddress);
         } catch (Exception ex) {
             Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
-            uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
+            jTextArea_descriptionInetAddress.setText("");
+            uiSwingMetotlar.exceptionHappened(ex, jTextArea_descriptionInetAddress);
         }
     }//GEN-LAST:event_jList_inetAddresslerValueChanged
 
@@ -1362,9 +1504,54 @@ public class kayasUI extends javax.swing.JFrame {
             uiSwingMetotlar.LinkedList2JList(tmpList, jList_inetAddressler);
         } catch (SocketException ex) {
             Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
-            uiSwingMetotlar.exceptionHappened(ex, jTextArea_Mesaj);
+            jTextArea_descriptionInetAddress.setText("");
+            uiSwingMetotlar.exceptionHappened(ex, jTextArea_descriptionInetAddress);
         }
     }//GEN-LAST:event_jButton_getInetAddressesActionPerformed
+
+    private void jButton_getInetAddressesByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_getInetAddressesByNameActionPerformed
+        
+        // TODO add your handling code here:
+        // liste ve tabloyu sıfırla.
+        jList_inetAddresslerByName.removeAll();
+        jTable_inetAddressByName.removeAll();
+        String host;
+        try {
+            host=jTextField_InetAddressByName.getText().trim();
+            ipAdresListByName=kayaNetworkAbstractClass1.inetAddresslerByName(host);
+            LinkedList<String> tmpList = new LinkedList<String>();    // JList'te gösterim için "InetAddress" nesnelerinin isimlerini ayrı ayrı göndersem daha iyi olacak.
+            
+            for(int i=0;i<ipAdresListByName.size();i++){
+
+                    tmpList.add(ipAdresListByName.get(i).toString());
+                    //tmpList.add(iaTmp.getHostAddress());
+            }
+            uiSwingMetotlar.LinkedList2JList(tmpList, jList_inetAddresslerByName);
+        } catch (Exception ex) {
+            Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+            jTextArea_descriptionInetAddressByName.setText("");
+            uiSwingMetotlar.exceptionHappened(ex, jTextArea_descriptionInetAddressByName);
+        }
+        
+    }//GEN-LAST:event_jButton_getInetAddressesByNameActionPerformed
+
+    private void jList_inetAddresslerByNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList_inetAddresslerByNameValueChanged
+        // TODO add your handling code here:
+         
+        int indeks = jList_inetAddresslerByName.getSelectedIndex();
+        if (indeks < 0) // nesne yenilenince indeks=-1 oluyor ve bir değişiklik olduğu için bu metot çağırılıyor, indeks=-1 olunca da "java.lang.IndexOutOfBoundsException" alıyorum.
+        {
+            return;
+        }
+        try {
+            ipAdresInfosByName = kayaNetworkAbstractClass1.inetAddressBilgileri(ipAdresListByName.get(indeks));
+            uiSwingMetotlar.bilgiler2Table(ipAdresInfosByName, jTable_inetAddressByName);
+        } catch (Exception ex) {
+            Logger.getLogger(kayasUI.class.getName()).log(Level.SEVERE, null, ex);
+            jTextArea_descriptionInetAddressByName.setText("");
+            uiSwingMetotlar.exceptionHappened(ex, jTextArea_descriptionInetAddressByName);
+        }
+    }//GEN-LAST:event_jList_inetAddresslerByNameValueChanged
 
     /**
      * @param args the command line arguments
@@ -1387,6 +1574,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton_back;
     private javax.swing.JButton jButton_clearVerbose;
     private javax.swing.JButton jButton_getInetAddresses;
+    private javax.swing.JButton jButton_getInetAddressesByName;
     private javax.swing.JButton jButton_getNetworkInterfaces;
     private javax.swing.JButton jButton_initializeAndSetVisible;
     private javax.swing.JButton jButton_sendEPosta;
@@ -1415,6 +1603,8 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1424,6 +1614,7 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel_shellVerbose_executing;
     private javax.swing.JList jList_inetAddressler;
+    private javax.swing.JList jList_inetAddresslerByName;
     private javax.swing.JList jList_networkArayuzler;
     private javax.swing.JList jList_shellCommandHistory;
     private javax.swing.JPanel jPanel1;
@@ -1433,6 +1624,8 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordField_password;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -1441,7 +1634,6 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
-    private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
@@ -1452,7 +1644,12 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane25;
+    private javax.swing.JScrollPane jScrollPane27;
+    private javax.swing.JScrollPane jScrollPane28;
+    private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane31;
+    private javax.swing.JScrollPane jScrollPane34;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
@@ -1465,11 +1662,13 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPane4;
     private javax.swing.JTable jTable_HttpURLConnection;
     private javax.swing.JTable jTable_URL;
     private javax.swing.JTable jTable_URL2;
     private javax.swing.JTable jTable_URLConnection;
     private javax.swing.JTable jTable_inetAddress;
+    private javax.swing.JTable jTable_inetAddressByName;
     private javax.swing.JTable jTable_networkArayuz;
     private javax.swing.JTable jTable_runtime;
     private javax.swing.JTable jTable_systemProperties;
@@ -1477,12 +1676,14 @@ public class kayasUI extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea_Mesaj;
     private javax.swing.JTextArea jTextArea_ShellVerbose;
     private javax.swing.JTextArea jTextArea_descriptionInetAddress;
+    private javax.swing.JTextArea jTextArea_descriptionInetAddressByName;
     private javax.swing.JTextArea jTextArea_descriptionNetworkArayuz;
     private javax.swing.JTextArea jTextArea_descriptionSystem_Runtime;
     private javax.swing.JTextArea jTextArea_descriptionURL_HTTP_Connection;
     private javax.swing.JTextArea jTextArea_epostaVerbose;
     private javax.swing.JTextArea jTextArea_setText;
     private javax.swing.JTextField jTextField_Command;
+    private javax.swing.JTextField jTextField_InetAddressByName;
     private javax.swing.JTextField jTextField_URL;
     private javax.swing.JTextField jTextField_setFrom;
     private javax.swing.JTextField jTextField_setRecipient;

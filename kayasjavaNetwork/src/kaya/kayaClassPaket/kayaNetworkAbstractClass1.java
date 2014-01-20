@@ -1407,4 +1407,17 @@ public abstract class kayaNetworkAbstractClass1 {
 
         return bilgilerDon(props, description, listeVals);
     }
+    
+    public static LinkedList<InetAddress> inetAddresslerByName(String host) throws UnknownHostException
+    {   
+        LinkedList<InetAddress> iaList;
+
+        // "Exception" işlemeyi "kayasUI.java"da yapacağım. Burada yaparsam, "kayasUI.java"da "Exception" mesajını göremem.
+        InetAddress[] iaArray = InetAddress.getAllByName(host);     // Given the name of a host, returns an array of its IP addresses, based on the configured name service on the system. 
+        
+        // http://stackoverflow.com/questions/157944/how-to-create-arraylist-arraylistt-from-array-t
+        iaList=new LinkedList<InetAddress>(Arrays.asList(iaArray));
+        
+        return iaList;
+    }
 }
