@@ -491,7 +491,72 @@ public abstract class kayaNetworkAbstractClass1 {
         InputStream is = url.openStream();
         return GenelMetotlar.readStringfromInputStream(is);
     }
+    
+    /*
+     * get the HTML source of a URL return String : "HTML" source of the URL
+     */
+    public static String readURL2HTMLString(URL url) throws IOException
+    {
+        URLConnection urlConnection=url.openConnection();
+        InputStream is=urlConnection.getInputStream();
+        return GenelMetotlar.readStringfromInputStream(is);
+    }
+    
+    /*
+     * writes the given parameters to an URL. 
+     * returns : InputStream for a URLConnection which is written with parameters
+     * paramNames : names of parameters to be written to URL, Ex. "username"
+     * paramValues : values of parameters to be written to URL, Ex. "kaya"
+     * 
+     * Java Tutorial : 
+     * "Writing to a URLConnection
 
+Many HTML pages contain forms — text fields and other GUI objects that let you enter data to send to the server. After you type in the required information and initiate the query by clicking a button, your Web browser writes the data to the URL over the network. At the other end the server receives the data, processes it, and then sends you a response, usually in the form of a new HTML page.
+
+Many of these HTML forms use the HTTP POST METHOD to send data to the server. Thus writing to a URL is often called posting to a URL. The server recognizes the POST request and reads the data sent from the client.
+
+For a Java program to interact with a server-side process it simply must be able to write to a URL, thus providing data to the server."
+     */
+    public static InputStream write2URL(URL url, String[] paramNames, String[] paramValues) throws IOException
+    {
+        InputStream is;
+
+        URLConnection urlConnection = url.openConnection();
+        urlConnection.setDoOutput(true);
+
+        OutputStream os=urlConnection.getOutputStream();
+        try (OutputStreamWriter osw = new OutputStreamWriter(os)) {
+            for(int i=0;i<paramNames.length;i++)
+            {
+                // Java Tutorial : "It (paramValues[i]) may contain spaces or other non-alphanumeric characters. These characters must be encoded because the string is processed on its way to the server."
+                /*
+                 * public static String encode(String s,String enc)
+                         throws UnsupportedEncodingException
+
+    Translates a string into application/x-www-form-urlencoded format using a specific encoding scheme. This method uses the supplied encoding scheme to obtain the bytes for unsafe characters.
+
+    Note: The World Wide Web Consortium Recommendation states that UTF-8 should be used. Not doing so may introduce incompatibilites.
+                 */
+                paramNames[i]=URLEncoder.encode(paramNames[i], "UTF-8");
+                paramValues[i]=URLEncoder.encode(paramValues[i], "UTF-8");
+                osw.write(paramNames[i] +"="+ paramValues[i]);
+            }
+        }
+    
+        is=urlConnection.getInputStream();    
+        return is;
+    }
+
+    /*
+     * write to a URL with given parameters and return the resulting HTML as String
+     * returns : HTML of the written URL as a String
+     */
+    public static String readWrittenURL2HTMLString(URL url,String[] paramNames,String[] paramValues) throws IOException
+    {
+        InputStream is=write2URL(url, paramNames, paramValues);
+        return GenelMetotlar.readStringfromInputStream(is);
+    }
+    
     /*
      * initialize and set a ServerSocket according to given parameters
      * LinkedList<Integer> parametreler : list of parameters describing the
