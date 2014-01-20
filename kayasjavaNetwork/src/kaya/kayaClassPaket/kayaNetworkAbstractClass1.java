@@ -1408,6 +1408,17 @@ public abstract class kayaNetworkAbstractClass1 {
         return bilgilerDon(props, description, listeVals);
     }
     
+    /*
+     * returns : bir "host" ismine ait IP adreslerinin listesi, dizisi değil.
+     * Dizi dönen API metodu aşağıda.
+     * 
+     public static InetAddress[] getAllByName(String host)
+                                  throws UnknownHostException
+
+    Given the name of a host, returns an array of its IP addresses, based on the configured name service on the system.
+
+    The host name can either be a machine name, such as "java.sun.com", or a textual representation of its IP address. If a literal IP address is supplied, only the validity of the address format is checked.
+     */
     public static LinkedList<InetAddress> inetAddresslerByName(String host) throws UnknownHostException
     {   
         LinkedList<InetAddress> iaList;
@@ -1419,5 +1430,49 @@ public abstract class kayaNetworkAbstractClass1 {
         iaList=new LinkedList<InetAddress>(Arrays.asList(iaArray));
         
         return iaList;
+    }
+    
+    /*
+     * returns : bu makinadaki tüm ağ arayüzlerin listesi
+     * Arayüzleri Enumeration olarak döndüren API metodu aşağıda.
+    public static Enumeration<NetworkInterface> getNetworkInterfaces()
+                                                          throws SocketException
+
+    Returns all the interfaces on this machine. Returns null if no network interfaces could be found on this machine. NOTE: can use getNetworkInterfaces()+getInetAddresses() to obtain all IP addresses for this node
+     */
+    public static LinkedList<NetworkInterface> getNetworkInterfaces() throws SocketException
+    {
+        LinkedList<NetworkInterface> networkArayuzList = new LinkedList<NetworkInterface>();
+
+        Enumeration<NetworkInterface> networkArayuzEnum = NetworkInterface.getNetworkInterfaces();
+        while (networkArayuzEnum.hasMoreElements()) {
+            networkArayuzList.add(networkArayuzEnum.nextElement());
+        }
+
+        return networkArayuzList;
+    }
+    
+    /*
+     * returns : bu makinadaki tüm "InetAddress" lerin bir listesi.
+     */
+    public static LinkedList<InetAddress> getInetAddresses() throws SocketException
+    {
+        NetworkInterface niTmp;
+        Enumeration<InetAddress> niEnumTmp;
+        InetAddress iaTmp;
+        LinkedList<InetAddress> ipAdresList = new LinkedList<InetAddress>();
+
+        Enumeration<NetworkInterface> networkArayuzEnum = NetworkInterface.getNetworkInterfaces();
+        while (networkArayuzEnum.hasMoreElements()) {
+            niTmp = networkArayuzEnum.nextElement();
+            niEnumTmp = niTmp.getInetAddresses();
+            while (niEnumTmp.hasMoreElements()) {
+                iaTmp = niEnumTmp.nextElement();
+
+                ipAdresList.add(iaTmp);
+            }
+        }
+
+        return ipAdresList;
     }
 }
