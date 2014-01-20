@@ -1287,7 +1287,8 @@ public abstract class kayaNetworkAbstractClass1 {
         LinkedList<String> listeVals = new LinkedList<String>();
 
         listeVals.add(String.valueOf(ni.getDisplayName()));
-        listeVals.add(String.valueOf(ni.getHardwareAddress()));
+         // http://stackoverflow.com/questions/6684665/java-byte-array-to-string-to-byte-array
+        listeVals.add(Arrays.toString(ni.getHardwareAddress()));
         listeVals.add(String.valueOf(ni.getIndex()));
         listeVals.add(String.valueOf(ni.getInetAddresses().toString()));
         listeVals.add(String.valueOf(ni.getInterfaceAddresses().toString()));
@@ -1357,7 +1358,8 @@ public abstract class kayaNetworkAbstractClass1 {
         LinkedList<String> listeVals = new LinkedList<String>();
 
         //listeVals.add(String.valueOf(ia.getDisplayName()));
-        listeVals.add(String.valueOf(ia.getAddress()));
+        // http://stackoverflow.com/questions/6684665/java-byte-array-to-string-to-byte-array
+        listeVals.add(Arrays.toString(ia.getAddress()));
         listeVals.add(String.valueOf(ia.getCanonicalHostName()));
         listeVals.add(String.valueOf(ia.getHostAddress()));
         listeVals.add(String.valueOf(ia.getHostName()));
