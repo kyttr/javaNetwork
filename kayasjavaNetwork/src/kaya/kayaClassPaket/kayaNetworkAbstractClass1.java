@@ -505,8 +505,9 @@ public abstract class kayaNetworkAbstractClass1 {
     /*
      * writes the given parameters to an URL. 
      * returns : InputStream for a URLConnection which is written with parameters
-     * paramNames : names of parameters to be written to URL, Ex. "username"
-     * paramValues : values of parameters to be written to URL, Ex. "kaya"
+     * params : map of parameters where
+     *          keys are names of parameters to be written to URL, Ex. "username"
+     *          values are values of parameters to be written to URL, Ex. "kaya"
      * 
      * Java Tutorial : 
      * "Writing to a URLConnection
@@ -517,18 +518,21 @@ Many of these HTML forms use the HTTP POST METHOD to send data to the server. Th
 
 For a Java program to interact with a server-side process it simply must be able to write to a URL, thus providing data to the server."
      */
-    public static InputStream write2URL(URL url, String[] paramNames, String[] paramValues) throws IOException
+    //public static InputStream write2URL(URL url, String[] paramNames, String[] paramValues) throws IOException
+    public static InputStream write2URL(URL url, Map<String, String> params) throws IOException
     {
         InputStream is;
-
-        URLConnection urlConnection = url.openConnection();
-        urlConnection.setDoOutput(true);
-
-        OutputStream os=urlConnection.getOutputStream();
-        try (OutputStreamWriter osw = new OutputStreamWriter(os)) {
-            for(int i=0;i<paramNames.length;i++)
-            {
-                // Java Tutorial : "It (paramValues[i]) may contain spaces or other non-alphanumeric characters. These characters must be encoded because the string is processed on its way to the server."
+        
+        // http://www.java-forums.org/blogs/java-socket/664-how-send-http-request-url.html
+        String paramsAll="";
+        String key, value;
+        if (params != null && params.size() > 0) {
+           Iterator<String> paramIterator = params.keySet().iterator();
+           while (paramIterator.hasNext()) {
+               key = paramIterator.next();
+               value = params.get(key);
+               
+               // Java Tutorial : "It (paramValues[i]) may contain spaces or other non-alphanumeric characters. These characters must be encoded because the string is processed on its way to the server."
                 /*
                  * public static String encode(String s,String enc)
                          throws UnsupportedEncodingException
@@ -537,10 +541,25 @@ For a Java program to interact with a server-side process it simply must be able
 
     Note: The World Wide Web Consortium Recommendation states that UTF-8 should be used. Not doing so may introduce incompatibilites.
                  */
-                paramNames[i]=URLEncoder.encode(paramNames[i], "UTF-8");
-                paramValues[i]=URLEncoder.encode(paramValues[i], "UTF-8");
-                osw.write(paramNames[i] +"="+ paramValues[i]);
-            }
+               paramsAll+=URLEncoder.encode(key, "UTF-8");  // name of the parameter
+               paramsAll+="=";
+               paramsAll+=URLEncoder.encode(value, "UTF-8");  // value of the parameter
+               paramsAll+="&";      // parameter delimeter
+           }
+       }
+        // delete the last "&"
+        if(paramsAll.contains("&"))
+        {
+            paramsAll=paramsAll.substring(0, paramsAll.lastIndexOf("&"));
+        }
+        
+        
+        URLConnection urlConnection = url.openConnection();
+        urlConnection.setDoOutput(true);
+
+        OutputStream os=urlConnection.getOutputStream();
+        try (OutputStreamWriter osw = new OutputStreamWriter(os)) {
+            osw.write(paramsAll);
         }
     
         is=urlConnection.getInputStream();    
@@ -551,9 +570,9 @@ For a Java program to interact with a server-side process it simply must be able
      * write to a URL with given parameters and return the resulting HTML as String
      * returns : HTML of the written URL as a String
      */
-    public static String readWrittenURL2HTMLString(URL url,String[] paramNames,String[] paramValues) throws IOException
+    public static String readWrittenURL2HTMLString(URL url, Map<String, String> params) throws IOException
     {
-        InputStream is=write2URL(url, paramNames, paramValues);
+        InputStream is=write2URL(url, params);
         return GenelMetotlar.readStringfromInputStream(is);
     }
     

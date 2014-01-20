@@ -67,3 +67,4 @@ DONE
 41. "kayasServerSocketUI" ve "kayasClientSocket" : "textArea" nesnelerinde varsayılan olarak en son satırı göster. "Shell" sekmesinde yaptığın gibi.
 DONE.
 42. "dosyaGezginiFrame" tasarımı düzenle. ("kayasServerSocketUI" ya bağlı olan nesne)
+43. URL ile request gönderme, session açma vs.
