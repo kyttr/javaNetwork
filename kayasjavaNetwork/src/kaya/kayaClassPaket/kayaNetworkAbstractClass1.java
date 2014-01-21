@@ -20,7 +20,8 @@ import java.util.logging.Level;
 import java.lang.Math.*;
 import java.nio.file.Files;
 import java.nio.file.attribute.BasicFileAttributes;
-import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -518,7 +519,6 @@ Many of these HTML forms use the HTTP POST METHOD to send data to the server. Th
 
 For a Java program to interact with a server-side process it simply must be able to write to a URL, thus providing data to the server."
      */
-    //public static InputStream write2URL(URL url, String[] paramNames, String[] paramValues) throws IOException
     public static InputStream write2URL(URL url, Map<String, String> params) throws IOException
     {
         InputStream is;
@@ -558,14 +558,83 @@ For a Java program to interact with a server-side process it simply must be able
         urlConnection.setDoOutput(true);   // java.net.ProtocolException: cannot write to a URLConnection if doOutput=false
         urlConnection.setDoInput(true);
 
-        OutputStream os=urlConnection.getOutputStream();
-        try (OutputStreamWriter osw = new OutputStreamWriter(os)) {
-            osw.write(paramsAll);
-        }
+         if (!paramsAll.isEmpty()) {
+             OutputStream os = urlConnection.getOutputStream();
+             try (OutputStreamWriter osw = new OutputStreamWriter(os)) {
+                 osw.write(paramsAll);
+                 osw.flush();
+                 osw.close();
+             }
+             os.flush();
+             os.close();
+         }
     
         is=urlConnection.getInputStream();    
         return is;
     }
+    
+        /*
+     * writes the given parameters to an URLConnection. 
+     * returns : InputStream for a URLConnection which is written with parameters
+     * params : map of parameters where
+     *          keys are names of parameters to be written to URL, Ex. "username"
+     *          values are values of parameters to be written to URL, Ex. "kaya"
+     * 
+     * Diğer (yukarıdaki) write2URL metodu ile aynı işi yapıyor, sadece "URL" nesnesi yerine "URLConnection" alıyor.
+     * Diğer metottan farklı olarak "URLConnection urlConnection = url.openConnection();" satırı yok.
+     * Bir "request" gönderirken "URLConnection" nesnesinde farklı ayarlar kullanmam gerekebiliyor, farklı "set...()" metotları çağırabiliyorum. Değişiklikleri "write2URL()" içinde yapsam metoda yapılan tüm çağrılar aynı "URLConnection" ayarlarını kullanacak, bu yüzden "URLConnection" ı  ayrı bir parametre olarak girmeye karar verdim.
+     */
+     public static InputStream write2URL(URLConnection urlConnection, Map<String, String> params) throws IOException
+     {
+                 InputStream is;
+        
+        // http://www.java-forums.org/blogs/java-socket/664-how-send-http-request-url.html
+        String paramsAll="";
+        String key, value;
+        if (params != null && params.size() > 0) {
+           Iterator<String> paramIterator = params.keySet().iterator();
+           while (paramIterator.hasNext()) {
+               key = paramIterator.next();
+               value = params.get(key);
+               
+               // Java Tutorial : "It (paramValues[i]) may contain spaces or other non-alphanumeric characters. These characters must be encoded because the string is processed on its way to the server."
+                /*
+                 * public static String encode(String s,String enc)
+                         throws UnsupportedEncodingException
+
+    Translates a string into application/x-www-form-urlencoded format using a specific encoding scheme. This method uses the supplied encoding scheme to obtain the bytes for unsafe characters.
+
+    Note: The World Wide Web Consortium Recommendation states that UTF-8 should be used. Not doing so may introduce incompatibilites.
+                 */
+               paramsAll+=URLEncoder.encode(key, "UTF-8");  // name of the parameter
+               paramsAll+="=";
+               paramsAll+=URLEncoder.encode(value, "UTF-8");  // value of the parameter
+               paramsAll+="&";      // parameter delimeter
+           }
+       }
+        // delete the last "&"
+        if(paramsAll.contains("&"))
+        {
+            paramsAll=paramsAll.substring(0, paramsAll.lastIndexOf("&"));
+        }
+        
+        urlConnection.setDoOutput(true);   // java.net.ProtocolException: cannot write to a URLConnection if doOutput=false
+        urlConnection.setDoInput(true);
+
+         if (!paramsAll.isEmpty()) {
+             OutputStream os = urlConnection.getOutputStream();
+             try (OutputStreamWriter osw = new OutputStreamWriter(os)) {
+                 osw.write(paramsAll);
+                 osw.flush();
+                 osw.close();
+             }
+             os.flush();
+             os.close();
+         }
+    
+        is=urlConnection.getInputStream();    
+        return is;
+     }
 
     /*
      * write to a URL with given parameters and return the resulting HTML as String
@@ -574,6 +643,16 @@ For a Java program to interact with a server-side process it simply must be able
     public static String readWrittenURL2HTMLString(URL url, Map<String, String> params) throws IOException
     {
         InputStream is=write2URL(url, params);
+        return GenelMetotlar.readStringfromInputStream(is);
+    }
+    
+     /*
+     * write to a URL with given parameters and return the resulting HTML as String
+     * returns : HTML of the written URL as a String
+     */
+    public static String readWrittenURL2HTMLString(URLConnection urlConnection, Map<String, String> params) throws IOException
+    {
+        InputStream is=write2URL(urlConnection, params);
         return GenelMetotlar.readStringfromInputStream(is);
     }
     
