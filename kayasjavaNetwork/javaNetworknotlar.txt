@@ -68,3 +68,15 @@ DONE
 DONE.
 42. "dosyaGezginiFrame" tasarımı düzenle. ("kayasServerSocketUI" ya bağlı olan nesne)
 43. URL ile request gönderme, session açma vs.
+44. HTML kaynak bölümüne bir arama kutusu gerek (Ctrl-F).
+45. Tüm programı tek bir dosyadan çalıştırma : Projeyi inşa edince (clean and build) "dist" klasörü altında "kayasjavaNetwork.jar" dosyası ve "lib" klasörü oluşuyor. Program "kayasjavaNetwork.jar" ile çalışıyor, "lib" de ise projeye dışarıdan eklenmiş kütüphaneler var ve bu klasör "kayasjavaNetwork.jar" dosyasının yanında bulunmalı. Ama, ben programı tek bir çalıştırılabilir (executable) dosya ile açmak istiyorum. Bunlar bazı çözüm önerileri :
+    https://netbeans.org/kb/articles/javase-deploy.html
+    http://stackoverflow.com/questions/3221078/create-on-single-jar-with-no-lib-folder
+    http://stackoverflow.com/questions/2034180/put-external-library-to-the-jar
+    http://stackoverflow.com/questions/1821803/creating-a-bundle-jar-with-ant
+    http://stackoverflow.com/questions/2212913/netbeans-deploying-all-in-one-jar
+    http://stackoverflow.com/questions/183292/classpath-including-jar-within-a-jar
+    http://stackoverflow.com/questions/81260/easiest-way-to-merge-a-release-into-one-jar-file
+DONE.
+    Bu çözüm işime yaradı:
+    http://mavistechchannel.wordpress.com/2010/08/17/how-to-build-a-single-jar-file-with-external-libs/
