@@ -80,3 +80,5 @@ DONE.
 DONE.
     Bu çözüm işime yaradı:
     http://mavistechchannel.wordpress.com/2010/08/17/how-to-build-a-single-jar-file-with-external-libs/
+46. Windows 7'de kurduğum ServerSocket'e bağlanamıyorum. Windows Firewall'ı etkisiz hale getirince dahi bağlanamadım.
+    Linux veya MAC OS'ta kurduğum ServerSocket'e bağlanabiliyorum.
