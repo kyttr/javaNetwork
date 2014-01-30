@@ -82,3 +82,6 @@ DONE.
     http://mavistechchannel.wordpress.com/2010/08/17/how-to-build-a-single-jar-file-with-external-libs/
 46. Windows 7'de kurduğum ServerSocket'e bağlanamıyorum. Windows Firewall'ı etkisiz hale getirince dahi bağlanamadım.
     Linux veya MAC OS'ta kurduğum ServerSocket'e bağlanabiliyorum.
+47. Windows 7 akıcı bir şekilde "screen shot" gönderebiliyor. Fakat, akıcı bir şekilde "screen shot" alamıyor. Görüntüler gecikiyor ve düzenli aralıklarla gelmiyor.
+48. Karşılıklı olarak "screen shot" göndermeyi deneyince her iki makinadaki "Socket" programları donuyor.
+49. "Shell Script" çalıştır. Ör: Bir "shell" komutunu döngü içinde çalıştırma. Bir listeden "script"in ismi seçilecek, seçilen "script" in kodu düzenlenebilir bir kutuda gösterilecek, bir butonla çalıştırılacak.
