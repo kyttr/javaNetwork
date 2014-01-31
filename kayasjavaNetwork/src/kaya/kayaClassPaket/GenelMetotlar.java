@@ -4,6 +4,7 @@
  */
 package kaya.kayaClassPaket;
 
+import java.util.List;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -271,6 +272,40 @@ public class GenelMetotlar {
 
         return verbose;
     }
+    
+    /*
+     * merges the String elements in the list "komut" into a "shell" command, executes it and returns its output as "String".
+     * 
+     * http://stackoverflow.com/questions/11506321/java-code-to-ping-an-ip-address/14110872
+     * Bu kodu başka bir şey ararken buldum, bulunsun diye buraya ekledim. Şu anda hiçbir yerde kullanmıyorum. Ayrıca, çalışmasını da hiç denemedim.
+     */
+    public static String executeString(List<String> komut) throws IOException {
+        String s = null;
+        String verbose="";
+
+        ProcessBuilder pb = new ProcessBuilder(komut);
+        Process process = pb.start();
+
+        BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        BufferedReader stdError = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+
+        // read the output from the command
+        while ((s = stdInput.readLine()) != null) {
+            // standard output of the command
+            verbose+=s+"\n";
+        }
+
+        // read any errors from the attempted command
+        if(verbose.equals(""))
+        {
+            while ((s = stdError.readLine()) != null) {
+                // standard error of the command
+                verbose+=s+"\n";
+            }
+        }
+        
+        return verbose;
+    }
 
     /*
      * a different version of "executeString()". This method runs the command
@@ -281,6 +316,8 @@ public class GenelMetotlar {
      * hence this method looks like to run serial.
      * 
      * At the moment NOTHING calss this method.
+     * 
+     * EDIT : "Thread" içinde komut çalıştırma işini "kayasUI.in_Thread_executeCommand" metodunda halletmişim. O metot ile istediğim gibi çalışıyor.
      */
     public static String executeString_in_Thread(String komut) throws InterruptedException {
         /*
