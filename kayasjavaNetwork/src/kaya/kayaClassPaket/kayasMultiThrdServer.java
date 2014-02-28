@@ -19,7 +19,7 @@ public class kayasMultiThrdServer {
 
     private ServerSocket serverSoket = null;
     private String hataStr = null;
-        private boolean isClosed = false;
+    private boolean isClosed = false;
 
     // TO BE GONE
     private JTextArea textArea = null;
@@ -89,20 +89,21 @@ public class kayasMultiThrdServer {
     /**
     @Override
     public void finalize() {
-    //Objects created in run method are finalized when
-    //program terminates and thread exits
-    try {
-    serverSoket.close();
-    } catch (IOException ex) {
-    hataMesaj = ex.toString();
-    }
+        //Objects created in run method are finalized when
+        //program terminates and thread exits
+        try {
+            serverSoket.close();
+        } 
+        catch (IOException ex) {
+            hataMesaj = ex.toString();
+        }
     }
      **/
     public void kapat() {
         try {
             //isClosed = true;
             if (soketThrd != null) {
-                //clientSoket.close();      //pek bir şey değişitirmiyor.
+                //clientSoket.close();      //pek bir şey değiştirmiyor.
                 soketThrd.kapat();
             }
             serverSoket.close();

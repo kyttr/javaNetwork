@@ -68,23 +68,28 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
 
         /*
-         * if (nesne instanceof BufferedImage) { //
-         * gnt.gelenResim=(BufferedImage) nesne;
-         * kayaNetworkAbstractClass1.bufferedImage2JLabel(gnt.gelenResim,
-         * jLabel_screenShot); } else if (nesne instanceof String) { //
-         * gnt.gelenStr=(String) nesne;
-         * jTextArea_readFromSocket.append(gnt.gelenStr + "\n"); } else if
-         * (nesne instanceof File) { // gnt.gelenDosya=(File) nesne;
-         * jTextArea_readFromSocket.append("Dosya geldi : " +
-         * gnt.gelenDosya.getAbsolutePath() + "\n"); } else if (nesne instanceof
-         * DefaultMutableTreeNode) { //
-         * gnt.setGelenDMTN((DefaultMutableTreeNode) nesne);
-         * gnt.gelenDMTN2DosyaBilgilerTreeNode();
+         * if (nesne instanceof BufferedImage) { 
+         *   // gnt.gelenResim=(BufferedImage) nesne;
+         * kayaNetworkAbstractClass1.bufferedImage2JLabel(gnt.gelenResim, jLabel_screenShot);
+         * }
+         * else if (nesne instanceof String) { 
+         * // gnt.gelenStr=(String) nesne;
+         * jTextArea_readFromSocket.append(gnt.gelenStr + "\n");
+         * }
+         * else if
+         * (nesne instanceof File) 
+         * { 
+         *   // gnt.gelenDosya=(File) nesne;
+         *   jTextArea_readFromSocket.append("Dosya geldi : " + gnt.gelenDosya.getAbsolutePath() + "\n"); 
+         * }
+         * else if (nesne instanceof DefaultMutableTreeNode) 
+         * {
+         *  // gnt.setGelenDMTN((DefaultMutableTreeNode) nesne);
+         *  gnt.gelenDMTN2DosyaBilgilerTreeNode();
          *
-         * //uiSwingMetotlar.dosyaBilgilerTree2List(gnt.gelenDMTN,
-         * jList_dizinler, jList_dosyalar);
-         * uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getGelenDMTN(),
-         * jList_dizinler, jList_dosyalar); }
+         * //uiSwingMetotlar.dosyaBilgilerTree2List(gnt.gelenDMTN, jList_dizinler, jList_dosyalar);
+         * uiSwingMetotlar.dosyaBilgilerTree2List(gnt.getGelenDMTN(), jList_dizinler, jList_dosyalar);
+         * }
          */
 
         if (!gnt.gelenStr.isEmpty()) {
@@ -961,27 +966,30 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jButton_acceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_acceptActionPerformed
         /*
-         * String gelenMesaj; try { // TODO add your handling code here:
-         * gelenMesaj=
-         * kayaNetworkAbstractClass1.acceptSoketAndSayWelcome(mySunucuSoket);
-         * if(gelenMesaj.isEmpty()) { jTextArea_readFromSocket.append("YOK
-         * ETWAS"); } else { jTextArea_readFromSocket.append(gelenMesaj); } }
+         * String gelenMesaj; 
+         * try { 
+         *  // TODO add your handling code here:
+         *  gelenMesaj=
+         *  kayaNetworkAbstractClass1.acceptSoketAndSayWelcome(mySunucuSoket);
+         * if(gelenMesaj.isEmpty()) 
+         * { 
+         *  jTextArea_readFromSocket.append("YOK ETWAS"); 
+         * }
+         * else
+         * { 
+         *  jTextArea_readFromSocket.append(gelenMesaj);
+         * }
+         * }
          * catch (Exception ex) {
-         * Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE,
-         * null, ex); textArea_descriptionServerSocket.setText(ex.toString()); }
-         *
-         */
-        /*
-         * kayasMultiThrdServer MTSunucu=new
-         * kayasMultiThrdServer(mySunucuSoket,jTextArea_readFromSocket);
-         * MTSunucu.clientDinle(); // MTSunucu.finalize();
+         *   Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex); 
+         *   textArea_descriptionServerSocket.setText(ex.toString()); 
+         * }
          */
 
         // kayasMultiThrdServer.finalize() butonu etkinleşsin.
         jButton_kapat.setEnabled(true);
         jButton_initializeAndSetServerSocket.setEnabled(false);
 
-        //Thread serverDinleThread = new Thread() {
         clientDinleThread = new Thread() {
             @Override
             public void run() {
@@ -1051,19 +1059,21 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private void jButton_kapatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_kapatActionPerformed
         // TODO add your handling code here:
         /*
-         * if(MTSunucu!=null) // kayasMultiThrdServer kapatılsın. {
-         * MTSunucu.finalize(); } MTSunucu.finalize();
-         * //serverDinleThread.interrupt(); //
+         * if(MTSunucu!=null) // kayasMultiThrdServer kapatılsın. 
+         * {
+         *  MTSunucu.finalize(); 
+         * } MTSunucu.finalize();
+         * //serverDinleThread.interrupt(); 
          *
          * Bunlar işe yaramıyor. Kendi metodumu yazdım.
          */
+        
         //Yukarıdakiler işe yaramıyor. Kendi metodumu yazdım.
         if (MTSunucu != null) {
             MTSunucu.kapat();
         }
 
-
-        // ServerSocket.accept() butonu etksizi olsun.
+        // ServerSocket.accept() butonu etkisiz olsun.
         //buton aktifleşmeleri
         jButton_accept.setEnabled(false);
         jButton_initializeAndSetServerSocket.setEnabled(true);
