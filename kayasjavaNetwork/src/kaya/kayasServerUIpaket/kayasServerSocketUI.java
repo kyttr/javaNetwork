@@ -55,7 +55,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         /*
          * http://www.javaworld.com/javaworld/javaqa/2002-03/01-qa-0315-happyevent.html?page=2
          */
-        Object nesne = olay.kaynakNesne();
+        Object nesne = olay.ilgiliNesne();
         try {
             //gnt=new GelenNesneTipleri();
             //gnt = new GelenNesneTipleri(nesne);
@@ -1010,7 +1010,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private void jButton_setVisibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_setVisibleActionPerformed
         // TODO add your handling code here:
 
-        kayasClientSocket kayasIstemciSoket = new kayasClientSocket();
+        kayasClientSocketUI kayasIstemciSoket = new kayasClientSocketUI();
         kayasIstemciSoket.setVisible(true);
     }//GEN-LAST:event_jButton_setVisibleActionPerformed
 
@@ -1077,7 +1077,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             kayaNetworkAbstractClass1.write2Soket(MTSunucu.clientSoket, gidecekMesaj, false);
             jTextArea_written2Socket.append(gidecekMesaj + "\n");
         } catch (IOException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionServerSocket.append(ex.toString() + "\n");
             jTextArea_written2Socket.append(ex.toString() + "\n");
         }
@@ -1100,7 +1100,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             // kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
             //  jTextArea_written2Socket.append(gidecekMesaj + "\n");
         } catch (IOException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionServerSocket.append(ex.toString() + "\n");
             jTextArea_written2Socket.append(ex.toString() + "\n");
         }
@@ -1118,7 +1118,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             //jTextArea_written2Socket.append(gidecekMesaj + "\n");
             kayaNetworkAbstractClass1.requestTimerScreenShotDurdur(MTSunucu.clientSoket);
         } catch (IOException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionServerSocket.append(ex.toString() + "\n");
             jTextArea_written2Socket.append(ex.toString() + "\n");
         }

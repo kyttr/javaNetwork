@@ -37,7 +37,7 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultCaret;
-import kaya.kayasServerUIpaket.kayasClientSocket;
+import kaya.kayasServerUIpaket.kayasClientSocketUI;
 import kaya.kayasServerUIpaket.kayasServerSocketUI;
 
 /**
@@ -1318,7 +1318,7 @@ public class kayasUI extends javax.swing.JFrame {
                 pencere = new kayasServerSocketUI();
                 break;
             case 1:
-                pencere = new kayasClientSocket();
+                pencere = new kayasClientSocketUI();
                 break;
             case 2:
                 pencere = new kayasUI();

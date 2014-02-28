@@ -4,7 +4,7 @@
  */
 
 /*
- * kayasClientSocket.java
+ * kayasClientSocketUI.java
  *
  * Created on Mar 15, 2012, 10:55:10 PM
  */
@@ -30,7 +30,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
  *
  * @author kaya
  */
-public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleyenlerInterface {
+public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinleyenlerInterface {
 
     // global değişkenler
     Socket myClientSoket;
@@ -45,15 +45,15 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
         /*
          * http://www.javaworld.com/javaworld/javaqa/2002-03/01-qa-0315-happyevent.html?page=2
          */
-        Object nesne = olay.kaynakNesne();
+        Object nesne = olay.ilgiliNesne();
         //gnt=new GelenNesneTipleri();
         gnt = new GelenNesneTipleri(nesne);
         try {
             gnt.properlyAssignGelenObje();
         } catch (IOException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         /*
@@ -90,9 +90,9 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
     }
 
     /**
-     * Creates new form kayasClientSocket
+     * Creates new form kayasClientSocketUI
      */
-    public kayasClientSocket() {
+    public kayasClientSocketUI() {
         initComponents();
         //Q - Her buton için : "enter" ile buton aktifleşir.
         //Component[] bilesenDizi=this.getComponents(); // işe yaramıyor.
@@ -493,11 +493,11 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                 .addContainerGap()
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                .addComponent(jTabbedPane_descriptionClientSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -557,19 +557,19 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                 .addContainerGap()
                 .addComponent(jLabel21)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton_readFromSocket)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel23)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton_write2Socket)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel22)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -635,7 +635,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                         .addGap(18, 18, 18)
                         .addComponent(jSpinner_timerDelay, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -652,7 +652,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 371, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton_screenShotGetir)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -693,8 +693,8 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
-            .addComponent(jTabbedPane1)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -718,7 +718,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                 jTextArea_readFromSocket.append(gelenMesaj + "\n");
             }
         } catch (Exception ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionClientSocket.append(ex.toString());
         }
 
@@ -732,14 +732,14 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
             kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
             jTextArea_written2Socket.append(gidecekMesaj + "\n");
         } catch (IOException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionClientSocket.append(ex.toString() + "\n");
             jTextArea_written2Socket.append(ex.toString() + "\n");
         }
 //        try {
 //            myClientSoket.close();
 //        } catch (IOException ex) {
-//            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+//            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
 //        }
     }//GEN-LAST:event_jButton_write2SocketActionPerformed
 
@@ -782,7 +782,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
                         //soketThread = new kayasSocketThread(myClientSoket, jTextArea_readFromSocket, jLabel_screenShot);
 
                         LinkedList<Object> listeDinleyenler = new LinkedList<Object>();
-                        listeDinleyenler.add(kayasClientSocket.this);
+                        listeDinleyenler.add(kayasClientSocketUI.this);
                         soketThread = new kayasSocketThread(myClientSoket, listeDinleyenler);
 
                         soketThread.run();
@@ -796,7 +796,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
 
             serverDinleThread.start();  // thread başlasın.
         } catch (Exception ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionClientSocket.append(ex.toString());
         }
 
@@ -831,7 +831,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
             // kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
             //  jTextArea_written2Socket.append(gidecekMesaj + "\n");
         } catch (IOException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionClientSocket.append(ex.toString() + "\n");
             jTextArea_written2Socket.append(ex.toString() + "\n");
         }
@@ -849,7 +849,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
             //jTextArea_written2Socket.append(gidecekMesaj + "\n");
             kayaNetworkAbstractClass1.requestTimerScreenShotDurdur(myClientSoket);
         } catch (IOException ex) {
-            Logger.getLogger(kayasClientSocket.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
             textArea_descriptionClientSocket.append(ex.toString() + "\n");
             jTextArea_written2Socket.append(ex.toString() + "\n");
         }
@@ -861,7 +861,7 @@ public class kayasClientSocket extends javax.swing.JFrame implements OlayDinleye
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new kayasClientSocket().setVisible(true);
+                new kayasClientSocketUI().setVisible(true);
             }
         });
     }

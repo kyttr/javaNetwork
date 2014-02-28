@@ -25,7 +25,7 @@ public class OlayNesnesi extends EventObject{
     /*
      * Olaya neden olan nesneyi getirir.
      */
-    public Object kaynakNesne() {
+    public Object ilgiliNesne() {
         return ilgiliNesne;
     }
 }

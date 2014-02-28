@@ -62,8 +62,8 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel5" pref="596" max="32767" attributes="0"/>
-                  <Component id="jTabbedPane1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jPanel5" max="32767" attributes="0"/>
+                  <Component id="jTabbedPane1" alignment="0" pref="596" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -480,11 +480,11 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane6" pref="319" max="32767" attributes="0"/>
+                              <Component id="jScrollPane6" pref="326" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTabbedPane_descriptionClientSocket" pref="151" max="32767" attributes="0"/>
+                              <Component id="jTabbedPane_descriptionClientSocket" pref="159" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -633,19 +633,19 @@
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane10" pref="145" max="32767" attributes="0"/>
+                              <Component id="jScrollPane10" pref="155" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jButton_readFromSocket" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField_write2Socket" pref="88" max="32767" attributes="0"/>
+                              <Component id="jTextField_write2Socket" pref="98" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton_write2Socket" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPane11" pref="133" max="32767" attributes="0"/>
+                              <Component id="jScrollPane11" pref="143" max="32767" attributes="0"/>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -742,7 +742,7 @@
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       <Component id="jSpinner_timerDelay" min="-2" pref="114" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jButton_periodicScreenShotGetir" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jButton_periodicScreenShotGetir" pref="206" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
@@ -765,7 +765,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" pref="371" max="32767" attributes="0"/>
+                              <Component id="jScrollPane7" pref="413" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                               <Component id="jButton_screenShotGetir" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">

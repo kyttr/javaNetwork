@@ -90,11 +90,15 @@ public class kayasSocketThread implements Runnable {
             try {
                 //gelenStr = kayaNetworkAbstractClass1.readFromSoket(soket);
                 gelenObje = kayaNetworkAbstractClass1.readMesajFromSoket(soket);
-//                if(gelenStr==null)
-//                {
-//                    break;
-//                }
-                //
+                
+                /*
+                if(gelenStr==null)
+                {
+                    break;
+                }
+                */
+                // Aşağıda A0-A1 arasındaki kod muhtemelen kullanılmıyor. Şimdilik yine de koda dokunmuyorum.
+                // A0
                 gelenResim = null;
                 gelenStr = "";
                 gelenDosya = null;
@@ -108,7 +112,7 @@ public class kayasSocketThread implements Runnable {
                 } else if (gelenObje instanceof DefaultMutableTreeNode) {
                     gelenDMTN = (DefaultMutableTreeNode) gelenObje;
                 }
-                //
+                // A1
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(kayasSocketThread.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InterruptedException ex) {
