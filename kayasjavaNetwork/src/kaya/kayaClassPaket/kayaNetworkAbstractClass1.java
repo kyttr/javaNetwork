@@ -1014,8 +1014,12 @@ For a Java program to interact with a server-side process it simply must be able
             //   "thread" kullanacaksam aşağıdaki gibi bir kod kullanmamalı. Çünkü, aşağıdaki kod "thread" de streamden sürekli input bekler.
            /*
              * A
-             * while ((lineOfMesaj = br.readLine()) != null) { gelenMesaj +=
-             * lineOfMesaj + "\n"; } br.close(); A
+             * while ((lineOfMesaj = br.readLine()) != null) 
+             *{ 
+             *  gelenMesaj += lineOfMesaj + "\n";
+             *}
+             * br.close(); 
+             * A
              */
 
             while ((lineOfgelenMesaj = br.readLine()) != null) {
