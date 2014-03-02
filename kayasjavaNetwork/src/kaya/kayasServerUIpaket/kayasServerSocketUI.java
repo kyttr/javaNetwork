@@ -10,7 +10,12 @@
  */
 package kaya.kayasServerUIpaket;
 
+import java.awt.AWTException;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import kaya.kayaClassPaket.*;
 import java.io.IOException;
@@ -20,8 +25,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.event.*;
+import javax.swing.filechooser.FileSystemView;
+import javax.swing.filechooser.FileView;
+import javax.swing.plaf.basic.DefaultMenuLayout;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.Timer;
+import javax.swing.tree.TreePath;
+import org.netbeans.lib.awtextra.AbsoluteLayout;
 
 /**
  *
@@ -41,8 +50,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     Thread clientDinleThread;
     GelenNesneTipleri gnt;
     DefaultMutableTreeNode tmpDMTN;
-    Timer timer_screenShotGetir;
-    
+
     public void OlayOlmus(OlayNesnesi olay) {
         /*
          * http://www.javaworld.com/javaworld/javaqa/2002-03/01-qa-0315-happyevent.html?page=2
@@ -1087,18 +1095,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     private void jButton_screenShotGetirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_screenShotGetirActionPerformed
         try {
-            // Bundan önce çalışan bir periodicScreenShotGetir "thread" i var ise onu kapat.
-            if(timer_screenShotGetir.isRunning())
-            {
-                timer_screenShotGetir.stop();
-            }
-            // NOT : 40. "ScreenShot" sekmesi : "screenShotGetir() + bufferefImage2JLabel()" butonu ile "periodicScreenShotGetir()" butonu arka arkaya çalışınca görüntüde çakışma oluyor. Çakışmayı engelle.
-            // Şu anda karşıdaki soketten "screenshot" alınıyorsa çakışmayı önlemek için bunu durdur.
-            kayaNetworkAbstractClass1.requestTimerScreenShotDurdur(MTSunucu.clientSoket);
-            
-            // şimdi bu makinanın ekran görüntüsünü getirmeye başla.
-            timer_screenShotGetir=uiSwingMetotlar.periodicScreenShotGetir(jLabel_screenShot);
-            
+            uiSwingMetotlar.periodicScreenShotGetir(jLabel_screenShot);
         } catch (Exception ex) {
             Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1109,17 +1106,6 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         String formatTip = jComboBox_formatName.getSelectedItem().toString();
         //String gidecekMesaj = "screenShotGetir" + peryotOfScreenShot + "," + formatTip;
         try {
-            // Bundan önce çalışan bir periodicScreenShotGetir "thread" i var ise onu kapat.
-            // Artık bu makinanın ekran görüntüsü alınmayacak.
-            if(timer_screenShotGetir.isRunning())
-            {
-                timer_screenShotGetir.stop();
-            }
-            // NOT : 40. "ScreenShot" sekmesi : "screenShotGetir() + bufferefImage2JLabel()" butonu ile "periodicScreenShotGetir()" butonu arka arkaya çalışınca görüntüde çakışma oluyor. Çakışmayı engelle.
-            // Şu anda karşıdaki soketten "screenshot" alınıyorsa çakışmayı önlemek için bunu durdur.
-            kayaNetworkAbstractClass1.requestTimerScreenShotDurdur(MTSunucu.clientSoket);
-            
-            // şimdi karşıdaki makinanın ekran görüntüsünü getirmeye başla.
             kayaNetworkAbstractClass1.requestPeriodicScreenShot(peryotOfScreenShot, formatTip, MTSunucu.clientSoket);
             // kayaNetworkAbstractClass1.write2Soket(myClientSoket, gidecekMesaj, false);
             //  jTextArea_written2Socket.append(gidecekMesaj + "\n");

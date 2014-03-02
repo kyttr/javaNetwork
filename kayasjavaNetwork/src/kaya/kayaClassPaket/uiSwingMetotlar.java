@@ -200,7 +200,7 @@ public abstract class uiSwingMetotlar {
         myLabel.setIcon(ikon);
     }
 
-    public static Timer periodicScreenShotGetir(final JLabel mylabel) {
+    public static void periodicScreenShotGetir(final JLabel mylabel) {
         /*
          * http://stackoverflow.com/questions/1006611/java-swing-timer
          * http://docs.oracle.com/javase/tutorial/uiswing/misc/timer.html
@@ -223,7 +223,6 @@ public abstract class uiSwingMetotlar {
         //import javax.swing.Timer;
         Timer timer = new Timer(1000, actionDinler);
         timer.start();
-        return timer;
     }
 
     /*
