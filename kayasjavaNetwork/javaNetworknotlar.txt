@@ -63,6 +63,7 @@ DONE
 37. URL ziyareti ayrı bir kanal (Thread) içinde yapılsın.
 DONE
 38. soket Bağlantı işlemi kanal (Thread) içinde yapılsın. kanal (Thread) içinde çalışan işlemler için "thread is running", "executing" vs. gibi uyarı yazıları olsun.
+DONE.
 39. "kayasServerSocketUI" ve "kayasClientSocket" tasarımı düzenle.
 40. "ScreenShot" sekmesi : "screenShotGetir() + bufferefImage2JLabel()" butonu ile "periodicScreenShotGetir()" butonu arka arkaya çalışınca görüntüde çakışma oluyor. Çakışmayı engelle.
 DONE (not tested)
@@ -84,6 +85,9 @@ DONE.
     http://mavistechchannel.wordpress.com/2010/08/17/how-to-build-a-single-jar-file-with-external-libs/
 46. Windows 7'de kurduğum ServerSocket'e bağlanamıyorum. Windows Firewall'ı etkisiz hale getirince dahi bağlanamadım.
     Linux veya MAC OS'ta kurduğum ServerSocket'e bağlanabiliyorum.
+Benzer sorunlar:
+    http://stackoverflow.com/questions/18639672/java-sockets-doesnt-work-on-windows
+
 47. Windows 7 akıcı bir şekilde "screen shot" gönderebiliyor. Fakat, akıcı bir şekilde "screen shot" alamıyor. Görüntüler gecikiyor ve düzenli aralıklarla gelmiyor.
 48. Karşılıklı olarak "screen shot" göndermeyi deneyince her iki makinadaki "Socket" programları donuyor.
 49. "Shell Script" çalıştır. Ör: Bir "shell" komutunu döngü içinde çalıştırma. Bir listeden "script"in ismi seçilecek, seçilen "script" in kodu düzenlenebilir bir kutuda gösterilecek, bir butonla çalıştırılacak.

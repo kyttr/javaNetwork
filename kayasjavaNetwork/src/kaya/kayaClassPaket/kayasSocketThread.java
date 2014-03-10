@@ -13,7 +13,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.logging.Level;
@@ -33,6 +35,10 @@ import kaya.kayasServerUIpaket.kayasServerSocketUI;
 //extends Thread{
 public class kayasSocketThread implements Runnable {
 
+    public static String yeniSoketBaglandiStr  = "yeniSoketBaglandi";
+    public static String yeniSoketeHosgeldinStr = "hosgeldinYeniSoket";
+    public static String exceptionOlduStr = "exceptionMeydanaGeldi";
+    
     private Socket soket = null;
     private BufferedReader soketsInputStream = null;
     private BufferedWriter soketsOutputStream = null;
@@ -80,6 +86,13 @@ public class kayasSocketThread implements Runnable {
         this.soketsOutputStream = new BufferedWriter(new OutputStreamWriter(gelenSoket.getOutputStream()));
         this.listenerObjects = dinleyenNesneler;
     }
+    
+    /**
+     * @return the soket
+     */
+    public Socket getSoket() {
+        return soket;
+    }
 
     @Override
     public void run() {
@@ -113,17 +126,30 @@ public class kayasSocketThread implements Runnable {
                     gelenDMTN = (DefaultMutableTreeNode) gelenObje;
                 }
                 // A1
+            }catch (SocketException ex){
+                Logger.getLogger(kayasSocketThread.class.getName()).log(Level.SEVERE, null, ex);
+                hataStr = ex.toString();            
+                throwException();
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(kayasSocketThread.class.getName()).log(Level.SEVERE, null, ex);
+                hataStr = ex.toString();
+                throwException();
             } catch (InterruptedException ex) {
                 Logger.getLogger(kayasSocketThread.class.getName()).log(Level.SEVERE, null, ex);
                 hataStr = ex.toString();
+                throwException();
             } catch (AWTException ex) {
                 Logger.getLogger(kayasSocketThread.class.getName()).log(Level.SEVERE, null, ex);
                 hataStr = ex.toString();
+                throwException();
             } catch (IOException ex) {
                 Logger.getLogger(kayasSocketThread.class.getName()).log(Level.SEVERE, null, ex);
                 hataStr = ex.toString();
+                throwException();             
+            } catch (Exception ex) {
+                Logger.getLogger(kayasSocketThread.class.getName()).log(Level.SEVERE, null, ex);
+                hataStr = ex.toString();
+                throwException();
                 break;
             }
 
@@ -188,5 +214,38 @@ public class kayasSocketThread implements Runnable {
             tmpNesne=itr.next();
             ((OlayDinleyenlerInterface)tmpNesne).OlayOlmus(olay);
         }
+    }
+    
+    public void throwOlay(Object ilgiliNesne)
+    {
+         /*
+         * http://www.javaworld.com/javaworld/javaqa/2002-03/01-qa-0315-happyevent.html?page=2
+         */
+        OlayNesnesi olay = new OlayNesnesi( this, ilgiliNesne);
+        Iterator itr=listenerObjects.iterator();
+        Object tmpNesne=null;
+        while( itr.hasNext() ) {
+            tmpNesne=itr.next();
+            ((OlayDinleyenlerInterface)tmpNesne).OlayOlmus(olay);
+        }
+    }
+    
+    // Bu metot da bir Map yardımıyla yapılabilir ve sonuçta işlemesi daha sade olabilir.
+    public void throwSoketBaglandi()
+    {
+        Object nesne = yeniSoketBaglandiStr;
+        throwOlay(nesne);
+    }
+    
+    public void throwException()
+    {
+        HashMap<String,String> nesne=new HashMap<String,String>();
+        nesne.put(exceptionOlduStr, hataStr);
+        throwOlay(nesne);
+    }
+    
+    public void welcomeSoket() throws IOException
+    {
+        kayaNetworkAbstractClass1.write2Soket(soket, yeniSoketeHosgeldinStr,false);
     }
 }

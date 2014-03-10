@@ -66,6 +66,21 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             Logger.getLogger(kayasServerSocketUI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        /*
+         * NOT : 38. soket Bağlantı işlemi kanal (Thread) içinde yapılsın. kanal (Thread) içinde çalışan işlemler için "thread is running", "executing" vs. gibi uyarı yazıları olsun. 
+         */
+        if(nesne.equals(kayasSocketThread.yeniSoketBaglandiStr))
+        {
+            jTextArea_verboseServerSocket.append(MTSunucu.clientSoket.toString()+" has been accepted."+"\n");
+            return;
+        }
+        // Kaynağı bir "Exception" olan olayları bir Map ile gönderdim.
+        else if(nesne instanceof Map)
+        {
+             jTextArea_verboseServerSocket.append(((HashMap<String,String>) nesne).get(kayasSocketThread.exceptionOlduStr)+"\n");
+            return;            
+        }
+            
 
         /*
          * if (nesne instanceof BufferedImage) { 
@@ -184,6 +199,8 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jTabbedPane_descriptionClientSocket = new javax.swing.JTabbedPane();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTextArea_verboseServerSocket = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTextArea_descriptionServerSocket = new javax.swing.JTextArea();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -459,12 +476,19 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
 
     jTabbedPane1.setPreferredSize(new java.awt.Dimension(700, 631));
 
+    jTextArea_verboseServerSocket.setColumns(20);
+    jTextArea_verboseServerSocket.setLineWrap(true);
+    jTextArea_verboseServerSocket.setRows(5);
+    jScrollPane13.setViewportView(jTextArea_verboseServerSocket);
+
+    jTabbedPane_descriptionClientSocket.addTab("String (Verbose - Swing)", jScrollPane13);
+
     jTextArea_descriptionServerSocket.setColumns(20);
     jTextArea_descriptionServerSocket.setLineWrap(true);
     jTextArea_descriptionServerSocket.setRows(5);
     jScrollPane7.setViewportView(jTextArea_descriptionServerSocket);
 
-    jTabbedPane_descriptionClientSocket.addTab("String (Verbose - Swing)", jScrollPane7);
+    jTabbedPane_descriptionClientSocket.addTab("Description of Properties", jScrollPane7);
 
     jEditorPane_descriptionServerSocket.setEditable(false);
     jScrollPane8.setViewportView(jEditorPane_descriptionServerSocket);
@@ -589,7 +613,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
                 .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
                 .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
-                .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
+                .addComponent(jButton_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
                 .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
                 .addComponent(jButton_readFromSocket, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE))
             .addContainerGap())
@@ -600,13 +624,13 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             .addContainerGap()
             .addComponent(jLabel21)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+            .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jButton_readFromSocket)
             .addGap(18, 18, 18)
             .addComponent(jLabel23)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+            .addComponent(jTextField_write2Socket, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jButton_write2Socket)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -676,7 +700,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
                         .addGroup(jPanel8Layout.createSequentialGroup()
                             .addComponent(jSpinner_timerDelay, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE))
+                            .addComponent(jButton_periodicScreenShotGetir, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE))
                         .addGroup(jPanel8Layout.createSequentialGroup()
                             .addComponent(jComboBox_formatName, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -755,23 +779,19 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         .addGroup(jPanel4Layout.createSequentialGroup()
             .addContainerGap()
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addContainerGap(47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jSpinner_timeOut, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSpinner_size, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSpinner_bandwidth, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSpinner_latency, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSpinner_connectionTime, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSpinner_backlog, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jSpinner_port, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jComboBox_on, javax.swing.GroupLayout.Alignment.LEADING, 0, 75, Short.MAX_VALUE))
-                    .addContainerGap())))
+                .addComponent(jSeparator3)
+                .addComponent(jSeparator1)
+                .addComponent(jSeparator2)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jSpinner_timeOut, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinner_size, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinner_bandwidth, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinner_latency, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinner_connectionTime, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinner_backlog, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinner_port, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox_on, javax.swing.GroupLayout.Alignment.LEADING, 0, 75, Short.MAX_VALUE)))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSeparator1, jSeparator2, jSeparator3});
@@ -1045,6 +1065,12 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
             mySunucuSoket = kayaNetworkAbstractClass1.initializeAndSetServerSocket(paramsforServerSocket);      // java.net.BindException: Address already in use hatası alınabiliyor.
             mySunucuSoketInfos = kayaNetworkAbstractClass1.serverSocketBilgileri(mySunucuSoket);
             uiSwingMetotlar.bilgiler2Table(mySunucuSoketInfos, jTable_serverSocket);
+            
+            /*
+             * NOT : 38. soket Bağlantı işlemi kanal (Thread) içinde yapılsın. kanal (Thread) içinde çalışan işlemler için "thread is running", "executing" vs. gibi uyarı yazıları olsun. 
+             */
+            jTextArea_verboseServerSocket.append("Server Socket is initialized on port "+mySunucuSoket.getLocalPort()+"\n");
+            
             // ServerSocket.accept() butonu etkinleşsin.
             // Buton aktifleşmeleri
             jButton_accept.setEnabled(true);
@@ -1072,6 +1098,11 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
         if (MTSunucu != null) {
             MTSunucu.kapat();
         }
+        
+        /*
+         * NOT : 38. soket Bağlantı işlemi kanal (Thread) içinde yapılsın. kanal (Thread) içinde çalışan işlemler için "thread is running", "executing" vs. gibi uyarı yazıları olsun. 
+         */
+        jTextArea_verboseServerSocket.append("Server Socket on port " + mySunucuSoket.getLocalPort() + " is closed" + "\n");
 
         // ServerSocket.accept() butonu etkisiz olsun.
         //buton aktifleşmeleri
@@ -1372,6 +1403,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
@@ -1404,6 +1436,7 @@ public class kayasServerSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JTextArea jTextArea_descriptionServerSocket;
     private javax.swing.JTextArea jTextArea_readFromSocket;
     private javax.swing.JTextArea jTextArea_valueClientSocket;
+    private javax.swing.JTextArea jTextArea_verboseServerSocket;
     private javax.swing.JTextArea jTextArea_written2Socket;
     private javax.swing.JTextField jTextField_currentRootDirectory;
     private javax.swing.JTextField jTextField_write2Socket;

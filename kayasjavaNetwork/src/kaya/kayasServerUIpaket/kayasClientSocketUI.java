@@ -55,6 +55,21 @@ public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinle
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        /*
+         * NOT : 38. soket Bağlantı işlemi kanal (Thread) içinde yapılsın. kanal (Thread) içinde çalışan işlemler için "thread is running", "executing" vs. gibi uyarı yazıları olsun. 
+         */
+        if(nesne.equals(kayasSocketThread.yeniSoketeHosgeldinStr))
+        {
+            jTextArea_verboseClientSocket.append("Connection accepted by server "+soketThread.getSoket().toString()+"\n");
+            return;
+        }
+        // Kaynağı bir "Exception" olan olayları bir Map ile gönderdim.
+        else if(nesne instanceof Map)
+        {
+             jTextArea_verboseClientSocket.append(((HashMap<String,String>) nesne).get(kayasSocketThread.exceptionOlduStr)+"\n");
+            return;            
+        }
 
         /*
          if (nesne instanceof BufferedImage) {
@@ -150,6 +165,8 @@ public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinle
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane_descriptionClientSocket = new javax.swing.JTabbedPane();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTextArea_verboseClientSocket = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea_descriptionClientSocket = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -409,12 +426,19 @@ public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinle
 
         jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel5, jLabel6, jLabel9});
 
+        jTextArea_verboseClientSocket.setColumns(20);
+        jTextArea_verboseClientSocket.setLineWrap(true);
+        jTextArea_verboseClientSocket.setRows(5);
+        jScrollPane9.setViewportView(jTextArea_verboseClientSocket);
+
+        jTabbedPane_descriptionClientSocket.addTab("String (Verbose - Swing)", jScrollPane9);
+
         jTextArea_descriptionClientSocket.setColumns(20);
         jTextArea_descriptionClientSocket.setLineWrap(true);
         jTextArea_descriptionClientSocket.setRows(5);
         jScrollPane2.setViewportView(jTextArea_descriptionClientSocket);
 
-        jTabbedPane_descriptionClientSocket.addTab("String (Verbose - Swing)", jScrollPane2);
+        jTabbedPane_descriptionClientSocket.addTab("Description of Properties", jScrollPane2);
 
         jEditorPane_descriptionServerSocket.setEditable(false);
         jScrollPane4.setViewportView(jEditorPane_descriptionServerSocket);
@@ -694,7 +718,7 @@ public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinle
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -797,6 +821,7 @@ public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinle
             serverDinleThread.start();  // thread başlasın.
         } catch (Exception ex) {
             Logger.getLogger(kayasClientSocketUI.class.getName()).log(Level.SEVERE, null, ex);
+            jTextArea_verboseClientSocket.append(ex.toString());
             textArea_descriptionClientSocket.append(ex.toString());
         }
 
@@ -919,6 +944,7 @@ public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSpinner jSpinner_bandwidth;
     private javax.swing.JSpinner jSpinner_connectionTime;
     private javax.swing.JSpinner jSpinner_latency;
@@ -935,6 +961,7 @@ public class kayasClientSocketUI extends javax.swing.JFrame implements OlayDinle
     private javax.swing.JTextArea jTextArea_descriptionClientSocket;
     private javax.swing.JTextArea jTextArea_readFromSocket;
     private javax.swing.JTextArea jTextArea_valueClientSocket;
+    private javax.swing.JTextArea jTextArea_verboseClientSocket;
     private javax.swing.JTextArea jTextArea_written2Socket;
     private javax.swing.JTextField jTextField_host;
     private javax.swing.JTextField jTextField_write2Socket;

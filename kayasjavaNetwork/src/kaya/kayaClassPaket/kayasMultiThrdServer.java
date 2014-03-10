@@ -73,6 +73,8 @@ public class kayasMultiThrdServer {
                 } else {
                     soketThrd = new kayasSocketThread(clientSoket);
                 }
+                soketThrd.welcomeSoket();
+                soketThrd.throwSoketBaglandi();
 
                 Thread t = new Thread(soketThrd);
                 t.start();              // thread'i çalıştır.

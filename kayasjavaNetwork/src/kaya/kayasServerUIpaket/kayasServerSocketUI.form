@@ -392,6 +392,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -500,11 +501,31 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                       <SubComponents>
-                        <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane13">
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                               <JTabbedPaneConstraints tabName="String (Verbose - Swing)">
                                 <Property name="tabTitle" type="java.lang.String" value="String (Verbose - Swing)"/>
+                              </JTabbedPaneConstraints>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                          <SubComponents>
+                            <Component class="javax.swing.JTextArea" name="jTextArea_verboseServerSocket">
+                              <Properties>
+                                <Property name="columns" type="int" value="20"/>
+                                <Property name="lineWrap" type="boolean" value="true"/>
+                                <Property name="rows" type="int" value="5"/>
+                              </Properties>
+                            </Component>
+                          </SubComponents>
+                        </Container>
+                        <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                              <JTabbedPaneConstraints tabName="Description of Properties">
+                                <Property name="tabTitle" type="java.lang.String" value="Description of Properties"/>
                               </JTabbedPaneConstraints>
                             </Constraint>
                           </Constraints>
@@ -988,28 +1009,21 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jSeparator3" linkSize="11" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSeparator1" linkSize="11" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSeparator2" linkSize="11" alignment="0" max="32767" attributes="1"/>
-                                      </Group>
-                                      <EmptySpace pref="47" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="jSpinner_timeOut" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSpinner_size" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSpinner_bandwidth" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSpinner_latency" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSpinner_connectionTime" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSpinner_backlog" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jSpinner_port" alignment="0" max="32767" attributes="1"/>
-                                          <Component id="jComboBox_on" alignment="0" pref="75" max="32767" attributes="1"/>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jSeparator3" linkSize="11" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSeparator1" linkSize="11" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jSeparator2" linkSize="11" alignment="0" max="32767" attributes="1"/>
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jSpinner_timeOut" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jSpinner_size" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jSpinner_bandwidth" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jSpinner_latency" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jSpinner_connectionTime" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jSpinner_backlog" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jSpinner_port" alignment="0" max="32767" attributes="1"/>
+                                      <Component id="jComboBox_on" alignment="0" pref="75" max="32767" attributes="1"/>
                                   </Group>
                               </Group>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
