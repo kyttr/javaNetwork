@@ -91,3 +91,9 @@ Benzer sorunlar:
 47. Windows 7 akıcı bir şekilde "screen shot" gönderebiliyor. Fakat, akıcı bir şekilde "screen shot" alamıyor. Görüntüler gecikiyor ve düzenli aralıklarla gelmiyor.
 48. Karşılıklı olarak "screen shot" göndermeyi deneyince her iki makinadaki "Socket" programları donuyor.
 49. "Shell Script" çalıştır. Ör: Bir "shell" komutunu döngü içinde çalıştırma. Bir listeden "script"in ismi seçilecek, seçilen "script" in kodu düzenlenebilir bir kutuda gösterilecek, bir butonla çalıştırılacak.
+
+ASUS N550JK bilgisayarına JDK'nın Temmuz 2014'deki son sürümü olan JDK 1.8 yükledim. Birkaç gün sonra Netbeans IDE 8.0 yükledim ve bu projeyi (kayasjavaNetwork) https://github.com/kyttr/javaNetwork.git adresinden klonladım. Fakat en son kullandığım branch olan "master_Jan2014" de kullandığım Java platformu JDK 1.7 idi. ASUS N550JK bilgisayarında JDK 1.7 kurulu olmadığı için aşağıdaki hatayı aldım.
+    Problem: The project uses the Java Platform called "JDK_1.7", but this platform was not found.
+    Solution: Click Resolve and create new platform called "JDK_1.7".
+İleride olabilecek çakışmaları engellemek için "master_Jan2014" branch ine dokunmadım, "master_Jul2014" adında yeni bir branch oluşturdum ve bunun Java platformunu JDK 1.8 olarak ayarladım.
+Temmuz 2014 tarihinden itibaren "master_Jul2014" branch inde çalışacağım. Bu branch üzerinde diğer bilgisayarlardan da çalışmak istersem onlara da JDK 1.8 yüklemem gerekecek. ASUS N550JK öncesindeki projenin yedeği ise "master_Jan2014" te duruyor.
